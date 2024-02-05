@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Коммутант группы</title>
+    <style>
+        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2.5rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+        h4 {
+            font-size: 1.4rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="теоремы-силова.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="разрешимые-группы.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+
+
+<h1 data-number="13" id="коммутант-группы">Коммутант группы</h1>
+<div id="definition-46">
+<p><strong>Определение:</strong> Пусть <span
+class="math inline">\(G\)</span> – группа, <span
+class="math inline">\(g, h \in G\)</span>. Множество <span
+class="math inline">\([g, h] \rightleftharpoons g^{-1}h^{-1}gh\)</span>
+– <em>коммутатор элементов</em> <span class="math inline">\(g\)</span> и
+<span class="math inline">\(h\)</span>.</p>
+</div>
+<div id="definition-47">
+<p><strong>Определение:</strong> Пусть <span
+class="math inline">\(G\)</span> – группа. Множество <span
+class="math inline">\([G, G] \rightleftharpoons \langle\{[g, h]|\,\,\,\,
+g, h \in G\}\rangle\)</span> – <em>коммутант группы</em> <span
+class="math inline">\(G\)</span>.</p>
+</div>
+<div id="statement-24">
+<p><strong>Утверждение:</strong> Пусть <span
+class="math inline">\(G\)</span> – группа. Тогда</p>
+<ol type="1">
+<li><span class="math inline">\([G, G] \vartriangleleft G\)</span>,</li>
+<li><span class="math inline">\(G\)</span> – абелева <span
+class="math inline">\(\iff [G, G] = \{e\}\)</span>,</li>
+<li><span class="math inline">\(G/[G, G]\)</span> – абелева.</li>
+</ol>
+<p><em>Доказательство:</em></p>
+<p><span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<blockquote>
+<p>Следующее утверждение понятно, потому что любая подгруппа в абелевой
+группе нормальна.</p>
+</blockquote>
+<div id="statement-25">
+<p><strong>Утверждение:</strong> <span class="math inline">\(H\)</span>
+– подгруппа в группе <span class="math inline">\(G\)</span>, содержащая
+коммутант <span class="math inline">\(G \implies H \vartriangleleft
+G\)</span>.</p>
+<p><em>Доказательство:</em> <span class="math inline">\(ghg^{-1} =
+ghg^{-1}h^{-1}h = [g^{-1}, h^{-1}]h \in H
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="statement-26">
+<p><strong>Утверждение:</strong> Пусть <span
+class="math inline">\(G\)</span> – группа, <span
+class="math inline">\(H\)</span> – подгруппа <span
+class="math inline">\(G\)</span>. Тогда <span class="math inline">\(H
+\vartriangleleft G\)</span> и <span class="math inline">\(G / H\)</span>
+абелева <span class="math inline">\(\iff [G, G] \subset H\)</span>.</p>
+<p><em>Доказательство:</em></p>
+<p><span class="math inline">\(\boxed{\Longrightarrow}\)</span> <span
+class="math inline">\((xH)(yH) = (yH)(xH) \implies xy \in yxH \implies
+[x, y] \in H \,\,\,\,\blacksquare\)</span></p>
+<p><span class="math inline">\(\boxed{\Longrightarrow}\)</span> По
+предыдущему утверждению <span class="math inline">\(H \vartriangleleft
+G\)</span>. <span class="math inline">\([G, G] \subset H \implies [g,
+h]H = H \implies ghH = hgH \,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="13.1"
+id="ядро-гомоморфизма-в-абелеву-группу-содержит-коммутант">Ядро
+гомоморфизма в абелеву группу содержит коммутант</h2>
+<div id="statement-27">
+<p><strong>Утверждение:</strong> Ядро гомоморфизма <span
+class="math inline">\(\varphi: G \to H\)</span>, где <span
+class="math inline">\(H\)</span> абелева, содержит коммутант <span
+class="math inline">\([G, G]\)</span>.</p>
+<p><em>Доказательство:</em></p>
+</div>
+<h2 data-number="13.2" id="коммутанты-некоторых-групп">Коммутанты
+некоторых групп</h2>
+<div id="definition-48">
+<p><strong>Определение:</strong> <em>Трансвекция</em> – это матрица
+вида: <span class="math inline">\(\left(\begin{array}{lllll}
+1 &amp; 0 &amp; \dots &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; \dots &amp; 0 \\
+0 &amp; \ddots &amp; \ddots &amp; \lambda &amp; 0 \\
+0 &amp; \dots &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; \dots &amp; 0 &amp; 1
+\end{array}\right)\)</span>, где <span class="math inline">\(\lambda \ne
+0\)</span> и <span class="math inline">\(\lambda\)</span> на позиции
+<span class="math inline">\(i \ne j\)</span>.</p>
+</div>
+<div id="statement-28">
+<p><strong>Утверждение:</strong></p>
+<ol type="1">
+<li><span class="math inline">\(A_n\)</span> порождается тройными
+циклами,</li>
+<li><span class="math inline">\(S_n\)</span> порождается
+транспозициями,</li>
+<li><span class="math inline">\(SL_n(\mathbb{F})\)</span> порождается
+трансвекциями,</li>
+<li><span class="math inline">\(GL_n(\mathbb{F})\)</span> порождается
+матрицами элементраных преобразований.</li>
+</ol>
+<p><em>Доказательство:</em></p>
+</div>
+<div id="statement-29">
+<p><strong>Утверждение:</strong></p>
+<ol type="1">
+<li><span class="math inline">\([S_n, S_n] = A_n\)</span></li>
+<li><span class="math inline">\([A_n, A_n] = A_n, \,\,\,\, \forall n
+\geqslant 5\)</span></li>
+<li><span class="math inline">\([GL_n(\mathbb{F}), GL_n(\mathbb{F})] =
+SL_n(\mathbb{F}), \,\,\,\, \forall \mathbb{F}: \,\,\,\, |\mathbb{F}|
+&gt; 3\)</span></li>
+<li><span class="math inline">\([SL_n(\mathbb{F}), SL_n(\mathbb{F})] =
+SL_n(\mathbb{F}), \,\,\,\, \forall \mathbb{F}: \,\,\,\, |\mathbb{F}|
+&gt; 3\)</span></li>
+</ol>
+<p><em>Доказательство:</em></p>
+<ol type="1">
+<li>При <span class="math inline">\(n = 1, 2\)</span> очев. Хотим
+доказать, что все тройные циклы содержатся в коммутанте и далее
+воспользоваться предыдущим утверждением.</li>
+</ol>
+<p><span class="math inline">\([(ij),(jk)] = (ij)(jk)(ij)(jk) = (kji)
+\,\,\,\,\blacksquare\)</span></p>
+<ol start="2" type="1">
+<li><p><span class="math inline">\([(ijk)(klm)] = \ldots =
+(kjm)\)</span> далее по предыдущей теореме <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p></li>
+<li><p>Рассмотрим гомоморфизм <span
+class="math inline">\(\operatorname{det}: GL_n(F) \to F^{*}\)</span>. По
+теореме о гомоморфизме <span class="math inline">\(GL_n(F)/SL_n(F)
+\simeq F^{*} \implies SL_n(F) \supset [GL_n(F), GL_n(F)]\)</span>. Чтобы
+доказать обратное включение надо включить мозги, а они у меня не
+работают <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p></li>
+</ol>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="теоремы-силова.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="разрешимые-группы.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

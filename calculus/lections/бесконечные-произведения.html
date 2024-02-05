@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Бесконечные произведения</title>
+    <style>
+        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2.5rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+        h4 {
+            font-size: 1.4rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="ряды-тейлора.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="собственные-интегралы-с-параметром.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+
+
+<h1 data-number="13" id="бесконечные-произведения">Бесконечные
+произведения</h1>
+<div id="definition-19">
+<p><strong>Определение:</strong> Пара <span
+class="math inline">\(\left(\{u_n\}_{n = 1}^{\infty}, \{\Pi_n =
+\displaystyle \prod_{k = 1}^{n}u_k\}_{n = 1}^{\infty}\right)\)</span> –
+<em>бесконечное произведение</em>.</p>
+<p><strong>Обозначается:</strong> <span
+class="math inline">\(\displaystyle \prod_{n =
+1}^{\infty}u_n\)</span></p>
+</div>
+<div id="definition-20">
+<p><strong>Определение:</strong></p>
+<p>Если <span class="math inline">\(\exists \displaystyle \lim_{n\to
+\infty}\Pi_n = 0\)</span>, то бесконечное произведение <span
+class="math inline">\(\displaystyle \prod_{n = 1}^{\infty}u_n\)</span>
+<em>расходится к нулю</em>.</p>
+<p>Если <span class="math inline">\(\exists \displaystyle \lim_{n\to
+\infty}\Pi_n \ne 0\)</span>, то бесконечное произведение <span
+class="math inline">\(\displaystyle \prod_{n = 1}^{\infty}u_n\)</span>
+<em>сходится</em>.</p>
+<p>Если <span class="math inline">\(\not\exists \displaystyle \lim_{n\to
+\infty}\Pi_n\)</span>, то бесконечное произведение <span
+class="math inline">\(\displaystyle \prod_{n = 1}^{\infty}u_n\)</span>
+<em>расходится</em>.</p>
+</div>
+<div id="statement-1">
+<p><strong>Утверждение:</strong> Если <span
+class="math inline">\(\exists u_n = 0\)</span>, то бесконечное
+произведение <span class="math inline">\(\displaystyle \prod_{n =
+1}^{\infty}u_n\)</span> расходится к нулю.</p>
+<p><em>Доказательство:</em> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<p>Далее <span class="math inline">\(u_n &gt; 0\)</span>.</p>
+<h2 data-number="13.1" id="необходимое-условие-сходимости">Необходимое
+условие сходимости</h2>
+<div id="statement-2">
+<p><strong>Утверждение:</strong> (<em>необходимое условие
+сходимости</em>) Если <span class="math inline">\(\displaystyle \prod_{n
+= 1}^{\infty}u_n\)</span> сходится, то <span
+class="math inline">\(\displaystyle \lim_{n\to \infty}\Pi_n =
+1\)</span>.</p>
+<p><em>Доказательство:</em> Поделить два соседних частичных произведения
+<span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<p>Далее <span class="math inline">\(u_n = 1 + a_n\)</span>, где <span
+class="math inline">\(a_n &gt; -1\)</span> и выполнено необходимое
+условие.</p>
+<div id="theorem-35">
+<p><strong>Теорема:</strong> <span class="math inline">\(\displaystyle
+\prod_{n = 1}^{\infty}(1+a_n)\)</span> сходится <span
+class="math inline">\(\iff\)</span> <span
+class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}\ln(1+
+a_n)\)</span> сходится.</p>
+<p><em>Доказательство:</em> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="definition-21">
+<p><strong>Определение:</strong> <span
+class="math inline">\(\displaystyle \prod_{n =
+1}^{\infty}(1+a_n)\)</span> <em>сходится абсолютно</em>, если <span
+class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}\ln(1+
+a_n)\)</span> сходится абсолютно.</p>
+</div>
+<div id="theorem-36">
+<p><strong>Теорема:</strong> <span class="math inline">\(\displaystyle
+\prod_{n = 1}^{\infty}(1+a_n)\)</span> сходится абсолютно <span
+class="math inline">\(\iff \displaystyle \sum_{n =
+1}^{\infty}a_n\)</span> сходится абсолютно.</p>
+<p><em>Доказательство:</em> Признак сравнения <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-37">
+<p><strong>Теорема:</strong> Рассмотрим <span
+class="math inline">\(\displaystyle \prod_{i = 0}^{\infty}(1+
+a_n)\)</span>. Если <span class="math inline">\(\displaystyle \sum_{n =
+1}^{\infty}a_n\)</span> сходится, то <span
+class="math inline">\(\displaystyle \prod_{i = 0}^{\infty}(1+
+a_n)\)</span> сходится или расходится одновременно с <span
+class="math inline">\(\displaystyle \sum_{n =
+1}^{\infty}a_n^2\)</span>.</p>
+<p><em>Доказательство:</em> <span class="math inline">\(\ln(1 + a_n) -
+a_n \sim -\frac{a_n^2}{2} \,\,\,\,\blacksquare\)</span></p>
+</div>
+<h3 data-number="13.1.1" id="пример">Пример</h3>
+<p>Рассмотрим <span class="math inline">\(\zeta(s) = \displaystyle
+\sum_{n = 1}^{\infty}\frac{1}{n^s}, \,\,\,\, s &gt; 1\)</span>.</p>
+<div id="definition-22">
+<p><strong>Определение:</strong> <span
+class="math inline">\(\zeta(s)\)</span> – <em>Дзета-функция
+Римана</em>.</p>
+</div>
+<p>Пусть <span class="math inline">\(p_n = 2, 3, 5\)</span> – простые
+числа.</p>
+<p>Рассмотрим <span class="math inline">\(\displaystyle \prod_{i =
+1}^{\infty}\left(1 - \frac1{p_n^s}\right)^{-1} = \displaystyle
+\lim_{n\to \infty}\displaystyle \prod_{i = 1}^{N}\left(1 -
+\frac1{p_n^s}\right)^{-1}\)</span>.</p>
+<p><span class="math inline">\(\prod_{i = 1}^{N}\left(1 -
+\frac1{p_n^s}\right)^{-1} = \prod_{i = 1}^{N}\left(\displaystyle \sum_{k
+= 0}^{\infty}\frac1{p_n^{sk}}\right)^{-1}\)</span>.</p>
+<p>Пусть <span class="math inline">\(N_1\)</span> максимальное такое,
+что в произведении <span class="math inline">\(\prod_{i =
+1}^{N}\left(\displaystyle \sum_{k =
+0}^{\infty}\frac1{p_n^{sk}}\right)^{-1}\)</span> что-то выполнено.
+<strong>?</strong></p>
+<p><span class="math display">\[\displaystyle \sum_{m =
+1}^{N_1}\frac1{m^s} &lt; \prod_{i = 1}^{N}\left(1 -
+\frac1{p_n^s}\right)^{-1} &lt; \displaystyle \sum_{m =
+1}^{\infty}\frac1{m^s}\]</span></p>
+<p><span class="math display">\[\Downarrow\]</span></p>
+<p>При <span class="math inline">\(s &gt; 1 \,\,\,\, \displaystyle
+\sum_{n = 1}^{\infty}\frac1{n^s} = \displaystyle \prod_{k =
+1}^{\infty}\left(1 - \frac1{p_k^s}\right)^{-1}\)</span>.</p>
+<h2 data-number="13.2" id="ужасная-теорема">Ужасная теорема</h2>
+<div id="lemma-2">
+<p><strong>Лемма:</strong></p>
+<p><span class="math display">\[\left|\displaystyle \prod_{k = 1}^{n}(1
++ a_k) - 1\right| \leqslant \displaystyle \prod_{k = 1}^{n}(1 + |a_k|) -
+1\]</span></p>
+<p><em>Доказательство:</em> База: <span class="math inline">\(|a_1| = (1
++ |a_1|) - 1\)</span>.</p>
+<p>Шаг: <span class="math inline">\(\left|\displaystyle \prod_{k = 1}^{n
++ 1}(1 + a_k) - 1\right| = \left|\displaystyle \prod_{k = 1}^{n + 1}(1 +
+a_k) - \displaystyle \prod_{k = 1}^{n}(1 + a_k) + \displaystyle \prod_{k
+= 1}^{n}(1 + a_k) - 1\right|\leqslant\)</span> <span
+class="math inline">\(\leqslant \left|\displaystyle \prod_{k = 1}^{n}(1
++ a_k)\cdot a_{n + 1}\right| + \left|\displaystyle \prod_{k = 1}^{n}(1 +
+a_k) - 1\right| \leqslant \displaystyle \prod_{k = 1}^{n}(1 + a_k)\cdot
+|a_{n + 1}| + \displaystyle \prod_{k = 1}^{n}(1 + |a_k|) - 1
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-38">
+<p><strong>Теорема:</strong> <span class="math inline">\(\forall x \ne
+\pi k, k \in \mathbb{Z}\)</span> верно:</p>
+<p><span class="math display">\[\sin x = x\cdot \displaystyle \prod_{k =
+1}^{\infty}\left(1 - \frac{x^2}{\pi^2 k^2}\right)\]</span></p>
+<p><em>Доказательство:</em> <span
+class="math inline">\(\exists\{P_n(y)\}_{n = 0}^{\infty}\)</span> –
+последовательность многочленов, такая, что <span
+class="math inline">\(\sin(2n + 1)t = (2n + 1)\sin t \cdot P_n(\sin^2
+t)\)</span>.</p>
+<p>Докажем по индукции. <span class="math inline">\(P_0 = 1\)</span>.
+Имеем при <span class="math inline">\(n = 0 \,\,\,\, \sin t = \sin
+t\)</span>. При <span class="math inline">\(n = 1 \,\,\,\, \sin 3t =
+3\sin t - 4 \sin^3 t = 3\sin t \left(1 - \frac43 \sin^2
+t\right)\)</span>.</p>
+<p><span class="math inline">\(\sin(2n + 1)t + \sin (2n - 3)t = 2\sin(2n
+- 1)t \cdot \cos 2t\)</span>.</p>
+<p><span class="math inline">\(\sin (2n - 1)t\)</span> и <span
+class="math inline">\(\sin (2n - 3)\)</span> заменяем по предположению
+индукции. Имеем</p>
+<p><span class="math inline">\(\sin(2n + 1)t = 2(2n - 1)\sin t P_{n -
+1}(\sin^2 t)\cdot (1 - 2\sin^2 t) - (2n - 3)\sin t P_{n - 2}(\sin^2
+t)\)</span>. Индукция окончена.</p>
+<p><span class="math inline">\(\sin (2n + 1)t = 0\)</span> при <span
+class="math inline">\(t = \frac{\pi k}{2n + 1}, \,\,\,\, k \in
+\mathbb{Z} \implies P_n(\sin^2 t) = 0\)</span> при <span
+class="math inline">\(t = \frac{\pi k}{2n + 1}, \,\,\,\, k \in \{1,
+\ldots, n\}\)</span>, то есть <span class="math inline">\(P_n(y) =
+0\)</span> при <span class="math inline">\(y = \sin^2\frac{\pi k}{2n +
+1}, \,\,\,\, k \in \{1, \ldots, n\}\)</span>, так как <span
+class="math inline">\(n\)</span> степень многочлена – это все корни.
+Следовательно <span class="math inline">\(P_n(y) = A\cdot \displaystyle
+\prod_{k = 1}^{n}\left(1 - \frac{y}{\sin^2\frac{\pi k}{2n +
+1}}\right)\)</span>.</p>
+<p><span class="math inline">\(\frac{\sin(2n + 1)t}{(2n + 1)\sin t} =
+P_n(\sin^2 t)\)</span> при <span class="math inline">\(t \to 0 \,\,\,\,
+1 = 1 \implies A = 1\)</span>.</p>
+<p><span class="math inline">\(\frac{\sin(2n + 1)t}{(2n + 1)\sin t} =
+\displaystyle \prod_{k = 1}^{n}(1 - \frac{\sin^2 t}{\sin^2\frac{\pi
+k}{2n + 1}}) \implies \frac{\sin x}{(2n + 1)\sin \frac{x}{2n + 1}} =
+\displaystyle \prod_{k = 1}^{n}\left(1 - \frac{\sin^2 \frac{x}{2n +
+1}}{\sin^2\frac{\pi k}{2n + 1}}\right)\)</span></p>
+<p><span class="math display">\[\displaystyle \prod_{k = 1}^{n}\left(1 -
+\frac{\sin^2 \frac{x}{2n + 1}}{\sin^2\frac{\pi k}{2n + 1}}\right)
+\overset{\forall x \in \mathbb{R}, \,\,\,\, x \ne \pi k \,\,\,\, |x|
+&lt; 2n + 1}{\underset{m \in \mathbb{N}, \,\,\,\, m &lt; n}{=}}
+\displaystyle \prod_{k = 1}^{m}\left(1 - \frac{\sin^2 \frac{x}{2n +
+1}}{\sin^2\frac{\pi k}{2n + 1}}\right)\cdot \displaystyle \prod_{k = m +
+1}^{n}\left(1 - \frac{\sin^2 \frac{x}{2n + 1}}{\sin^2\frac{\pi k}{2n +
+1}}\right)=\]</span> <span class="math display">\[= \displaystyle
+\prod_{k = 1}^{m}\left(1 - \frac{\sin^2 \frac{x}{2n +
+1}}{\sin^2\frac{\pi k}{2n + 1}}\right)\cdot P_{n, m}(x)\]</span></p>
+<p><span class="math inline">\(\left|P_{n, m}(x) - 1\right| \leqslant
+\displaystyle \prod_{k = m + 1}^{n}\left(1 - \frac{\sin^2 \frac{x}{2n +
+1}}{\sin^2\frac{\pi k}{2n + 1}}\right) - 1 \leqslant \displaystyle
+\prod_{k = m + 1}^{n}\left(1 + \frac{x^2}{4k^2}\right) - 1\)</span>, так
+как при <span class="math inline">\(x \in [0,
+\frac{\pi}2]\,\,\,\,\frac2{\pi}x \leqslant \sin x \leqslant
+x\)</span>.</p>
+<p>Разделили на две части каждая из которых зависит от <span
+class="math inline">\(n\)</span> в одном параметре, а следовательно
+можно устремлять <span class="math inline">\(n \to \infty\)</span>.</p>
+<p><span class="math display">\[\frac{\sin x}{(2n + 1)\sin \frac{x}{2n +
+1}} = \displaystyle \prod_{k = 1}^{n}\left(1 - \frac{\sin^2 \frac{x}{2n
++ 1}}{\sin^2\frac{\pi k}{2n + 1}}\right)\cdot P_{n, m}(x)\]</span></p>
+<p><span class="math display">\[\displaystyle \lim_{n\to
+\infty}\displaystyle \prod_{k = 1}^{n}\left(1 - \frac{\sin^2 \frac{x}{2n
++ 1}}{\sin^2\frac{\pi k}{2n + 1}}\right) = \displaystyle \prod_{k = m +
+1}^{n}\left(1 + \frac{x^2}{4k^2}\right)\]</span></p>
+<p>Устремляем <span class="math inline">\(m \to \infty\)</span>.</p>
+<p><span class="math display">\[\exists \displaystyle \lim_{n\to
+\infty}P_{n, m} = P_m \overset{m \to \infty}{\to} 1
+\,\,\,\,\blacksquare\]</span></p>
+</div>
+<div id="corollary-4">
+<p><strong>Следствие:</strong> (<em>формула Валлиса</em>) Подставить в
+разложение <span class="math inline">\(x = \frac{\pi}2\)</span>.</p>
+<p><em>Доказательство:</em> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="ряды-тейлора.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="собственные-интегралы-с-параметром.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

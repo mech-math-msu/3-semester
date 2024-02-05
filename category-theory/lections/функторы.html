@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Функторы</title>
+    <style>
+        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2.5rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+        h4 {
+            font-size: 1.4rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+            <script defer>
+                window.MathJax = {
+                  tex: {
+                    macros: {
+                        cod: "{\\mathop{\\rm cod}\\nolimits}",
+                        dom: "{\\mathop{\\rm dom}\\nolimits}",
+                        Mor: "{\\mathop{\\rm Mor}\\nolimits}",
+                        Ob: "{\\mathop{\\rm Ob}\\nolimits}",
+                        Hom: "{\\mathop{\\rm Hom}}",
+                        id: "{\\mathop{\\rm id}}",
+                        C: "{\\mathbf{C}}",
+                        D: "{\\mathbf{D}}",
+                        Grp: "{\\mathbf{Grp}}",
+                        CRng: "{\\mathbf{CRng}}",
+                        Matr: "{\\mathbf{Matr}}",
+                        Vect: "{\\mathbf{Vect}}",
+                        G: "{\\mathbf{G}}",
+                        Top: "{\\mathbf{Top}}",
+                        Ass: "{\\mathbf{Ass}}",
+                        Set: "{\\mathbf{Set}}",
+                        Nat: "{\\mathbf{Nat}}",
+                        Funct: "{\\mathbf{Funct}}"
+                    }
+                  }
+                };
+            </script>
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="теория-категорий.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="изоморфизмы.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+
+
+<h1 data-number="2" id="функторы">Функторы</h1>
+<h2 data-number="2.1" id="определения-1">Определения</h2>
+<div id="definition-4">
+<p><strong>Определение:</strong> Пусть <span
+class="math inline">\(\C\)</span> и <span
+class="math inline">\(\D\)</span> категории. Функтор <span
+class="math inline">\(F: \C \to \D\)</span> – это пара отображений <a
+href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a> <span class="math inline">\(F: \Ob
+\C \to \Ob \D\)</span> и <span class="math inline">\(F: \Mor \C \to \Mor
+\D\)</span>, причем:</p>
+<ol type="1">
+<li><span class="math inline">\(F\id_a = \id_{F_a} \,\,\,\, \forall a
+\in \Ob \C\)</span> <a href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a>,</li>
+<li><span class="math inline">\(F(fg) = (Ff)(Fg) \,\,\,\,\forall (f, g)
+\in \Mor\C\times_{\Ob C}\Mor\C\)</span> <a href="#fn3"
+class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a>.</li>
+</ol>
+</div>
+<div id="definition-5">
+<p><strong>Определение:</strong></p>
+<p>Функторы из <span class="math inline">\(\C \to \D\)</span> –
+<em>ковариантные</em>.</p>
+<p>Функторы из <span class="math inline">\(\C \to
+\D^{\operatorname{op}}\)</span> – <em>контравариантные</em>.</p>
+</div>
+<h2 data-number="2.2" id="примеры-функторов">Примеры функторов</h2>
+<dl>
+<dt><strong>Забывающие функторы</strong></dt>
+<dd>
+<p><span class="math inline">\(F: \Grp \to \Set\)</span></p>
+<p><span class="math inline">\(F: \Top \to \Set\)</span></p>
+<p>Эти функторы переводят гомоморфизм или непрерывное отображение в
+отображение множеств.</p>
+</dd>
+<dt><strong>Функтор вложения</strong></dt>
+<dd>
+<p><span class="math inline">\(\C \hookrightarrow \D\)</span></p>
+</dd>
+<dt><strong><span class="math inline">\(GL_n\)</span></strong></dt>
+<dd>
+<p>Зафиксируем <span class="math inline">\(n \in \mathbb{N}\)</span>.
+<span class="math inline">\(GL_n: \CRng \to \Grp, \,\,\,\, \Ob\CRng \ni
+K \mapsto GL_n(K) \in \Grp\)</span>, а гомоморфизм колец является
+гомоморфизмом колец.</p>
+</dd>
+<dt><strong>Функтор взятия группы обратимых элементов
+кольца</strong></dt>
+<dd>
+<p><span class="math inline">\(\times: \CRng \to \Grp, \,\,\,\, \Ob\CRng
+\ni K \mapsto K^{\times} \in \Grp\)</span>, а гомоморфизм колец является
+гомоморфизмом колец.</p>
+</dd>
+<dt><strong><span
+class="math inline">\(\Hom\)</span>-функторы</strong></dt>
+<dd>
+<p>Пусть <span class="math inline">\(\C\)</span> – категория. И пусть ее
+<span class="math inline">\(\hom\)</span>-множества являются малыми
+множествами. Зафиксируем объект <span class="math inline">\(a \in \Ob
+\C\)</span>. Построим функтор: <span class="math inline">\(\hom(a, -):
+\C \to \Set\)</span>. <span class="math inline">\(\forall b \in \Ob\C
+\,\,\,\, \hom(a, b): b \mapsto \hom(a, b)\)</span> и каждая стрелка
+<span class="math inline">\(f: b \to b’\)</span> переводится в функцию
+<span class="math inline">\(\hom(a, f): \hom(a, b) \to \hom(a, b’):
+\,\,\,\, f \mapsto g\circ f \,\,\,\, \forall g \in \hom(a, b)\)</span>.
+Это ковариантный <span class="math inline">\(\hom\)</span>-функтор.</p>
+<p>Контравариантный <span class="math inline">\(\hom\)</span>-функтор
+можно записать в ковариантном виде: <span class="math inline">\(\hom(-,
+c): \C^{\operatorname{op}} \to \Set, \,\,\,\, a \in \Ob \C \,\,\,\,
+\hom(a, c): a \mapsto \hom(a, c)\)</span> и каждая стрелка <span
+class="math inline">\(g: b \to b’\)</span> переводится в функцию <span
+class="math inline">\(\hom(g, c): \hom(b, c) \to \hom(b’, c): \,\,\,\, g
+\mapsto f\circ g \,\,\,\, \forall f \in \hom(b, c)\)</span>.</p>
+</dd>
+<dt><strong>Функтор абелианизации группы</strong></dt>
+<dd>
+<p><span class="math inline">\(\Grp \to \mathbf{Ab}, \,\,\,\, G \to G /
+[G, G]\)</span></p>
+<p><span class="math inline">\([G, G]\)</span> – коммутант группы.</p>
+</dd>
+</dl>
+<div id="definition-6">
+<p><strong>Определение:</strong></p>
+<p>Пусть <span class="math inline">\(F: \C \to \D\)</span> –
+функтор.</p>
+<p>Если <span class="math inline">\(\forall a, b \in \Ob\C\)</span>
+отображение <span class="math inline">\(\C(a, b) \to \D(F_a,
+F_b)\)</span> инъективно, то функтор <span
+class="math inline">\(F\)</span> – <em>унивалентный</em>.</p>
+<p>Если <span class="math inline">\(\forall a, b \in \Ob\C\)</span>
+отображение <span class="math inline">\(\C(a, b) \to \D(F_a,
+F_b)\)</span> сюръективно, то функтор <span
+class="math inline">\(F\)</span> – <em>полный</em>.</p>
+</div>
+<div id="definition-7">
+<p><strong>Определение:</strong> <em>Подкатегория</em> категории <span
+class="math inline">\(\C\)</span> – это категория, множеством объектов
+которой является подмножеством объектов категории <span
+class="math inline">\(\C\)</span> и множество морфизмов является
+подмножеством морфизмов.</p>
+</div>
+<p><span class="math inline">\(\newcommand{\cod}{\mathop{\rm
+cod}\nolimits}\)</span> <span
+class="math inline">\(\newcommand{\dom}{\mathop{\rm
+dom}\nolimits}\)</span> <span
+class="math inline">\(\newcommand{\Mor}{\mathop{\rm
+Mor}\nolimits}\)</span> <span
+class="math inline">\(\newcommand{\Ob}{\mathop{\rm
+Ob}\nolimits}\)</span> <span
+class="math inline">\(\newcommand{\Hom}{\mathop{\rm Hom}}\)</span> <span
+class="math inline">\(\newcommand{\id}{\mathop{\rm id}}\)</span> <span
+class="math inline">\(\newcommand{\D}{\mathbf{D}}\)</span> <span
+class="math inline">\(\newcommand{\Grp}{\mathbf{Grp}}\)</span> <span
+class="math inline">\(\newcommand{\Rng}{\mathbf{Rng}}\)</span> <span
+class="math inline">\(\newcommand{\CRng}{\mathbf{CRng}}\)</span> <span
+class="math inline">\(\newcommand{\C}{\mathbf{C}}\)</span> <span
+class="math inline">\(\newcommand{\Matr}{\mathbf{Matr}}\)</span> <span
+class="math inline">\(\newcommand{\Vect}{\mathbf{Vect}}\)</span> <span
+class="math inline">\(\newcommand{\G}{\mathbf{G}}\)</span> <span
+class="math inline">\(\newcommand{\Top}{\mathbf{Top}}\)</span> <span
+class="math inline">\(\newcommand{\Ass}{\mathbf{Ass}}\)</span> <span
+class="math inline">\(\newcommand{\Set}{\mathbf{Set}}\)</span> <span
+class="math inline">\(\newcommand{\Funct}{\mathbf{Funct}}\)</span> <span
+class="math inline">\(\newcommand{\Nat}{\mathbf{Nat}}\)</span></p>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Оба отображения обозначаются <span
+class="math inline">\(F\)</span>.<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Сохранение единицы.<a href="#fnref2"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Для любых морфизмов, у которых определена композиция,
+функтор сохраняет композицию.<a href="#fnref3" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="теория-категорий.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="изоморфизмы.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

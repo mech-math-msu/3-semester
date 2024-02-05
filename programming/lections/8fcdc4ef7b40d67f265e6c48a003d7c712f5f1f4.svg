@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- Created by MetaPost 2.02 on 2024.02.05:1232 -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="69.767258" height="43.211700" viewBox="0 0 69.767258 43.211700">
+<!-- Original BoundingBox: -10.472000 -3.403900 59.295258 39.807800 -->
+  <path d="M10.472000 39.807800L25.472000 9.807800L60.472000 39.807800Z" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <g transform="translate(0.000000 43.211700)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">A</text>
+  </g>
+  <path d="M10.472000 39.807800l0 0" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 3.000000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <g transform="translate(21.943542 6.807800)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">B</text>
+  </g>
+  <path d="M25.472000 9.807800l0 0" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 3.000000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <g transform="translate(62.571991 37.707809)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">C</text>
+  </g>
+  <path d="M60.472000 39.807800l0 0" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 3.000000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M25.472000 9.807800L31.530472 39.807800" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M10.472000 39.807800L39.524231 21.852615" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M60.472000 39.807800L18.276733 24.199020" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M29.193924 28.237503l0 0" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 3.000000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M40.764542 28.237503C40.764542 25.168655,39.545258 22.225845,37.375412 20.056015C35.205582 17.886169,32.262772 16.666885,29.193924 16.666885C26.125076 16.666885,23.182266 17.886169,21.012436 20.056015C18.842590 22.225845,17.623306 25.168655,17.623306 28.237503C17.623306 31.306351,18.842590 34.249161,21.012436 36.418991C23.182266 38.588837,26.125076 39.808121,29.193924 39.808121C32.262772 39.808121,35.205582 38.588837,37.375412 36.418991C39.545258 34.249161,40.764542 31.306351,40.764542 28.237503Z" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+</svg>

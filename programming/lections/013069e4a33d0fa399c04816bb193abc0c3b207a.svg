@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!-- Created by MetaPost 2.02 on 2024.02.05:1232 -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="68.743713" height="56.797653" viewBox="0 0 68.743713 56.797653">
+<!-- Original BoundingBox: -4.743546 -20.282349 64.000168 36.515305 -->
+  <path d="M4.743546 36.515305L53.841171 36.515305L53.841171 8.168854Z" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <g transform="matrix(0.000000,-1.399994,5.000000,0.000000,41.745575 46.489090)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">f</text>
+  </g>
+  <g transform="matrix(1.300003,-0.000000,-0.000000,3.000000,56.841171 29.814011)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">g</text>
+  </g>
+  <g transform="matrix(0.750000,1.299042,-4.936356,2.850006,12.295013 21.295197)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">f</text>
+  </g>
+  <g transform="translate(22.650558 47.233551)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">p</text>
+  </g>
+  <path d="M30.952759 47.034256L35.934158 47.034256" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.398499;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <g transform="translate(30.952759 55.474854)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">3</text>
+  </g>
+  <g transform="translate(63.762421 25.552277)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">1</text>
+  </g>
+  <g transform="translate(19.715103 13.277893)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">2</text>
+  </g>
+</svg>

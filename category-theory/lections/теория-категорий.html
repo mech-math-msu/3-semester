@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Теория категорий</title>
+    <style>
+        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2.5rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+        h4 {
+            font-size: 1.4rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+            <script defer>
+                window.MathJax = {
+                  tex: {
+                    macros: {
+                        cod: "{\\mathop{\\rm cod}\\nolimits}",
+                        dom: "{\\mathop{\\rm dom}\\nolimits}",
+                        Mor: "{\\mathop{\\rm Mor}\\nolimits}",
+                        Ob: "{\\mathop{\\rm Ob}\\nolimits}",
+                        Hom: "{\\mathop{\\rm Hom}}",
+                        id: "{\\mathop{\\rm id}}",
+                        C: "{\\mathbf{C}}",
+                        D: "{\\mathbf{D}}",
+                        Grp: "{\\mathbf{Grp}}",
+                        CRng: "{\\mathbf{CRng}}",
+                        Matr: "{\\mathbf{Matr}}",
+                        Vect: "{\\mathbf{Vect}}",
+                        G: "{\\mathbf{G}}",
+                        Top: "{\\mathbf{Top}}",
+                        Ass: "{\\mathbf{Ass}}",
+                        Set: "{\\mathbf{Set}}",
+                        Nat: "{\\mathbf{Nat}}",
+                        Funct: "{\\mathbf{Funct}}"
+                    }
+                  }
+                };
+            </script>
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="index.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="функторы.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+
+
+<h1 data-number="1" id="теория-категорий">Теория категорий</h1>
+<p><strong>Об обозначениях:</strong> Пусть задано отображение <span
+class="math inline">\(f: A \to B\)</span>. В зависимости от настроения
+образ элемента <span class="math inline">\(a \in A\)</span> при
+отображении <span class="math inline">\(f\)</span> обозначается: <span
+class="math inline">\(f(a)\)</span>, или <span
+class="math inline">\(f_a\)</span>, или <span
+class="math inline">\(fa\)</span>.</p>
+<h2 data-number="1.1" id="определения">Определения</h2>
+<blockquote>
+<p>В теории множеств, чтобы избежать парадоксов аналогичных парадоксу
+Рассела, используются понятия классов и множеств, где множества – это те
+классы, которые являются элементами других классов.</p>
+</blockquote>
+<p>В теории категорий будет проще придерживаться терминологии малых и
+большх множеств.</p>
+<div id="definition-0">
+<p><strong>Определение:</strong> <em>Универсум</em> – некоторый класс.
+<a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></p>
+<p><em>Малые множества</em> – элементы универсума.</p>
+<p><em>Большие множества</em> – множества, не являющиеся малыми.</p>
+<blockquote>
+<p>Если взять <span class="math inline">\(U = \{x|\,\,\,\, \exists y:
+\,\,\,\, x \in y\}\)</span>, то малые множества – это множества, а
+большие множества – это классы, не являющиеся множествами. <a
+href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a></p>
+</blockquote>
+</div>
+<div id="definition-1">
+<p><strong>Определение:</strong> (<em>1-е определение
+категории</em>)</p>
+<p><em>Категория</em> <span class="math inline">\(\C\)</span> – это пара
+<span class="math inline">\((\Ob \C, \Mor \C)\)</span>, где</p>
+<p><span class="math inline">\(\Ob \C\)</span> – <em>множество
+объектов</em>,</p>
+<p><span class="math inline">\(\Mor\C\)</span> – <em>множество
+морфизмов</em> <a href="#fn3" class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a>, такая что:</p>
+<ol type="1">
+<li><span class="math inline">\(\forall f \in \Mor\C\,\,\,\, \exists a
+\in \Ob\C\)</span>, обозначается <span class="math inline">\(\dom
+f\)</span> и <span class="math inline">\(\exists b \in \Ob\C\)</span>,
+обозначается <span class="math inline">\(\cod f\)</span> <a href="#fn4"
+class="footnote-ref" id="fnref4"
+role="doc-noteref"><sup>4</sup></a>,</li>
+<li><span class="math inline">\(\forall a \in \Ob\C \,\,\,\, \exists \id
+_a \in \Mor\C: \,\,\,\, \cod \id_a = \dom \id_a = a\)</span>.</li>
+</ol>
+<p>По определению <span class="math inline">\(\Mor\C \times_{\Ob\C}
+\Mor\C = \{(f, g): \,\,\,\, f, g \in \Mor\C, \,\,\,\, \dom f = \cod g
+\}\)</span>. Определена операция <span class="math inline">\(\circ:
+\,\,\,\, \Mor\C \times_{\Ob\C} \Mor\C \to \Mor\C\)</span>, такая
+что:</p>
+<ol start="3" type="1">
+<li><span class="math inline">\(\forall (f, g) \in \Mor\C \times_{\Ob\C}
+\Mor\C \,\,\,\, \dom f\circ g = \dom g\)</span>,</li>
+<li><span class="math inline">\(\forall (f, g) \in \Mor\C \times_{\Ob\C}
+\Mor\C \,\,\,\, \cod f\circ g = \cod f\)</span>,</li>
+<li><span class="math inline">\(f(gh) = (fg)h\)</span>,</li>
+<li><span class="math inline">\(\forall f: a \to b \,\,\,\, \id_b f =
+f\id_a = f\)</span>.</li>
+</ol>
+<p>Множество всех морфизмов <span class="math inline">\(a \to b\)</span>
+обозначается <span class="math inline">\(\Hom_{\C}(a, b)\)</span> или
+<span class="math inline">\(\C(a, b)\)</span>.</p>
+<blockquote>
+<p>Вообще категория задается набором морфизмов, так как каждый объект
+задается своей единичной стрелкой.</p>
+</blockquote>
+</div>
+<h2 data-number="1.2" id="примеры-категорий">Примеры категорий</h2>
+<dl>
+<dt><strong>Категория множеств</strong></dt>
+<dd>
+<p>Обозначается <span class="math inline">\(\Set\)</span>.</p>
+<p>Объекты – малые множества.</p>
+<p>Морфизмы – отображения между множествами.</p>
+</dd>
+<dt><strong>Категория групп</strong></dt>
+<dd>
+<p>Обозначается <span class="math inline">\(\Grp\)</span>.</p>
+<p>Объекты – группы.</p>
+<p>Морфизмы – гомоморфизмы групп.</p>
+</dd>
+<dt><strong>Категория моноид</strong></dt>
+<dd>
+<p>Категория с одним объектом.</p>
+<p>Моноидом является, например, любой объект категории <span
+class="math inline">\(c \in \C\)</span> с множеством морфизмов <span
+class="math inline">\(\Hom_{\C}(c, c)\)</span>.</p>
+</dd>
+<dt><strong>Категория группы</strong></dt>
+<dd>
+<p>Обозначается <span class="math inline">\(\G\)</span>.</p>
+<p>Множество объектов состоит из единицы группы <span
+class="math inline">\(\Ob\C = \{e\}\)</span>.</p>
+<p>Морфизмы – все элементы группы, а <span
+class="math inline">\(\circ\)</span> из <a
+href="теория-категорий.html#definition-0">определения категории</a> –
+это умножение элементов группы.</p>
+<p>Это моноид с обратимыми стрелками.</p>
+</dd>
+<dt><strong>Категория матриц</strong></dt>
+<dd>
+<p>Обозначается <span class="math inline">\(\Matr_{\mathbb{K}}\)</span>,
+где <span class="math inline">\(\mathbb{K}\)</span> – любое
+коммутативное, ассоциативное кольцо с единицей.</p>
+<p>Объекты – натуральные числа. <a href="#fn5" class="footnote-ref"
+id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p><span class="math inline">\(\Hom_{\Matr_{\mathbf{K}}}(m, n)\)</span>
+– это матрицы размера <span class="math inline">\(n\times m\)</span>, а
+<span class="math inline">\(\circ\)</span> – это произведение
+матриц.</p>
+</dd>
+<dt><strong>Категория колец</strong></dt>
+<dd>
+<p>Обозначается <span class="math inline">\(\CRng\)</span>.</p>
+<p>Объекты – ассоциативные, коммутативные кольца с единицей.</p>
+<p>Морфизмы – гомоморфизмы колец.</p>
+</dd>
+<dt><strong>Категория векторных пространств над полем <span
+class="math inline">\(\mathbf{K}\)</span></strong></dt>
+<dd>
+<p>Обозначается <span class="math inline">\(\Vect_{\mathbb{K}}\)</span>,
+где <span class="math inline">\(\mathbb{K}\)</span> – любое поле.</p>
+<p>Объекты – векторные пространства над полем <span
+class="math inline">\(\mathbf{K}\)</span>.</p>
+<p><span class="math inline">\(\Hom_{\Vect_{\mathbf{K}}}(U, V)\)</span>
+– это линейные отображения пространства <span class="math inline">\(U
+\to V\)</span>.</p>
+</dd>
+<dt><strong>Категория топологических пространств</strong></dt>
+<dd>
+<p>Обозначается <span class="math inline">\(\Top\)</span>.</p>
+<p>Объекты – топологические пространства.</p>
+<p>Морфизмы – непрерывные отображения.</p>
+</dd>
+</dl>
+<div id="definition-2">
+<p><strong>Определение:</strong> Бинарное отношение <span
+class="math inline">\(\leqslant\)</span> на множестве <span
+class="math inline">\(M\)</span> – <em>предпорядок</em>, если <span
+class="math inline">\(\forall a, b, c \in M\)</span>:</p>
+<ol type="1">
+<li><span class="math inline">\(a \leqslant a\)</span>
+(<em>рефлексивность</em>),</li>
+<li><span class="math inline">\(a \leqslant b\)</span> и <span
+class="math inline">\(b \leqslant c \implies a \leqslant c\)</span>
+(<em>транзитивность</em>)</li>
+</ol>
+</div>
+<dl>
+<dt><strong>Категория предпорядка</strong></dt>
+<dd>
+<p>Пусть задано множество <span class="math inline">\(M\)</span> с
+предпорядком <span class="math inline">\(\leqslant\)</span>.</p>
+<p>Объекты – это элементы множества <span
+class="math inline">\(M\)</span>.</p>
+<p><span class="math inline">\(|\Hom_{\mathbf{M}}(m, n)| \leqslant
+1\)</span> и <span class="math inline">\(\Hom_{\mathbf{M}}(m, n) \ne
+\varnothing \iff m \leqslant n\)</span>.</p>
+</dd>
+</dl>
+<h2 data-number="1.3" id="двойственная-категория">Двойственная
+категория</h2>
+<div id="definition-3">
+<p><strong>Определение:</strong> Пусть <span
+class="math inline">\(\C\)</span> – категория. <em>Двойственная к</em>
+<span class="math inline">\(\C\)</span> <em>категория</em> – это
+категория <span class="math inline">\(\C^{\operatorname{op}}\)</span>, у
+которой <span class="math inline">\(\Ob \C^{\operatorname{op}} = \Ob
+\C\)</span> и стрелки развернуты.</p>
+</div>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Достаточно большое «множество»<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Например, в смысле этого определения универсума, класс
+всех малых множеств – <em>большое множество</em>.<a href="#fnref2"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Стрелки между объектами.<a href="#fnref3"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Пишут <span class="math inline">\(f: a \to b\)</span> и
+говорят, что <span class="math inline">\(f\)</span> стрелка из <span
+class="math inline">\(a\)</span> в <span
+class="math inline">\(b\)</span>.<a href="#fnref4" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Кто бы мог подумать 😵<a href="#fnref5"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="index.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="функторы.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

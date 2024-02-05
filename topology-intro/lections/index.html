@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Введение в топологию</title>
+    <style>
+        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2.5rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+        h4 {
+            font-size: 1.4rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+            <script defer>
+                window.MathJax = {
+                  tex: {
+                    macros: {
+                      blades: "{\\,\\,\\,\\,\\style{display: inline-block; transform: rotate(135deg)}{\\Large{\\dagger}}\\kern-7pt\\style{display: inline-block; transform: rotate(225deg)}{\\Large{\\dagger}}}"
+                    }
+                  }
+                };
+            </script>
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                    </span>
+        <span class="navlink">
+                    </span>
+        <span class="navlink">
+                        <a href="основные-определения.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+<header id="title-block-header">
+    <h1 class="title">Введение в топологию</h1>
+
+    
+    
+    
+    </header>
+
+<nav id="TOC" role="doc-toc">
+        <h2 id="toc-title" class="toc-title">Содержание</h2>
+        <ul>
+        <li><a href="основные-определения.html"
+        id="toc-основные-определения">Основные определения</a>
+        <ul>
+        <li><a
+        href="основные-определения.html#специальные-точки-и-множества-в-топологии"
+        id="toc-специальные-точки-и-множества-в-топологии">Специальные точки и
+        множества в топологии</a></li>
+        </ul></li>
+        <li><a href="непрерывные-отображения.html"
+        id="toc-непрерывные-отображения">Непрерывные отображения</a></li>
+        <li><a href="гомеоморфизм.html" id="toc-гомеоморфизм">Гомеоморфизм</a>
+        <ul>
+        <li><a href="гомеоморфизм.html#теорема-о-гомеоморфизме"
+        id="toc-теорема-о-гомеоморфизме">Теорема о гомеоморфизме</a></li>
+        </ul></li>
+        <li><a href="различные-топологии.html"
+        id="toc-различные-топологии">Различные топологии</a>
+        <ul>
+        <li><a href="различные-топологии.html#метрические-пространства"
+        id="toc-метрические-пространства">Метрические пространства</a></li>
+        <li><a href="различные-топологии.html#индуцированная-топология"
+        id="toc-индуцированная-топология">Индуцированная топология</a></li>
+        </ul></li>
+        <li><a
+        href="инварианты-топологичеких-пространств-при-непрерывных-отображениях.html"
+        id="toc-инварианты-топологичеких-пространств-при-непрерывных-отображениях">Инварианты
+        топологичеких пространств при непрерывных отображениях</a>
+        <ul>
+        <li><a
+        href="инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#связность"
+        id="toc-связность">Связность</a>
+        <ul>
+        <li><a
+        href="инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#линейная-связность"
+        id="toc-линейная-связность">Линейная связность</a></li>
+        </ul></li>
+        <li><a
+        href="инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#компактность"
+        id="toc-компактность">Компактность</a>
+        <ul>
+        <li><a
+        href="инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#лемма-лебега"
+        id="toc-лемма-лебега">Лемма Лебега</a></li>
+        </ul></li>
+        <li><a
+        href="инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#отделимость"
+        id="toc-отделимость">Отделимость</a>
+        <ul>
+        <li><a
+        href="инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#хаусдорфовость"
+        id="toc-хаусдорфовость">Хаусдорфовость</a></li>
+        </ul></li>
+        <li><a
+        href="инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#урысоновость"
+        id="toc-урысоновость">Урысоновость</a></li>
+        </ul></li>
+        <li><a href="теорема-стоуна-вейерштрасса.html"
+        id="toc-теорема-стоуна-вейерштрасса">Теорема
+        Стоуна-Вейерштрасса</a></li>
+        <li><a href="еще-способы-получить-новую-топологию-из-уже-имеющихся.html"
+        id="toc-еще-способы-получить-новую-топологию-из-уже-имеющихся">Еще
+        способы получить новую топологию из уже имеющихся</a>
+        <ul>
+        <li><a
+        href="еще-способы-получить-новую-топологию-из-уже-имеющихся.html#топология-произведения"
+        id="toc-топология-произведения">Топология произведения</a></li>
+        <li><a
+        href="еще-способы-получить-новую-топологию-из-уже-имеющихся.html#фактор-топология"
+        id="toc-фактор-топология">Фактор-топология</a>
+        <ul>
+        <li><a
+        href="еще-способы-получить-новую-топологию-из-уже-имеющихся.html#стягивание-подпространства-в-точку"
+        id="toc-стягивание-подпространства-в-точку">Стягивание подпространства в
+        точку</a></li>
+        <li><a
+        href="еще-способы-получить-новую-топологию-из-уже-имеющихся.html#пространство-с-отмеченной-точкой"
+        id="toc-пространство-с-отмеченной-точкой">Пространство с отмеченной
+        точкой</a></li>
+        </ul></li>
+        <li><a
+        href="еще-способы-получить-новую-топологию-из-уже-имеющихся.html#цилиндр-и-конус"
+        id="toc-цилиндр-и-конус">Цилиндр и конус</a></li>
+        <li><a
+        href="еще-способы-получить-новую-топологию-из-уже-имеющихся.html#компактно-открытая-топология-на-пространстве-непрерывных-отображений"
+        id="toc-компактно-открытая-топология-на-пространстве-непрерывных-отображений">Компактно-открытая
+        топология на пространстве непрерывных отображений</a></li>
+        </ul></li>
+        <li><a href="гомотопии.html" id="toc-гомотопии">Гомотопии</a></li>
+        <li><a href="ретракции.html" id="toc-ретракции">Ретракции</a>
+        <ul>
+        <li><a
+        href="ретракции.html#свойство-продолжения-гомотопии-homotopy-extension-property"
+        id="toc-свойство-продолжения-гомотопии-homotopy-extension-property">Свойство
+        продолжения гомотопии (homotopy extension property)</a></li>
+        <li><a
+        href="ретракции.html#первый-признак-гомотопической-эквивалентности-пространств"
+        id="toc-первый-признак-гомотопической-эквивалентности-пространств">Первый
+        признак гомотопической эквивалентности пространств</a></li>
+        <li><a
+        href="ретракции.html#второй-признак-гомотопической-эквивалентности-пространств"
+        id="toc-второй-признак-гомотопической-эквивалентности-пространств">Второй
+        признак гомотопической эквивалентности пространств</a></li>
+        </ul></li>
+        <li><a href="пути.html" id="toc-пути">Пути</a></li>
+        <li><a href="фундаментальная-группа.html"
+        id="toc-фундаментальная-группа">Фундаментальная группа</a>
+        <ul>
+        <li><a
+        href="фундаментальная-группа.html#ассоциативность-умножения-гомотопных-классов-путей"
+        id="toc-ассоциативность-умножения-гомотопных-классов-путей">Ассоциативность
+        умножения гомотопных классов путей</a></li>
+        <li><a
+        href="фундаментальная-группа.html#наличие-единицы-при-умножении-гомотопических-классов-путей"
+        id="toc-наличие-единицы-при-умножении-гомотопических-классов-путей">Наличие
+        единицы при умножении гомотопических классов путей</a></li>
+        <li><a
+        href="фундаментальная-группа.html#существование-обратного-элемента-при-умножении-гомотопных-классов-путей"
+        id="toc-существование-обратного-элемента-при-умножении-гомотопных-классов-путей">Существование
+        обратного элемента при умножении гомотопных классов путей</a></li>
+        <li><a
+        href="фундаментальная-группа.html#собственно-фундаментальная-группа"
+        id="toc-собственно-фундаментальная-группа">Собственно фундаментальная
+        группа</a>
+        <ul>
+        <li><a
+        href="фундаментальная-группа.html#самый-простой-пример-фундаментальной-группы"
+        id="toc-самый-простой-пример-фундаментальной-группы">Самый простой
+        пример фундаментальной группы</a></li>
+        </ul></li>
+        <li><a
+        href="фундаментальная-группа.html#фанфакт-что-такое-алгебраическая-топология"
+        id="toc-фанфакт-что-такое-алгебраическая-топология">Фанфакт: что такое
+        алгебраическая топология?</a></li>
+        <li><a
+        href="фундаментальная-группа.html#гомоморфизм-фундаментальных-групп"
+        id="toc-гомоморфизм-фундаментальных-групп">Гомоморфизм фундаментальных
+        групп</a></li>
+        <li><a href="фундаментальная-группа.html#зачем-нужны-отмеченные-точки"
+        id="toc-зачем-нужны-отмеченные-точки">Зачем нужны отмеченные
+        точки?</a></li>
+        <li><a
+        href="фундаментальная-группа.html#изоморфизм-фундаментальных-групп-гомотопически-эквивалентных-пространств"
+        id="toc-изоморфизм-фундаментальных-групп-гомотопически-эквивалентных-пространств">Изоморфизм
+        фундаментальных групп гомотопически эквивалентных пространств</a></li>
+        <li><a
+        href="фундаментальная-группа.html#фундаментальная-группа-окружности"
+        id="toc-фундаментальная-группа-окружности">Фундаментальная группа
+        окружности</a></li>
+        <li><a
+        href="фундаментальная-группа.html#теорема-о-неподвижной-точке-брауэра"
+        id="toc-теорема-о-неподвижной-точке-брауэра">Теорема о неподвижной точке
+        (Брауэра)</a></li>
+        <li><a href="фундаментальная-группа.html#основная-теорема-алгебры"
+        id="toc-основная-теорема-алгебры">Основная теорема алгебры</a></li>
+        </ul></li>
+        <li><a href="свободное-произведение-и-теорема-ван-кампена.html"
+        id="toc-свободное-произведение-и-теорема-ван-кампена">Свободное
+        произведение и теорема ван Кампена</a></li>
+        <li><a href="накрытия.html" id="toc-накрытия">Накрытия</a>
+        <ul>
+        <li><a
+        href="накрытия.html#пример-линейно-связного-но-не-локально-линейно-свзного-пространства"
+        id="toc-пример-линейно-связного-но-не-локально-линейно-свзного-пространства">Пример
+        линейно связного, но не локально линейно свзного пространства</a></li>
+        <li><a href="накрытия.html#примеры-накрытий"
+        id="toc-примеры-накрытий">Примеры накрытий</a></li>
+        <li><a
+        href="накрытия.html#гомоморфизм-фундаментальных-групп-индуцированный-отображением-накрытия"
+        id="toc-гомоморфизм-фундаментальных-групп-индуцированный-отображением-накрытия">Гомоморфизм
+        фундаментальных групп, индуцированный отображением накрытия</a></li>
+        <li><a href="накрытия.html#критерий-поднятия-отображения"
+        id="toc-критерий-поднятия-отображения">Критерий поднятия
+        отображения</a></li>
+        <li><a href="накрытия.html#универсальные-накрытия"
+        id="toc-универсальные-накрытия">Универсальные накрытия</a></li>
+        </ul></li>
+        </ul>
+</nav>
+
+
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                    </span>
+        <span class="navlink">
+                    </span>
+        <span class="navlink">
+                        <a href="основные-определения.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

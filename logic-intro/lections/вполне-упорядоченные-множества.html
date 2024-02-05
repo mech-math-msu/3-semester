@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Вполне упорядоченные множества</title>
+    <style>
+        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2.5rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+        h4 {
+            font-size: 1.4rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="наивная-теория-множеств.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="логические-языки.-логика-отношений.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+
+
+<h1 data-number="6" id="вполне-упорядоченные-множества">Вполне
+упорядоченные множества</h1>
+<h2 data-number="6.1"
+id="полное-упорядочение.-предельные-и-не-предельные-элементы">Полное
+упорядочение. Предельные и не предельные элементы</h2>
+<div id="definition-22">
+<p><strong>Определение:</strong> Множество <em>вполне упорядоченно</em>,
+если на нем задано отношение линейного порядка и каждое непустое
+подмножество имеет наименьший элемент. Соответствующее отношение
+линейного порядка – <em>полный порядок</em>. Пустое множество вполне
+упорядочено по определению.</p>
+<p>Пусть <span class="math inline">\(X\)</span> – вполне упорядоченное
+множество, <span class="math inline">\(x \in X\)</span>.</p>
+<p><em>Следующий за</em> <span class="math inline">\(x\)</span> элемент
+– это наименьший элемент множества элементов больших <span
+class="math inline">\(x\)</span>.</p>
+<p><em>Предыдущий для</em> <span class="math inline">\(x\)</span>
+элемент – это наибольший элемент множества элементов меньших <span
+class="math inline">\(x\)</span>, если такой имеется.</p>
+<p><em>Ноль</em> вполне <span class="math inline">\(X\)</span> – это
+наименьший элемент <span class="math inline">\(X\)</span>.</p>
+</div>
+<div id="statement-3">
+<p><strong>Утверждение:</strong> (<em>свойства вполне упорядоченного
+множества</em>) Пусть <span class="math inline">\(X\)</span> непустое
+вполне упорядоченное множество. Тогда</p>
+<ol type="1">
+<li>В <span class="math inline">\(X\)</span> есть минимальный элемент,
+то есть существует ноль,</li>
+<li>Любое подмножество <span class="math inline">\(X\)</span> вполне
+упорядочено.</li>
+</ol>
+<p><em>Доказательство:</em> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="statement-4">
+<p><strong>Утверждение:</strong> Множество натуральных чисел, введеное
+по фон-Нейману вполне упорядочено.</p>
+<p><em>Доказательство:</em> Введем отношение порядка на <span
+class="math inline">\(\mathbb{N}\)</span>. <span
+class="math inline">\(\mathbb{N} \ni n &lt; m \in \mathbb{N}\)</span>,
+если <span class="math inline">\(n \varsubsetneq m\)</span>. Докажем,
+что это отношение полное. Рассмотрим непустое подмножество <span
+class="math inline">\(A \subset \mathbb{N}\)</span>.</p>
+</div>
+<div id="definition-23">
+<p><strong>Определение:</strong> <em>Сумма двух полных порядков</em>
+<span class="math inline">\(&lt;_1\)</span> и <span
+class="math inline">\(&lt;_2\)</span>, определенных на <span
+class="math inline">\(X\)</span> и <span
+class="math inline">\(Y\)</span> соответсвенно, – это порядок <span
+class="math inline">\(&lt; = &lt;_1 + &lt;_2\)</span>, который определен
+следующим образом: <span class="math inline">\(x &lt; y\)</span>, если
+<span class="math inline">\(x \in X\)</span> и <span
+class="math inline">\(y \in Y\)</span>, или <span
+class="math inline">\(x, y \in X\)</span> и <span
+class="math inline">\(x &lt;_1 y\)</span>, или <span
+class="math inline">\(x, y \in Y\)</span> и <span
+class="math inline">\(x &lt;_2 y\)</span>.</p>
+</div>
+<div id="statement-5">
+<p><strong>Утверждение:</strong> Сумма полных порядков – полный
+порядок.</p>
+<p><em>Доказательство:</em> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="definition-24">
+<p><strong>Определение:</strong> Элемент вполне упорядоченного множества
+<em>предельный</em>, если он не ноль и не имеет предыдущего.</p>
+<p><strong>Пример:</strong> Рассмотрим сумму полных порядков,
+определенных на <span class="math inline">\(X\)</span> и <span
+class="math inline">\(Y\)</span>. Наименьший элемент <span
+class="math inline">\(Y\)</span> – предельный в полученном порядке.</p>
+<p>Подмножество вполне упорядоченного множества – <em>начальный
+отрезок</em>, если с каждым своим элементом содержит все меньшие
+его.</p>
+<p>Начальный отрезок <em>собственный</em>, если он не пустое множество и
+не все множество целиком.</p>
+</div>
+<h2 data-number="6.2"
+id="индуктивное-доказательство-для-вполне-упорядоченных-множеств">Индуктивное
+доказательство для вполне упорядоченных множеств</h2>
+<div id="theorem-2">
+<p><strong>Теорема:</strong> Пусть утверждение <span
+class="math inline">\(A\)</span> зависит <strong>??</strong> от элемента
+<span class="math inline">\(b\)</span> вполне упорядоченного множества
+<span class="math inline">\(B\)</span> и <span
+class="math inline">\(A\)</span> выполнено для нуля множества <span
+class="math inline">\(B\)</span>. И пусть выполнено одно из следующих
+условий:</p>
+<ol type="1">
+<li>Из того что утверждение <span class="math inline">\(A\)</span>
+выполнено для всех элементов <span class="math inline">\(B\)</span>
+меньших <span class="math inline">\(b\)</span> следует, что <span
+class="math inline">\(A\)</span> выполнено для <span
+class="math inline">\(b\)</span>.</li>
+<li>Из того что утверждение <span class="math inline">\(A\)</span>
+выполнено для – всех меньших, чем <span class="math inline">\(b\)</span>
+элементов, если <span class="math inline">\(b\)</span> предельный, –
+предыдущего элемента для <span class="math inline">\(b\)</span>, если
+<span class="math inline">\(b\)</span> не предельный следует, что <span
+class="math inline">\(A\)</span> выполнено для <span
+class="math inline">\(b\)</span>.</li>
+<li>Из того что утверждение <span class="math inline">\(A\)</span> не
+выполнено для <span class="math inline">\(b\)</span> следует, что <span
+class="math inline">\(A\)</span> не выполнено для некоторого элемента
+меньшего, чем <span class="math inline">\(b\)</span>.</li>
+</ol>
+<p>Тогда утверждение верно для всех элементов множества <span
+class="math inline">\(B\)</span>.</p>
+<p><em>Доказательство:</em></p>
+<p>Рассмотрим множество <span class="math inline">\(X\)</span>
+элементов, для которых условие <span class="math inline">\(A\)</span> не
+выполнено. Пусть условие <span class="math inline">\(A\)</span> не
+выполнено для <span class="math inline">\(b\)</span>. Значит <span
+class="math inline">\(b \in X\)</span>. …. Значит для минимального
+элемента <span class="math inline">\(X\)</span> условие не выполнено.
+Значит для всего <span class="math inline">\(B\)</span> условие не
+выполнено <span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+<p>Какая-то лажа происходит.</p>
+</div>
+<h2 data-number="6.3"
+id="индуктивное-определение-функции-на-вполне-упорядоченном-множестве">Индуктивное
+определение функции на вполне упорядоченном множестве</h2>
+<div id="definition-25">
+<p><strong>Определение:</strong> Пусть <span
+class="math inline">\(X\)</span> – вполне упорядоченнное множество.
+Пусть заданы значения функции <span class="math inline">\(f\)</span> на
+некотором начальном отрезке множества <span
+class="math inline">\(X\)</span>, а значения на остальных элементах
+выражаются через заданные значения. Такое определение функции <span
+class="math inline">\(f\)</span> <em>индуктивное</em>.</p>
+</div>
+<div id="statement-6">
+<p><strong>Утверждение:</strong> Функция, заданная индуктивно, является
+функцией и определена на всем множестве.</p>
+<p><em>Доказательство:</em> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="6.4"
+id="свойства-начальных-отрезков-вполне-упорядоченных-множеств">Свойства
+начальных отрезков вполне упорядоченных множеств</h2>
+<div id="statement-7">
+<p><strong>Утверждение:</strong> <span class="math inline">\(A\)</span>
+– собственный начальный отрезок множества <span
+class="math inline">\(X\iff A\)</span> – это множество всех элементов
+<span class="math inline">\(X\)</span> меньших некоторого <span
+class="math inline">\(a \in X\)</span>.</p>
+<p><em>Доказательство:</em> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="lemma-4">
+<p><strong>Лемма:</strong> Объединение начальных отрезков – начальный
+отрезок.</p>
+<p><em>Доказательство:</em> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="6.5"
+id="единственность-вложения-для-вполне-упорядоченных-множеств">Единственность
+вложения для вполне упорядоченных множеств</h2>
+<div id="definition-26">
+<p><strong>Определение:</strong> Вполне упорядоченное множество <span
+class="math inline">\(A\)</span> <em>вкладывается</em> в вполне
+упорядоченное множество <span class="math inline">\(B\)</span>, если
+существует биективное отображение <span class="math inline">\(f\)</span>
+<span class="math inline">\(A\)</span> в некторый начальный отрезок
+множества <span class="math inline">\(B\)</span>, такое что <span
+class="math inline">\(a, b \in A, \,\,\,\, a &lt; b \implies f(a) &lt;
+f(b)\)</span>.</p>
+</div>
+<div id="statement-8">
+<p><strong>Утверждение:</strong> Вложение, если оно существует,
+единственно.</p>
+<p><em>Доказательство:</em> Минимальный элемент переходит в минимальный,
+следующий за ним в следующий <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="6.6"
+id="возможность-сравнения-вполне-упорядоченных-множеств">Возможность
+сравнения вполне упорядоченных множеств</h2>
+<div id="statement-9">
+<p><strong>Утверждение:</strong> Для любых двух вполне упорядоченных
+множеств одно вкладывается в другое.</p>
+<p><em>Доказательство:</em></p>
+</div>
+<h2 data-number="6.7"
+id="функция-выбора.-существование-функции-выбора-для-вполне-упорядоченного-множества">Функция
+выбора. Существование функции выбора для вполне упорядоченного
+множества</h2>
+<div id="definition-27">
+<p><strong>Определение:</strong> <span
+class="math inline">\(2^A\)</span>, где <span
+class="math inline">\(A\)</span> – множество, – это множество всех
+подмножеств <span class="math inline">\(A\)</span>.</p>
+<p><em>Функция выбора</em> – это отображение <span
+class="math inline">\(2^A \to A\)</span>, такое что образ любого
+подножества принадлежит этому подмножеству.</p>
+<p><em>Функция дополнения</em> – это функция, ставящая в соответствие
+подмножеству значение функции выбора на дополнении к подмножеству.</p>
+<p><em>Характеристическая функция</em> подмножества <span
+class="math inline">\(B \subset A\)</span> множества <span
+class="math inline">\(A\)</span> – это функция <span
+class="math inline">\(A \to A: \begin{cases}
+    1, b \in B\\
+    0, b \not\in B
+\end{cases}\)</span>.</p>
+</div>
+<div id="lemma-5">
+<p><strong>Лемма:</strong> Пусть <span class="math inline">\(X\)</span>
+вполне упорядоченное множество. Тогда существует функция выбора на <span
+class="math inline">\(X\)</span>.</p>
+<p><em>Доказательство:</em> У любого подножества вполне упорядоченного
+множества существует наименьший элемент. Определим функцию <span
+class="math inline">\(f: 2^X \to X\)</span>, которая переводит
+подмножетсво в его наименьший элемент <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="6.8"
+id="теорема-цермело-о-возможности-вполне-упорядочения">Теорема Цермело о
+возможности вполне упорядочения</h2>
+<div id="theorem-3">
+<p><strong>Теорема:</strong> Если на множестве задана функция выбора, то
+оно может быть вполне упорядоченно.</p>
+<p><em>Доказательство:</em></p>
+</div>
+<h2 data-number="6.9" id="аксиома-выбора">Аксиома выбора</h2>
+<p><strong>Аксиома выбора</strong>: на всяком непустом множестве
+существует функция выбора.</p>
+<h2 data-number="6.10"
+id="возможность-сравнения-любых-множеств-по-мощности">Возможность
+сравнения любых множеств по мощности</h2>
+<p>По теореме Цермело в условиях аксиомы выбора можно вполне упорядочить
+любое множество, а вполне упорядоченные множества вкладываются друг в
+друга.</p>
+<h2 data-number="6.11"
+id="теорема-банаха-тарского-без-доказательства.-аксиома-детерминированности-игр">Теорема
+Банаха – Тарского (без доказательства). Аксиома детерминированности
+игр</h2>
+<div id="theorem-4">
+<p><strong>Теорема:</strong> Если принять аксиому выбора, то любой шар
+можно разделить на <span class="math inline">\(5\)</span> частей,
+передвинув которые можно сложить два шара того же радиуса.</p>
+<p><em>Доказательство:</em></p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="наивная-теория-множеств.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="логические-языки.-логика-отношений.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Логические языки. Логика отношений</title>
+    <style>
+        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2.5rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+        h4 {
+            font-size: 1.4rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="вполне-упорядоченные-множества.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="элиминация-кванторов-в-поле-действительных-чисел.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+
+
+<h1 data-number="7" id="логические-языки.-логика-отношений">Логические
+языки. Логика отношений</h1>
+<p>Знак <span class="math inline">\(\rightleftharpoons\)</span>
+обозначает равно по определению.</p>
+<div id="definition-28">
+<p><strong>Определение:</strong></p>
+<p><em>Алфавит</em> – это некоторое множество, его элементы –
+<em>символы</em> или <em>буквы</em>.</p>
+<p><em>Слово</em> в алфавите <span class="math inline">\(\Sigma\)</span>
+– это конечная последовательность символов.</p>
+<p><em>Длина слова</em> – это количество элементов в последовательности
+символов, составляющей слово.</p>
+<p>Слово нулевой длины обозначается <span
+class="math inline">\(\varepsilon\)</span>.</p>
+<p>Если <span class="math inline">\(w_1\)</span> и <span
+class="math inline">\(w_2\)</span> слова в некотором алфавите, то слово
+<span class="math inline">\(w_1w_2\)</span>, полученное приписыванием
+<span class="math inline">\(w_2\)</span> в конец <span
+class="math inline">\(w_1\)</span> – <em>конкатенация слов</em>.</p>
+<p>Если <span class="math inline">\(w\)</span> – слово и <span
+class="math inline">\(n \in \mathbb{N}\)</span>, то <span
+class="math inline">\(x^n\)</span> – это <span
+class="math inline">\(\underbrace{x\ldots x}_{n}\)</span>. <span
+class="math inline">\(x^0 \rightleftharpoons \varepsilon\)</span>.</p>
+<p>Множество всех слов в алфавите <span
+class="math inline">\(\Sigma\)</span> обозначается <span
+class="math inline">\(\Sigma^{*}\)</span>.</p>
+<p>Подмножества <span class="math inline">\(\Sigma^{*}\)</span> –
+<em>словарные множества</em> или <em>языки</em>.</p>
+</div>
+<h2 data-number="7.1"
+id="имена-и-значения.-значения-составных-имен.-скобки">Имена и значения.
+Значения составных имен. Скобки</h2>
+<div id="definition-29">
+<p><strong>Определение:</strong> <em>Сигнатура</em> – это алфавит <span
+class="math inline">\(\Sigma\)</span> допустимых при построении формулы
+символов. <a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></p>
+<p><em>Синтаксис</em> – это подмножество <span
+class="math inline">\(\Sigma^{*}\)</span>. Элементы синтаксиса –
+<em>(составные) имена</em> или <em>формулы</em>.</p>
+<p><em>Семантика</em> – это про смысл формул.</p>
+</div>
+<div id="definition-30">
+<p><strong>Определение:</strong></p>
+<p><span class="math inline">\(\operatorname{Pred}_{\Sigma} \ne
+\varnothing\)</span> – алфавит <em>предикатных символов</em>, или
+<em>имен отношений</em>, или <em>предикатов</em>, или
+<em>отношений</em>,</p>
+<p><span class="math inline">\(\operatorname{Ob}_{\Sigma} \ne
+\varnothing\)</span> – алфавит <em>предметных символов</em>, или
+<em>имен объектов</em>, или <em>констант</em>.</p>
+<p><em>Сигнатура</em> – это <span class="math inline">\(\Sigma =
+\operatorname{Pred}_{\Sigma}\cup\operatorname{Ob}_{\Sigma}\)</span> и
+<em>отображение валентности</em>, или <em>арности</em>, или
+<em>количества аргументов</em> <span
+class="math inline">\(\operatorname{arity}: \operatorname{Pred}_{\Sigma}
+\to \mathbb{N},\)</span> сопоставляющая каждому имени отношения
+(предикатному символу) количество его аргументов. <a href="#fn2"
+class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+</div>
+<h2 data-number="7.2"
+id="язык-и-структура.-универсум-значения-имен-объектов-и-отношений">Язык
+и структура. Универсум, значения имен объектов и отношений</h2>
+<div id="definition-31">
+<p><strong>Определение:</strong> Зафиксируем <span
+class="math inline">\(U \ne \varnothing\)</span>.</p>
+<p>Пусть задано отображение <span class="math inline">\(I: \Sigma \to
+U\)</span> и</p>
+<p><span class="math inline">\(\operatorname{I}: P \mapsto \overline{P}
+\subset U^n\)</span> <em>значение имени отношения/ предиката</em> <a
+href="#fn3" class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a>,</p>
+<p><span class="math inline">\(\operatorname{I}: v \mapsto \overline{v}
+\in U\)</span> <em>значение имени объекта</em>,</p>
+<p><span class="math inline">\(\operatorname{I}\)</span> –
+<em>интерпретация</em> сигнатуры <span
+class="math inline">\(\Sigma\)</span>. <span
+class="math inline">\(U\)</span> – <em>универсум</em> или <em>носитель
+интерпретации</em>.</p>
+<p><em>Алгебраическая структура (модель) сигнатуры</em> <span
+class="math inline">\(A_{\Sigma}\)</span> – это интерпретация и
+универсум.</p>
+</div>
+<h2 data-number="7.3"
+id="переменные.-контекст-в-универсуме.-термы-значения-термов-в-контексте">Переменные.
+Контекст в универсуме. Термы, значения термов в контексте</h2>
+<div id="definition-32">
+<p><strong>Определение:</strong> Пусть задана сигнатура <span
+class="math inline">\(\Sigma\)</span>.</p>
+<p><span class="math inline">\(\operatorname{Var}\)</span> – алфавит
+<em>переменных</em>.</p>
+<p><em>Язык сигнатуры</em> – это <span
+class="math inline">\(\operatorname{Var}\cup \{\neg, \vee, \wedge,
+\rightarrow, \leftrightarrow, \forall, \exists, «(», «)»,
+«,»\}\)</span></p>
+<p>Символ переменной или константы – <em>терм</em>.</p>
+<p><em>Контекст</em> – это отображение <span
+class="math inline">\(\operatorname{Var} \to U\)</span>.</p>
+<p><em>Значение терма в контексте</em> – это элемент универсума,
+полученный при отображении, определенном выше.</p>
+<h3 data-number="7.3.1"
+id="атомные-формулы-их-значение-в-контексте">Атомные формулы, их
+значение в контексте</h3>
+<p><em>Атомарная формула (атом)</em> – это <span
+class="math inline">\(p(t_1, \ldots, t_n)\)</span>, где <span
+class="math inline">\(p \in \operatorname{Pred}_{\Sigma}, \,\,\,\,
+\operatorname{arity}(p) = n\)</span> и <span class="math inline">\(t_1,
+\ldots,t_n\)</span> – термы, нульместные отношения являются <em>атомными
+формулами</em> по определению.</p>
+<p><em>Значение атомной формулы</em> <span class="math inline">\(p(t_1,
+\ldots, t_n)\)</span> <em>в контексте</em>.</p>
+<h3 data-number="7.3.2"
+id="формулы-логики-отношений-индуктивное-определение">Формулы логики
+отношений, индуктивное определение</h3>
+<p><em>Формула</em> определяется индуктивно:</p>
+<ol type="1">
+<li>Атом – <em>формула</em>.</li>
+<li>Если <span class="math inline">\(F\)</span> и <span
+class="math inline">\(F’\)</span> – формулы и <span
+class="math inline">\(x \in \operatorname{Var}\)</span>, то
+<ul>
+<li><span class="math inline">\(\neg (F)\)</span> –
+<em>формула</em>,</li>
+<li><span class="math inline">\((F) \vee (F’)\)</span> –
+<em>формула</em>,</li>
+<li><span class="math inline">\((F) \wedge (F’)\)</span> –
+<em>формула</em>,</li>
+<li><span class="math inline">\((F) \rightarrow (F’)\)</span> –
+<em>формула</em>,</li>
+<li><span class="math inline">\((F) \leftrightarrow (F’)\)</span> –
+<em>формула</em>,</li>
+<li><span class="math inline">\(\forall x (F)\)</span> –
+<em>формула</em>,</li>
+<li><span class="math inline">\(\exists x (F)\)</span> –
+<em>формула</em>.</li>
+</ul></li>
+</ol>
+<p>При этом <span class="math inline">\(F\)</span> и <span
+class="math inline">\(F’\)</span> – <em>подформулы</em>.</p>
+</div>
+<h2 data-number="7.4" id="однозначность-анализа-формул">Однозначность
+анализа формул</h2>
+<p>БЛА-БЛА-БЛА</p>
+<h2 data-number="7.5"
+id="связанные-и-свободные-вхождения-переменных.-свободные-переменные-формулы">Связанные
+и свободные вхождения переменных. Свободные переменные формулы</h2>
+<div id="definition-33">
+<p><strong>Определение:</strong> Пусть <span
+class="math inline">\(\varphi\)</span> – формула. В формулах <span
+class="math inline">\((\forall x \varphi)\)</span> и <span
+class="math inline">\((\exists x \varphi) \,\,\,\, \varphi\)</span> –
+это <em>область действия квантора</em>.</p>
+<p>Если <span class="math inline">\(\varphi\)</span> содержит <span
+class="math inline">\(x \in \operatorname{Var}\)</span>, то <span
+class="math inline">\(x\)</span> – <em>связанная переменная</em>. Вообще
+это неформально и надо по индукции.</p>
+<p>Иначе <span class="math inline">\(x\)</span> – <em>свободная
+переменная</em>.</p>
+<p>Формула <em>замкнутая</em> или <em>является высказыванием</em>, если
+в ней нет свободных переменных.</p>
+</div>
+<h2 data-number="7.6"
+id="контексты.-отношения-определяемые-формулами-бесконечноместное-и-на-конечной-степени-универсума">Контексты.
+Отношения, определяемые формулами – бесконечноместное и на конечной
+степени универсума</h2>
+<h2 data-number="7.7"
+id="высказывания.-истинность-высказывания-в-структуре.-выполнимость-высказывания">Высказывания.
+Истинность высказывания в структуре. Выполнимость высказывания</h2>
+<div id="definition-34">
+<p><strong>Определение:</strong> Высказывание <em>выполнимо</em>, если
+существует структура, в которой оно истинно.</p>
+</div>
+<h2 data-number="7.8"
+id="эквивалентные-формулы.-дизъюнктивная-нормальная-форма-днф">Эквивалентные
+формулы. Дизъюнктивная нормальная форма (ДНФ)</h2>
+<div id="definition-35">
+<p><strong>Определение:</strong> Формулы эквивалентны, если их значения
+совпадают в любом контексте для любой структуры.</p>
+<p>Дизъюнктивная нормальная форма – это эквивалентная данной формула,
+состоящая из дизъюнкций элементарных конъюнкций.</p>
+</div>
+<div id="statement-10">
+<p><strong>Утверждение:</strong> Любая бескванторная формула
+эквивалентна ДНФ.</p>
+<p><em>Доказательство:</em></p>
+</div>
+<h2 data-number="7.9" id="предваренная-нормальная-форма">Предваренная
+нормальная форма</h2>
+<div id="definition-36">
+<p><strong>Определение:</strong> <em>Предваренная нормальная форма</em>
+– это эквивалентная данной формула, где все кванторы стоят в начале
+формулы.</p>
+</div>
+<h2 data-number="7.10" id="игровая-семантика-логики-отношений">Игровая
+семантика логики отношений</h2>
+<p>А если природа тупая?</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Эти символы могут быть словами в другом алфавите.<a
+href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Имена отношений валентности <span
+class="math inline">\(0\)</span> – это константы истина или ложь.<a
+href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><span class="math inline">\(P \in
+\operatorname{Pred}_{\Sigma}\)</span> и <span
+class="math inline">\(\operatorname{arity}(P) = n\)</span><a
+href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="вполне-упорядоченные-множества.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="элиминация-кванторов-в-поле-действительных-чисел.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

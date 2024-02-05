@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Инварианты топологичеких пространств при непрерывных
+отображениях</title>
+    <style>
+        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2.5rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+        h4 {
+            font-size: 1.4rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+            <script defer>
+                window.MathJax = {
+                  tex: {
+                    macros: {
+                      blades: "{\\,\\,\\,\\,\\style{display: inline-block; transform: rotate(135deg)}{\\Large{\\dagger}}\\kern-7pt\\style{display: inline-block; transform: rotate(225deg)}{\\Large{\\dagger}}}"
+                    }
+                  }
+                };
+            </script>
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="различные-топологии.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="теорема-стоуна-вейерштрасса.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+
+
+<h1 data-number="5"
+id="инварианты-топологичеких-пространств-при-непрерывных-отображениях">Инварианты
+топологичеких пространств при непрерывных отображениях</h1>
+<h2 data-number="5.1" id="связность">Связность</h2>
+<p><strong>Обозначение:</strong> Если написано <span
+class="math inline">\(X = U \sqcup V\)</span>, то <span
+class="math inline">\(X = U \cup V\)</span> и <span
+class="math inline">\(U \cap V = \varnothing\)</span>.</p>
+<div id="definition-22">
+<p><strong>Определение:</strong> Топологичекое пространство <span
+class="math inline">\(X\)</span> <em>несвязно</em>, если представляется
+в виде объединения непересекающихся открытых подмножеств.</p>
+<p>Иначе <span class="math inline">\(X\)</span> <em>связно</em>.</p>
+</div>
+<div id="statement-6">
+<p><strong>Утверждение:</strong> Образ связного множества при
+непрерывном отображении связен.</p>
+<p><em>Доказательство:</em> Предположим обратное. Пусть при непрерывном
+отображении <span class="math inline">\(f: X \to Y\)</span> образ <span
+class="math inline">\(f(A)\)</span> связного множества <span
+class="math inline">\(A \subset X\)</span> несвязен, то есть <span
+class="math inline">\(f(A) = U \sqcup V\)</span> и <span
+class="math inline">\(U, V\)</span> открыты в <span
+class="math inline">\(Y\)</span>. Отображение непрерывно <span
+class="math inline">\(\implies f^{-1}(U)\)</span> и <span
+class="math inline">\(f^{-1}(V)\)</span> открыты в <span
+class="math inline">\(X\)</span>. <span class="math inline">\(A =
+f^{-1}(f(A)) = f^{-1}(U \sqcup V) = f^{-1}(U)\sqcup f^{-1}(V) \implies
+A\)</span> несвязно <span class="math inline">\(\blades\)</span></p>
+</div>
+<h3 data-number="5.1.1" id="линейная-связность">Линейная связность</h3>
+<div id="statement-7">
+<p><strong>Утверждение:</strong> Отрезок, как подмножество вещественной
+прямой с естественной топологией, – связен.</p>
+<p><em>Доказательство:</em></p>
+</div>
+<div id="definition-23">
+<p><strong>Определение:</strong> Образ отрезка с естественной топологией
+при непрерывном отображении в топологическое пространство –
+<em>(непрерывная) кривая</em>, <em>соединяющая</em> образы концов
+отрезка.</p>
+</div>
+<div id="definition-24">
+<p><strong>Определение:</strong> Пространство <em>линейно связно</em>,
+если любые две точки можно соединить непрерывной кривой.</p>
+</div>
+<div id="statement-8">
+<p><strong>Утверждение:</strong> Пространство <span
+class="math inline">\(X\)</span> линейно связно <span
+class="math inline">\(\implies\)</span> пространство <span
+class="math inline">\(X\)</span> связно.</p>
+<p><em>Доказательство:</em> <span class="math inline">\(X\)</span> –
+линейно связно <span class="math inline">\(\implies \forall x, y \in X
+\,\,\,\, \exists f: [a, b] \in X: \,\,\,\, f(a) = x, \,\,\,\, f(b) =
+y\)</span> и <span class="math inline">\(f\)</span> – непрерывно. Пусть
+<span class="math inline">\(X\)</span> несвязно, то есть <span
+class="math inline">\(X = U \sqcap V\)</span>, где <span
+class="math inline">\(U\)</span> и <span
+class="math inline">\(V\)</span> открыты. Взяв точки <span
+class="math inline">\(x \in U\)</span> и <span class="math inline">\(y
+\in V\)</span> и соединяющую их непрерывную кривую <span
+class="math inline">\(f: [a, b] \to X\)</span> получим, что <span
+class="math inline">\([a, b] = f^{-1}(U)\sqcup f^{-1}(V)\)</span> –
+несвязен <span class="math inline">\(\blades\)</span></p>
+</div>
+<h2 data-number="5.2" id="компактность">Компактность</h2>
+<div id="definition-25">
+<p><strong>Определение:</strong> Пространство <span
+class="math inline">\(X\)</span> – <em>компакт</em>, если из любого его
+открытого покрытия можно выделить конечное подпокрытие.</p>
+</div>
+<div id="definition-26">
+<p><strong>Определение:</strong> Подмножество <span
+class="math inline">\(A \subset X\)</span> топологического пространства
+<span class="math inline">\(X\)</span> – <em>компактно</em>, если из
+любого его открытого покрытия можно выделить конечное подпокрытие.</p>
+</div>
+<div id="statement-9">
+<p><strong>Утверждение:</strong> Образ компактного подмножества при
+непрерывном отображении компактен.</p>
+<p><em>Доказательство:</em> Пусть <span
+class="math inline">\(\cup_{\alpha \in \Lambda}U_{\alpha}\)</span> –
+открытое покрытие образа <span class="math inline">\(f(K)\)</span>
+компактного множества <span class="math inline">\(K\)</span>
+топологического пространства <span class="math inline">\(X\)</span> при
+непрерывном отображении <span class="math inline">\(f: X \to Y\)</span>.
+Рассмотрим покрытие <span class="math inline">\(\cup_{\alpha \in
+\Lambda}f^{-1}(U_{\alpha}) = f^{-1}(\cup_{\alpha \in
+\Lambda}U_{\alpha})\)</span> множества <span
+class="math inline">\(K\)</span>. <span class="math inline">\(K\)</span>
+– компакт <span class="math inline">\(\implies \exists \cup_{i =
+1}^{n}U_{\alpha_i} \supset K\)</span>. <span
+class="math inline">\(\cup_{i = 1}^{n}f(U_{\alpha_i})\)</span> искомое
+подпокрытие <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="statement-10">
+<p><strong>Утверждение:</strong> Замкнутое подмножество компактного
+пространства компактно.</p>
+<p><em>Доказательство:</em> Рассмотрим покрытие <span
+class="math inline">\(U = \cup_{\alpha \in \Lambda}U_{\alpha}\)</span>
+замкнутого множества <span class="math inline">\(V\)</span> в компактном
+пространстве <span class="math inline">\(X\)</span>. Хотим выделить
+конечное подпокрытие. <span class="math inline">\(V\)</span> закнуто
+<span class="math inline">\(\implies X \setminus V\)</span> – открыто.
+Добавим <span class="math inline">\(X \setminus V\)</span> к <span
+class="math inline">\(U\)</span>, получим покрытие всего <span
+class="math inline">\(X\)</span>. <span class="math inline">\(X\)</span>
+компактно <span class="math inline">\(\implies \exists \cup_{i =
+1}^{n}U_{\alpha_i} \supset X\)</span>. <span
+class="math inline">\(\cup_{i = 1}^{n}U_{\alpha_i} \setminus (X
+\setminus V)\)</span> искомое подпокрытие <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h3 data-number="5.2.1" id="лемма-лебега">Лемма Лебега</h3>
+<div id="lemma-4">
+<p><strong>Лемма:</strong> (<em>Лебега</em>) Пусть <span
+class="math inline">\(X\)</span> компактное метрическое пространство.
+Пусть <span class="math inline">\(\{U_{\alpha}\}\)</span> открытое
+покрытие <span class="math inline">\(X\)</span>. Тогда <span
+class="math inline">\(\exists r &gt; 0\)</span>, такое что любой
+открытый шар радиуса <span class="math inline">\(r\)</span> целиком
+лежит в одном из <span class="math inline">\(U_{\alpha}\)</span>.</p>
+<p><em>Доказательство:</em> <span
+class="math inline">\(\{U_{\alpha}\}\)</span> – покрытие, следовательно
+<span class="math inline">\(\forall x \in X \,\,\,\, \exists
+O_{\varepsilon_x}(x) \subset U_{\alpha}\)</span> для некоторого <span
+class="math inline">\(\alpha\)</span>. Рассмотрим покрытие <span
+class="math inline">\(X\)</span> множествами вида <span
+class="math inline">\(O_{\frac{\varepsilon_x}2}(x)\)</span>. В силу
+компактности <span class="math inline">\(X\)</span> выделим конечное
+подпокрытие <span
+class="math inline">\(\{O_{\frac{\varepsilon_{x_i}}2}(x_i)\}_{i =
+1}^{n}\)</span>. Возьмем <span class="math inline">\(r =
+\min\{\frac{x_i}2|\,\,\,\, i \in \{1, \ldots, n\}\}\)</span>.</p>
+<p>Докажем, что любой шар радиуса <span class="math inline">\(r\)</span>
+целиком лежит в одном из <span
+class="math inline">\(O_{\varepsilon_{x_i}}(x_i)\)</span>, а
+следовательно в одном из <span
+class="math inline">\(U_{\alpha}\)</span>. Рассмотрим <span
+class="math inline">\(O_{r}(x)\)</span>. <span
+class="math inline">\(\forall y \in O_r(x) \,\,\,\, \rho(x, y) &lt;
+r\)</span> и <span class="math inline">\(\rho(x_i, y) \leqslant
+\rho(x_i, x) + \rho(x, y) &lt; \frac{\varepsilon_{x_i}}2 + r \leqslant
+\varepsilon_{x_i} \implies y \in O_{\varepsilon_{x_i}}(x_i)
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="definition-27">
+<p><strong>Определение:</strong> Максимальное <span
+class="math inline">\(r\)</span>, удовлетворяющее условиям предыдущей
+леммы, – <em>число Лебега</em> покрытия <span
+class="math inline">\(U_{\alpha}\)</span>.</p>
+</div>
+<h2 data-number="5.3" id="отделимость">Отделимость</h2>
+<div id="definition-28">
+<p><strong>Определение:</strong> (<span
+class="math inline">\(\operatorname{T_1}\)</span>) Топологическое
+пространство <span class="math inline">\(X\)</span> обладает <span
+class="math inline">\(\operatorname{T_1}\)</span>, если <span
+class="math inline">\(\forall x, y \in X \,\,\,\, \exists U_x, U_y \in
+\tau_X: \,\,\,\, x \not\in U_y\)</span> и <span class="math inline">\(y
+\not\in U_x\)</span>.</p>
+</div>
+<div id="lemma-5">
+<p><strong>Лемма:</strong> <span class="math inline">\(X\)</span>
+обладает <span class="math inline">\(\operatorname{T_1}\iff\)</span>
+любая точка <span class="math inline">\(X\)</span> замкнута.</p>
+<p><em>Доказательство:</em></p>
+<p><span class="math inline">\(\boxed{\Longrightarrow}\)</span>
+Зафиксируем <span class="math inline">\(x_0 \in X\)</span>. Докажем, что
+<span class="math inline">\(\{x_0\}\)</span> – замкнуто. <span
+class="math inline">\(X\)</span> обладает <span
+class="math inline">\(\operatorname{T_1}\implies \forall x \in X
+\setminus \{x_0\} \exists U_x \in \tau_X: \,\,\,\, x_0 \not\in U_x
+\implies X \setminus \{x_0\}\)</span> – открыто <span
+class="math inline">\(\implies \{x_0\}\)</span> – замкнуто.</p>
+<p><span class="math inline">\(\boxed{\Longrightarrow}\)</span> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h3 data-number="5.3.1" id="хаусдорфовость">Хаусдорфовость</h3>
+<div id="definition-29">
+<p><strong>Определение:</strong> (<span
+class="math inline">\(\operatorname{T_2}\)</span>) Топологическое
+пространство <span class="math inline">\(X\)</span>
+<em>хаусдорфово</em>, если <span class="math inline">\(\forall x, y \in
+X \,\,\,\, \exists U_x, U_y \in \tau_X: \,\,\,\, U_x \cap U_y =
+\varnothing\)</span>.</p>
+</div>
+<div id="definition-30">
+<p><strong>Определение:</strong> Пусть <span
+class="math inline">\(\{x_n\}_{n = 1}^{\infty}\)</span> –
+последовательность точек <span class="math inline">\(X\)</span>. <span
+class="math inline">\(x \in X\)</span> – <em>предел</em>
+последовательности <span class="math inline">\(x_n\)</span>, если
+дополнение любой окрестности <span class="math inline">\(x\)</span>
+содержит конечное количество членов последовательнсти.</p>
+</div>
+<div id="statement-11">
+<p><strong>Утверждение:</strong> Если <span
+class="math inline">\(X\)</span> хаусдорфово, то любая
+последовательность имеет не более одного предела.</p>
+<p><em>Доказательство:</em> Пусть <span
+class="math inline">\(x_1\)</span> и <span
+class="math inline">\(x_2\)</span> пределы последовательности <span
+class="math inline">\(\{a_n\}_{n = 1}^{\infty}\)</span>. <span
+class="math inline">\(X\)</span> хаусдорфово <span
+class="math inline">\(\implies \exists U_{x_1}, U_{x_2} \in \tau_X:
+\,\,\,\, U_{x_1}\cap U_{x_2} = \varnothing\)</span> и каждая из этих
+окрестностей содержит бесконечное количество точек, а значит дополнение
+к <span class="math inline">\(U_{x_1}\)</span> содержит бесконечное
+количество точек <span class="math inline">\(\blades\)</span></p>
+</div>
+<div id="definition-31">
+<p><strong>Определение:</strong> (<span
+class="math inline">\(\operatorname{T_3}\)</span>) Топологическое
+пространство <span class="math inline">\(X\)</span> обладает <span
+class="math inline">\(\operatorname{T_3}\)</span>, если <span
+class="math inline">\(\forall x \in X\)</span> и любого замкнутого <span
+class="math inline">\(A \subset X: \,\,\,\, x \not\in A \,\,\,\, \exists
+U_x, U_A \in \tau_X: \,\,\,\, U_x \cap U_A = \varnothing\)</span>.</p>
+</div>
+<div id="definition-32">
+<p><strong>Определение:</strong> (<span
+class="math inline">\(\operatorname{T_4}\)</span>) Топологическое
+пространство <span class="math inline">\(X\)</span> обладает <span
+class="math inline">\(\operatorname{T_4}\)</span>, если для любых
+замкнутых <span class="math inline">\(A, B \subset X: \,\,\,\, A \cap B
+= \varnothing \,\,\,\, \exists U_A, U_B \in \tau_X: \,\,\,\, U_A \cap
+U_B = \varnothing\)</span>.</p>
+</div>
+<div id="definition-33">
+<p><strong>Определение:</strong> Если <span
+class="math inline">\(X\)</span> обладает <span
+class="math inline">\(\operatorname{T_1}\)</span> и <span
+class="math inline">\(\operatorname{T_3}\)</span>, то <span
+class="math inline">\(X\)</span> – <em>регулярно</em>.</p>
+</div>
+<div id="definition-34">
+<p><strong>Определение:</strong> Если <span
+class="math inline">\(X\)</span> обладает <span
+class="math inline">\(\operatorname{T_1}\)</span> и <span
+class="math inline">\(\operatorname{T_4}\)</span>, то <span
+class="math inline">\(X\)</span> – <em>нормально</em>.</p>
+</div>
+<p><strong>Факт:</strong> Нормально <span
+class="math inline">\(\implies\)</span> регулярно <span
+class="math inline">\(\implies\)</span> хаусдорфово <span
+class="math inline">\(\implies \operatorname{T_1}\)</span>.</p>
+<div id="statement-12">
+<p><strong>Утверждение:</strong> Если пространство <span
+class="math inline">\(X\)</span> компактно и хаусдорфово, то оно
+нормально.</p>
+<p><em>Доказательство:</em> <span class="math inline">\(X\)</span>
+хаусдорфово <span class="math inline">\(\implies X\)</span> обладает
+<span class="math inline">\(T_1\)</span>.</p>
+<p>Докажем, что <span class="math inline">\(X\)</span> регулярно. Пусть
+<span class="math inline">\(A \subset X\)</span> – замкнуто и <span
+class="math inline">\(X \ni x_0 \not\in A\)</span>. <span
+class="math inline">\(X\)</span> хаусдорфово <span
+class="math inline">\(\implies \forall x \in A \exists U_x, U_{x,\,\,
+x_0} \in \tau_X: \,\,\,\, U_x \cap U_{x,\,\, x_0} =
+\varnothing\)</span>. Рассмотрим открытое покрытие <span
+class="math inline">\(\{U_x\}_{x \in A}\)</span> множества <span
+class="math inline">\(A\)</span>. Любое замкнутое подмножество
+компактного пространства компактно, а следовательно <span
+class="math inline">\(\exists \{U_{x_i}\}_{i = 1}^n\)</span> конечное
+покрытие <span class="math inline">\(A\)</span>. Возьмем в качестве
+непересекающихся окрестностей <span class="math inline">\(A\)</span> и
+<span class="math inline">\(x_0\)</span> множества <span
+class="math inline">\(\cup_{i = 1}^{n}U_{x_i} \supset A\)</span> и <span
+class="math inline">\(\cap_{i = 1}^{n}U_{x_0, \,\, x_i} \ni
+x_0\)</span>. Доказали регулярность.</p>
+<p>Докажем, что <span class="math inline">\(X\)</span> нормально.
+Рассмотрим <span class="math inline">\(A, B\)</span> замкнутые
+непересекающиеся подмножества <span class="math inline">\(X\)</span>.
+<span class="math inline">\(X\)</span> регулярно <span
+class="math inline">\(\implies \forall x \in A \,\,\,\, \exists U_x,
+U_{B, \,\, x} \in \tau_X: \,\,\,\, U_x \cap U_{B, \,\, x} =
+\varnothing\)</span>. Рассмотрим открытое покрытие <span
+class="math inline">\(\{U_x\}_{x \in A}\)</span> множества <span
+class="math inline">\(A\)</span>. Любое замкнутое подмножество
+компактного пространства компактно, а следовательно <span
+class="math inline">\(\exists \{U_{x_i}\}_{i = 1}^n\)</span> конечное
+покрытие <span class="math inline">\(A\)</span>. Возьмем в качестве
+непересекающихся окрестностей <span class="math inline">\(A\)</span> и
+<span class="math inline">\(B\)</span> множества <span
+class="math inline">\(\cup_{i = 1}^{n}U_{x_i} \supset A\)</span> и <span
+class="math inline">\(\cap_{i = 1}^{n}U_{B, \,\, x_i} \supset B
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="lemma-6">
+<p><strong>Лемма:</strong> Компактное подмножество <span
+class="math inline">\(K\)</span> хаусдорфова пространства <span
+class="math inline">\(X\)</span> замкнуто.</p>
+<p><em>Доказательство:</em> Рассмотрим <span class="math inline">\(x_0
+\in X \setminus K\)</span>. <span class="math inline">\(X\)</span>
+хаусдорфово <span class="math inline">\(\implies \forall x \in K \exists
+U_x, U_{x,\,\, x_0} \in \tau_X: \,\,\,\, U_x \cap U_{x,\,\, x_0} =
+\varnothing\)</span>. Рассмотрим открытое покрытие <span
+class="math inline">\(\{U_x\}_{x \in K}\)</span> множества <span
+class="math inline">\(K\)</span>. <span class="math inline">\(K\)</span>
+компактно, а следовательно <span class="math inline">\(\exists
+\{U_{x_i}\}_{i = 1}^n\)</span> конечное покрытие <span
+class="math inline">\(K\)</span>. <span class="math inline">\(x_0 \in
+\cap_{i = 1}^{n}U_{x_0, \,\, x_i} \in \tau_X\)</span> и <span
+class="math inline">\(\left(\cap_{i = 1}^{n}U_{x_0, \,\, x_i}\right)
+\cap K = \varnothing \implies X \setminus K\)</span> – открыто <span
+class="math inline">\(\implies K\)</span> – замкнуто <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="5.4" id="урысоновость">Урысоновость</h2>
+<div id="lemma-7">
+<p><strong>Лемма:</strong> (<em>Урысона</em>) Пусть <span
+class="math inline">\(X\)</span> – нормальное пространство, <span
+class="math inline">\(A, B \subset X\)</span> замкнуты и <span
+class="math inline">\(A \cap B = \varnothing\)</span>. Тогда <span
+class="math inline">\(\exists f: X \to [0, 1]: \,\,\,\, f_{|A} = 0,
+f_{|B} = 1\)</span> и <span class="math inline">\(f\)</span>
+непрерывна.</p>
+<p><em>Доказательство:</em> Рассмотрим множество <span
+class="math inline">\(\Lambda = \{\frac{k}{2^n}, \,\,\,\, k, n \in
+\mathbb{N}\cup \{0\}, \,\,\,\, k \leqslant 2^n\}\)</span>. Докажем, что
+существуют такие открытые подмножества <span
+class="math inline">\(\{U_{\alpha}\}_{\alpha \in \Lambda}\)</span>, что
+<span class="math inline">\(A \subset U_0\)</span> и <span
+class="math inline">\(B \subset U_1\)</span> и <span
+class="math inline">\(\operatorname{Cl}U_{\alpha} \subset U_{\beta},
+\,\,\,\, \forall \alpha &lt; \beta\)</span>.</p>
+<p>Пусть <span class="math inline">\(U_1 = X\)</span>. Так как
+пространство нормально <span class="math inline">\(\exists U_0 \supset
+A: \,\,\,\, \operatorname{Cl}U_0 \cap B = \varnothing \implies \exists
+U_{\frac12} \supset \operatorname{Cl}U_0: \,\,\,\,
+\operatorname{Cl}U_{\frac12} \cap B = \varnothing\)</span>.</p>
+<p>Пусть <span class="math inline">\(f(x) = \inf\{\alpha \in \Lambda:
+\,\,\,\, x \in \operatorname{Cl}U_{\alpha}\}\)</span>.</p>
+<p><span class="math inline">\(f_{|A} = 0\)</span> и <span
+class="math inline">\(f_{|B} = 1\)</span>. Докажем, что <span
+class="math inline">\(f\)</span> непрерывно. Рассмотрим предбазу из
+интервалов вида <span class="math inline">\([0, a)\)</span> и <span
+class="math inline">\((b, 1]\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="definition-35">
+<p><strong>Определение:</strong> Норма функции <span
+class="math inline">\(f: X \to \mathbb{R}\)</span> ограниченной на <span
+class="math inline">\(\mathbb{R}\)</span> – это <span
+class="math inline">\(||f|| = \displaystyle\sup_{x \in
+X}|f(x)|\)</span>.</p>
+</div>
+<div id="theorem-1">
+<p><strong>Теорема:</strong> (<em>Титце</em>) Пусть <span
+class="math inline">\(X\)</span> – нормальное пространство, <span
+class="math inline">\(A \subset X\)</span> замкнуто. Тогда для любой
+непрерывной функции <span class="math inline">\(f: A \to
+\mathbb{R}\)</span> существует непрерывная функция <span
+class="math inline">\(F: X \to \mathbb{R}\)</span>, такая, что <span
+class="math inline">\(F_{|A} = f\)</span>. Если <span
+class="math inline">\(||f|| \leqslant 1\)</span>, то <span
+class="math inline">\(||F|| \leqslant 1\)</span>.</p>
+<p><em>Доказательство:</em> Достаточно доказать, для <span
+class="math inline">\(f: A \to [-1, 1]\)</span>, так как <span
+class="math inline">\(\tan: [-1, 1] \to \mathbb{R}\)</span> –
+непрерывен.</p>
+<p>Индуктивно построим последовательность функций <span
+class="math inline">\(F_n\)</span>, равномерно сходящуюся к <span
+class="math inline">\(F\)</span>.</p>
+<p>Пусть <span class="math inline">\(f = f_0\)</span> и <span
+class="math inline">\(c_0 = 1 \geqslant ||f_0||\)</span>. Пусть <span
+class="math inline">\(B_0 = f_0^{-1}([-c_0, -\frac{c_0}3])\)</span> и
+<span class="math inline">\(A_0 = f_0^{-1}([\frac{c_0}3, c_0])\)</span>.
+<span class="math inline">\(A_0\)</span> и <span
+class="math inline">\(B_0\)</span> замкнутые множества, так как
+прообразы замкнутых <a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a> множеств при непрерывном
+отображении. Значит по лемме Урысона существует непрерывное отображение
+<span class="math inline">\(F_0: X \to [-\frac{c_0}3,
+\frac{c_0}3]\)</span>, такое что <span class="math inline">\(F_0(A_0) =
+\{\frac{c_0}3\}\)</span> и <span class="math inline">\(F_0(B_0) =
+\{-\frac{c_0}3\}\)</span> <a href="#fn2" class="footnote-ref"
+id="fnref2" role="doc-noteref"><sup>2</sup></a>. Имеем <span
+class="math inline">\(||f_0 - F_0|_{Y}|| \leqslant 2\frac{c_0}3\)</span>
+<a href="#fn3" class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a>.</p>
+<p>Пусть <span class="math inline">\(f_n = f_{n - 1} - F_{n - 1}|_{Y} =
+f_0 - (F_1 + \ldots + F_{n - 1})|_{Y}\)</span> и <span
+class="math inline">\(c_n = 2\frac{c_{n - 1}}3 \geqslant ||f_{n -
+1}||\)</span>. Пусть <span class="math inline">\(B_n = f_{n}^{-1}([-c_n,
+-\frac{c_n}3])\)</span> и <span class="math inline">\(A_n =
+f_n^{-1}([\frac{c_n}3, c_n])\)</span>. <span
+class="math inline">\(A_n\)</span> и <span
+class="math inline">\(B_n\)</span>. По лемме Урысона существует
+непрерывное отображение <span class="math inline">\(F_n: X \to
+[-\frac{c_n}3, \frac{c_n}3]\)</span>, такое что <span
+class="math inline">\(F_n(A_n) = \{\frac{c_n}3\}\)</span> и <span
+class="math inline">\(F_n(B_n) = \{-\frac{c_n}3\}\)</span>. Имеем <span
+class="math inline">\(||f_{n + 1}|| = ||f_n - F_n|_{Y}|| \leqslant
+2\frac{c_n}3 = \left(\frac23\right)^n c_0\)</span>.</p>
+<p>Построили последовательность непрерывных функций <span
+class="math inline">\(F_n\)</span> и последовательность непрерывных
+функций <span class="math inline">\(f_n\)</span>. Ряд <span
+class="math inline">\(\displaystyle \sum_{n = 0}^{\infty}F_n\)</span>
+равномерно сходится на <span class="math inline">\(X\)</span> к
+непрерывной функции <span class="math inline">\(F\)</span> по признаку
+Вейерштрасса <a href="#fn4" class="footnote-ref" id="fnref4"
+role="doc-noteref"><sup>4</sup></a>. Так как <span
+class="math inline">\(\forall n \,\,\,\, ||f - (F_1 + \ldots + F_{n -
+1})|_{Y}|| \leqslant \left(\frac23\right)^n c_0\)</span>, имеем <span
+class="math inline">\(f = F_{|Y} \,\,\,\,\blacksquare\)</span></p>
+</div>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Почему отрезок замкнут?<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Почему существование непрерывного отображения в <span
+class="math inline">\([0, 1]\)</span> дает непрерывное отображение в
+любой отрезок <span class="math inline">\([a, b]\)</span>? Потому что
+<span class="math inline">\(f: [0, 1] \to [a, b]: a(1 - t) +
+bt\)</span>.<a href="#fnref2" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Почему? Потому что разобрать случаи.<a href="#fnref3"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p><span class="math inline">\(||F_n|| \leqslant
+\frac{c_n}3\)</span><a href="#fnref4" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="различные-топологии.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="теорема-стоуна-вейерштрасса.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

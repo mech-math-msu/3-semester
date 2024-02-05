@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Способы получения групп</title>
+    <style>
+        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2.5rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+        h4 {
+            font-size: 1.4rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="группы.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="смежные-классы-нормальные-подгруппы-автоморфизмы.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+
+
+<h1 data-number="3" id="способы-получения-групп">Способы получения
+групп</h1>
+<h2 data-number="3.1" id="подгруппы">Подгруппы</h2>
+<div id="definition-10">
+<p><strong>Определение:</strong> Пусть <span
+class="math inline">\(G\)</span> – группа, <span class="math inline">\(H
+\subset G\)</span>. <span class="math inline">\(H\)</span> –
+<em>подгруппа</em> группы <span class="math inline">\(G\)</span>, если
+<span class="math inline">\(H\)</span> – группа относительно операции
+группы <span class="math inline">\(G\)</span>.</p>
+</div>
+<div id="statement-0">
+<p><strong>Утверждение:</strong> Пусть <span class="math inline">\((G,
+\cdot)\)</span> – группа, <span class="math inline">\(H \subset
+G\)</span>.</p>
+<p>Тогда <span class="math inline">\(H\)</span> – <em>подгруппа</em>
+группы <span class="math inline">\(G\)</span></p>
+<p><span class="math inline">\(\Updownarrow\)</span></p>
+<p><span class="math inline">\((1) \,\,\,\, H \ne
+\varnothing\)</span>,</p>
+<p><span class="math inline">\((2) \,\,\,\, \forall h_1, h_2 \in H
+\,\,\,\, h_1 \cdot h_2 \in H\)</span>,</p>
+<p><span class="math inline">\((3) \,\,\,\, \forall h \in H \,\,\,\,
+h^{-1} \in H\)</span>.</p>
+<p><em>Доказательство:</em></p>
+<p><span class="math inline">\(\Downarrow \,\,\,\,
+\,\,\,\,\blacksquare\)</span></p>
+<p><span class="math inline">\(\Uparrow\)</span> Докажем, что <span
+class="math inline">\(H\)</span> группа относительно операции <span
+class="math inline">\(\cdot\)</span>. <span class="math inline">\(H \ne
+\varnothing \Rightarrow \exists h \in H \Rightarrow h^{-1} \in
+H\)</span>. По <span class="math inline">\((2) \,\,\,\, e = h \cdot
+h^{-1} \in H \Rightarrow e \in H \,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="3.2" id="системы-порождающих">Системы порождающих</h2>
+<div id="definition-11">
+<p><strong>Определение:</strong> Пусть <span
+class="math inline">\(G\)</span> – группа, <span class="math inline">\(S
+\subset G\)</span>. Множество <span class="math inline">\(\langle S
+\rangle = \{g_1^{\varepsilon_1}\cdot \ldots \cdot g_k^{\varepsilon_k}|
+\,\,\,\, k \in \mathbb{N}, \,\,\,\, g_1, \ldots, g_k \in H, \,\,\,\,
+\varepsilon_1, \ldots, \varepsilon_k \in \{-1, 1\}\}\)</span> –
+<em>подгруппа, порожденная множеством</em> <span
+class="math inline">\(S\)</span>.</p>
+</div>
+<h2 data-number="3.3" id="изоморфные-группы-и-теорема-кэли">Изоморфные
+группы и теорема Кэли</h2>
+<div id="definition-12">
+<p><strong>Определение:</strong> Пусть <span class="math inline">\((G,
+\star)\)</span> и <span class="math inline">\((H, \cdot)\)</span>
+группы. Отображение <span class="math inline">\(\varphi: G \to
+H\)</span>, такое, что <span class="math inline">\(\varphi(g_1\star g_2)
+= \varphi(g_1)\cdot \varphi(g_2)\)</span> – <em>гомоморфизм</em> групп
+<span class="math inline">\(G\)</span> и <span
+class="math inline">\(H\)</span>.</p>
+</div>
+<div id="definition-13">
+<p><strong>Определение:</strong> Группы <span class="math inline">\((G,
+\star)\)</span> и <span class="math inline">\((H, \cdot)\)</span>
+<em>изоморфны</em>, если существует биективный гомоморфизм <span
+class="math inline">\(\varphi: G \to H\)</span> <a href="#fn1"
+class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>.</p>
+<p><strong>Обозначение:</strong> <span class="math inline">\(G \cong
+H\)</span></p>
+</div>
+<div id="definition-14">
+<p><strong>Определение:</strong> Если группа <span
+class="math inline">\(H\)</span> изоморфна некоторой подгруппе группы
+<span class="math inline">\(G\)</span>, то <span
+class="math inline">\(H\)</span> <em>вкладывается в</em> <span
+class="math inline">\(G\)</span>.</p>
+</div>
+<div id="theorem-1">
+<p><strong>Теорема:</strong> (<em>Кэли</em>) Любая конечная <a
+href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a> группа <span
+class="math inline">\((G, \cdot)\)</span> вкладывается в <span
+class="math inline">\(S_{|G|}\)</span>.</p>
+<p><em>Доказательство:</em></p>
+<p>Пусть <span class="math inline">\(G = \{g_1, \ldots,
+g_n\}\)</span>.</p>
+<p>Пусть <span class="math inline">\(\varphi: g_i \mapsto
+\left(\begin{array}{ccc} g_1 &amp; \dots &amp; g_n \\ g_i\cdot g_1 &amp;
+\dots &amp; g_i \cdot g_n \end{array}\right)\)</span>.</p>
+<p>Докажем, что <span class="math inline">\(\varphi\)</span> –
+изоморфизм групп <span class="math inline">\(G\)</span> и <span
+class="math inline">\(&lt;\varphi(G)&gt;\)</span>.</p>
+<p><span class="math inline">\(\varphi(g \cdot g^{\prime}) =
+\left(\begin{array}{ccc} g_1 &amp; \dots &amp; g_n \\ g \cdot
+g^{\prime}\cdot g_1 &amp; \dots &amp; g \cdot g^{\prime} \cdot g_n
+\end{array}\right) =\)</span> <span class="math inline">\(=
+\left(\begin{array}{ccc} g_1 &amp; \dots &amp; g_n \\ g \cdot g_1 &amp;
+\dots &amp; g \cdot g_n \end{array}\right)\circ\left(\begin{array}{ccc}
+g_1 &amp; \dots &amp; g_n \\ g^{\prime}\cdot g_1 &amp; \dots &amp;
+g^{\prime} \cdot g_n \end{array}\right) = \varphi(g)\circ
+\varphi(g^{\prime})\)</span></p>
+<p>Проверим биективность:</p>
+<ol type="1">
+<li><span class="math inline">\(\varphi\)</span> – сюръективно по
+определению.</li>
+<li>Пусть <span class="math inline">\(\varphi(g) =
+\varphi(g^{\prime})\)</span>. Тогда <span class="math inline">\(g =
+\varphi(g)(e) = \varphi(g^{\prime})(e) = g^{\prime}
+\,\,\,\,\blacksquare\)</span></li>
+</ol>
+</div>
+<h2 data-number="3.4" id="циклические-группы">Циклические группы</h2>
+<div id="definition-15">
+<p><strong>Определение:</strong> Группа <em>циклическая</em>, если она
+порождается одним элементом.</p>
+</div>
+<p><strong>Упражнение:</strong><a name="exercise-0"></a> Циклическая
+группа – абелева.</p>
+<div id="definition-16">
+<p><strong>Определение:</strong> <em>Порядок элемента</em> <span
+class="math inline">\(g\)</span> группы <span
+class="math inline">\(G\)</span> – это минимальное натуральное <span
+class="math inline">\(n\)</span>, такое, что <span
+class="math inline">\(g^n = e\)</span>. Если такого <span
+class="math inline">\(n\)</span> не существует, то порядок –
+бесконечность.</p>
+</div>
+<div id="statement-1">
+<p><strong>Утверждение:</strong> Порядок элемента <span
+class="math inline">\(g \in G\)</span> равен <span
+class="math inline">\(|\langle g \rangle|\)</span>.</p>
+<p><em>Доказательство:</em> Пусть <span class="math inline">\(\langle g
+\rangle = \{e, g, g^2, \ldots, g^{n - 1}\}\)</span>.</p>
+<p>Пусть <span class="math inline">\(g^l = g^m \,\,\,\, (n - 1 &gt; l
+&gt; m) \,\,\,\, \Rightarrow g^{l - m} = e \Rightarrow |\langle g
+\rangle| &lt; n - 1 \,\,\,\,\blacksquare\)</span></p>
+</div>
+<blockquote>
+<p>Эта теорема мечта любого алгебраиста.</p>
+</blockquote>
+<div id="theorem-2">
+<p><strong>Теорема:</strong> (<em>Классификация циклических
+групп</em>)</p>
+<ol type="1">
+<li><span class="math inline">\(\forall n \in \mathbb{N} \,\,\,\,
+\exists\)</span> циклическая группа порядка <span
+class="math inline">\(n\)</span>.</li>
+<li>Все циклические группы порядка <span
+class="math inline">\(n\)</span> изоморфны.</li>
+</ol>
+<p><em>Доказательство:</em></p>
+<ol type="1">
+<li><span class="math inline">\(\mathbb{Z}_n\)</span> <a href="#fn3"
+class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a></li>
+<li>Пусть <span class="math inline">\(\langle g \rangle_n\)</span> –
+циклическая группа порядка <span class="math inline">\(n\)</span>,
+порожденная элементом <span class="math inline">\(g\)</span>. Пусть
+<span class="math inline">\(\varphi: k \mapsto g^k
+\,\,\,\,\blacksquare\)</span></li>
+</ol>
+</div>
+<div id="theorem-3">
+<p><strong>Теорема:</strong> (<em>о подгруппах циклических
+групп</em>)</p>
+<ol type="1">
+<li>Подгруппа циклической группы – циклическая.</li>
+<li>У циклической группы порядка <span class="math inline">\(n \in
+\mathbb{N}\)</span> существует ровно по одной подгруппе каждого порядка,
+делящего <span class="math inline">\(n\)</span>, и других подгрупп
+нет.</li>
+</ol>
+<p><em>Доказательство:</em></p>
+<ol type="1">
+<li><p>Пусть <span class="math inline">\(H\)</span> подгруппа <span
+class="math inline">\(G = \langle g \rangle\)</span>. Пусть <span
+class="math inline">\(k = \min\{l \in \mathbb{N}| \,\,\,\, g^l \in
+H\}\)</span>. Докажем, что <span class="math inline">\(H = \langle g^k
+\rangle\)</span>. <span class="math inline">\(H \ni g^m = g^{q k + r}
+\,\,\,\, (k &gt; r \ge 0) = (g^k)^q\cdot g^r \Rightarrow r = 0
+\,\,\,\,\blacksquare\)</span></p></li>
+<li><p>Пусть <span class="math inline">\(G = \langle g
+\rangle_n\)</span> <a href="#fn4" class="footnote-ref" id="fnref4"
+role="doc-noteref"><sup>4</sup></a>, <span class="math inline">\(k
+\,\,|\,\, n\)</span>. Тогда <span class="math inline">\(\langle
+g^{\frac{n}{k}}\rangle\)</span> – циклическая группа порядка <span
+class="math inline">\(k\)</span>. Существование доказано.</p></li>
+</ol>
+<p>Пусть <span class="math inline">\(H\)</span> циклическая подгруппа
+порядка <span class="math inline">\(k\)</span>, по рассуждению 1. <span
+class="math inline">\(H = \langle g^{\frac{n}{k}} \rangle\)</span><span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>биективное отображение <span
+class="math inline">\(\varphi: G \to H\)</span>, такое, что <span
+class="math inline">\(\varphi(g_1\star g_2) = \varphi(g_1)\cdot
+\varphi(g_2)\)</span>.<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Для бесконечных тоже верно.<a href="#fnref2"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Порождается <span class="math inline">\(1\)</span>.<a
+href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Циклическая группа <span
+class="math inline">\(G\)</span> порождена элементом <span
+class="math inline">\(g\)</span><a href="#fnref4" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="группы.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="смежные-классы-нормальные-подгруппы-автоморфизмы.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

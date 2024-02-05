@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Свободное произведение и теорема ван Кампена</title>
+    <style>
+        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2.5rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+        h4 {
+            font-size: 1.4rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+            <script defer>
+                window.MathJax = {
+                  tex: {
+                    macros: {
+                      blades: "{\\,\\,\\,\\,\\style{display: inline-block; transform: rotate(135deg)}{\\Large{\\dagger}}\\kern-7pt\\style{display: inline-block; transform: rotate(225deg)}{\\Large{\\dagger}}}"
+                    }
+                  }
+                };
+            </script>
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="фундаментальная-группа.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="накрытия.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+
+
+<h1 data-number="12"
+id="свободное-произведение-и-теорема-ван-кампена">Свободное произведение
+и теорема ван Кампена</h1>
+<div id="definition-64">
+<p><strong>Определение:</strong> Пусть <span
+class="math inline">\(G\)</span> и <span
+class="math inline">\(H\)</span> группы. Множество <span
+class="math inline">\(G\ast H\)</span>, состоящее из приведенных слов, с
+операцией конкатенации – <em>свободное произведение групп</em> <span
+class="math inline">\(G\)</span> и <span
+class="math inline">\(H\)</span>.</p>
+<p>Понятно что делать, если группа задана не более чем счетным набором
+порождающих <a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>, а что делать иначе непонятно и
+непонятно какая группа задается более чем счетным набором
+порождающих?</p>
+</div>
+<div id="statement-39">
+<p><strong>Утверждение:</strong> (<em>корректность определения</em>)
+<span class="math inline">\(G\ast H\)</span> – группа относительно
+операции конкатенации.</p>
+<p><em>Доказательство:</em> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="statement-40">
+<p><strong>Утверждение:</strong> (<em>основное свойство свободного
+произведения</em>) Любые гомоморфизмы <span
+class="math inline">\(\alpha: H \to K\)</span> и <span
+class="math inline">\(\beta: G \to K\)</span> единственным образом
+продолжаются до гомоморфизма <span class="math inline">\(\varphi: H \ast
+G \to K\)</span>.</p>
+<p><em>Доказательство:</em> <span
+class="math inline">\(\varphi(h_1g_1h_2g_2\ldots) =
+\alpha(h_1)\beta(g_1)\ldots \,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="definition-65">
+<p><strong>Определение:</strong> <em>Амальгамированное произведение
+групп</em> <span class="math inline">\(G\)</span> и <span
+class="math inline">\(H\)</span> <em>по группе</em> <span
+class="math inline">\(K\)</span> <em>с заданными гомоморфизмами</em>
+<span class="math inline">\(\varphi: K \to G\)</span> и <span
+class="math inline">\(\psi: K \to H\)</span> – это факторгруппа <span
+class="math inline">\(G\ast H / N\)</span>, где <span
+class="math inline">\(N\)</span> – нормальное замыкание группы,
+порожденной <span
+class="math inline">\(\{\varphi(k)\psi(k^{-1})|\,\,\,\, k \in
+K\}\)</span>.</p>
+</div>
+<div id="definition-66">
+<p><strong>Определение:</strong> Топологическое пространство <span
+class="math inline">\(X\)</span> <em>вкладывается</em> в топологическое
+пространство <span class="math inline">\(Y\)</span>, если <span
+class="math inline">\(X\)</span> гомеоморфно некоторому подпространству
+<span class="math inline">\(Y\)</span>. Такой гомеоморфизм –
+<em>вложение</em>.</p>
+</div>
+<div id="theorem-8">
+<p><strong>Теорема:</strong> Пусть топологическое пространство <span
+class="math inline">\(X = A \cup B\)</span>, где <span
+class="math inline">\(A\)</span> и <span
+class="math inline">\(B\)</span> открытые линейно связные подмножества
+<span class="math inline">\(X\)</span>. Пусть <span
+class="math inline">\(A\cap B\)</span> линейно связно и <span
+class="math inline">\(x_0 \in A\cap B\)</span>. Рассмотрим гомоморфизм
+<span class="math inline">\(\Phi: \pi_1(A, x_0)\ast \pi_1(B, x_0) \to
+\pi_1(X, x_0)\)</span>, являющийся продолжением гомоморфизмов <span
+class="math inline">\(a: \pi_1(A, x_0) \to \pi_1(X, x_0)\)</span> и
+<span class="math inline">\(b: \pi_1(B, x_0) \to \pi_1(X, x_0)\)</span>
+индуцированных включениями <span class="math inline">\(A \hookrightarrow
+X\)</span> и <span class="math inline">\(B \hookrightarrow X\)</span>.
+Пусть <span class="math inline">\(\alpha: \pi_1(A\cap B, x_0) \to
+\pi_1(A, x_0)\)</span> – гомоморфизм индуцированный включением и
+аналогично <span class="math inline">\(\beta:  \pi_1(A\cap B, x_0) \to
+\pi_1(B, x_0)\)</span>. Тогда</p>
+<ol type="1">
+<li><span class="math inline">\(\Phi\)</span> – сюръекция,</li>
+<li><span class="math inline">\(\operatorname{Ker}\Phi = N\)</span>, где
+<span class="math inline">\(N\)</span> – нормальное замыкание группы,
+порожденной <span
+class="math inline">\(\{\alpha(w)\beta(w)^{-1}|\,\,\,\, w \in A \cap
+B\}\)</span>, или эквивалентно<span class="math inline">\(\pi_1(X, x_0)
+\simeq \pi_1(A, x_0)\ast_{N} \pi_1(B, x_0)\)</span>.</li>
+</ol>
+<p><em>Доказательство:</em></p>
+<ol type="1">
+<li>Идея: разбить произвольную петлю <span class="math inline">\(\gamma:
+I \to X\)</span> на произведение петель, каждая из которых целиком лежит
+в <span class="math inline">\(A\)</span> или <span
+class="math inline">\(B\)</span>. Если это удалось, то первый пункт
+доказан, так как вложением полученных петель получим <span
+class="math inline">\(\gamma\)</span>.</li>
+</ol>
+<p>Реализация идеи: рассмотрим разбиение <span class="math inline">\(0 =
+t_0 &lt; \ldots &lt; t_n = 1\)</span> отрезка <span
+class="math inline">\([0, 1]\)</span>, такое что <span
+class="math inline">\(\forall i \in \{1, \ldots, n\} \,\,\,\,
+\gamma([t_{i - 1}, t_i]) \subset A\)</span> или <span
+class="math inline">\(\gamma([t_{i - 1}, t_i]) \subset A\)</span>. <a
+href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a></p>
+<p>Обозначим за <span class="math inline">\(\gamma_i\)</span> путь,
+полученный сужением <span class="math inline">\(\gamma\)</span> на <span
+class="math inline">\([t_{i - 1}, t_i]\)</span>.</p>
+<p>Если <span class="math inline">\(\gamma([t_{i - 1}, t_i]) \subset
+A\)</span> и <span class="math inline">\(\gamma([t_{i}, t_{i + 1}])
+\subset A\)</span>, то выбросим <span class="math inline">\(t_i\)</span>
+из разбиения.</p>
+<p>Теперь <span class="math inline">\(\forall t_i \,\,\,\, \gamma(t_i)
+\in A\cap B\)</span>, поэтому, в силу линейной связности <span
+class="math inline">\(A\cap B\)</span>, для каждого <span
+class="math inline">\(i \in \{1, \ldots, n\}\)</span> можем построить
+путь <span class="math inline">\(\rho_i\)</span>, соединяющий <span
+class="math inline">\(x_0 = \gamma(0)\)</span> и <span
+class="math inline">\(\gamma(t_i)\)</span> и целиком лежащий в <span
+class="math inline">\(A\cap B\)</span>.</p>
+<p><span class="math inline">\(\gamma = \gamma_1\gamma_2\ldots \gamma_n
+=
+(\gamma_1\rho_1\rho_1^{-1})(\gamma_2\rho_2\rho_2^{-1})\ldots(\gamma_n\rho_n\rho_n^{-1})
+=
+\gamma_1\rho_1(\rho_1^{-1}\gamma_2\rho_2)(\rho_2^{-1}\ldots\gamma_n\rho_n)\rho_n^{-1}\)</span>,
+где каждая скобка вида <span
+class="math inline">\((\rho_{i-1}^{-1}\gamma_i\rho_i)\)</span> петля,
+целиком лежащая в <span class="math inline">\(A\)</span> или <span
+class="math inline">\(B\)</span>. Сюръективность доказана.</p>
+<ol start="2" type="1">
+<li>Докажем, что <span class="math inline">\(N =
+\operatorname{Ker}\Phi\)</span>.</li>
+</ol>
+<ul>
+<li><p><span class="math inline">\(N \subset
+\operatorname{Ker}\Phi\)</span>, так как включения на элементах из <span
+class="math inline">\(A\cap B\)</span> дейсвуют одинаково, то есть <span
+class="math inline">\(\alpha(w)\beta(w)^{-1} = \mathbb{1}\,\,\,\,
+\forall w \in A \cap B\)</span>.</p></li>
+<li><p>Пусть <span class="math inline">\(w = [u_1][v_1][u_2][v_2]\ldots
+[u_n][v_n]\in \pi_1(A, x_0)\ast \pi_1(B, x_0)\)</span> и <span
+class="math inline">\(w \in \operatorname{Ker}\Phi\)</span>, то есть
+<span class="math inline">\(a([u_1])b([v_1])\ldots a([u_n])b([v_n]) =
+\Phi(w) \sim_{\{0, 1\}} e_{x_0}\)</span>. Рассмотрим гомотопию <span
+class="math inline">\(H: I \times I \to X\)</span>. Существуют разбиения
+<span class="math inline">\(0 = t_0 &lt; \ldots &lt; t_n\)</span> и
+<span class="math inline">\(0 = s_0 &lt; \ldots &lt; s_m\)</span>
+отрезка <span class="math inline">\([0, 1]\)</span>, что <span
+class="math inline">\(\forall i \in \{1, \ldots, n\}, \,\,\,\, \forall j
+\in \{1, \ldots, m\} \,\,\,\, H([t_{i - 1}, t_i]\times [s_{i - 1}, s_i])
+\subset A\)</span> или <span class="math inline">\(H([t_{i - 1},
+t_i]\times [s_{i - 1}, s_i]) \subset B\)</span>. Соединим каждую точку
+<span class="math inline">\(H((t_i, s_j))\)</span> с <span
+class="math inline">\(x_0\)</span> путем <span
+class="math inline">\(\rho_{ij}\)</span>, лежащим в <span
+class="math inline">\(A\cap B\)</span>. <a href="#fn3"
+class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a></p></li>
+</ul>
+<p><span class="math inline">\(\forall j \in \{1, \ldots, m\} \,\,\,\,
+F(t, s_j): I \to X\)</span> – петля в <span
+class="math inline">\(X\)</span>. Как в доказательстве сюръективности
+можем с помощью разбиения <span class="math inline">\(t_i\)</span>
+представить <span class="math inline">\(F(t, s_j)\)</span> как <span
+class="math inline">\((\gamma_{j1}\rho_{j1}\rho_{j1}^{-1})(\gamma_{j2}\rho_{j2}\rho_{j2}^{-1})\ldots(\gamma_{jn}\rho_{jn}\rho_{jn}^{-1})\)</span></p>
+</div>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Вообще, набор порождающих – это не свободная группа?<a
+href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Как получить такое разбиение: <span
+class="math inline">\(\gamma\)</span> – непрерывно, а значит у каждой
+точки <span class="math inline">\(t \in [0, 1]\)</span> существует
+окрестность <span class="math inline">\(U_t\)</span>, образ которой
+целиком содержится в <span class="math inline">\(A\)</span> или <span
+class="math inline">\(B\)</span>, так как <span
+class="math inline">\(A\)</span> и <span
+class="math inline">\(B\)</span> открыты. Отрезок компакт, поэтому можем
+выбрать конечное подпокрытие из <span
+class="math inline">\(U_t\)</span>.<a href="#fnref2"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Можем аналогично доказательству сюръективности.<a
+href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="фундаментальная-группа.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="накрытия.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

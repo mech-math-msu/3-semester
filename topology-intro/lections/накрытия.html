@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Накрытия</title>
+    <style>
+        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2.5rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+        h4 {
+            font-size: 1.4rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+            <script defer>
+                window.MathJax = {
+                  tex: {
+                    macros: {
+                      blades: "{\\,\\,\\,\\,\\style{display: inline-block; transform: rotate(135deg)}{\\Large{\\dagger}}\\kern-7pt\\style{display: inline-block; transform: rotate(225deg)}{\\Large{\\dagger}}}"
+                    }
+                  }
+                };
+            </script>
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="свободное-произведение-и-теорема-ван-кампена.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                    </span>
+    </div>
+</nav>
+
+
+
+<h1 data-number="13" id="накрытия">Накрытия</h1>
+<blockquote>
+<p>Во многом фундаментальную группу и накрытия можно рассматривать как
+две точки зрения на одно и тоже.</p>
+</blockquote>
+<div id="definition-67">
+<p><strong>Определение:</strong> Топологическое пространство <span
+class="math inline">\(X\)</span> <em>локально линейно связно</em>, если
+у любой точки <span class="math inline">\(x \in X\)</span> и любой
+окрестности <span class="math inline">\(U_x\)</span> точки <span
+class="math inline">\(x\)</span> существует линейно связная окрестность
+<span class="math inline">\(V_x \subset U_x\)</span>.</p>
+</div>
+<h2 data-number="13.1"
+id="пример-линейно-связного-но-не-локально-линейно-свзного-пространства">Пример
+линейно связного, но не локально линейно свзного пространства</h2>
+<div id="definition-68">
+<p><strong>Определение:</strong> <em>Гребень</em> – это <span
+class="math inline">\(\{(t, 0)|\,\,\,\, t \in [0, 1]\}\cap\{(0,
+t)|\,\,\,\, t \in [0, 1]\}\cap\{(\frac1n, t)|\,\,\,\, t \in [0,
+1]\}\)</span>.</p>
+<center>
+<canvas id="canvas-comb">
+</canvas>
+</center>
+</div>
+<div id="statement-41">
+<p><strong>Утверждение:</strong> Гребень не локально линейно связен.</p>
+<p><em>Доказательство:</em> см.картинку <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="definition-69">
+<p><strong>Определение:</strong> Пусть <span
+class="math inline">\(Y\)</span> и <span
+class="math inline">\(X\)</span> – линейно связные и локально линейно
+связные топологические пространства и <span class="math inline">\(p: Y
+\to X\)</span> – непрерывное (сюръективное) отображение. Пусть у каждой
+точки <span class="math inline">\(x \in X\)</span> существует
+окрестность <span class="math inline">\(U_x \in \tau_X\)</span>, такая
+что <span class="math inline">\(p^{-1}(U_x) =
+\sqcup_{\alpha}V_{\alpha}\)</span> и <span class="math inline">\(\forall
+\alpha \,\,\,\, p_{|V_{\alpha}}: V_{\alpha} \to U_x\)</span> –
+гомеоморфизм. Тогда <span class="math inline">\(p\)</span> –
+<em>накрытие</em> пространства <span class="math inline">\(X\)</span>
+пространством <span class="math inline">\(Y\)</span>.</p>
+</div>
+<h2 data-number="13.2" id="примеры-накрытий">Примеры накрытий</h2>
+<ul>
+<li><p>У любого пространства <span class="math inline">\(X\)</span>
+существует тривиальное накрытие <span class="math inline">\(Y =
+X\)</span> и <span class="math inline">\(p =
+\operatorname{id}\)</span>.</p></li>
+<li><p><span class="math inline">\(Y = \mathbb{R}^{1} \,\,\,\, X = S^1
+\,\,\,\, p(t) = e^{2\pi i t}\)</span>.</p></li>
+<li><p><span class="math inline">\(X = \mathbb{R}P^2 \,\,\,\, Y = S^2
+\,\,\,\, p\)</span> – отождествление противоположных точек.</p></li>
+</ul>
+<div id="lemma-13">
+<p><strong>Лемма:</strong> (<em>поднятие пути</em>) Пусть <span
+class="math inline">\((Y, p, X)\)</span> – накрытие, <span
+class="math inline">\(x_0 \in X, \,\,\,\, y_0 \in Y \,\,\,\, p(y_0) =
+x_0, \,\,\,\,\gamma: [0, 1] \to X \,\,\,\, \gamma(0) = x_0\)</span>.
+Тогда <span class="math inline">\(\exists!\)</span> путь <span
+class="math inline">\(\tilde{\gamma}: [0, 1] \to Y\)</span>, такой что
+<span class="math inline">\(p\circ \tilde{\gamma} = \gamma\)</span>. <a
+href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></p>
+<p><em>Доказательство:</em></p>
+<p>В силу леммы Лебега выберем разбиение <span class="math inline">\(0
+&lt; t_0 &lt; \ldots &lt; t_n\)</span> отрезка <span
+class="math inline">\([0, 1]\)</span>, так чтобы <span
+class="math inline">\(\gamma([t_i, t_{i+1}]) \subset U_{i}\)</span>, где
+<span class="math inline">\(U_{i}\)</span> окрестность, прообраз которой
+состоит из дизъюнктного объединения <span
+class="math inline">\(V_{i\alpha}\)</span>.</p>
+<p>Выберем среди <span class="math inline">\(V_{i\alpha}\)</span>
+окрестность <span class="math inline">\(V_{i}\)</span>, содержащую <span
+class="math inline">\(y_0\)</span>. <span
+class="math inline">\(p_{|V_i}\)</span> – это гомеоморфизм <span
+class="math inline">\(U_i\)</span> и <span
+class="math inline">\(V_i\)</span>, то есть, рассмотрев композицию <span
+class="math inline">\(p_{|V_i}^{-1}\circ
+\gamma_{|\gamma^{-1}(U_i)}\)</span> и перепараметризовав ее, получим
+поднятие пути <span class="math inline">\(\gamma([t_i, t_{i +
+1}])\)</span>, далее выберем среди <span class="math inline">\(V_{(i+1)
+\alpha}\)</span> окрестность, содержащую нужную точку и т.д. <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+<p>Если что это несложно сделать аккуратно. Реально?</p>
+</div>
+<div id="lemma-14">
+<p><strong>Лемма:</strong> (<em>поднятие гомотопии</em>) Пусть <span
+class="math inline">\((\tilde{X}, p, X)\)</span> – накрытие. <span
+class="math inline">\(f: Y \times I \to X\)</span> – гомотопия и <span
+class="math inline">\(\tilde{f}_0: Y \to \tilde{X}\)</span> –
+непрерывное отображение поднимающее <span
+class="math inline">\(f_0\)</span>, то есть диаграмма слева
+коммутативна. Тогда диаграмма справа коммутативна.</p>
+<p><img src="img/cover-lemma.png" /></p>
+<!-- <center><div id="container" style="position: relative; width: 300px; height: 300px;">
+<canvas id="canvas-diag" style="position: absolute; left: 0px; top: 0px;"></canvas>
+</div></center> -->
+<p><em>Доказательство:</em> При фиксированном <span
+class="math inline">\(y\)</span> поднятие <span
+class="math inline">\(\tilde{f}_y\)</span> для <span
+class="math inline">\(f: \{y\}\times I \to X\)</span> существует по
+предыдущей лемме. А следовательно определено отображение <span
+class="math inline">\(\tilde{f}\)</span>. Непрерывность проверяется
+поточечно. Единственность следует из единственности в лемме <a
+href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="13.3"
+id="гомоморфизм-фундаментальных-групп-индуцированный-отображением-накрытия">Гомоморфизм
+фундаментальных групп, индуцированный отображением накрытия</h2>
+<div id="lemma-15">
+<p><strong>Лемма:</strong> Пусть <span class="math inline">\((\tilde{X},
+p, X)\)</span> – накрытие. Тогда гомоморфизм <span
+class="math inline">\(p_{*}: \pi_1(\tilde{X}, x_0) \to \pi_1(X,
+p(x_0))\)</span> – инъективен, то есть <span
+class="math inline">\(p_{*}(\pi_1(\tilde{X}, x_0))\)</span> подгруппа в
+<span class="math inline">\(\pi_1(X, p(x_0))\)</span>, причем она
+состоит из тех классов петель, поднятия которых – петли.</p>
+<p><em>Доказательство:</em> По предыдущей лемме ядро тривиально. <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="13.4" id="критерий-поднятия-отображения">Критерий
+поднятия отображения</h2>
+<div id="theorem-9">
+<p><strong>Теорема:</strong> Пусть <span
+class="math inline">\((\tilde{X}, p, X)\)</span> – накрытие. <span
+class="math inline">\(f: (Y, y_0) \to (X, x_0)\)</span> и <span
+class="math inline">\(Y\)</span> линейно связно и локально линейно
+связно. Поднятие <span class="math inline">\(\tilde{f}: (Y, y_0) \to
+(\tilde{X}, \tilde{x}_0)\)</span> отображения <span
+class="math inline">\(f\)</span> существует <span
+class="math inline">\(\iff f_{*}(\pi_1(Y, y_0)) \subset
+p_{*}(\pi_1(\tilde{X}, \tilde{x}_0))\)</span>.</p>
+<p><em>Доказательство:</em></p>
+</div>
+<h2 data-number="13.5" id="универсальные-накрытия">Универсальные
+накрытия</h2>
+<div id="definition-70">
+<p><strong>Определение:</strong> Накрытие <span
+class="math inline">\((\tilde{X}, p, X)\)</span> <em>универсальное</em>,
+если <span class="math inline">\(\pi_1(\tilde{X}) = \{e\}\)</span>.</p>
+<h3 data-number="13.5.1" id="пример">Пример</h3>
+<p><span class="math inline">\((\mathbb{R}^1, p, S^1)\)</span> –
+универсально.</p>
+</div>
+<script>
+    function drawArrowhead(x, y, angle, ctx, canvas) {
+        const arrowSize = 8;
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(angle);
+        ctx.beginPath();
+        ctx.moveTo(-arrowSize, -arrowSize);
+        ctx.lineTo(0, 0);
+        ctx.lineTo(-arrowSize, arrowSize);
+        ctx.stroke();
+        ctx.restore();
+    }
+    function drawAxes(margin, ctx, canvas) {
+        const arrowSize = 8;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.strokeStyle = '#363636';
+        ctx.beginPath();
+        ctx.moveTo(margin, canvas.height - margin);
+        ctx.lineTo(canvas.width - margin, canvas.height - margin);
+        ctx.stroke();
+        drawArrowhead(canvas.width - margin, canvas.height - margin, 0, ctx, canvas);
+        ctx.beginPath();
+        ctx.moveTo(margin, margin);
+        ctx.lineTo(margin, canvas.height - margin);
+        ctx.stroke();
+        drawArrowhead(margin, margin, -Math.PI / 2, ctx, canvas);
+    }
+    function drawGrid(margin, n, ctx, canvas) {
+        ctx.strokeStyle = '#ccc';
+        ctx.lineWidth = 1;
+        delta = (canvas.width - 2 * margin) / n;
+        for (let x = margin; x < canvas.width - margin; x += delta) {
+            ctx.beginPath();
+            ctx.moveTo(x, margin);
+            ctx.lineTo(x, canvas.height - margin);
+            ctx.stroke();
+        }
+        for (let y = margin; y < canvas.height - margin; y += delta) {
+            ctx.beginPath();
+            ctx.moveTo(margin, y);
+            ctx.lineTo(canvas.width - margin, y);
+            ctx.stroke();
+        }
+    }
+    (function () {
+        const canvas = document.getElementById("canvas-comb");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = 300;
+        canvas.height = 300;
+
+
+        const margin = 40; // Margin for the axes
+
+        //drawAxes(margin, ctx, canvas);
+        const n_ = 4;
+        const h = canvas.height;
+        drawGrid(margin, n_, ctx, canvas);
+        delta = (canvas.width - 2 * margin) / n_;
+
+        // Plot x^2
+        ctx.beginPath();
+        ctx.strokeStyle = '#d6430d';
+        ctx.lineWidth = 2;
+        ctx.lineTo(margin, margin);
+        ctx.lineTo(margin, margin + 4 * delta);
+        for (let n = 0; n <= 100; n++) {
+            //const y = ((1 - t) * Math.pow(x / (canvas.width - 2 * margin), 2) + t * (x / (canvas.width - 2 * margin))) * (canvas.height - 2 * margin);
+            ctx.lineTo(margin + (4 * delta) / n, margin + 4 * delta);
+            ctx.lineTo(margin + (4 * delta) / n, margin);
+            ctx.moveTo(margin + (4 * delta) / n, margin + 4 * delta)
+        }
+        ctx.stroke();
+
+    })();
+</script>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>такое <span
+class="math inline">\(\tilde{\gamma}\)</span> – это <em>поднятие
+пути</em> <span class="math inline">\(\gamma\)</span>.<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Да, там я ее не доказала.<a href="#fnref2"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="свободное-произведение-и-теорема-ван-кампена.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

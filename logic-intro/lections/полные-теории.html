@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Полные теории</title>
+    <style>
+        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2.5rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+        h4 {
+            font-size: 1.4rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="структуры-и-теории.-элементарные-расширения.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="математическое-изучение-математики.-неполнота.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+
+
+<h1 data-number="13" id="полные-теории">Полные теории</h1>
+<h2 data-number="13.1"
+id="полные-теории.-существование-пополнения">Полные теории.
+Существование пополнения</h2>
+<div id="definition-51">
+<p><strong>Определение:</strong> Теория <em>полная</em>, если с любым
+высказыванием она содержит его отрицание.</p>
+<p>Теория <em>выполнима</em>, если у нее есть модель.</p>
+</div>
+<div id="statement-16">
+<p><strong>Утверждение:</strong> Если теория выполнима, то у нее
+существует полное расширение.</p>
+<p><em>Доказательство:</em></p>
+</div>
+<h2 data-number="13.2"
+id="ω-категоричность.-ω-категоричность-плотного-порядка-без-наибольшего-и-наименьшего">ω-категоричность.
+ω-категоричность плотного порядка без наибольшего и наименьшего</h2>
+<div id="definition-52">
+<p><strong>Определение:</strong> Теория <span
+class="math inline">\(\omega\)</span>-<em>категорична</em>, если все
+счетные модели этой теории изоморфны.</p>
+</div>
+<h2 data-number="13.3" id="признак-лося-воота">Признак Лося – Воота</h2>
+<div id="theorem-14">
+<p><strong>Теорема:</strong> (<em>признак Лося-Воота</em>) Выполнимая
+<span class="math inline">\(\omega\)</span>-категоричная теория с
+счетной или конечной сигнатурой, не имеющая конечных моделей, полна.</p>
+<p><em>Доказательство:</em> см. теорему левенгейма-сколема <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="13.4"
+id="нестандартные-модели-дискретного-порядка-с-наименьшим-элементом-без-наибольшего">Нестандартные
+модели дискретного порядка с наименьшим элементом без наибольшего</h2>
+<h2 data-number="13.5"
+id="сверхбольшая-теория-для-дискретного-порядка-с-наименьшим-элементом-без-наибольшего">Сверхбольшая
+теория для дискретного порядка с наименьшим элементом без
+наибольшего</h2>
+<h2 data-number="13.6"
+id="сверхбольшая-структура-модель-дискретного-порядка-с-наименьшим-элементом-без-наибольшего">Сверхбольшая
+структура – модель дискретного порядка с наименьшим элементом без
+наибольшего</h2>
+<h2 data-number="13.7"
+id="пример-полной-не-ω-категоричной-теории.-доказательство-и-обсуждение.-теория-определимости">Пример
+полной, не ω-категоричной теории. Доказательство и обсуждение. Теория
+определимости</h2>
+<div id="theorem-15">
+<p><strong>Теорема:</strong> <span
+class="math inline">\(\Gamma_{\mathbb{N}}\)</span> не является <span
+class="math inline">\(\omega\)</span>-категоричной, но является
+полной.</p>
+<p><em>Доказательство:</em></p>
+</div>
+<h2 data-number="13.8"
+id="определимость-отношения-через-множество-отношений.-решетка-определимости">Определимость
+отношения через множество отношений. Решетка определимости</h2>
+<div id="definition-53">
+<p><strong>Определение:</strong> Пусть задан универсум <span
+class="math inline">\(U\)</span> и множество отношений <span
+class="math inline">\(S\)</span>. Дадим имена конечному множеству
+отношений и запишем любую формулу логики отношений. Она определяет
+некоторое отношение на <span class="math inline">\(U\)</span>.</p>
+<p>Множество всех определимых через <span
+class="math inline">\(S\)</span> отношений – <em>пространтсво
+определимости</em>.</p>
+</div>
+<div id="definition-54">
+<p><strong>Определение:</strong> <em>Решетка</em> – частично
+упорядоченное множество, где у любых двух элементов есть точная верхняя
+и точняя нижняя грань.</p>
+</div>
+<h2 data-number="13.9"
+id="автоморфизмы-структур.-соответствие-галуа-между-решеткой-определимости-и-решеткой-надгрупп">Автоморфизмы
+структур. Соответствие Галуа между решеткой определимости и решеткой
+надгрупп</h2>
+<div id="definition-55">
+<p><strong>Определение:</strong> Пусть на <span
+class="math inline">\(U\)</span> задано множество отношений <span
+class="math inline">\(S\)</span>. Перестановки, то есть биективные
+отображения в себя, множества <span class="math inline">\(U\)</span>,
+сохраняющие отношения из <span class="math inline">\(S\)</span>, –
+<em>автоморфизмы</em> <span class="math inline">\(S\)</span>.</p>
+<p>Пусть <span class="math inline">\(G \subset
+\operatorname{Sym}(U)\)</span> – подгруппа и <span
+class="math inline">\(\forall g \in G \,\,\,\, (\forall W \subset U
+\,\,\,\, \exists f \in G: \,\,\,\, f = g_{W}) \to g \in G\)</span>.
+Тогда <span class="math inline">\(G\)</span> <em>замкнута</em>.</p>
+<p>Отношение <span class="math inline">\(R\)</span> <em>инвариант</em>
+множества <span class="math inline">\(G \subset
+\operatorname{Sym}(U)\)</span>, если <span class="math inline">\(\forall
+g \in G \,\,\,\, \forall \mathbf{r} \in R \,\,\,\, g(\mathbf{r}) \in
+R\)</span>.</p>
+</div>
+<div id="statement-17">
+<p><strong>Утверждение:</strong> Группа автоморфизмов множества
+отношений замкнута.</p>
+<p><em>Доказательство:</em></p>
+</div>
+<div id="statement-18">
+<p><strong>Утверждение:</strong> Пусть задано множество отношений <span
+class="math inline">\(S\)</span> на <span
+class="math inline">\(U\)</span>. Отображение <span
+class="math inline">\(\operatorname{Aut}\)</span>, ставящее в
+соответствие подпространству <span class="math inline">\(S\)</span> его
+группу автоморфизмов и отображение <span
+class="math inline">\(\operatorname{Inv}\)</span>, ставящее в
+соответствие каждой замкнутой надгруппе группы <span
+class="math inline">\(\operatorname{Aut}(S)\)</span> множество ее
+инвариантов, образуют соответствие Галуа.</p>
+<p><em>Доказательство:</em></p>
+</div>
+<h2 data-number="13.10"
+id="примеры-автоморфизмов-и-не-определимости-для-решетки-определимости-порядка-рациональных-чисел">Примеры
+автоморфизмов и не определимости для решетки определимости порядка
+рациональных чисел</h2>
+<h2 data-number="13.11"
+id="теорема-свенониуса-без-доказательства">Теорема Свенониуса (без
+доказательства)</h2>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="структуры-и-теории.-элементарные-расширения.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="математическое-изучение-математики.-неполнота.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

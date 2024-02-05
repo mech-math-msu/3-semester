@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Описание основных групп</title>
+    <style>
+        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2.5rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+        h4 {
+            font-size: 1.4rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="теорема-бернсайда.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                    </span>
+    </div>
+</nav>
+
+
+
+<h1 data-number="27" id="описание-основных-групп">Описание основных
+групп</h1>
+<h2 data-number="27.1"
+id="группа-диэдра-группа-симметрий-правильного-n-угольника">Группа
+Диэдра (Группа симметрий правильного <span
+class="math inline">\(n\)</span>-угольника)</h2>
+<p><strong>Замечание:</strong> Группу Диэдра можно задать с помощью
+определяющего соотношения <span class="math inline">\(\langle r, s| r^n
+= e, \,\,\,\, s^{-1} = s, \,\,\,\, srs^{-1} = r^{-1} = r^{n - 1}
+\rangle\)</span>.</p>
+<p>Группа Диэдра порождается поворотом на минимальный угол <span
+class="math inline">\(r = \frac{2\pi}{n}\)</span> и любой из симметрий
+<span class="math inline">\(s\)</span>.</p>
+<p>При любом <span class="math inline">\(n\)</span> сопряжены повороты
+на <span class="math inline">\(\frac{2\pi k}{n}\)</span> и <span
+class="math inline">\(\frac{2\pi (n - k)}{n}\)</span>, поэтому при
+нечетном <span class="math inline">\(n\)</span> получаем <span
+class="math inline">\(\frac{n + 1}2\)</span> классов сопряженности
+поворотов <span class="math inline">\(\{e\}, \{\frac{2\pi}n, \frac{2\pi
+(n - 1)}n\}, \ldots, \{\frac{2\pi (\frac{n - 1}2)}n, \frac{2\pi (\frac{n
++ 1}2)}n \}\)</span>, а при четном поворот на <span
+class="math inline">\(\frac{2\pi (\frac{n}2)}n = \pi\)</span> совпадает
+с поворотом на <span class="math inline">\(\frac{2\pi (n -
+\frac{n}2)}n\)</span> и получаем <span class="math inline">\(\frac{n}2 +
+1\)</span> классов сопряженности.</p>
+<p>Все симметрии сопряжены при нечетном <span
+class="math inline">\(n\)</span>. При четном они образуют два класса
+сопряженности: симметрии, проходящие через середины противоположных
+сторон и симметрии, проходящие через противоположные вершины.</p>
+<p>Получаем <strong>при четном</strong> <span
+class="math inline">\(n\)</span> – <span class="math inline">\(\frac{n}2
++ 3\)</span> классов сопряженности, из которых <span
+class="math inline">\(\frac{n}2 - 1\)</span> <strong>классов
+сопярженности поворотов по две штуки, класс сопряженнности <span
+class="math inline">\(e\)</span> и класс сопряженности поворота <span
+class="math inline">\(\pi\)</span></strong> и <span
+class="math inline">\(2\)</span> <strong>класса сопряженности
+симметрий</strong>.</p>
+<p><strong>При нечетном</strong> <span class="math inline">\(n\)</span>
+– <span class="math inline">\(\frac{n + 3}2\)</span> классов
+сопряженности, из которых <span class="math inline">\(\frac{n + 1}2 -
+1\)</span> <strong>классов сопярженности поворотов по две штуки, класс
+сопряженнности <span class="math inline">\(e\)</span></strong> и <span
+class="math inline">\(1\)</span> <strong>класс сопряженности
+симметрий</strong>.</p>
+<h3 data-number="27.1.1" id="коммутант-группы-диэдра">Коммутант группы
+Диэдра</h3>
+<p>При <strong>нечетном</strong> <span class="math inline">\(n\)</span>
+– <strong>подгруппа поворотов</strong>.</p>
+<h2 data-number="27.2" id="группа-кватернионов-q_8">Группа кватернионов
+<span class="math inline">\(Q_8\)</span></h2>
+<p><strong>Замечание:</strong> Группу кватернионов можно задать с
+помощью определяющего соотношения <span class="math inline">\(\langle
+\pm 1, i, j, k| 1 = (-1)^2 = i^2 = j^2 = k^2, \,\,\,\, ijk = -1
+\rangle\)</span>.</p>
+<p>В группе кватернионов <span class="math inline">\(4\)</span> класса
+сопряженности <span class="math inline">\(\{\pm 1\}, \{\pm i\}, \{\pm
+j\}, \{\pm k\}\)</span>.</p>
+<h2 data-number="27.3" id="группа-перестановок-s_n">Группа перестановок
+<span class="math inline">\(S_n\)</span></h2>
+<p>Сопряжены все нечетные</p>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="теорема-бернсайда.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

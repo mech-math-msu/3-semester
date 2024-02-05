@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Metapost</title>
+    <style>
+        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2.5rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+        h4 {
+            font-size: 1.4rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+        /* CSS for syntax highlighting */
+            pre > code.sourceCode { white-space: pre; position: relative; }
+            pre > code.sourceCode > span { line-height: 1.25; }
+            pre > code.sourceCode > span:empty { height: 1.2em; }
+            .sourceCode { overflow: visible; }
+            code.sourceCode > span { color: inherit; text-decoration: inherit; }
+            div.sourceCode { margin: 1em 0; }
+            pre.sourceCode { margin: 0; }
+            @media screen {
+            div.sourceCode { overflow: auto; }
+            }
+            @media print {
+            pre > code.sourceCode { white-space: pre-wrap; }
+            pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+            }
+            pre.numberSource code
+              { counter-reset: source-line 0; }
+            pre.numberSource code > span
+              { position: relative; left: -4em; counter-increment: source-line; }
+            pre.numberSource code > span > a:first-child::before
+              { content: counter(source-line);
+                position: relative; left: -1em; text-align: right; vertical-align: baseline;
+                border: none; display: inline-block;
+                -webkit-touch-callout: none; -webkit-user-select: none;
+                -khtml-user-select: none; -moz-user-select: none;
+                -ms-user-select: none; user-select: none;
+                padding: 0 4px; width: 4em;
+                background-color: #232629;
+                color: #7a7c7d;
+              }
+            pre.numberSource { margin-left: 3em; border-left: 1px solid #7a7c7d;  padding-left: 4px; }
+            div.sourceCode
+              { color: #cfcfc2; background-color: #232629; }
+            @media screen {
+            pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+            }
+            code span { color: #cfcfc2; } /* Normal */
+            code span.al { color: #95da4c; background-color: #4d1f24; font-weight: bold; } /* Alert */
+            code span.an { color: #3f8058; } /* Annotation */
+            code span.at { color: #2980b9; } /* Attribute */
+            code span.bn { color: #f67400; } /* BaseN */
+            code span.bu { color: #7f8c8d; } /* BuiltIn */
+            code span.cf { color: #fdbc4b; font-weight: bold; } /* ControlFlow */
+            code span.ch { color: #3daee9; } /* Char */
+            code span.cn { color: #27aeae; font-weight: bold; } /* Constant */
+            code span.co { color: #7a7c7d; } /* Comment */
+            code span.cv { color: #7f8c8d; } /* CommentVar */
+            code span.do { color: #a43340; } /* Documentation */
+            code span.dt { color: #2980b9; } /* DataType */
+            code span.dv { color: #f67400; } /* DecVal */
+            code span.er { color: #da4453; text-decoration: underline; } /* Error */
+            code span.ex { color: #0099ff; font-weight: bold; } /* Extension */
+            code span.fl { color: #f67400; } /* Float */
+            code span.fu { color: #8e44ad; } /* Function */
+            code span.im { color: #27ae60; } /* Import */
+            code span.in { color: #c45b00; } /* Information */
+            code span.kw { color: #cfcfc2; font-weight: bold; } /* Keyword */
+            code span.op { color: #cfcfc2; } /* Operator */
+            code span.ot { color: #27ae60; } /* Other */
+            code span.pp { color: #27ae60; } /* Preprocessor */
+            code span.re { color: #2980b9; background-color: #153042; } /* RegionMarker */
+            code span.sc { color: #3daee9; } /* SpecialChar */
+            code span.ss { color: #da4453; } /* SpecialString */
+            code span.st { color: #f44f4f; } /* String */
+            code span.va { color: #27aeae; } /* Variable */
+            code span.vs { color: #da4453; } /* VerbatimString */
+            code span.wa { color: #da4453; } /* Warning */
+    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+            <p><link href="https://fonts.googleapis.com" rel="preconnect"/>
+            <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&amp;display=swap" rel="stylesheet"/></p>
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="gnuplot-cheatsheet.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                    </span>
+    </div>
+</nav>
+
+
+
+<h1 data-number="2" id="metapost">Metapost</h1>
+<p><code>Metapost</code> – это язык для рисования векторной графики.</p>
+<h2 data-number="2.1" id="создание-картинки-из-metapost-кода">Создание
+картинки из <code>metapost</code> кода</h2>
+<p><code>mpost filename</code></p>
+<p>Не обязательно писать <code>.mp</code>, то есть команда выше
+эквивалентна <code>mpost filename.mp</code>.</p>
+<h2 data-number="2.2" id="примеры-и-синтаксис">Примеры и синтаксис</h2>
+<p><code>%</code> – комментарий.</p>
+<p>Дефолтная единица измерения – <code>PostScript point</code> или
+<code>bp</code>. <code>bp</code> <span class="math inline">\(=
+0.35\)</span> мм <span class="math inline">\(=\frac{1}{72}\)</span>
+дюймов.</p>
+<p>В <code>metapost</code> можно писать <code
+class="sourceCode metafont"><span class="dv">42</span>abracodabra</code>,
+что значит <code>42 * abracodabra</code>. Есть предопределенные единицы
+измерения, например, <code>cm</code>.</p>
+<h3 data-number="2.2.1" id="окружность">Окружность</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode mp"><code class="sourceCode metafont"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="kw">fullcircle</span> <span class="at">scaled</span> <span class="dv">2</span>cm; <span class="co">% scaled -- увеличить в 2cm раз</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="6602a3d4cc7fc22fc4c0a25de8f5d4b3a1c55e2a.svg" />
+<h3 data-number="2.2.2" id="равносторонний-треугольник">Равносторонний
+треугольник</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode mp"><code class="sourceCode metafont"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="dv">2</span>cm;</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">h</span> <span class="op">:=</span> (<span class="bu">sqrt</span>(<span class="dv">3</span>) <span class="op">/</span> <span class="dv">2</span>) <span class="op">*</span> u; <span class="co">% высота треугольника</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (<span class="dv">0</span>, <span class="dv">0</span>) <span class="op">--</span> (<span class="fl">0.5</span>u, <span class="kw">h</span>) <span class="op">--</span> (u, <span class="dv">0</span>) <span class="op">--</span> (<span class="dv">0</span>, <span class="dv">0</span>);</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="9f03e4c9120bdcc9ffb722c64cb2ae1f8144c515.svg" />
+<h3 data-number="2.2.3" id="правильный-шестиугольник">Правильный
+шестиугольник</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode mp"><code class="sourceCode metafont"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">% angles</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>pi <span class="op">:=</span> <span class="fl">3.1415926</span>;</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>radian <span class="op">:=</span> <span class="dv">180</span><span class="op">/</span>pi;</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="re">vardef</span> sin <span class="at">primary</span> x <span class="op">=</span> (<span class="bu">sind</span>(x<span class="op">*</span>radian)) <span class="re">enddef</span>;</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="re">vardef</span> cos <span class="at">primary</span> x <span class="op">=</span> (<span class="bu">cosd</span>(x<span class="op">*</span>radian)) <span class="re">enddef</span>;</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="dv">5</span>cm;</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>n <span class="op">:=</span> <span class="dv">6</span>;</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> ((<span class="dv">1</span>u, <span class="dv">0</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> k <span class="op">:=</span> <span class="dv">1</span> <span class="cf">upto</span> n:</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">--</span> (cos(<span class="dv">2</span>pi <span class="op">*</span> k <span class="op">/</span> n) <span class="op">*</span> u, sin(<span class="dv">2</span>pi <span class="op">*</span> k <span class="op">/</span> n) <span class="op">*</span> u) <span class="cf">endfor</span>);</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="b326655c64fbb5663ff6ea88d9b2704e7e1cdb8d.svg" />
+<h3 data-number="2.2.4"
+id="проекции-куба-и-призмы-диаграммы-шлегеля-если-по-умному">Проекции
+куба и призмы (диаграммы Шлегеля, если по-умному)</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode mp"><code class="sourceCode metafont"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>pi <span class="op">:=</span> <span class="fl">3.1415926</span>;</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>radian <span class="op">:=</span> <span class="dv">180</span><span class="op">/</span>pi;</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="re">vardef</span> sin <span class="at">primary</span> x <span class="op">=</span> (<span class="bu">sind</span>(x<span class="op">*</span>radian)) <span class="re">enddef</span>;</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="re">vardef</span> cos <span class="at">primary</span> x <span class="op">=</span> (<span class="bu">cosd</span>(x<span class="op">*</span>radian)) <span class="re">enddef</span>;</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="dv">5</span>cm;</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>q <span class="op">:=</span> <span class="fl">2.5</span>cm;</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>n <span class="op">:=</span> <span class="dv">4</span>;</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> ((<span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> k <span class="op">:=</span> <span class="dv">1</span> <span class="cf">upto</span> n:</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">--</span> (cos(<span class="dv">2</span>pi <span class="op">*</span> k <span class="op">/</span> n), sin(<span class="dv">2</span>pi <span class="op">*</span> k <span class="op">/</span> n)) <span class="cf">endfor</span>) <span class="at">scaled</span> u;</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> ((<span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> k <span class="op">:=</span> <span class="dv">1</span> <span class="cf">upto</span> n:</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="op">--</span> (cos(<span class="dv">2</span>pi <span class="op">*</span> k <span class="op">/</span> n), sin(<span class="dv">2</span>pi <span class="op">*</span> k <span class="op">/</span> n)) <span class="cf">endfor</span>) <span class="at">scaled</span> (u <span class="op">/</span> <span class="dv">2</span>);</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="op">:=</span> <span class="dv">0</span> <span class="cf">upto</span> n:</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">draw</span> (cos(<span class="dv">2</span>pi <span class="op">*</span> k <span class="op">/</span> n), sin(<span class="dv">2</span>pi <span class="op">*</span> k <span class="op">/</span> n)) <span class="at">scaled</span> (u <span class="op">/</span> <span class="dv">2</span>) <span class="op">--</span> (cos(<span class="dv">2</span>pi <span class="op">*</span> k <span class="op">/</span> n), sin(<span class="dv">2</span>pi <span class="op">*</span> k <span class="op">/</span> n)) <span class="at">scaled</span> u;</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="cf">endfor</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="73966768312aed8b12597ab0931ea551657d6c9c.svg" />
+<div class="sourceCode" id="cb5"><pre class="sourceCode mp"><code class="sourceCode metafont"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>pi <span class="op">:=</span> <span class="fl">3.1415926</span>;</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>radian <span class="op">:=</span> <span class="dv">180</span><span class="op">/</span>pi;</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="re">vardef</span> sin <span class="at">primary</span> x <span class="op">=</span> (<span class="bu">sind</span>(x<span class="op">*</span>radian)) <span class="re">enddef</span>;</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="re">vardef</span> cos <span class="at">primary</span> x <span class="op">=</span> (<span class="bu">cosd</span>(x<span class="op">*</span>radian)) <span class="re">enddef</span>;</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="dv">5</span>cm;</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>q <span class="op">:=</span> <span class="fl">2.5</span>cm;</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>n <span class="op">:=</span> <span class="dv">3</span>;</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> ((<span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> k <span class="op">:=</span> <span class="dv">1</span> <span class="cf">upto</span> n:</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">--</span> (cos(<span class="dv">2</span>pi <span class="op">*</span> k <span class="op">/</span> n), sin(<span class="dv">2</span>pi <span class="op">*</span> k <span class="op">/</span> n)) <span class="cf">endfor</span>) <span class="at">scaled</span> u;</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> ((<span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> k <span class="op">:=</span> <span class="dv">1</span> <span class="cf">upto</span> n:</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="op">--</span> (cos(<span class="dv">2</span>pi <span class="op">*</span> k <span class="op">/</span> n), sin(<span class="dv">2</span>pi <span class="op">*</span> k <span class="op">/</span> n)) <span class="cf">endfor</span>) <span class="at">scaled</span> (u <span class="op">/</span> <span class="dv">2</span>);</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="op">:=</span> <span class="dv">0</span> <span class="cf">upto</span> n:</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">draw</span> (cos(<span class="dv">2</span>pi <span class="op">*</span> k <span class="op">/</span> n), sin(<span class="dv">2</span>pi <span class="op">*</span> k <span class="op">/</span> n)) <span class="at">scaled</span> (u <span class="op">/</span> <span class="dv">2</span>) <span class="op">--</span> (cos(<span class="dv">2</span>pi <span class="op">*</span> k <span class="op">/</span> n), sin(<span class="dv">2</span>pi <span class="op">*</span> k <span class="op">/</span> n)) <span class="at">scaled</span> u;</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="cf">endfor</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="41828df6d1363ff53e9c54aacc4984273e73371f.svg" />
+<h2 data-number="2.3" id="чиселки-в-metapost">Чиселки в
+<code>metapost</code></h2>
+<ul>
+<li>Единственный числовой тип – <code>numeric</code></li>
+<li>Числа с фиксированной точностью</li>
+<li>По умолчанию переменная – это <code>numeric</code>, поэтому их можно
+не объявлять заранее, а писать <code>n := 5;</code> <a href="#fn1"
+class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></li>
+<li>Чтобы напечатать число в консоли, надо написать
+<code>show n;</code></li>
+<li>Возведение в степень – <code>2**n;</code></li>
+</ul>
+<h2 data-number="2.4" id="базовые-типы-данных">Базовые типы данных</h2>
+<h3 data-number="2.4.1" id="пара-pair">Пара <code>pair</code></h3>
+<ul>
+<li><code>pair p; p := (1, 0);</code></li>
+<li>Можно складывать, умножать на <code>numeric</code> и т.д., то есть
+<code>pair</code> можно воспринимать как вектор</li>
+<li>Пару можно воспринимать как точку и рисовать
+<code>draw (1, 6);</code></li>
+<li>Если переменная для имени пары начинается с <code>z</code> и
+заканчивается числом, то автоматически создаются переменные
+<code>x[число]</code> и <code>y[число]</code>. В общем, лучше на
+примере:</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode mp"><code class="sourceCode metafont"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="va">z0</span> <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>); <span class="co">% супер важно, что начинается с z</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">% если не так, то присваивание с = не работает</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="at">show</span> <span class="va">x0</span>;</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="at">show</span> <span class="va">y0</span>;</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="42a0b4333cdd3e1cbe0f98e8eb6134ac31dac93a.svg" />
+<ul>
+<li>Пусть есть две пары, и пусть они задают отрезок. Как найти
+середину?</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode mp"><code class="sourceCode metafont"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="va">z0</span> <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>);</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="va">z1</span> <span class="op">=</span> (<span class="dv">100</span>, <span class="dv">100</span>);</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="va">z2</span> <span class="op">=</span> <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z0</span>, <span class="va">z1</span>];</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="va">z0</span> <span class="op">--</span> <span class="va">z1</span>;</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="va">z2</span> <span class="at">withpen</span> <span class="at">pencircle</span> <span class="at">scaled</span> <span class="dv">10</span>;</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="0ac00bf53e4c47061b99ee4061e591a228b55d7e.svg" />
+<h2 data-number="2.5" id="как-менять-толщину-линии">Как менять толщину
+линии?</h2>
+<h3 data-number="2.5.1" id="локально-на-один-раз">Локально (на один
+раз)</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode mp"><code class="sourceCode metafont"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="kw">unitsquare</span> <span class="at">scaled</span> <span class="dv">70</span> <span class="at">withcolor</span> <span class="kw">red</span>;</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (<span class="dv">35</span>, <span class="dv">35</span>) <span class="at">withpen</span> <span class="at">pencircle</span> <span class="at">scaled</span> <span class="dv">4</span>; <span class="co">% временно поменяли, то есть при следующем вызове draw ничего не поменяется</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">% scaled тут относится к pen</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="e86c0f5a887f7cd88ee0d20938be60b87aafab61.svg" />
+<h3 data-number="2.5.2" id="глобально">Глобально</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode mp"><code class="sourceCode metafont"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">pickup</span> <span class="at">pencircle</span> <span class="at">scaled</span> <span class="dv">4</span>; <span class="co">% теперь все будет шириной 4 PostScript point</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="kw">unitsquare</span> <span class="at">scaled</span> <span class="dv">70</span> <span class="at">withcolor</span> <span class="kw">red</span>;</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (<span class="dv">35</span>, <span class="dv">35</span>);</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="cad6b4beda998b1c4267257037766ac2fcbc634d.svg" />
+<h3 data-number="2.5.3"
+id="точка-пересечения-медиан-треугольника-и-метки-вершин">Точка
+пересечения медиан треугольника и метки вершин</h3>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="va">z0</span> <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>);</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="va">z1</span> <span class="op">=</span> (<span class="dv">30</span>, <span class="dv">50</span>);</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="va">z2</span> <span class="op">=</span> (<span class="dv">100</span>, <span class="dv">0</span>);</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (<span class="va">z0</span> <span class="op">--</span> <span class="va">z1</span> <span class="op">--</span> <span class="va">z2</span> <span class="op">--</span> <span class="at">cycle</span>) <span class="at">scaled</span> <span class="dv">3</span>;</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="kw">dotlabel</span>.<span class="kw">llft</span>(<span class="st">&quot;A&quot;</span>, <span class="va">z0</span>);</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="kw">dotlabel</span>.<span class="kw">lrt</span>(<span class="st">&quot;B&quot;</span>, <span class="va">z2</span> <span class="at">scaled</span> <span class="dv">3</span>);</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="kw">dotlabel</span>.<span class="kw">top</span>(<span class="st">&quot;C&quot;</span>, <span class="va">z1</span> <span class="at">scaled</span> <span class="dv">3</span>);</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (<span class="va">z0</span> <span class="op">--</span> <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z1</span>, <span class="va">z2</span>]) <span class="at">scaled</span> <span class="dv">3</span>;</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (<span class="va">z1</span> <span class="op">--</span> <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z0</span>, <span class="va">z2</span>]) <span class="at">scaled</span> <span class="dv">3</span>;</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (<span class="va">z2</span> <span class="op">--</span> <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z1</span>, <span class="va">z0</span>]) <span class="at">scaled</span> <span class="dv">3</span>;</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="kw">dotlabel</span>.<span class="kw">ulft</span>(<span class="st">&quot;B&#39;&quot;</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z1</span>, <span class="va">z0</span>] <span class="at">scaled</span> <span class="dv">3</span>);</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="kw">dotlabel</span>.<span class="kw">urt</span>(<span class="st">&quot;A&#39;&quot;</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z1</span>, <span class="va">z2</span>] <span class="at">scaled</span> <span class="dv">3</span>);</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="kw">dotlabel</span>.<span class="kw">bot</span>(<span class="st">&quot;C&#39;&quot;</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z0</span>, <span class="va">z2</span>] <span class="at">scaled</span> <span class="dv">3</span>);</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="39d328ba893689ca16e9a78df33b1aaf0894b4ca.svg" />
+<h3 data-number="2.5.4"
+id="пятиугольник-с-помощью-команды-dir">Пятиугольник с помощью команды
+<code>dir</code></h3>
+<ul>
+<li><code>dir(60)</code> = <span class="math inline">\((\frac12,
+\frac{\sqrt{3}}2)\)</span> – команда позволяет по углу получить точку на
+единичной окружности.</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>n <span class="op">:=</span> <span class="dv">5</span>;</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>pi <span class="op">:=</span> <span class="fl">3.1415926</span>;</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (<span class="kw">dir</span>(<span class="dv">0</span>) <span class="cf">for</span> k <span class="op">:=</span> <span class="dv">1</span> <span class="cf">upto</span> n: <span class="op">--</span> <span class="kw">dir</span>((<span class="dv">360</span> <span class="op">/</span> n) <span class="op">*</span> k) <span class="cf">endfor</span>) <span class="at">scaled</span> <span class="dv">5</span>cm <span class="at">withpen</span> <span class="at">pencircle</span> <span class="at">scaled</span> <span class="dv">3</span>;</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="34436fb8be6bc67bd4a2e7cc2961f6a21675e723.svg" />
+<h3 data-number="2.5.5"
+id="пересекающиеся-под-углом-30-градусов-прямые">Пересекающиеся под
+углом <span class="math inline">\(30\)</span> градусов прямые</h3>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (<span class="kw">dir</span>(<span class="op">-</span><span class="dv">45</span>) <span class="op">--</span> <span class="kw">dir</span>(<span class="dv">45</span> <span class="op">*</span> <span class="dv">3</span>)) <span class="at">scaled</span> <span class="dv">5</span>cm;</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> ((<span class="dv">0</span>, <span class="dv">0</span>) <span class="op">--</span> <span class="kw">dir</span>(<span class="dv">105</span>)) <span class="at">scaled</span> <span class="dv">5</span>cm;</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (<span class="dv">0</span>, <span class="dv">0</span>) <span class="at">withpen</span> <span class="at">pencircle</span> <span class="at">scaled</span> <span class="dv">10</span>;</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="543acc951f1c836116f2e85991cc7d722e918fbb.svg" />
+<h2 data-number="2.6" id="пути-path">Пути (<code>Path</code>)</h2>
+<p>Путь – это такой тип данных в <code>metapost</code>. Объявляется:
+<code>path</code>.</p>
+<h3 data-number="2.6.1" id="mystery-of-magical-z-is-solved">Mystery of
+magical <code>z</code> is solved</h3>
+<ul>
+<li><code>pair p[];</code> – создаёт массив из пар. Казалось бы дальше
+все просто <code>p[i] = (1, 2)</code>, но нет, это же
+<code>metapost</code> и он прекрасен! Чтобы создать элемент массива
+нужно написать <code>p1 = (1, 2)</code> или
+<code>p100500 = (42, 42)</code>. Прекрасно, не правда ли? :)</li>
+</ul>
+<h3 data-number="2.6.2" id="закрытые-и-открытые-пути">Закрытые и
+открытые пути</h3>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="dt">pair</span> p[];</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="va">p0</span> <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>); <span class="va">p1</span> <span class="op">=</span> (<span class="dv">3</span>cm, <span class="dv">5</span>cm); <span class="va">p2</span> <span class="op">=</span> (<span class="dv">7</span>cm, <span class="dv">0</span>);</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (<span class="va">p0</span> <span class="op">--</span> <span class="va">p1</span> <span class="op">--</span> <span class="va">p2</span> <span class="op">--</span> <span class="va">p0</span>);</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (<span class="va">p0</span> <span class="op">--</span> <span class="va">p1</span> <span class="op">--</span> <span class="va">p2</span> <span class="op">--</span> <span class="at">cycle</span>) <span class="at">shifted</span> (<span class="dv">8</span>cm, <span class="dv">0</span>);</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co">% Визуально одно и тоже, но --cycle создает</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co">% действительно замкнутый путь и его можно заливать цветом, например</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="56e24fa27bfbc793527f6866275c0ddfab1100ac.svg" />
+<h2 data-number="2.7" id="цвета-color">Цвета (<code>Color</code>)</h2>
+<p>Еще один тип данных. Объявляется: <code>color</code>.</p>
+<ul>
+<li>Цвета, как и пары, можно ипользовать как векторы, то есть умножать
+на <code>numeric</code> и складывать. Правда, значения ограничены.</li>
+</ul>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="dt">pair</span> p[];</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="va">p0</span> <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>); <span class="va">p1</span> <span class="op">=</span> (<span class="dv">3</span>cm, <span class="dv">5</span>cm); <span class="va">p2</span> <span class="op">=</span> (<span class="dv">7</span>cm, <span class="dv">0</span>);</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">% fill (p0 -- p1 -- p2 -- p0) withcolor black; тут возникает ошибка</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> (<span class="va">p0</span> <span class="op">--</span> <span class="va">p1</span> <span class="op">--</span> <span class="va">p2</span> <span class="op">--</span> <span class="at">cycle</span>) <span class="at">shifted</span> (<span class="dv">8</span>cm, <span class="dv">0</span>) <span class="at">withcolor</span> <span class="fl">0.7</span><span class="op">*</span>(<span class="kw">red</span> <span class="op">+</span> <span class="kw">green</span>);</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co">% а замкнутый путь можно залить</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="906a72bebdcb6a848baa341edd5e3d97e02ca078.svg" />
+<h3 data-number="2.7.1" id="как-нарисовать-кривую-а-не-прямую">Как
+нарисовать кривую, а не прямую?</h3>
+<p>Команда <code>p0 -- p1</code> соединяет точки <code>p1</code> и
+<code>p0</code> прямой, а команда <code>..</code> проводит через точки
+<code>p1</code> и <code>p0</code> кривую Безье, то есть кривую, заданную
+формулой: <span class="math inline">\(f(t) = (1 - t)^2 p_0 + 3(1 - t)^2
+t c_0 + 3(1 - t)^2 t c_1 + t^3 p_1, \,\,\,\, t \in [0, 1]\)</span>, где
+<code>c0</code> и <code>c1</code> точки, которые <code>metapost</code>
+вычисляет так, чтобы отрезки через точки <code>p0</code> и
+<code>c0</code> были касательными к итоговой кривой.</p>
+<p>Эти точки можно получить в коде:</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="at">color</span> gray;</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="fl">1.2</span>cm;</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>gray <span class="op">:=</span> <span class="fl">0.6</span>white;</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="dt">pair</span> p[]; <span class="va">p0</span> <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>); <span class="va">p1</span> <span class="op">=</span> (<span class="dv">2</span>cm, <span class="dv">3</span>cm); <span class="va">p2</span> <span class="op">=</span> (<span class="dv">7</span>cm, <span class="dv">4</span>cm);</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="dt">path</span> q; q <span class="op">:=</span> <span class="va">p0</span><span class="op">..</span><span class="va">p1</span><span class="op">..</span><span class="va">p2</span><span class="op">..</span><span class="at">cycle</span>;</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="re">def</span> drawpoint(<span class="at">expr</span> p, c) <span class="op">=</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">draw</span> p <span class="at">withpen</span> <span class="at">pencircle</span> <span class="at">scaled</span> <span class="dv">3</span> <span class="at">withcolor</span> c;</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="re">enddef</span>;</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="op">:=</span> <span class="dv">0</span> <span class="cf">upto</span> <span class="bu">length</span>(q):</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    drawpoint(<span class="at">point</span> i <span class="at">of</span> q, <span class="kw">black</span>);</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    <span class="va">p3</span> <span class="op">:=</span> <span class="at">precontrol</span> i <span class="at">of</span> q;</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    <span class="va">p4</span> <span class="op">:=</span> <span class="at">postcontrol</span> i <span class="at">of</span> q;</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">draw</span> <span class="va">p3</span> <span class="op">--</span> <span class="va">p4</span> <span class="at">withcolor</span> gray;</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>    drawpoint(<span class="va">p3</span>, gray);</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>    drawpoint(<span class="va">p4</span>, gray);</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a><span class="cf">endfor</span>;</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> q;</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="2b2130f49e9dda254c332bfa47eb50a50351efe1.svg" />
+<h3 data-number="2.7.2"
+id="что-можно-делать-с-кривыми-или-как-сделать-их-еще-более-кривыми">Что
+можно делать с кривыми? Или как сделать их еще более кривыми…</h3>
+<p>Чтобы изменить кривую можно:</p>
+<ul>
+<li>Менять угол начала и конца кривой с помощью команд <code>up</code>,
+<code>down</code>, <code>left</code>, <code>right</code> или
+<code>dir</code></li>
+<li>Еще есть команды <code>tension</code> и <code>curl</code>, которые
+меняют кривизну и скорость достижения начальной и конечной точек, чтобы
+это ни значило. <code>curl</code> в процентах, если их много, то
+выбирается наиболее кривой путь (с самой большой амплитудой), если
+процент маленький, то наоборот – самый короткий. <code>tension</code> в
+процентах, чем меньше, тем больше свободы у кривой, то есть ей
+необязательно очень быстро попасть в нужную точку, а если процент <span
+class="math inline">\(100\)</span>, то точки соединяются прямой. Вообще
+лучше смотреть примеры, а еще лучше их писать</li>
+<li>Можно самостоятельно указывать точки <code>c0</code> и
+<code>c1</code> для кривой</li>
+</ul>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="dt">pair</span> p[]; <span class="va">p0</span> <span class="op">:=</span> (<span class="dv">0</span>, <span class="dv">0</span>); <span class="va">p1</span> <span class="op">:=</span> (<span class="dv">2</span>cm, <span class="dv">2</span>cm);</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="re">def</span> drawsquare(<span class="at">expr</span> shift) <span class="op">=</span> <span class="kw">draw</span> <span class="kw">unitsquare</span> <span class="at">scaled</span> <span class="dv">2</span>cm <span class="at">shifted</span> shift <span class="at">withcolor</span> <span class="fl">0.6</span>white <span class="at">withpen</span> <span class="at">pencircle</span> <span class="at">scaled</span> <span class="dv">1</span> <span class="re">enddef</span>;</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>drawsquare((<span class="dv">0</span>, <span class="dv">0</span>)); <span class="kw">drawarrow</span> <span class="va">p0</span><span class="op">..</span><span class="va">p1</span>;</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>drawsquare((<span class="dv">3</span>cm, <span class="dv">0</span>)); <span class="kw">drawarrow</span> (<span class="va">p0</span>{<span class="kw">up</span>}<span class="op">..</span><span class="va">p1</span>) <span class="at">shifted</span> (<span class="dv">3</span>cm, <span class="dv">0</span>);</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>drawsquare((<span class="dv">6</span>cm, <span class="dv">0</span>)); <span class="kw">drawarrow</span> (<span class="va">p0</span>{<span class="kw">dir</span>(<span class="dv">30</span>)}<span class="op">..</span><span class="va">p1</span>) <span class="at">shifted</span> (<span class="dv">6</span>cm, <span class="dv">0</span>);</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>drawsquare((<span class="dv">9</span>cm, <span class="dv">0</span>)); <span class="kw">drawarrow</span> (<span class="va">p0</span>{<span class="kw">down</span>}<span class="op">..</span><span class="va">p1</span>) <span class="at">shifted</span> (<span class="dv">9</span>cm, <span class="dv">0</span>);</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>drawsquare((<span class="dv">12</span>cm, <span class="dv">0</span>)); <span class="kw">drawarrow</span> (<span class="va">p0</span><span class="op">..</span> <span class="at">controls</span> (<span class="dv">0</span>, <span class="fl">1.5</span>cm) <span class="bu">and</span> (<span class="fl">1.5</span>cm, <span class="dv">0</span>) <span class="op">..</span><span class="va">p1</span>) <span class="at">shifted</span> (<span class="dv">12</span>cm, <span class="dv">0</span>);</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>drawsquare((<span class="dv">15</span>cm, <span class="dv">0</span>)); <span class="kw">drawarrow</span> (<span class="va">p0</span>{<span class="at">curl</span> <span class="dv">90</span>}<span class="op">..</span>(<span class="dv">0</span>, <span class="op">-</span><span class="fl">1.5</span>cm)<span class="op">..</span>{<span class="at">curl</span> <span class="dv">5</span>}<span class="va">p1</span>) <span class="at">shifted</span> (<span class="dv">15</span>cm, <span class="dv">0</span>);</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (<span class="dv">0</span>, <span class="op">-</span><span class="fl">1.5</span>cm) <span class="at">shifted</span> (<span class="dv">15</span>cm, <span class="dv">0</span>) <span class="at">withpen</span> <span class="at">pencircle</span> <span class="at">scaled</span> <span class="dv">5</span>;</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>drawsquare((<span class="dv">18</span>cm, <span class="dv">0</span>)); <span class="kw">drawarrow</span> (<span class="va">p0</span><span class="op">..</span><span class="at">tension</span>(<span class="dv">1</span>)<span class="op">..</span>(<span class="dv">1</span>cm, <span class="op">-</span><span class="fl">1.5</span>cm)<span class="op">..</span><span class="va">p1</span>) <span class="at">shifted</span> (<span class="dv">18</span>cm, <span class="dv">0</span>);</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (<span class="dv">1</span>cm, <span class="op">-</span><span class="fl">1.5</span>cm) <span class="at">shifted</span> (<span class="dv">18</span>cm, <span class="dv">0</span>) <span class="at">withpen</span> <span class="at">pencircle</span> <span class="at">scaled</span> <span class="dv">5</span>;</span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>drawsquare((<span class="dv">21</span>cm, <span class="dv">0</span>)); <span class="kw">drawarrow</span> (<span class="va">p0</span><span class="op">..</span><span class="at">tension</span>(<span class="dv">100</span>)<span class="op">..</span>(<span class="dv">1</span>cm, <span class="op">-</span><span class="fl">1.5</span>cm)<span class="op">..</span><span class="va">p1</span>) <span class="at">shifted</span> (<span class="dv">21</span>cm, <span class="dv">0</span>);</span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (<span class="dv">1</span>cm, <span class="op">-</span><span class="fl">1.5</span>cm) <span class="at">shifted</span> (<span class="dv">21</span>cm, <span class="dv">0</span>) <span class="at">withpen</span> <span class="at">pencircle</span> <span class="at">scaled</span> <span class="dv">5</span>;</span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="488d16d36e74a13f85dd18723d9a8cc7f5ff01be.svg" />
+<p>В <code>metapost</code> предопределены операторы <code>--</code>,
+<code>---</code> и <code>...</code> через <code>curl</code> и
+<code>tension</code>.</p>
+<ul>
+<li><code>def -- = {curl 1}..{curl 1} enddef;</code> – соедини
+прямыми,</li>
+<li><code>def -- = .. tension infinity .. enddef;</code> – получи
+гладкий переход от прямой до остальной кривой,</li>
+<li><code>def ... = .. tension atleast 1 .. enddef;</code> – соедини
+кривой без перегибов, если это возможно.</li>
+</ul>
+<h3 data-number="2.7.3" id="красивый-угол">Красивый угол</h3>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>a <span class="op">:=</span> <span class="dv">45</span>;</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (<span class="dv">0</span>, <span class="dv">0</span>) <span class="op">--</span> (<span class="dv">10</span>cm, <span class="dv">0</span>);</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> ((<span class="dv">0</span>, <span class="dv">0</span>) <span class="op">--</span> <span class="kw">dir</span>(a)) <span class="at">scaled</span> <span class="dv">10</span>cm;</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (<span class="dv">0</span>, <span class="dv">0</span>) <span class="at">withpen</span> <span class="at">pencircle</span> <span class="at">scaled</span> <span class="dv">5</span>;</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="kw">drawarrow</span> (<span class="dv">3</span>cm, <span class="dv">0</span>){<span class="kw">dir</span>(<span class="dv">100</span>)}<span class="op">..</span>(<span class="dv">3</span>cm <span class="op">*</span> <span class="kw">dir</span>(a));</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="818eba87c6b18d57d55bf26fc38a80c73ec377b5.svg" />
+<h3 data-number="2.7.4" id="какой-то-непонятный-граф">Какой-то
+непонятный граф</h3>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="dv">5</span>cm;</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="dt">pair</span> p[]; <span class="va">p0</span> <span class="op">:=</span> (<span class="dv">0</span>, <span class="dv">0</span>); <span class="va">p1</span> <span class="op">:=</span> <span class="kw">dir</span>(<span class="dv">60</span>)<span class="op">*</span>u; <span class="va">p2</span> <span class="op">:=</span> (<span class="dv">1</span>u, <span class="dv">0</span>);</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="va">p0</span> <span class="at">withpen</span> <span class="at">pencircle</span> <span class="at">scaled</span> <span class="dv">6</span>;</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="va">p1</span> <span class="at">withpen</span> <span class="at">pencircle</span> <span class="at">scaled</span> <span class="dv">6</span>;</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="va">p2</span> <span class="at">withpen</span> <span class="at">pencircle</span> <span class="at">scaled</span> <span class="dv">6</span>;</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="va">p0</span> <span class="op">--</span> <span class="va">p2</span> <span class="op">--</span> <span class="va">p1</span>;</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="va">p0</span>{<span class="kw">dir</span>(<span class="dv">45</span>)}<span class="op">..</span><span class="va">p1</span>;</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="va">p0</span>{<span class="kw">dir</span>(<span class="dv">75</span>)}<span class="op">..</span><span class="va">p1</span>;</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="0014dd72a761aa540c098b4ab13b596149af0c39.svg" />
+<h3 data-number="2.7.5" id="инь-янь">Инь-Янь</h3>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="dv">7</span>cm;</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="dt">pair</span> a, b; a <span class="op">:=</span> (<span class="dv">0</span>, u <span class="op">/</span> <span class="dv">2</span>); b <span class="op">:=</span> (<span class="dv">0</span>, <span class="op">-</span>u <span class="op">/</span> <span class="dv">2</span>);</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="dt">path</span> p, q;</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>p <span class="op">:=</span> (<span class="kw">halfcircle</span> <span class="at">scaled</span> u <span class="at">rotated</span> <span class="dv">90</span>) <span class="op">--</span> a{<span class="at">curl</span> <span class="fl">0.2</span>}<span class="op">..</span>(u <span class="op">/</span> <span class="dv">4</span>, u <span class="op">/</span> <span class="dv">4</span>)<span class="op">..</span>(<span class="dv">0</span>, <span class="dv">0</span>)<span class="op">..</span>(<span class="op">-</span>u<span class="op">/</span><span class="dv">4</span>, <span class="op">-</span>u <span class="op">/</span> <span class="dv">4</span>)<span class="op">..</span>{<span class="at">curl</span> <span class="fl">0.2</span>}b <span class="op">--</span> <span class="at">cycle</span>;</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>q <span class="op">:=</span> (<span class="kw">halfcircle</span> <span class="at">scaled</span> u <span class="at">rotated</span> <span class="op">-</span><span class="dv">90</span>) <span class="op">--</span> a{<span class="at">curl</span> <span class="fl">0.1</span>}<span class="op">..</span>(u <span class="op">/</span> <span class="dv">4</span>, u <span class="op">/</span> <span class="dv">4</span>)<span class="op">..</span>(<span class="dv">0</span>, <span class="dv">0</span>)<span class="op">..</span>(<span class="op">-</span>u<span class="op">/</span><span class="dv">4</span>, <span class="op">-</span>u <span class="op">/</span> <span class="dv">4</span>)<span class="op">..</span>{<span class="at">curl</span> <span class="fl">0.1</span>}b <span class="op">--</span> <span class="at">cycle</span>;</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> p <span class="at">withcolor</span> <span class="kw">white</span>;</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> q <span class="at">withcolor</span> <span class="kw">black</span>;</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (<span class="dv">0</span>, u <span class="op">/</span> <span class="dv">4</span>) <span class="at">withpen</span> <span class="at">pencircle</span> <span class="at">scaled</span> <span class="dv">20</span>;</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (<span class="dv">0</span>, <span class="op">-</span>u <span class="op">/</span> <span class="dv">4</span>) <span class="at">withpen</span> <span class="at">pencircle</span> <span class="at">scaled</span> <span class="dv">20</span> <span class="at">withcolor</span> <span class="kw">white</span>;</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="809df68cca127cbdc0be5250e0f5ade877aaea97.svg" />
+<h3 data-number="2.7.6"
+id="биссектриса-треугольника-whatever-и-angle">Биссектриса треугольника,
+<code>whatever</code> и <code>angle</code></h3>
+<ul>
+<li><code>angle</code> – обратная к <code>dir</code> функция. Вычисляет
+угол между вектором и осью <code>(0, 0) -- (1, 0)</code>.</li>
+</ul>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>a <span class="op">:=</span> <span class="bu">angle</span>(<span class="kw">dir</span>(<span class="dv">60</span>));</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="at">show</span> a; <span class="co">% 60.00008</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="92eb55c1b42d43a42b5533569e8988677f03d4d3.svg" />
+<ul>
+<li><code>whatever</code> – это собственно <code>whatever</code>.</li>
+</ul>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="dv">2</span>cm;</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="dt">pair</span> A, B, C, <span class="kw">D</span>, N, M;</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>A <span class="op">:=</span> (<span class="dv">0</span>, <span class="dv">0</span>); B <span class="op">:=</span> (<span class="fl">1.5</span>u, <span class="dv">3</span>u); C <span class="op">:=</span> (<span class="dv">5</span>u, <span class="dv">0</span>);</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> A <span class="op">--</span> B <span class="op">--</span> C <span class="op">--</span> <span class="at">cycle</span>;</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="kw">dotlabel</span>.<span class="kw">lft</span>(<span class="st">&quot;A&quot;</span>, A);</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="kw">dotlabel</span>.<span class="kw">top</span>(<span class="st">&quot;B&quot;</span>, B);</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="kw">dotlabel</span>.<span class="kw">urt</span>(<span class="st">&quot;C&quot;</span>, C);</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a><span class="kw">D</span> <span class="op">=</span> <span class="kw">whatever</span>[A, C] <span class="op">=</span> B <span class="op">+</span> <span class="kw">whatever</span> <span class="op">*</span> <span class="kw">dir</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span> <span class="op">*</span> <span class="bu">angle</span>(A <span class="op">-</span> B) <span class="op">+</span> <span class="dv">1</span><span class="op">/</span><span class="dv">2</span> <span class="op">*</span> <span class="bu">angle</span>(C <span class="op">-</span> B));</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="kw">whatever</span>[A, <span class="kw">D</span>] <span class="op">=</span> B <span class="op">+</span> <span class="kw">whatever</span> <span class="op">*</span> <span class="kw">dir</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span> <span class="op">*</span> <span class="bu">angle</span>(A <span class="op">-</span> B) <span class="op">+</span> <span class="dv">1</span><span class="op">/</span><span class="dv">2</span> <span class="op">*</span> <span class="bu">angle</span>(<span class="kw">D</span> <span class="op">-</span> B));</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> <span class="kw">whatever</span>[<span class="kw">D</span>, C] <span class="op">=</span> B <span class="op">+</span> <span class="kw">whatever</span> <span class="op">*</span> <span class="kw">dir</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span> <span class="op">*</span> <span class="bu">angle</span>(<span class="kw">D</span> <span class="op">-</span> B) <span class="op">+</span> <span class="dv">1</span><span class="op">/</span><span class="dv">2</span> <span class="op">*</span> <span class="bu">angle</span>(C <span class="op">-</span> B));</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (B <span class="op">+</span> <span class="dv">1</span><span class="op">/</span><span class="dv">10</span> <span class="op">*</span> (N <span class="op">-</span> B)) <span class="op">--</span> (N <span class="op">-</span> <span class="dv">7</span><span class="op">/</span><span class="dv">8</span> <span class="op">*</span> (N <span class="op">-</span> B));</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (B <span class="op">+</span> <span class="dv">1</span><span class="op">/</span><span class="dv">10</span> <span class="op">*</span> (M <span class="op">-</span> B)) <span class="op">--</span> (M <span class="op">-</span> <span class="dv">7</span><span class="op">/</span><span class="dv">8</span> <span class="op">*</span> (M <span class="op">-</span> B));</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a><span class="dt">pair</span> X, Y; X <span class="op">:=</span> B <span class="op">+</span> <span class="dv">1</span><span class="op">/</span><span class="dv">10</span> <span class="op">*</span> (A <span class="op">-</span> B); Y <span class="op">:=</span> B <span class="op">+</span> (X <span class="op">-</span> B) <span class="at">rotated</span> (<span class="bu">angle</span>(C <span class="op">-</span> B) <span class="op">-</span> <span class="bu">angle</span>(A <span class="op">-</span> B));</span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> X{<span class="kw">dir</span>(<span class="op">-</span><span class="dv">45</span>)}<span class="op">..</span>Y;</span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a><span class="kw">dotlabel</span>.<span class="kw">bot</span>(<span class="st">&quot;D&quot;</span>, <span class="kw">D</span>);</span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> B <span class="op">--</span> <span class="kw">D</span>;</span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="c1997b022dae2585582bc6ce19b75a00b8b2f591.svg" />
+<h3 data-number="2.7.7" id="точка-пересечения-биссектрис">Точка
+пересечения биссектрис</h3>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="dv">1</span>cm;</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="dt">pair</span> A, B, C, <span class="kw">D</span>, E, F;</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>A <span class="op">:=</span> (<span class="dv">0</span>, <span class="dv">0</span>); B <span class="op">:=</span> (<span class="dv">15</span>, <span class="dv">30</span>); C <span class="op">:=</span> (<span class="dv">50</span>, <span class="dv">0</span>);</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (A <span class="op">--</span> B <span class="op">--</span> C <span class="op">--</span> <span class="at">cycle</span>);</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="kw">dotlabel</span>.<span class="kw">lft</span>(<span class="st">&quot;A&quot;</span>, A);</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="kw">dotlabel</span>.<span class="kw">top</span>(<span class="st">&quot;B&quot;</span>, B);</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="kw">dotlabel</span>.<span class="kw">urt</span>(<span class="st">&quot;C&quot;</span>, C);</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="kw">D</span> <span class="op">=</span> <span class="kw">whatever</span>[A, C] <span class="op">=</span> B <span class="op">+</span> <span class="kw">whatever</span> <span class="op">*</span> <span class="kw">dir</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span> <span class="op">*</span> <span class="bu">angle</span>(A <span class="op">-</span> B) <span class="op">+</span> <span class="dv">1</span><span class="op">/</span><span class="dv">2</span> <span class="op">*</span> <span class="bu">angle</span>(C <span class="op">-</span> B));</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (B <span class="op">--</span> <span class="kw">D</span>);</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>E <span class="op">=</span> <span class="kw">whatever</span>[B, C] <span class="op">=</span> A <span class="op">+</span> <span class="kw">whatever</span> <span class="op">*</span> <span class="kw">dir</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span> <span class="op">*</span> (<span class="dv">180</span> <span class="op">+</span> <span class="bu">angle</span>(A <span class="op">-</span> B)));</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (A <span class="op">--</span> E);</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>F <span class="op">=</span> <span class="kw">whatever</span>[A, B] <span class="op">=</span> C <span class="op">+</span> <span class="kw">whatever</span> <span class="op">*</span> <span class="kw">dir</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">2</span> <span class="op">*</span> <span class="bu">angle</span>(C <span class="op">-</span> B));</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> (C <span class="op">--</span> F);</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a><span class="dt">pair</span> M;</span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>M <span class="op">=</span> <span class="kw">whatever</span>[B, <span class="kw">D</span>] <span class="op">=</span> <span class="kw">whatever</span>[F, C];</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> M <span class="at">withpen</span> <span class="at">pencircle</span> <span class="at">scaled</span> <span class="dv">3</span>;</span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>a <span class="op">:=</span> <span class="bu">length</span>(B <span class="op">-</span> A);</span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>b <span class="op">:=</span> <span class="bu">length</span>(C <span class="op">-</span> B);</span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>c <span class="op">:=</span> <span class="bu">length</span>(C <span class="op">-</span> A);</span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>p <span class="op">:=</span> (a <span class="op">+</span> b <span class="op">+</span> c) <span class="op">/</span> <span class="dv">2</span>;</span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a>r <span class="op">:=</span> ((p <span class="op">-</span> a)<span class="op">*</span>(p <span class="op">-</span> b)<span class="op">*</span>(p <span class="op">-</span> c) <span class="op">/</span> p) <span class="op">**</span> (<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>);</span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="kw">fullcircle</span> <span class="at">scaled</span> (<span class="dv">2</span> <span class="op">*</span> r) <span class="at">shifted</span> (M);</span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="8fcdc4ef7b40d67f265e6c48a003d7c712f5f1f4.svg" />
+<h2 data-number="2.8" id="стрелки-arrow">Стрелки <code>Arrow</code></h2>
+<ul>
+<li><code>drawarrow</code> вместо <code>draw</code>, чтобы нарисовать
+стрелку, а не линию,</li>
+<li><code>drawdblarrow</code> – двусторонняя стрелка.</li>
+</ul>
+<h3 data-number="2.8.1" id="команда-reverse">Команда
+<code>reverse</code></h3>
+<ul>
+<li>Позволяет нарисовать стрелку в обратном направлении:
+<code>drawarrow reverse((0, 0) -- (100, 0));</code></li>
+</ul>
+<h3 data-number="2.8.2" id="стили-стрелок">Стили стрелок</h3>
+<ul>
+<li>C помощью команд <code>ahlength</code> и <code>ahangle</code> можно
+поменять длину головы стрелки и угол головы стрелки. Дефолтные значения
+<code>ahlength = 4bp</code> и <code>ahangle=45deg</code>.</li>
+<li>Можно вообще поменять голову стрелки с помощью функции
+<code>arrowhead</code>:</li>
+</ul>
+<h4 data-number="2.8.2.1"
+id="какой-то-сложный-пример-на-стиль-стрелки">Какой-то сложный пример на
+стиль стрелки</h4>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="at">save</span> <span class="kw">arrowhead</span>; <span class="co">% чтобы это могло значить?</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="re">vardef</span> <span class="kw">arrowhead</span> <span class="at">expr</span> p <span class="op">=</span> <span class="co">% полуфункция arrowhead получает на вход путь</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">save</span> A, a, slope; <span class="dt">pair</span> A, slope; <span class="dt">path</span> a;</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    A <span class="op">=</span> <span class="at">point</span> (<span class="bu">length</span>(p) <span class="op">/</span> <span class="dv">2</span>) <span class="at">of</span> p; <span class="co">% точка на кривой на расстоянии длина кривой пополам</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    slope <span class="op">=</span> <span class="kw">direction</span> (<span class="bu">length</span>(p) <span class="op">/</span> <span class="dv">2</span>) <span class="at">of</span> p; <span class="co">% касательная в этой точке</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="kw">halfcircle</span> <span class="at">scaled</span> <span class="kw">ahlength</span> <span class="at">rotated</span> (<span class="op">-</span><span class="dv">90</span> <span class="op">+</span> <span class="bu">angle</span>(slope)) <span class="at">shifted</span> A;</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">% полукруг повернутый перпендикулярно касательной и уевличенный до ahlength</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    a<span class="op">--</span><span class="at">cycle</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="re">enddef</span>;</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="dv">2</span>cm;</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="kw">ahlength</span> <span class="op">:=</span> <span class="fl">0.3</span>cm;</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="kw">drawarrow</span> (<span class="dv">0</span>, <span class="dv">0</span>)<span class="op">..</span>(<span class="dv">2</span>u, <span class="dv">3</span>u)<span class="op">..</span>(<span class="dv">5</span>u, <span class="op">-</span>u);</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="fe5034b4685d709f7fc33d1260d1232123decdf9.svg" />
+<h2 data-number="2.9"
+id="кружки-эллипсы-квадраты-и-прямоугольники">Кружки, эллипсы, квадраты
+и прямоугольники</h2>
+<p>Предопределенные пути:</p>
+<ul>
+<li><code>fullcircle</code> – окружность диаметра <span
+class="math inline">\(1\)</span> с центром в <span
+class="math inline">\((0, 0)\)</span></li>
+<li><code>halfcircle</code> – верхняя полуокружность
+<code>fullcircle</code></li>
+<li><code>quartercircle</code> – первая четверть (от <span
+class="math inline">\(0\)</span> до <span
+class="math inline">\(\frac{\pi}2\)</span>) <code>fullcircle</code></li>
+<li><code>unitsquare</code> –
+<code>(0, 0) -- (0, 1) -- (1, 1) -- cycle</code></li>
+</ul>
+<h2 data-number="2.10" id="транформации">Транформации</h2>
+<ul>
+<li><code>shifted</code> – параллельный перенос на заданный вектор
+(<code>pair</code>)</li>
+<li><code>scaled</code>, <code>xcaled</code>, <code>yscaled</code> –
+увеличение / уменьшение в заданное число раз относительно центра
+пути</li>
+<li><code>rotated</code> – поворот вокруг центра на заданный в градусах
+угол</li>
+<li>Порядок трансформаций очень важен!</li>
+</ul>
+<h3 data-number="2.10.1"
+id="большой-пример-на-трансформации-и-кружочки-квадраты">Большой пример
+на трансформации и кружочки / квадраты</h3>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="dv">2</span>cm;</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="op">=</span> <span class="op">-</span><span class="dv">1</span> <span class="cf">upto</span> <span class="dv">9</span>: <span class="kw">draw</span> (i <span class="op">*</span> u, <span class="dv">4</span>u) <span class="op">--</span> (i <span class="op">*</span> u, <span class="op">-</span><span class="dv">3</span>u) <span class="at">withcolor</span> <span class="fl">0.7</span>white; <span class="cf">endfor</span>;</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="op">=</span> <span class="op">-</span><span class="dv">3</span> <span class="cf">upto</span> <span class="dv">4</span>: <span class="kw">draw</span> (<span class="op">-</span>u, i <span class="op">*</span> u) <span class="op">--</span> (<span class="dv">9</span>u, i <span class="op">*</span> u) <span class="at">withcolor</span> <span class="fl">0.7</span>white; <span class="cf">endfor</span>;</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="kw">dotlabel</span>(<span class="st">&quot;&quot;</span>, <span class="kw">origin</span>); <span class="co">% отрисовка сетки</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="kw">fullcircle</span> <span class="at">scaled</span> u;</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="kw">halfcircle</span> <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">2</span>u, <span class="dv">0</span>);</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="kw">quartercircle</span> <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">4</span>u, <span class="dv">0</span>);</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="kw">fullcircle</span> <span class="at">xscaled</span> <span class="dv">2</span>u <span class="at">yscaled</span> u <span class="at">shifted</span> (<span class="dv">6</span>u, <span class="dv">0</span>);</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="kw">fullcircle</span> <span class="at">xscaled</span> <span class="dv">2</span>u <span class="at">yscaled</span> u <span class="at">rotated</span> <span class="op">-</span><span class="dv">45</span> <span class="at">shifted</span> (<span class="dv">8</span>u, <span class="dv">0</span>);</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> <span class="kw">fullcircle</span> <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">0</span>, <span class="op">-</span><span class="dv">2</span>u);</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> <span class="kw">halfcircle</span> <span class="op">--</span> <span class="at">cycle</span> <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">2</span>u, <span class="op">-</span><span class="dv">2</span>u);</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a><span class="dt">path</span> quarterdisk; quarterdisk <span class="op">:=</span> <span class="kw">quartercircle</span> <span class="op">--</span> <span class="kw">origin</span> <span class="op">--</span> <span class="at">cycle</span>;</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> quarterdisk <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">4</span>u, <span class="op">-</span><span class="dv">2</span>u);</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> quarterdisk <span class="at">scaled</span> u <span class="at">rotated</span> <span class="op">-</span><span class="dv">45</span> <span class="at">shifted</span> (<span class="dv">6</span>u, <span class="op">-</span><span class="dv">2</span>u);</span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> quarterdisk <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">6</span>u, <span class="op">-</span><span class="dv">2</span>u) <span class="at">rotated</span> <span class="dv">45</span>;</span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> quarterdisk <span class="at">rotated</span> <span class="op">-</span><span class="dv">90</span> <span class="at">scaled</span> <span class="dv">2</span>u <span class="at">shifted</span> (<span class="dv">8</span>u, <span class="dv">3</span>u);</span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> <span class="kw">unitsquare</span> <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">0</span>, <span class="dv">2</span>u);</span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> <span class="kw">unitsquare</span> <span class="at">xscaled</span> u <span class="at">yscaled</span> <span class="dv">3</span><span class="op">/</span><span class="dv">2</span>u <span class="at">shifted</span> (<span class="dv">2</span>u, <span class="dv">2</span>u);</span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="3f8df45318da62f8491d5619c63cb2c1a679e76d.svg" />
+<h2 data-number="2.11" id="текст-в-metapost">Текст в
+<code>metapost</code></h2>
+<p><code>label.suffix(string expression, pair);</code> – команда
+позволяет написать текст <code>expression</code> в точке
+<code>pair</code>, сдвинув текст относительно точки в
+<code>suffix</code>.</p>
+<p>Какие бывают <code>suffix</code>?</p>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="dv">3</span>cm;</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>n <span class="op">:=</span> <span class="dv">8</span>;</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="op">:=</span> <span class="dv">0</span> <span class="cf">upto</span> n:</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">draw</span> (<span class="dv">0</span>, <span class="dv">0</span>) <span class="op">--</span> <span class="kw">dir</span>(<span class="dv">360</span> <span class="op">/</span> n <span class="op">*</span> k) <span class="op">*</span> u;</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="cf">endfor</span>;</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">top</span>(<span class="st">&quot;top&quot;</span>, (<span class="dv">0</span>, u));</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">rt</span>(<span class="st">&quot;rt&quot;</span>, (u, <span class="dv">0</span>));</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">bot</span>(<span class="st">&quot;bot&quot;</span>, (<span class="dv">0</span>, <span class="op">-</span>u));</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">lft</span>(<span class="st">&quot;lft&quot;</span>, (<span class="op">-</span>u, <span class="dv">0</span>));</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">urt</span>(<span class="st">&quot;urt&quot;</span>, <span class="kw">dir</span>(<span class="dv">45</span>) <span class="op">*</span> u);</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">lrt</span>(<span class="st">&quot;lrt&quot;</span>, <span class="kw">dir</span>(<span class="op">-</span><span class="dv">45</span>) <span class="op">*</span> u);</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">llft</span>(<span class="st">&quot;llft&quot;</span>, <span class="kw">dir</span>(<span class="op">-</span><span class="dv">3</span> <span class="op">*</span> <span class="dv">45</span>) <span class="op">*</span> u);</span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">ulft</span>(<span class="st">&quot;ulft&quot;</span>, <span class="kw">dir</span>(<span class="dv">3</span> <span class="op">*</span> <span class="dv">45</span>) <span class="op">*</span> u);</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="ac7de5040b1937bcfea613c3f22bf8d0b22b15ef.svg" />
+<h2 data-number="2.12" id="как-поменять-шрифт-и-его-размер">Как поменять
+шрифт и его размер?</h2>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="kw">defaultfont</span> <span class="op">:=</span> <span class="st">&quot;psyro&quot;</span>; <span class="co">% надо написать название, угадав его</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co">% в папке, где tex в поддиректории .\texmf-dist\fonts\tfm\ должен быть файл название-шрифта.tfm</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co">% нда, почему такие крутые вещи никому не нужны?</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="kw">defaultscale</span> <span class="op">:=</span> <span class="dv">12</span>pt <span class="op">/</span> <span class="at">fontsize</span>(<span class="kw">defaultfont</span>);</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="dv">3</span>cm;</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>n <span class="op">:=</span> <span class="dv">8</span>;</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="op">:=</span> <span class="dv">0</span> <span class="cf">upto</span> n:</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">draw</span> (<span class="dv">0</span>, <span class="dv">0</span>) <span class="op">--</span> <span class="kw">dir</span>(<span class="dv">360</span> <span class="op">/</span> n <span class="op">*</span> k) <span class="op">*</span> u;</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="cf">endfor</span>;</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">top</span>(<span class="st">&quot;top&quot;</span>, (<span class="dv">0</span>, u));</span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">rt</span>(<span class="st">&quot;rt&quot;</span>, (u, <span class="dv">0</span>));</span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">bot</span>(<span class="st">&quot;bot&quot;</span>, (<span class="dv">0</span>, <span class="op">-</span>u));</span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">lft</span>(<span class="st">&quot;lft&quot;</span>, (<span class="op">-</span>u, <span class="dv">0</span>));</span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">urt</span>(<span class="st">&quot;urt&quot;</span>, <span class="kw">dir</span>(<span class="dv">45</span>) <span class="op">*</span> u);</span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">lrt</span>(<span class="st">&quot;lrt&quot;</span>, <span class="kw">dir</span>(<span class="op">-</span><span class="dv">45</span>) <span class="op">*</span> u);</span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">llft</span>(<span class="st">&quot;llft&quot;</span>, <span class="kw">dir</span>(<span class="op">-</span><span class="dv">3</span> <span class="op">*</span> <span class="dv">45</span>) <span class="op">*</span> u);</span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">ulft</span>(<span class="st">&quot;ulft&quot;</span>, <span class="kw">dir</span>(<span class="dv">3</span> <span class="op">*</span> <span class="dv">45</span>) <span class="op">*</span> u);</span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="50c144933d81730d81c1c2c11d615e494a168641.svg" />
+<h2 data-number="2.13" id="оператор-конкатенации">Оператор
+конкатенации</h2>
+<p>Чтобы что-то склеить (пути или текст) можно использовать
+<code>&amp;</code>.</p>
+<h3 data-number="2.13.1"
+id="использование-latex-в-metapost">Использование <code>latex</code> в
+<code>metapost</code></h3>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="va">z0</span> <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>);</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="va">z1</span> <span class="op">=</span> (<span class="bu">sqrt</span>(<span class="dv">3</span>)<span class="op">*</span><span class="fl">cm</span>, <span class="dv">0</span>);</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="va">z2</span> <span class="op">=</span> (<span class="bu">sqrt</span>(<span class="dv">3</span>)<span class="op">*</span><span class="fl">cm</span>, <span class="dv">1</span>cm);</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="va">z0</span> <span class="op">--</span> <span class="va">z1</span> <span class="op">--</span> <span class="va">z2</span> <span class="op">--</span> <span class="at">cycle</span>;</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">bot</span>(<span class="re">btex</span> <span class="ss">$</span><span class="fu">\lbrace</span><span class="ss">$</span> <span class="re">etex</span> <span class="at">rotated</span> <span class="dv">90</span> <span class="at">xscaled</span> <span class="dv">5</span> <span class="at">yscaled</span> <span class="fl">1.4</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z0</span>, <span class="va">z1</span>]);</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">rt</span>((<span class="re">btex</span> <span class="ss">$</span><span class="fu">\rbrace</span><span class="ss">$</span> <span class="re">etex</span>) <span class="at">xscaled</span> <span class="fl">1.3</span> <span class="at">yscaled</span> <span class="dv">3</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z1</span>, <span class="va">z2</span>]);</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>(<span class="re">btex</span> <span class="ss">$</span><span class="fu">\lbrace</span><span class="ss">$</span> <span class="re">etex</span> <span class="at">xscaled</span> <span class="fl">1.5</span> <span class="at">yscaled</span> <span class="fl">5.7</span> <span class="at">rotated</span> <span class="op">-</span><span class="dv">60</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z0</span>, <span class="va">z2</span>] <span class="op">+</span> <span class="kw">dir</span>(<span class="dv">120</span>)<span class="op">*</span><span class="dv">2</span>mm);</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="kw">labeloffset</span> <span class="op">:=</span> <span class="fl">3.5</span>mm; <span class="co">% на каком расстоянии от точки рисовать метку</span></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">bot</span>(<span class="re">btex</span> <span class="ss">$</span><span class="fu">\sqrt</span><span class="ss">{3}$</span> <span class="re">etex</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z0</span>, <span class="va">z1</span>]);</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">rt</span>(<span class="re">btex</span> 1 <span class="re">etex</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z1</span>, <span class="va">z2</span>]);</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>(<span class="re">btex</span> 2 <span class="re">etex</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z0</span>, <span class="va">z2</span>] <span class="op">+</span> <span class="kw">dir</span>(<span class="dv">120</span>)<span class="op">*</span><span class="dv">5</span>mm);</span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="013069e4a33d0fa399c04816bb193abc0c3b207a.svg" />
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Но писать <code>p := (1, 2);</code> для пары нельзя и
+т.д.<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="gnuplot-cheatsheet.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

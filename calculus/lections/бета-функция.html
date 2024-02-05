@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Бета-функция</title>
+    <style>
+        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2.5rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+        h4 {
+            font-size: 1.4rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="формула-стирлинга.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="ряды-фурье.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+
+
+<h1 data-number="19" id="бета-функция">Бета-функция</h1>
+<div id="definition-26">
+<p><strong>Определение:</strong> (<em>второй интеграл Эйлера</em>)</p>
+<p><span class="math display">\[B(\alpha, \beta) =
+\displaystyle\int\limits_0^1 t^{\alpha - 1}(1 - t)^{\beta - 1}dt,
+\,\,\,\, \alpha &gt; 0, \,\,\,\, \beta &gt; 0\]</span></p>
+</div>
+<div id="statement-3">
+<p><strong>Утверждение:</strong> <span class="math display">\[B(\alpha,
+\beta) = B(\beta, \alpha)\]</span></p>
+<p><em>Доказательство:</em> <span class="math inline">\(t = 1 - x
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-55">
+<p><strong>Теорема:</strong> <span class="math display">\[B(\alpha + 1,
+\beta) = \frac{\alpha}{\alpha + \beta}\cdot B(\alpha,
+\beta)\]</span></p>
+<p><em>Доказательство:</em> по частям</p>
+</div>
+<h2 data-number="19.1" id="связь-бета-и-гамма-функций">Связь бета и
+гамма-функций</h2>
+<div id="theorem-56">
+<p><strong>Теорема:</strong> (<em>связь бета и гамма-функций</em>)</p>
+<p><span class="math display">\[B(\alpha, \beta) =
+\frac{\Gamma(\alpha)\cdot \Gamma(\beta)}{\Gamma(\alpha +
+\beta)}\]</span></p>
+<p><em>Доказательство:</em></p>
+<p>Пусть <span class="math inline">\(t = \frac{1}{1 + x} \implies 1 - t
+= \frac{x}{1 + x}\)</span> и <span class="math inline">\(dt =
+-\frac{dx}{1 + x}^2\)</span>.</p>
+<p><span class="math display">\[B(\alpha, \beta) =
+\displaystyle\int\limits_0^1 t^{\alpha - 1}(1 - t)^{\beta - 1}dt =
+\displaystyle\int\limits_0^{+\infty} \frac{x^{\beta - 1}}{(1 +
+x)^{\alpha + \beta}}dx\]</span></p>
+<p>Делаем замену <span class="math inline">\(x = (t + 1)y\)</span> в
+<span class="math inline">\(\Gamma(\alpha + \beta)\)</span>. Получим
+<span class="math inline">\(\Gamma(\alpha + \beta) =
+\displaystyle\int\limits_0^{+\infty} (t + 1)^{\alpha + \beta}\cdot
+y^{\alpha + \beta - 1}e^{-(t + 1)y}dy\)</span>.</p>
+<p><span class="math display">\[B(\alpha, \beta)\cdot \Gamma(\alpha +
+\beta) = \displaystyle\int\limits_0^{+\infty} \frac{x^{\beta - 1}}{(1 +
+x)^{\alpha + \beta}}\Gamma(\alpha + \beta)dx =
+\displaystyle\int\limits_0^{+\infty} \frac{x^{\beta - 1}}{(1 +
+x)^{\alpha + \beta}}\left(\displaystyle\int\limits_0^{+\infty} (t +
+1)^{\alpha + \beta}\cdot y^{\alpha + \beta - 1}e^{-(t +
+1)y}dy\right)dx=\]</span> <span
+class="math display">\[=\displaystyle\int\limits_0^{+\infty} y^{\alpha -
+1}e^{-y}\left(\displaystyle\int\limits_0^{+\infty} (ty)^{\beta -
+1}e^{-ty}d(ty)\right)dy = \Gamma(\beta)\cdot \Gamma(\alpha)
+\,\,\,\,\blacksquare\]</span></p>
+<p>Тут используется теорема о изменении порядка интегралов, а для нее
+необходима неотрицательность и непрерывность, поэтому рассуждения выше
+для <span class="math inline">\(\alpha &gt; 1\)</span> и <span
+class="math inline">\(\beta &gt; 1\)</span>.</p>
+</div>
+<h2 data-number="19.2"
+id="теорема-вейерштрасса-о-приближении-непрерывной-функции-многочленами">Теорема
+Вейерштрасса о приближении непрерывной функции многочленами</h2>
+<div id="theorem-57">
+<p><strong>Теорема:</strong> (<em>Вейерштрасса о приближении
+многочленами</em>) Пусть <span class="math inline">\(f(x) \in C[a, b]
+\,\,\,\, \exists \{P_n(x)\}_{n = 1}, \,\,\,\, P_n\)</span> – многочлены,
+такие что <span class="math inline">\(P_n(x) \overset{[a,
+b]}{\rightrightarrows} f(x)\)</span>.</p>
+<p><em>Доказательство:</em></p>
+<p>Без ограничения общности пусть <span class="math inline">\(f(x) \in
+C[0, 1]\)</span> и <span class="math inline">\(f(0) = f(1) = 0\)</span>,
+так как отрезок <span class="math inline">\([a, b]\)</span> можно
+перевести в отрезок <span class="math inline">\([0, 1]\)</span> линейной
+заменой, то есть многочлен останется многочленом. Пусть <span
+class="math inline">\(f(x) \equiv 0, \,\,\,\, x \not\in [0, 1] \implies
+f(x) \in C(\mathbb{R})\)</span>.</p>
+<p>Пусть <span class="math inline">\(\{c_n\}_{n = 1}^{\infty}: \,\,\,\,
+c_n \displaystyle\int\limits_{-1}^1 (1 - x^2)^ndx = 1\)</span>.</p>
+<p><img src="img/sing.png" /></p>
+<p>Оценим <span class="math inline">\(c_n:\)</span> <span
+class="math inline">\(1 = c_n 2 \displaystyle\int\limits_0^1 (1 -
+x^2)^ndx \geqslant 2c_n \displaystyle\int\limits_0^{\frac1{\sqrt{n}}} (1
+- x^2)^n dx \geqslant 2c_n \displaystyle\int\limits_0^{\frac1{\sqrt{n}}}
+(1 - nx^2) dx=\)</span> <span class="math inline">\(= 2 c_n
+\left(\frac1{\sqrt{n}} - \frac{1}{3\sqrt{n}}\right) = \frac43\cdot
+\frac{c_n}{\sqrt{n}} &gt; \frac{c_n}{\sqrt{n}} \implies c_n &lt;
+\sqrt{n}\)</span>. <a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></p>
+<p><span class="math display">\[\forall \delta &gt; 0 \,\,\,\, c_n(1-
+x^2)^n \leqslant c_n(1 - \delta^2)^n \overset{n \to \infty}{\to} 0
+\implies c_n(1- x^2)^n \overset{[-1,-\delta]\cup[\delta,
+1]}{\rightrightarrows} 0\]</span></p>
+<p><span class="math display">\[f_n(x) =
+c_n\cdot\displaystyle\int\limits_{-1}^1 f(x + t)(1- t^2)^ndt\]</span>
+<span class="math display">\[|f_n(x) - f(x)| =
+\left|c_n\cdot\displaystyle\int\limits_{-1}^1 f(x + t)(1- t^2)^ndt -
+f(x)c_n\displaystyle\int\limits_{-1}^1 (1 - x^2)^ndx\right|=\]</span>
+<span class="math display">\[= c_n\left|\displaystyle\int\limits_{-1}^1
+(1- t^2)^n (f(x + t) - f(x))\right| \leqslant
+c_n\displaystyle\int\limits_{-1}^{-\delta} (1- t^2)^n |f(x + t) -
+f(x)|dt+\]</span> <span class="math display">\[+
+c_n\displaystyle\int\limits_{\delta}^1 (1- t^2)^n |f(x + t) -
+f(x)|dt+\]</span> <span class="math display">\[+ c_n
+\displaystyle\int\limits_{-\delta}^{\delta} (1- t^2)^n |f(x + t) -
+f(x)|dt \leqslant \varepsilon + 2M\varepsilon \implies\]</span> <span
+class="math display">\[\implies f_n(x) \overset{[0,
+1]}{\rightrightarrows}f(x)\]</span> <span class="math display">\[f_n(x)
+= c_n\cdot \displaystyle\int\limits_x^{1-x} f(x + t)(1-t^2)^ndt
+\overset{\tau = x+t}{=} c_n\cdot \displaystyle\int\limits_0^1 f(\tau)(1
+- (x - \tau)^2)^nd\tau\]</span></p>
+</div>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Это назвается ядро сингулярного разложения.<a
+href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="формула-стирлинга.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="ряды-фурье.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

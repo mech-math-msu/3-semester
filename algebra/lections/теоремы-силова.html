@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Теоремы Силова</title>
+    <style>
+        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2.5rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+        h4 {
+            font-size: 1.4rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="действие-группы.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="коммутант-группы.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+
+
+<h1 data-number="12" id="теоремы-силова">Теоремы Силова</h1>
+<div id="definition-42">
+<p><strong>Определение:</strong> Пусть <span
+class="math inline">\(G\)</span> – конечная группа и <span
+class="math inline">\(|G| = p^k\cdot m\)</span>, причем <span
+class="math inline">\(p \nmid m\)</span>. Тогда подгруппа <span
+class="math inline">\(G\)</span> порядка <span
+class="math inline">\(p^k\)</span> – <em>силовская</em> <span
+class="math inline">\(p\)</span>-<em>подгруппа</em>.</p>
+</div>
+<div id="definition-43">
+<p><strong>Определение:</strong> <em>Нормализатор</em> <span
+class="math inline">\(\operatorname{N}(H)\)</span> подгруппы <span
+class="math inline">\(H\)</span> – это <span class="math inline">\(\{g
+\in G| \,\,\,\, gH g^{-1} = H\}\)</span>.</p>
+</div>
+<div id="statement-23">
+<p><strong>Утверждение:</strong> Подгруппа является нормальной
+подгруппой в своем нормализаторе.</p>
+<p><em>Доказательство:</em> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-17">
+<p><strong>Теорема:</strong> Пусть <span
+class="math inline">\(G\)</span> – конечная группа, <span
+class="math inline">\(p\)</span> – простое число. Тогда</p>
+<ol type="1">
+<li>Если <span
+class="math inline">\(p^k\,\,|\,\,\left|G\right|\)</span>, то существует
+подгруппа <span class="math inline">\(H\)</span> группы <span
+class="math inline">\(G\)</span>, такая что <span
+class="math inline">\(|H| = p^k\)</span>. <a href="#fn1"
+class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></li>
+<li>Все подгруппы порядка <span class="math inline">\(p^k\)</span>
+сопряжены некоторой силовской <span
+class="math inline">\(p\)</span>-подгруппе. <a href="#fn2"
+class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a></li>
+<li>Пусть число силовских <span
+class="math inline">\(p\)</span>-подгрупп – <span
+class="math inline">\(N_p\)</span>. Тогда <span
+class="math inline">\(N_p \equiv 1\mod p\)</span> и <span
+class="math inline">\(N_p \,\,|\,\, m\)</span>.</li>
+</ol>
+<p><em>Доказательство:</em></p>
+<p><span class="math display">\[\boxed{1}\]</span></p>
+<p><span class="math inline">\(\boxed{\operatorname{I}}\)</span> Пусть
+<span class="math inline">\(p\,\,|\,\,|Z(G)|\)</span>. <span
+class="math inline">\(Z(G)\)</span> – это конечная абелева группа.
+Следовательно <a href="lection-cauchy-theorem.html#theorem-0">по теореме
+Коши</a> <a href="#fn3" class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a> <span class="math inline">\(\exists
+g \in Z(G): \,\,\,\, \operatorname{ord}g = p\)</span>. <span
+class="math inline">\(p^{k - 1}\,\,|\,\,\left|G/\langle
+g\rangle\right|\)</span> <a href="#fn4" class="footnote-ref" id="fnref4"
+role="doc-noteref"><sup>4</sup></a>. По предположению индукции
+существует <span class="math inline">\(\hat{H} \subset G/\langle
+g\rangle\)</span>, такая, что <span class="math inline">\(|\hat{H}| =
+p^{k - 1}\)</span>. В качестве <span class="math inline">\(H\)</span>
+возьмем прообраз <span class="math inline">\(\hat{H}\)</span> при
+гомоморфизме <span class="math inline">\(G \ni x \mapsto x\langle
+g\rangle \in G/\langle g\rangle \,\,\,\,\blacksquare\)</span> <a
+href="#fn5" class="footnote-ref" id="fnref5"
+role="doc-noteref"><sup>5</sup></a></p>
+<p><span class="math inline">\(\boxed{\operatorname{II}}\)</span> Пусть
+<span class="math inline">\(p \nmid  |Z(G)|\)</span>. Рассмотрим
+действие сопряжением группы на себя. Так как <span
+class="math inline">\(|G| = |G\circ x_1|+ \ldots + |G\circ x_n|\)</span>
+и порядок <span class="math inline">\(Z(G)\)</span> – это количество
+орбит длины <span class="math inline">\(1\)</span>, существует орбита
+неединичной длины <span class="math inline">\(G\circ x\)</span>, такая,
+что <span class="math inline">\(p \nmid |G\circ x| = \frac{|G|}{|C(x)|}
+\implies p^k \,\,|\,\, |\operatorname{St}(x)|\)</span> <a href="#fn6"
+class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>.
+Значит по предположению индукции <span class="math inline">\(\exists H
+\subset \operatorname{St}(x)\)</span>, такая, что <span
+class="math inline">\(p^k \,\,|\,\,|H| \,\,\,\,\blacksquare\)</span> <a
+href="#fn7" class="footnote-ref" id="fnref7"
+role="doc-noteref"><sup>7</sup></a></p>
+<p><span class="math display">\[\boxed{2}\]</span></p>
+<p>Пусть <span class="math inline">\(S\)</span> – силовская <span
+class="math inline">\(p\)</span>-подгруппа, <span
+class="math inline">\(P\)</span> – <span
+class="math inline">\(p\)</span>-подгруппа.</p>
+<p>Рассмотрим <a href="lection-group-action.html#definition-5">действие
+левыми сдвигами</a> группы <span class="math inline">\(P\)</span> на
+<span class="math inline">\(\{gS|\,\,\,\, g \in G\}\)</span>. <span
+class="math inline">\(|\{gS\}| = m\)</span>, так как <span
+class="math inline">\(|G|/|S| = m\)</span>. <span
+class="math inline">\(m = \displaystyle \sum\)</span> длин орбит <span
+class="math inline">\(= k_1 + \ldots + k_l\)</span>. <span
+class="math inline">\(k_i = p^n_i\)</span>, так как длина орбиты равна
+индексу стабилизатора, и, в частности, делит порядок группы <span
+class="math inline">\(P\)</span>. Но <span
+class="math inline">\(p\)</span> не делит <span
+class="math inline">\(m\)</span>, а следовательно существует
+одноэлементная орбита <span class="math inline">\(P\circ (g’S)\)</span>,
+то есть <span class="math inline">\(\forall g \in P \,\,\,\, g g’S = g’S
+\iff g’^{-1}g g’S \in S \iff g’^{-1}g g’ \in S \iff P \subset
+g’Sg’^{-1}\)</span>. Если <span class="math inline">\(P\)</span>
+силовская, то <span class="math inline">\(P = g’Sg’^{-1}
+\,\,\,\,\blacksquare\)</span></p>
+<div id="corollary-5">
+<p><strong>Следствие:</strong> Силовская <span
+class="math inline">\(p\)</span>-подгруппа <span
+class="math inline">\(S\)</span> нормальна <span
+class="math inline">\(\iff S\)</span> единственна.</p>
+<p><em>Доказательство:</em> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<p><span class="math display">\[\boxed{3}\]</span></p>
+<p>Докажем, что <span class="math inline">\(N_p \,\,|\,\, m\)</span>.
+Рассмотрим действие группой <span class="math inline">\(G\)</span> на
+множество всех подгрупп группы <span class="math inline">\(G\)</span>
+сопряжением. По второй т.Силова все силовские подгруппы сопряжены и
+следовательно лежат в одной орбите, длина которой и есть их количество.
+Так как длина орбиты равна индексу стабилизатора, и в частности делит
+порядок группы, получаем, что <span class="math inline">\(N_p \,\,|\,\,
+|G|\)</span>.</p>
+<p>Рассмотрим действие сопряжением группы <span
+class="math inline">\(S\)</span> на множество силовских подгрупп <span
+class="math inline">\(G\)</span>. <span class="math inline">\(N_p =
+p^{k_1} + \ldots + p^{k_n}\)</span>. Есть одна одноточечная орбита <span
+class="math inline">\(\{S\}\)</span>, <span class="math inline">\(s\circ
+S = s S s^{-1} = S \,\,\,\, \forall s \in S\)</span>. Докажем, что
+других одноточеных орбит нет. Пусть <span
+class="math inline">\(\{H\}\)</span> – одноточечная орбита, то есть
+<span class="math inline">\(\forall s \in S \,\,\,\, sH s^{-1} = H
+\implies S \subset \operatorname{N}(H) \implies\)</span> в <span
+class="math inline">\(G\)</span> две силовские <span
+class="math inline">\(p\)</span>-подгруппы в <span
+class="math inline">\(\operatorname{N}(H)\)</span> и <span
+class="math inline">\(H\)</span> – нормальна <span
+class="math inline">\(\implies S = H\)</span>.</p>
+<p>Значит <span class="math inline">\(\gcd{N_p, p} = 1\)</span>, а
+следовательно <span class="math inline">\(N_p \,\,|\,\, m
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="12.1"
+id="лемма-бернсайда-о-количестве-орбит-конечной-группы">Лемма Бернсайда
+о количестве орбит конечной группы</h2>
+<div id="definition-44">
+<p><strong>Определение:</strong> Пусть группа <span
+class="math inline">\(G\)</span> действует на множестве <span
+class="math inline">\(X\)</span>. <span
+class="math inline">\(\operatorname{Fix}(g) = \{x \in X: \,\,\,\, g\circ
+x = x\}\)</span>.</p>
+</div>
+<div id="definition-45">
+<p><strong>Определение:</strong> <em>Точка неподвижна</em></p>
+</div>
+<div id="theorem-18">
+<p><strong>Теорема:</strong> Пусть <span
+class="math inline">\(G\)</span> – конечная группа, <span
+class="math inline">\(X\)</span> – конечное множество и <span
+class="math inline">\(G\)</span> действует на <span
+class="math inline">\(X\)</span>. Тогда число орбит равно среднему числу
+неподвижных точек.</p>
+<p><em>Доказательство:</em></p>
+<p><span class="math inline">\(X = X_1\sqcup X_2 \ldots\sqcup
+X_k\)</span>, где <span class="math inline">\(X_i\)</span> – орбита.
+Нарисуем табличку:</p>
+<p><span class="math display">\[\begin{array}{c|c|c|}
+&amp; g_1 &amp; g_2\\
+\hline
+x_1 &amp; \checkmark &amp; \checkmark\\
+\hline
+x_2 &amp; \checkmark &amp; \\
+\hline
+\end{array}\]</span></p>
+<p>Имеем <span class="math inline">\(\displaystyle \sum_{g \in
+G}^{}|\operatorname{Fix}(g)| = \displaystyle \sum_{x \in
+X}^{}\operatorname{St}(x) = \displaystyle \sum_{x \in
+X_1}^{}|\operatorname{St}(x)| + \ldots + \displaystyle \sum_{x \in
+X_k}^{}|\operatorname{St}(x)|\)</span>.</p>
+<p><span class="math inline">\(\displaystyle \sum_{x \in
+X_1}^{}\frac{|G|}{|G \circ x|} = |X_1|\frac{|G|}{|G \circ x|} = |G|
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-19">
+<p><strong>Теорема:</strong> Конечную подгруппу нельзя представить, как
+объединение сопряженных собственных подгрупп.</p>
+<p><em>Доказательство:</em> Пусть <span class="math inline">\(G =
+\cup_{g \in G}gHg^{-1}\)</span>, где <span
+class="math inline">\(H\)</span> – подгруппа. Рассмотрим действие группы
+<span class="math inline">\(G\)</span> на множестве <span
+class="math inline">\(\{gHg^{-1}: \,\,\,\, g \in G\}\)</span>. Орбита
+одна, так как любую подгруппу вида <span
+class="math inline">\(gHg^{-1}\)</span> можем получить сопряжением.
+Рассмотрим <span class="math inline">\(\operatorname{Fix}(g)\)</span>.
+<span class="math inline">\(gHg^{-1} \in
+\operatorname{Fix}(g’)\)</span>, если <span class="math inline">\(g’ \in
+gHg^{-1}\implies\)</span>, так как предположили, что вся группа
+покрывается, <span class="math inline">\(\forall g \in G \,\,\,\,
+|\operatorname{Fix}(g)| \geqslant 1\)</span> и по лемме Бернсайда <span
+class="math inline">\(\frac1{|G|}\displaystyle \sum_{g \in
+G}|\operatorname{Fix}(g)| = 1 \implies |\operatorname{Fix}(g)| = 1
+\,\,\,\, \forall g \in G\)</span>, но <span
+class="math inline">\(\operatorname{Fix}(e) = \{gHg^{-1}: \,\,\,\, g \in
+G\} \implies \{gHg^{-1}: \,\,\,\, g \in G\} = \{H\} \implies H
+\vartriangleleft G \,\,\,\,\blacksquare\)</span></p>
+</div>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>В частности, существует силовская <span
+class="math inline">\(p\)</span>-подгруппа.<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>В частности, все силовские <span
+class="math inline">\(p\)</span>-подгруппы сопряжены.<a href="#fnref2"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Это, конечно, из пушки по воробьям и можно просто взять
+подгруппу простого порядка в разложении <span
+class="math inline">\(Z(G)\)</span> на прямую сумму циклических.<a
+href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Факторизовать можем, так как любая подгруппа <span
+class="math inline">\(Z(G)\)</span> нормальна в <span
+class="math inline">\(G\)</span>.<a href="#fnref4" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Порядок группы станет <span
+class="math inline">\(p\)</span>, так как добавятся <span
+class="math inline">\(p\)</span> элементов из группы <span
+class="math inline">\(\langle g\rangle\)</span>.<a href="#fnref5"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p><span class="math inline">\(|G\circ x| =
+\frac{|G|}{|\operatorname{St}(x)|}\)</span>, так как <a
+href="способы-получения-групп.html#theorem-1">теорема</a>.<a
+href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p><span class="math inline">\(|\operatorname{St}(x)| &lt;
+|G|\)</span>, так как <span class="math inline">\(x \not\in
+Z(G)\)</span><a href="#fnref7" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="действие-группы.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="коммутант-группы.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

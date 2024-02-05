@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Структуры и теории. Элементарные расширения</title>
+    <style>
+        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2.5rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+        h4 {
+            font-size: 1.4rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="теория-моделей.-определения-и-примеры.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="полные-теории.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+
+
+<h1 data-number="12"
+id="структуры-и-теории.-элементарные-расширения">Структуры и теории.
+Элементарные расширения</h1>
+<h2 data-number="12.1" id="теория-структуры-и-класса-структур">Теория
+структуры и класса структур</h2>
+<div id="definition-47">
+<p><strong>Определение:</strong> Пусть <span
+class="math inline">\(M\)</span> – структура, то есть интерпретация и
+универсум.</p>
+<p><em>Теория структуры</em> <span
+class="math inline">\(\operatorname{Th}(M)\)</span> – это множество
+высказываний истинных в данной структуре.</p>
+<p>Пусть <span class="math inline">\(m\)</span> – множество структур.
+<span class="math inline">\(\operatorname{Th}(m) = \cap_{M \in
+m}(\operatorname{Th}(M))\)</span>.</p>
+<p>Пусть <span class="math inline">\(\varphi\)</span> – теория, то есть
+множество высказываний. Класс всех моделей теории <span
+class="math inline">\(\varphi\)</span> <strong>обозначается</strong>
+<span class="math inline">\(\operatorname{Mod}(\varphi)\)</span>.</p>
+<p>То есть имеем отображения <span
+class="math inline">\(\operatorname{Th}\)</span> и <span
+class="math inline">\(\operatorname{Mod}\)</span>.</p>
+</div>
+<div id="statement-13">
+<p><strong>Утверждение:</strong> (<em>свойства отображений теория и
+модель</em>)</p>
+<ol type="1">
+<li><span class="math inline">\(\operatorname{Th}\)</span> и <span
+class="math inline">\(\operatorname{Mod}\)</span> нестрого монотонно
+убывающие отображения.</li>
+<li><span class="math inline">\(\varphi \subset \operatorname{Th}(m)
+\iff m \subset \operatorname{Mod}(\varphi)\)</span>.</li>
+<li><span class="math inline">\(\varphi \subset
+\operatorname{Th}(\operatorname{Mod}(\varphi))\)</span>.</li>
+<li><span class="math inline">\(m \subset
+\operatorname{Mod}(\operatorname{Th}(m))\)</span>.</li>
+</ol>
+<p><em>Доказательство:</em> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="12.2"
+id="соответствие-галуа-между-теориями-и-классами-структур">Соответствие
+Галуа между теориями и классами структур</h2>
+<div id="definition-48">
+<p><strong>Определение:</strong> Пусть заданы два частично упорядоченных
+множества <span class="math inline">\(X\)</span> и <span
+class="math inline">\(Y\)</span>. Элементы первого множества обозначим
+<span class="math inline">\(x\)</span>, второго – <span
+class="math inline">\(y\)</span>, а оба отношения порядка обозначим
+<span class="math inline">\(\subseteq\)</span>. Тогда пара отображений
+<span class="math inline">\(f: X \to Y\)</span> и <span
+class="math inline">\(g: Y \to X\)</span> – <em>соответствие Галуа</em>
+множеств <span class="math inline">\(X\)</span> и <span
+class="math inline">\(Y\)</span>, если</p>
+<ol type="1">
+<li><span class="math inline">\(f\)</span> и <span
+class="math inline">\(g\)</span> нестрого монотонно убывающие
+отображения,</li>
+<li><span class="math inline">\(x \subseteq g(y) \iff y \subseteq
+f(x)\)</span>,</li>
+<li><span class="math inline">\(x \subseteq g(f(x))\)</span>,</li>
+<li><span class="math inline">\(y \subseteq f(g(x))\)</span>.</li>
+</ol>
+</div>
+<div id="statement-14">
+<p><strong>Утверждение:</strong> <span class="math inline">\(\langle
+\operatorname{Th}, \operatorname{Mod}\rangle\)</span> – соответствие
+Галуа между теориями и классами структур.</p>
+<p><em>Доказательство:</em> см. свойства <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<h2 data-number="12.3"
+id="эквивалентность-структур.-соотношение-между-эквивалентностью-и-изоморфизмом">Эквивалентность
+структур. Соотношение между эквивалентностью и изоморфизмом</h2>
+<div id="definition-49">
+<p><strong>Определение:</strong> Структуры <em>эквивалентны</em>, если
+их теории совпадают.</p>
+</div>
+<div id="statement-15">
+<p><strong>Утверждение:</strong> Изоморфные структуры эквивалентны.</p>
+<p><em>Доказательство:</em></p>
+</div>
+<h2 data-number="12.4"
+id="элементарное-расширение-и-элементарная-подструктура-структуры">Элементарное
+расширение и элементарная подструктура структуры</h2>
+<div id="definition-50">
+<p><strong>Определение:</strong> <em>Подструктура</em> структуры <span
+class="math inline">\(\langle U, I \rangle\)</span> с сигнатурой <span
+class="math inline">\(\Sigma\)</span> – это структура <span
+class="math inline">\(\langle U’, I’\rangle\)</span>, где <span
+class="math inline">\(U’ \subset U\)</span>, <span
+class="math inline">\(I’(\operatorname{Ob}_{\Sigma}) \subset
+U’\)</span>, <span class="math inline">\(\forall a \in
+\operatorname{Ob}_{\Sigma} \,\,\,\, I’(a) = I(a) \in U’\)</span>, <span
+class="math inline">\(\forall P \in \operatorname{Pred}_{\Sigma},
+\,\,\,\, I’(P) = I(P)\cap (U’)^n\)</span>, где <span
+class="math inline">\(n\)</span> – порядок имени отношения <span
+class="math inline">\(P\)</span>. В этом случае <span
+class="math inline">\(\langle U, I \rangle\)</span> <em>расширение
+структуры</em> <span class="math inline">\(\langle U’, I’
+\rangle\)</span>.</p>
+<p>Подструктура <em>элементарная</em>, если <span
+class="math inline">\(\forall P \in \operatorname{Pred}_{\Sigma},
+\,\,\,\, \forall x_1, \ldots, x_n \in \operatorname{Var} \langle U, I
+\rangle \models\,\,\,\, P(x_1, \ldots, x_n) \iff \langle U’, I’\rangle
+\models P(x_1, \ldots, x_n)\)</span>.</p>
+</div>
+<h2 data-number="12.5" id="критерий-тарского-воота">Критерий Тарского –
+Воота</h2>
+<div id="theorem-11">
+<p><strong>Теорема:</strong> (<em>критерий Тарского-Воота</em>)
+Расширение <span class="math inline">\(\langle U’, I’\rangle\)</span>
+структуры <span class="math inline">\(\langle U, I \rangle\)</span>
+элементарное <span class="math inline">\(\iff \forall \Phi(\mathbf{x},
+y)\,\,\,\,\forall \mathbf{a} \in (U)^{*} \,\,\,\, \exists b \in U’:
+\,\,\,\, \Phi(\mathbf{a}, b) \implies \exists c \in U: \,\,\,\,
+\Phi(\mathbf{a}, c)\)</span>.</p>
+<p><em>Доказательство:</em></p>
+</div>
+<h2 data-number="12.6"
+id="теоремы-левенгейма-сколема-об-элементарной-подструктуре">Теоремы
+Левенгейма – Сколема об элементарной подструктуре</h2>
+<div id="theorem-12">
+<p><strong>Теорема:</strong> (<em>Левегейма-Сколема</em>) Любая
+бесконечная структура с счетной или конечной сигнатурой содержит счетную
+элементарную подструктуру.</p>
+<p><em>Доказательство:</em></p>
+</div>
+<h2 data-number="12.7"
+id="теоремы-левенгейма-сколема-об-элементарном-расширении">Теоремы
+Левенгейма – Сколема об элементарном расширении</h2>
+<div id="theorem-13">
+<p><strong>Теорема:</strong> (<em>Левегейма-Сколема</em>) Любая
+бесконечная нормальная структура с счетной или конечной сигнатурой имеет
+элементарное нормальное расширение любой мощности.</p>
+<p><em>Доказательство:</em></p>
+</div>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="теория-моделей.-определения-и-примеры.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="полные-теории.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

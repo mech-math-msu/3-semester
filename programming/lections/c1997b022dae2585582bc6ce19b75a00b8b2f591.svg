@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!-- Created by MetaPost 2.02 on 2024.02.05:1232 -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="303.231766" height="189.694305" viewBox="0 0 303.231766 189.694305">
+<!-- Original BoundingBox: -10.472000 -9.807800 292.759766 179.886505 -->
+  <path d="M10.472000 179.886505L95.511353 9.807800L293.936508 179.886505Z" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <g transform="translate(0.000000 183.290405)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">A</text>
+  </g>
+  <path d="M10.472000 179.886505l0 0" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 3.000000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <g transform="translate(91.982895 6.807800)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">B</text>
+  </g>
+  <path d="M95.511353 9.807800l0 0" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 3.000000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <g transform="translate(296.036499 177.786514)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">C</text>
+  </g>
+  <path d="M293.936508 179.886505l0 0" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 3.000000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M93.249741 26.816711L92.684525 31.067642" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M105.493530 26.816711L107.988312 31.067642" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M87.006897 26.816711C94.110962 33.920792,106.159119 31.487762,109.949707 22.183624" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <g transform="translate(126.053375 189.694305)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">D</text>
+  </g>
+  <path d="M129.858566 179.886505l0 0" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 3.000000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M95.511353 9.807800L129.858566 179.886505" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+</svg>

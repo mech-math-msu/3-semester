@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+    
+    
+    
+    
+    <title>Основная теорема о гомоморфизме</title>
+    <style>
+        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        span.navlink { margin-left: 10px; }
+        span.navlink-label { display: inline-block; min-width: 4em; }
+        html {
+                    font-family: Georgia, serif;
+            
+                    font-size: 18px;
+            
+                    line-height: 1.45;
+            
+            color: #1a1a1a;
+
+            background-color: #fdfdfd;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 64%;
+            padding-left: 20px;
+            padding-right: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9rem;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+        @media print {
+            html {
+                background-color: white;
+            }
+            body {
+                background-color: transparent;
+                color: black;
+                font-size: 16px;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+        p {
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #1a1a1a;
+        }
+        a:hover {
+            color: #7bc99a;
+        }
+        a:visited {
+            color: #1a1a1a;
+        }
+        img {
+            max-width: 100%;
+        }
+        svg {
+            height: auto;
+            max-width: 100%;
+        }
+
+        h1 {
+            padding-bottom: 3px;
+            border-bottom: 1px solid black;
+        }
+
+        h1.title {
+            font-size: 2.5rem;
+            border: none;
+        }
+        h2.toc-title {
+            border: none !important;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 1rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+        h4 {
+            font-size: 1.4rem;
+        }
+
+        ol, ul {
+            padding-left: 1.7rem;
+            margin-top: 1rem;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+        blockquote {
+            margin: 1rem 0 1rem 1.7rem;
+            padding-left: 1rem;
+            border-left: 2px solid #e6e6e6;
+            color: #606060;
+        }
+
+
+        code {
+            font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+                font-size: 85%;
+        /*    padding: 1rem 2rem;*/
+            margin: 0;
+            hyphens: manual;
+        }
+        pre {
+            margin: 1rem 0;
+                padding: 1rem 2rem;
+            overflow: auto;
+        }
+        pre code {
+        /*    padding: 1rem 2rem;*/
+            overflow: visible;
+            overflow-wrap: normal;
+        }
+        .sourceCode {
+            background-color: transparent;
+            overflow: visible;
+        }
+        div.sourceCode {
+            border-radius: 5px;
+            margin-left: 10px !important;
+        }
+        hr {
+            background-color: #1a1a1a;
+            border: none;
+            height: 1px;
+            margin: 1rem 0;
+        }
+        table {
+            margin: 1rem 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75rem;
+        }
+        tbody {
+            margin-top: 0.5rem;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        th {
+            border-top: 1px solid #1a1a1a;
+            padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+        }
+        td {
+            padding: 0.125rem 0.5rem 0.25rem 0.5rem;
+        }
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        #TOC li {
+            list-style: none;
+        }
+        #TOC ul {
+            padding-left: 1.3rem;
+        }
+        #TOC > ul {
+            padding-left: 0;
+        }
+        #TOC a:not(:hover) {
+            text-decoration: none;
+        }
+
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+        ul.task-list[class]{list-style: none;}
+        ul.task-list li input[type="checkbox"] {
+            font-size: inherit;
+            width: 0.8rem;
+            margin: 0 0.8rem 0.2rem -1.6rem;
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+    
+    <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
+
+    
+            <script
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+            type="text/javascript"></script>
+    </head>
+<body>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="факторгруппы.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="любая-подгруппа-конечного-индекса-содержит-нормальную-подгруппу-конечного-индекса.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+
+
+<h1 data-number="6" id="основная-теорема-о-гомоморфизме">Основная
+теорема о гомоморфизме</h1>
+<div id="lemma-0">
+<p><strong>Лемма:</strong> (<em>критерий инъективности</em>) Пусть <span
+class="math inline">\(\varphi: \,\,\,\, G \to H\)</span> –
+гомоморфизм.</p>
+<p>Тогда <span class="math inline">\(\varphi\)</span> инъективно <span
+class="math inline">\(\iff\)</span> <span
+class="math inline">\(\operatorname{Ker} \varphi = \{e\}\)</span>.</p>
+<p><em>Доказательство:</em></p>
+<p><span class="math inline">\(\bbox[4px, border: 1px solid
+black]{\Longrightarrow}\)</span> Очевидно.</p>
+<p><span class="math inline">\(\bbox[4px, border: 1px solid
+black]{\Longleftarrow}\)</span> Пусть <span
+class="math inline">\(\varphi(a) = \varphi(b) \implies\)</span> <span
+class="math inline">\(\implies e = \varphi(a)\cdot (\varphi(b))^{-1} =
+\varphi(a)\cdot \varphi(b^{-1}) = \varphi(a\cdot b^{-1}) \implies a\cdot
+b^{-1} = e \implies a = b \,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="theorem-5">
+<p><strong>Теорема:</strong> (<em>основная теорема о гомоморфизме</em>)
+Пусть <span class="math inline">\(\varphi: G \to H\)</span> –
+гомоморфизм. Тогда</p>
+<p><span class="math display">\[\varphi(G) \simeq G / \operatorname{Ker}
+\varphi\]</span></p>
+<p><em>Доказательство:</em> Построим изоморфизм <span
+class="math inline">\(\alpha: G / \operatorname{Ker} \varphi \to
+\varphi(G)\)</span>, <span class="math inline">\(\alpha: g\cdot
+\operatorname{Ker}\varphi \mapsto \varphi(g)\)</span>.</p>
+<ol type="1">
+<li>Корректность определения отображения <span
+class="math inline">\(\alpha\)</span>. <a href="#fn1"
+class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
+Пусть <span class="math inline">\(g \operatorname{Ker}\varphi = g’
+\operatorname{Ker}\varphi \implies g = g’ x, \,\,\,\, x \in
+\operatorname{Ker}\varphi\)</span>. <span class="math inline">\(\alpha(g
+\operatorname{Ker}\varphi) = \varphi(g) = \varphi(g’x) = \alpha(g’
+\operatorname{Ker}\varphi)\)</span></li>
+<li>Покажем, что <span class="math inline">\(\alpha\)</span> гомоморфизм
+<span class="math inline">\(\varphi(G)\)</span> и <span
+class="math inline">\(G / \operatorname{Ker} \varphi\)</span>.</li>
+</ol>
+<p><span class="math inline">\(\alpha((g \operatorname{Ker}\varphi)\cdot
+(g’ \operatorname{Ker}\varphi)) = \alpha(gg’\cdot
+\operatorname{Ker}\varphi) = \varphi(gg’) = \alpha(g
+\operatorname{Ker}\varphi) \alpha(g’
+\operatorname{Ker}\varphi)\)</span></p>
+<ol start="3" type="1">
+<li><p>Проверим инъективность. <span class="math inline">\(g \cdot
+\operatorname{Ker}\varphi \in \operatorname{Ker}\alpha \implies \alpha(g
+\cdot \operatorname{Ker}\varphi) = e_{\varphi(G)} = \varphi(g) \implies
+g \in \operatorname{Ker}\varphi \implies\)</span> <a
+href="основная-теорема-о-гомоморфизме.html#lemma-0">по лемме</a> <span
+class="math inline">\(\implies g = e\)</span></p></li>
+<li><p>Сюръективность следует из определения <span
+class="math inline">\(\alpha \,\,\,\,\blacksquare\)</span></p></li>
+</ol>
+</div>
+<h2 data-number="6.1"
+id="пример-использования-основной-теоремы-о-гомоморфизме">Пример
+использования основной теоремы о гомоморфизме</h2>
+<p>Рассмотрим группы <span
+class="math inline">\(GL_3(\mathbb{C})\)</span><a href="#fn2"
+class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> и
+ее погруппу <span class="math inline">\(SL_3(\mathbb{C})\)</span><a
+href="#fn3" class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a>.</p>
+<p>Чему изоморфна группа <span class="math inline">\(GL_3(\mathbb{C}) /
+SL_3(\mathbb{C})\)</span>?</p>
+<blockquote>
+<p>Вообще, это глупый вопрос и надо отвечать изоморфна себе, но хотим
+что-то поинтереснее.</p>
+</blockquote>
+<p>Подберем такой гомоморфизм, чтобы его ядром были все матрицы с
+определителем <span class="math inline">\(1\)</span>. Это определитель.
+По теореме о гомоморфизме получаем, что <span
+class="math inline">\(GL_3(\mathbb{C}) / SL_3(\mathbb{C}) \simeq
+\operatorname{Img}\det = C^{*}\)</span>.</p>
+<h2 data-number="6.2"
+id="группа-автоморфизмов-и-внутренних-автоморфизмов">Группа
+автоморфизмов и внутренних автоморфизмов</h2>
+<div id="statement-9">
+<p><strong>Утверждение:</strong> Пусть <span
+class="math inline">\(G\)</span> – группа. Зафиксируем <span
+class="math inline">\(g \in G\)</span>. Рассмотрим отображение <span
+class="math inline">\(\varphi_g: G \to G\)</span>, <span
+class="math inline">\(\varphi_g: x \mapsto gxg^{-1}\)</span>. Это
+отображение автоморфизм группы <span
+class="math inline">\(G\)</span>.</p>
+<p><em>Доказательство:</em> Биективность очевидна. Проверим
+гомоморфность: <span class="math inline">\(\varphi_g(xy) = gxyg^{-1} =
+gxgg^{-1}yg^{-1} = \varphi_g(x)\varphi_g(y)
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="statement-10">
+<p><strong>Утверждение:</strong> Пусть <span
+class="math inline">\(G\)</span> – группа, <span
+class="math inline">\(\Phi: G \to \operatorname{Aut}G\)</span>, <span
+class="math inline">\(g \mapsto \varphi_g\)</span>. Тогда <span
+class="math inline">\(\Phi\)</span> – гомоморфизм.</p>
+<p><em>Доказательство:</em> <span class="math inline">\(\Phi(gg’)(x) =
+gg’x (gg’)^{-1} = gg’xg’^{-1}g^{-1} = \Phi(g)\Phi(g’)(x)
+\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="definition-25">
+<p><strong>Определение:</strong> <span
+class="math inline">\(\operatorname{Ker}\Phi = \{g \in G: \,\,\,\,
+\varphi_g(x) = x \,\,\,\, \forall x \in G\}=\)</span> <span
+class="math inline">\(= \{g \in G: \,\,\,\, gxg^{-1} = x \,\,\,\,
+\forall x \in G\} = \{g \in G: \,\,\,\, gx = xg \,\,\,\, \forall x \in
+G\} = Z(G)\)</span> – <em>центр</em> группы <span
+class="math inline">\(G\)</span>.</p>
+</div>
+<div id="definition-26">
+<p><strong>Определение:</strong> <span
+class="math inline">\(\operatorname{Img}\Phi =
+\operatorname{Inn}G\)</span> – <em>группа внутренних автоморфизмов</em>
+<span class="math inline">\(G\)</span>.</p>
+</div>
+<div id="statement-11">
+<p><strong>Утверждение:</strong> <span
+class="math display">\[\operatorname{Inn} G \simeq G / Z(G)\]</span></p>
+<p><em>Доказательство:</em> Следует из определения <a
+href="группы.html#definition-1">центра</a>, <a
+href="группы.html#definition-2">группы внутренних автоморфизмов</a> и <a
+href="группы.html#theorem-0">основной теоремы о гомоморфизме</a> <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="statement-12">
+<p><strong>Утверждение:</strong> (<em>нормальность подгруппы внутренних
+автоморфизмов</em>) Пусть <span class="math inline">\(G\)</span> –
+группа. Тогда <span class="math inline">\(\operatorname{Inn}G
+\vartriangleleft \operatorname{Aut}G\)</span>.</p>
+<p><em>Доказательство:</em> <span class="math inline">\(\forall \alpha
+\in \operatorname{Aut}G \,\,\,\, \forall \varphi_g \in
+\operatorname{Inn}G \,\,\,\, (\alpha \varphi_g \alpha^{-1})(x) =
+\alpha(\varphi_g(\alpha^{-1}(x)))=\)</span> <span
+class="math inline">\(= \alpha(g\alpha^{-1}(x)g^{-1}) = \alpha(g)x
+\alpha^{-1}(g) = \varphi_{\alpha(g)}(x) \implies \alpha \varphi_g
+\alpha^{-1} \in \operatorname{Inn}G \,\,\,\,\blacksquare\)</span></p>
+</div>
+<div id="definition-27">
+<p><strong>Определение:</strong> <span
+class="math inline">\(\operatorname{Aut}G / \operatorname{Inn}G =
+\operatorname{Out}G\)</span> – <em>група внешних автоморфизмов</em>.</p>
+</div>
+<h2 data-number="6.3" id="нормальное-замыкание">Нормальное
+замыкание</h2>
+<div id="definition-28">
+<p><strong>Определение:</strong> Пусть <span
+class="math inline">\(G\)</span> – группа, <span class="math inline">\(H
+\subset G\)</span>. <span class="math inline">\(&lt;\displaystyle\cup_{g
+\in G}gHg^{-1}&gt;  = &lt;&lt;H&gt;&gt; \vartriangleleft G\)</span> –
+<em>нормальное замыкание</em> <span
+class="math inline">\(H\)</span>.</p>
+</div>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Нужно показать, что одинаковые элементы переходят в
+одинаковые.<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Невырожденные квадратные матрицы.<a href="#fnref2"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Невырожденные квадратные матрицы с определителем <span
+class="math inline">\(1\)</span>.<a href="#fnref3" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+
+<nav id="sitenav">
+    <div class="sitenav">
+        <span class="navlink">
+                        <a href="факторгруппы.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                    </span>
+        <span class="navlink">
+                        <a href="любая-подгруппа-конечного-индекса-содержит-нормальную-подгруппу-конечного-индекса.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                    </span>
+    </div>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!-- Created by MetaPost 2.02 on 2024.02.05:1232 -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="205.930359" height="193.688492" viewBox="0 0 205.930359 193.688492">
+<!-- Original BoundingBox: -106.079468 -99.534073 99.850891 94.154419 -->
+  <path d="M106.079468 94.154419L191.118820 94.154419" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M106.079468 94.154419L166.211441 34.022446" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M106.079468 94.154419L106.079468 9.115067" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M106.079468 94.154419L45.947495 34.022446" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M106.079468 94.154419L21.040115 94.154419" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M106.079468 94.154419L45.947495 154.286392" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M106.079468 94.154419L106.079468 179.193771" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M106.079468 94.154419L166.211441 154.286392" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <path d="M106.079468 94.154419L191.118820 94.154419" style="stroke:rgb(0.000000%,0.000000%,0.000000%); stroke-width: 0.500000;stroke-linecap: round;stroke-linejoin: round;stroke-miterlimit: 10.000000;fill: none;"></path>
+  <g transform="matrix(1.199997,-0.000000,-0.000000,1.199997,96.892014 6.031357)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">top</text>
+  </g>
+  <g transform="matrix(1.199997,-0.000000,-0.000000,1.199997,194.118820 95.750458)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">rt</text>
+  </g>
+  <g transform="matrix(1.199997,-0.000000,-0.000000,1.199997,96.892014 190.849213)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">bot</text>
+  </g>
+  <g transform="matrix(1.199997,-0.000000,-0.000000,1.199997,0.000000 97.062515)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">lft</text>
+  </g>
+  <g transform="matrix(1.199997,-0.000000,-0.000000,1.199997,168.311432 29.083176)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">urt</text>
+  </g>
+  <g transform="matrix(1.199997,-0.000000,-0.000000,1.199997,168.311432 165.041824)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">lrt</text>
+  </g>
+  <g transform="matrix(1.199997,-0.000000,-0.000000,1.199997,19.244034 165.041824)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">llft</text>
+  </g>
+  <g transform="matrix(1.199997,-0.000000,-0.000000,1.199997,18.921371 29.083176)" style="fill: rgb(0.000000%,0.000000%,0.000000%);">
+    <text font-size="9.962646">ulft</text>
+  </g>
+</svg>
