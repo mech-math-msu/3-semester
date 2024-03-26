@@ -11,7 +11,10 @@
     
     <title>Введение в топологию</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -238,19 +246,31 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                    </span>
-        <span class="navlink">
-                    </span>
-        <span class="navlink">
-                        <a href="основные-определения.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                            </span>
+            <span class="navlink">
+                            </span>
+            <span class="navlink">
+                                <a href="основные-определения.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
 <header id="title-block-header">
+
     <h1 class="title">Введение в топологию</h1>
 
     
@@ -261,7 +281,7 @@
 <nav id="TOC" role="doc-toc">
         <h2 id="toc-title" class="toc-title">Содержание</h2>
         <ul>
-        <li><a href="основные-определения.html"
+        <li><a href="основные-определения.html#основные-определения"
         id="toc-основные-определения">Основные определения</a>
         <ul>
         <li><a
@@ -269,14 +289,15 @@
         id="toc-специальные-точки-и-множества-в-топологии">Специальные точки и
         множества в топологии</a></li>
         </ul></li>
-        <li><a href="непрерывные-отображения.html"
+        <li><a href="непрерывные-отображения.html#непрерывные-отображения"
         id="toc-непрерывные-отображения">Непрерывные отображения</a></li>
-        <li><a href="гомеоморфизм.html" id="toc-гомеоморфизм">Гомеоморфизм</a>
+        <li><a href="гомеоморфизм.html#гомеоморфизм"
+        id="toc-гомеоморфизм">Гомеоморфизм</a>
         <ul>
         <li><a href="гомеоморфизм.html#теорема-о-гомеоморфизме"
         id="toc-теорема-о-гомеоморфизме">Теорема о гомеоморфизме</a></li>
         </ul></li>
-        <li><a href="различные-топологии.html"
+        <li><a href="различные-топологии.html#различные-топологии"
         id="toc-различные-топологии">Различные топологии</a>
         <ul>
         <li><a href="различные-топологии.html#метрические-пространства"
@@ -285,7 +306,7 @@
         id="toc-индуцированная-топология">Индуцированная топология</a></li>
         </ul></li>
         <li><a
-        href="инварианты-топологичеких-пространств-при-непрерывных-отображениях.html"
+        href="инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#инварианты-топологичеких-пространств-при-непрерывных-отображениях"
         id="toc-инварианты-топологичеких-пространств-при-непрерывных-отображениях">Инварианты
         топологичеких пространств при непрерывных отображениях</a>
         <ul>
@@ -317,10 +338,12 @@
         href="инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#урысоновость"
         id="toc-урысоновость">Урысоновость</a></li>
         </ul></li>
-        <li><a href="теорема-стоуна-вейерштрасса.html"
+        <li><a
+        href="теорема-стоуна-вейерштрасса.html#теорема-стоуна-вейерштрасса"
         id="toc-теорема-стоуна-вейерштрасса">Теорема
         Стоуна-Вейерштрасса</a></li>
-        <li><a href="еще-способы-получить-новую-топологию-из-уже-имеющихся.html"
+        <li><a
+        href="еще-способы-получить-новую-топологию-из-уже-имеющихся.html#еще-способы-получить-новую-топологию-из-уже-имеющихся"
         id="toc-еще-способы-получить-новую-топологию-из-уже-имеющихся">Еще
         способы получить новую топологию из уже имеющихся</a>
         <ul>
@@ -348,8 +371,9 @@
         id="toc-компактно-открытая-топология-на-пространстве-непрерывных-отображений">Компактно-открытая
         топология на пространстве непрерывных отображений</a></li>
         </ul></li>
-        <li><a href="гомотопии.html" id="toc-гомотопии">Гомотопии</a></li>
-        <li><a href="ретракции.html" id="toc-ретракции">Ретракции</a>
+        <li><a href="гомотопии.html#гомотопии"
+        id="toc-гомотопии">Гомотопии</a></li>
+        <li><a href="ретракции.html#ретракции" id="toc-ретракции">Ретракции</a>
         <ul>
         <li><a
         href="ретракции.html#свойство-продолжения-гомотопии-homotopy-extension-property"
@@ -364,8 +388,8 @@
         id="toc-второй-признак-гомотопической-эквивалентности-пространств">Второй
         признак гомотопической эквивалентности пространств</a></li>
         </ul></li>
-        <li><a href="пути.html" id="toc-пути">Пути</a></li>
-        <li><a href="фундаментальная-группа.html"
+        <li><a href="пути.html#пути" id="toc-пути">Пути</a></li>
+        <li><a href="фундаментальная-группа.html#фундаментальная-группа"
         id="toc-фундаментальная-группа">Фундаментальная группа</a>
         <ul>
         <li><a
@@ -416,10 +440,11 @@
         <li><a href="фундаментальная-группа.html#основная-теорема-алгебры"
         id="toc-основная-теорема-алгебры">Основная теорема алгебры</a></li>
         </ul></li>
-        <li><a href="свободное-произведение-и-теорема-ван-кампена.html"
+        <li><a
+        href="свободное-произведение-и-теорема-ван-кампена.html#свободное-произведение-и-теорема-ван-кампена"
         id="toc-свободное-произведение-и-теорема-ван-кампена">Свободное
         произведение и теорема ван Кампена</a></li>
-        <li><a href="накрытия.html" id="toc-накрытия">Накрытия</a>
+        <li><a href="накрытия.html#накрытия" id="toc-накрытия">Накрытия</a>
         <ul>
         <li><a
         href="накрытия.html#пример-линейно-связного-но-не-локально-линейно-свзного-пространства"
@@ -444,7 +469,7 @@
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                     </span>
         <span class="navlink">

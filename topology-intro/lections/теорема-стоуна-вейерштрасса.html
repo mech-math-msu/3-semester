@@ -11,7 +11,10 @@
     
     <title>Теорема Стоуна-Вейерштрасса</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -238,17 +246,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="инварианты-топологичеких-пространств-при-непрерывных-отображениях.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="еще-способы-получить-новую-топологию-из-уже-имеющихся.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="инварианты-топологичеких-пространств-при-непрерывных-отображениях.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="еще-способы-получить-новую-топологию-из-уже-имеющихся.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -262,27 +281,28 @@ class="math inline">\(C(X)\)</span> – множество непрерывны�
 class="footnote-ref" id="fnref1"
 role="doc-noteref"><sup>1</sup></a>.</p>
 <div id="statement-13">
-<p><strong>Утверждение:</strong> Пусть <span
-class="math inline">\(X\)</span> – компактное хаусдорфово пространство и
-<span class="math inline">\(f, g: X \to Y\)</span>. Тогда <span
-class="math inline">\(C(X)\)</span> алгебра над <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(X\)</span> – компактное хаусдорфово
+пространство и <span class="math inline">\(f, g: X \to Y\)</span>. Тогда
+<span class="math inline">\(C(X)\)</span> алгебра над <span
 class="math inline">\(\mathbb{R}\)</span> относительно операций <span
 class="math inline">\(f\cdot g: x \to f(x)\cdot g(x), \,\,\,\, f + g: x
 \to f(x) + g(x), \,\,\,\, \lambda f: x \to \lambda f(x)\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 <div id="definition-36">
-<p><strong>Определение:</strong> Набор функций <span
-class="math inline">\(A \subset C(X)\)</span> <em>разделяет точки</em>
-топологического пространства <span class="math inline">\(X\)</span>,
-если <span class="math inline">\(\forall x, y \in X \,\,\,\, \exists f
-\in A: \,\,\,\, f(x) = 0\)</span> и <span class="math inline">\(f(y) =
+<p><span class="margin-lft"><strong>Определение: </strong></span>Набор
+функций <span class="math inline">\(A \subset C(X)\)</span>
+<em>разделяет точки</em> топологического пространства <span
+class="math inline">\(X\)</span>, если <span
+class="math inline">\(\forall x, y \in X \,\,\,\, \exists f \in A:
+\,\,\,\, f(x) = 0\)</span> и <span class="math inline">\(f(y) =
 1\)</span>.</p>
 </div>
 <div id="theorem-2">
-<p><strong>Теорема:</strong> (<em>Вейерштрасса-Стоуна об
-аппроксимации</em>)</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Вейерштрасса-Стоуна об аппроксимации</em>)</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 <section id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
@@ -296,7 +316,7 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="инварианты-топологичеких-пространств-при-непрерывных-отображениях.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

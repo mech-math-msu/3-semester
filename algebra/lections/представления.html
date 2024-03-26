@@ -11,7 +11,10 @@
     
     <title>Представления</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="автоморфизм-фробениуса.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="регулярные-представления.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="автоморфизм-фробениуса.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="регулярные-представления.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -247,16 +266,18 @@
 
 <h1 data-number="21" id="представления">Представления</h1>
 <div id="definition-77">
-<p><strong>Определение:</strong> <em>Линейное представление группы</em>
-<span class="math inline">\(G\)</span> <em>над полем</em> <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Линейное представление группы</em> <span
+class="math inline">\(G\)</span> <em>над полем</em> <span
 class="math inline">\(F\)</span> – это гомоморфизм <span
 class="math inline">\(G \to GL(V)\)</span>, где <span
 class="math inline">\(V\)</span> – векторное пространство над <span
 class="math inline">\(F\)</span>.</p>
 </div>
 <div id="definition-78">
-<p><strong>Определение:</strong> <em>Матричное представление группы</em>
-<span class="math inline">\(G\)</span> <em>над полем</em> <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Матричное представление группы</em> <span
+class="math inline">\(G\)</span> <em>над полем</em> <span
 class="math inline">\(F\)</span> – это гомоморфизм <span
 class="math inline">\(G \to GL_n(V)\)</span>, где <span
 class="math inline">\(V\)</span> – векторное пространство над <span
@@ -266,42 +287,46 @@ class="math inline">\(n\)</span>.</p>
 <h2 data-number="21.1" id="примеры-представлений">Примеры
 представлений</h2>
 <div id="definition-79">
-<p><strong>Определение:</strong> <em>Тривиальное представление</em> –
-это <span class="math inline">\(G \to GL_n(F): g \mapsto E\)</span>, где
-<span class="math inline">\(E\)</span> – единичная матрица.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Тривиальное представление</em> – это <span
+class="math inline">\(G \to GL_n(F): g \mapsto E\)</span>, где <span
+class="math inline">\(E\)</span> – единичная матрица.</p>
 </div>
 <div id="definition-80">
-<p><strong>Определение:</strong> Пусть <span class="math inline">\(V =
-\langle e_1, \ldots, e_n \rangle\)</span>. Представление <span
-class="math inline">\(\varphi: S_n \to GL(V): \varphi(\sigma)(e_i) =
-e_{\sigma(i)}\)</span> – <em>мономиальное представление</em></p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(V = \langle e_1, \ldots, e_n
+\rangle\)</span>. Представление <span class="math inline">\(\varphi: S_n
+\to GL(V): \varphi(\sigma)(e_i) = e_{\sigma(i)}\)</span> –
+<em>мономиальное представление</em></p>
 </div>
 <div id="definition-81">
-<p><strong>Определение:</strong> Подпространство <span
-class="math inline">\(U\)</span> векторного пространства <span
-class="math inline">\(V\)</span> <em>инвариантно</em> относительно
-представления <span class="math inline">\(\varphi: G \to GL(V)\)</span>,
-если <span class="math inline">\(\forall g \in G, \,\,\,\, \forall u \in
-U \,\,\,\, \varphi(g)(u) \in U\)</span>.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Подпространство <span class="math inline">\(U\)</span>
+векторного пространства <span class="math inline">\(V\)</span>
+<em>инвариантно</em> относительно представления <span
+class="math inline">\(\varphi: G \to GL(V)\)</span>, если <span
+class="math inline">\(\forall g \in G, \,\,\,\, \forall u \in U \,\,\,\,
+\varphi(g)(u) \in U\)</span>.</p>
 </div>
 <div id="definition-82">
-<p><strong>Определение:</strong> <em>Подпредстваление</em> –
-представления <span class="math inline">\(\varphi: G \to GL(V)\)</span>
-– это сужение <span class="math inline">\(\varphi\)</span> на
-инвариантное подпространство <span class="math inline">\(U\)</span>.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Подпредстваление</em> – представления <span
+class="math inline">\(\varphi: G \to GL(V)\)</span> – это сужение <span
+class="math inline">\(\varphi\)</span> на инвариантное подпространство
+<span class="math inline">\(U\)</span>.</p>
 </div>
 <div id="definition-83">
-<p><strong>Определение:</strong> Представление <span
-class="math inline">\(\varphi: G \to GL(V)\)</span>
-<em>неприводимо</em>, если существует ровно два инвариантных
-подпространства относительно этого представления, а именно <span
-class="math inline">\(V\)</span> и <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Представление <span class="math inline">\(\varphi: G \to
+GL(V)\)</span> <em>неприводимо</em>, если существует ровно два
+инвариантных подпространства относительно этого представления, а именно
+<span class="math inline">\(V\)</span> и <span
 class="math inline">\(\{0\}\)</span>.</p>
 </div>
 <div id="statement-46">
-<p><strong>Утверждение:</strong> Мономиальное представление
-приводимо.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Мономиальное представление приводимо.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>Рассмотрим инвариантное подпространство <span
 class="math inline">\(\{\displaystyle \sum_{i = 1}^{n}\alpha_i
 e_i|\,\,\,\, \displaystyle \sum_{i = 1}^{n}\alpha_i = 0\}\)</span> или
@@ -309,8 +334,9 @@ e_i|\,\,\,\, \displaystyle \sum_{i = 1}^{n}\alpha_i = 0\}\)</span> или
 \,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="definition-84">
-<p><strong>Определение:</strong> <em>Прямая сумма представлений</em>
-<span class="math inline">\(\varphi: G \to GL(V)\)</span> и <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Прямая сумма представлений</em> <span
+class="math inline">\(\varphi: G \to GL(V)\)</span> и <span
 class="math inline">\(\psi: G \to GL(W)\)</span> – это представление
 <span class="math inline">\(\varphi\oplus \psi: G \to GL(V\oplus W):
 (\varphi\oplus \psi(g))(v + w) = \varphi(g)(v)+\psi(g)(w)\)</span>.</p>
@@ -319,11 +345,12 @@ class="math inline">\(\psi: G \to GL(W)\)</span> – это представле
 \end{array}\right)\)</span>.</p>
 </div>
 <div id="definition-85">
-<p><strong>Определение:</strong> Представления <span
-class="math inline">\(\varphi: G \to GL(V)\)</span> и <span
-class="math inline">\(\psi: G \to GL(W)\)</span> <em>изоморфны</em>,
-если существует изоморфизм <span class="math inline">\(\alpha\)</span>
-векторных пространств <span class="math inline">\(V\)</span> и <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Представления <span class="math inline">\(\varphi: G \to
+GL(V)\)</span> и <span class="math inline">\(\psi: G \to GL(W)\)</span>
+<em>изоморфны</em>, если существует изоморфизм <span
+class="math inline">\(\alpha\)</span> векторных пространств <span
+class="math inline">\(V\)</span> и <span
 class="math inline">\(W\)</span>, такой что <span
 class="math inline">\(\forall g \in G, \,\,\,\,\forall v \in V \,\,\,\,
 \alpha(\varphi(g)(v)) = \psi(g)\alpha(v)\)</span>. Отображение <span
@@ -338,9 +365,9 @@ class="math inline">\(\alpha\)</span> – <em>гомоморфизм
 форме.</p>
 </div>
 <div id="definition-86">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(\alpha\)</span> – гомоморфизм представлений <span
-class="math inline">\(\varphi: G \to GL(V)\)</span> и <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(\alpha\)</span> – гомоморфизм представлений
+<span class="math inline">\(\varphi: G \to GL(V)\)</span> и <span
 class="math inline">\(\psi: G \to GL(W)\)</span>. <em>Ядро</em> <span
 class="math inline">\(\operatorname{ker} \alpha\)</span> – гомоморфизма
 <span class="math inline">\(\alpha\)</span> – это <span
@@ -348,9 +375,9 @@ class="math inline">\(\{v \in V| \,\,\,\, \alpha(v) =
 \vec{0}\}\)</span>.</p>
 </div>
 <div id="definition-87">
-<p><strong>Определение:</strong> Отображение <span
-class="math inline">\(p: V \to V\)</span> – <em>проектор</em>, если
-выполнено одно из условий:</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Отображение <span class="math inline">\(p: V \to
+V\)</span> – <em>проектор</em>, если выполнено одно из условий:</p>
 <ol type="1">
 <li><span class="math inline">\(p^2 = p\)</span>,</li>
 <li><span class="math inline">\(p|_{p(V)} =
@@ -372,17 +399,18 @@ class="math inline">\(W\)</span>.</p>
 </div>
 <h2 data-number="21.2" id="теорема-машке">Теорема Машке</h2>
 <div id="theorem-38">
-<p><strong>Теорема:</strong> (<em>Машке</em>) Пусть <span
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Машке</em>) Пусть <span
 class="math inline">\(G\)</span> – конечная группа и <span
 class="math inline">\(\operatorname{char}F \nmid |G|\)</span>, <span
 class="math inline">\(V\)</span> – векторное пространство над полем
 <span class="math inline">\(F\)</span>. Тогда любое конечномерное
 представление <span class="math inline">\(\varphi: G \to GL(V)\)</span>
 изоморфно прямой сумме неприводимых представлений.</p>
-<p><em>Доказательство:</em> Пусть <span class="math inline">\(V \ne U
-\ne \{0\}\)</span> – инвариантное относительно <span
-class="math inline">\(\varphi\)</span> пространство. Если такого
-пространства нет, то теорема доказана.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть <span
+class="math inline">\(V \ne U \ne \{0\}\)</span> – инвариантное
+относительно <span class="math inline">\(\varphi\)</span> пространство.
+Если такого пространства нет, то теорема доказана.</p>
 <p>Хотим найти инвариантное относительно <span
 class="math inline">\(\varphi\)</span> пространство <span
 class="math inline">\(W\)</span>, такое что <span
@@ -425,7 +453,7 @@ class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <h2 data-number="21.3" id="лемма-шура">Лемма Шура</h2>
 <div id="lemma-9">
-<p><strong>Лемма:</strong> Пусть <span
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Пусть <span
 class="math inline">\(\alpha\)</span> – гомоморфизм представлений <span
 class="math inline">\(\phi: G \to GL(V)\)</span> и <span
 class="math inline">\(\psi: G \to GL(W)\)</span>. Тогда <span
@@ -433,7 +461,7 @@ class="math inline">\(\operatorname{ker}\alpha\)</span> инвариантно
 относительно <span class="math inline">\(\varphi\)</span> и <span
 class="math inline">\(\operatorname{img} \alpha\)</span> инвариантно
 относительно <span class="math inline">\(\psi\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <ol type="1">
 <li><span class="math inline">\(\forall g \in G \,\,\,\, \forall v \in
 \operatorname{ker} \alpha \,\,\,\, \alpha(\varphi(g)(v)) =
@@ -447,13 +475,14 @@ v \in \operatorname{ker} \alpha\)</span>,</li>
 </ol>
 </div>
 <div id="lemma-10">
-<p><strong>Лемма:</strong> (<em>Шура</em>) Пусть <span
+<p><span class="margin-lft"><strong>Лемма:
+</strong></span>(<em>Шура</em>) Пусть <span
 class="math inline">\(\alpha\)</span> – гомоморфизм неприводимых
 представлений <span class="math inline">\(\phi: G \to GL(V)\)</span> и
 <span class="math inline">\(\psi: G \to GL(W)\)</span>. Тогда <span
 class="math inline">\(\alpha\)</span> – изоморфизм или тривиальный
 гомоморфизм.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>По предыдущей лемме <span
 class="math inline">\(\operatorname{ker}\alpha\)</span> инвариантное
 подпространство относительно <span
@@ -474,12 +503,12 @@ class="math inline">\(\operatorname{ker}\alpha = \{\vec{0}\}\)</span>.
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="corollary-7">
-<p><strong>Следствие:</strong> Над <span
+<p><span class="margin-lft"><strong>Следствие: </strong></span>Над <span
 class="math inline">\(\mathbb{C}\)</span> гомоморфизм <span
 class="math inline">\(\alpha\)</span> неприводимых представлений <span
 class="math inline">\(\varphi\)</span> и <span
 class="math inline">\(\psi\)</span> скалярный.</p>
-<p><em>Доказательство:</em> Над <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> Над <span
 class="math inline">\(\mathbb{C}\)</span> у любого оператора существует
 собственное значение <span class="math inline">\(\lambda\)</span>, а
 следовательно <span class="math inline">\(\operatorname{ker}(\alpha -
@@ -503,7 +532,7 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="автоморфизм-фробениуса.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

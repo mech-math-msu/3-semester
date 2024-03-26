@@ -12,7 +12,10 @@
     <title>Количество неприводимых комплексных представлений
 группы</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -84,13 +87,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -99,19 +102,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -217,7 +221,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -230,17 +238,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="представления-абелевых-групп.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="теорема-бернсайда.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="представления-абелевых-групп.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="теорема-бернсайда.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -253,20 +272,21 @@ id="количество-неприводимых-комплексных-пре�
 id="алгебра-эндоморфизмов-регулярного-представления">Алгебра
 эндоморфизмов регулярного представления</h2>
 <div id="statement-50">
-<p><strong>Утверждение:</strong> Множество эндоморфизмов <span
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Множество эндоморфизмов <span
 class="math inline">\(\operatorname{Hom}(\rho, \rho)\)</span>
 регулярного представления <span class="math inline">\(\rho: G \to
 GL(V(F))\)</span> – алгебра над <span class="math inline">\(F\)</span>
 относительно композиции.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <h2 data-number="25.2" id="групповая-алгебра">Групповая алгебра</h2>
 <div id="definition-90">
-<p><strong>Определение:</strong> Пусть <span class="math inline">\(G =
-\{g_1, \ldots, g_n\}\)</span> – конечная группа. <em>Групповая
-алгебра</em> <span class="math inline">\(\mathbb{C}[G]\)</span> – это
-множество <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(G = \{g_1, \ldots, g_n\}\)</span> – конечная
+группа. <em>Групповая алгебра</em> <span
+class="math inline">\(\mathbb{C}[G]\)</span> – это множество <span
 class="math inline">\(\{\lambda_1g_1+\ldots+\lambda_ng_n|
 \,\,\,\,\lambda_i \in \mathbb{C}\}\)</span> с операциями почленного
 сложения и умножения на <span class="math inline">\(\lambda \in
@@ -277,16 +297,17 @@ g\right)\cdot\left(\displaystyle \sum_{g’ \in G}\lambda_{g’} g’\right) =
 gg’}\lambda_g \lambda_{g’}\right)g’’\)</span>.</p>
 </div>
 <div id="statement-51">
-<p><strong>Утверждение:</strong> Определение групповой алгебры
-корректно.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Определение групповой алгебры корректно.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <h3 data-number="25.2.1" id="их-изоморфность">Их изоморфность</h3>
 <div id="statement-52">
-<p><strong>Утверждение:</strong> Групповая алгебра изоморфна алгебре
-эндоморфизмов регулярного представления.</p>
-<p><em>Доказательство:</em> Пусть <span
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Групповая алгебра изоморфна алгебре эндоморфизмов
+регулярного представления.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть <span
 class="math inline">\(\mathbb{C}[G]\)</span> – групповая алгебра, <span
 class="math inline">\(G = \{g_1, \ldots, g_n\}\)</span> и <span
 class="math inline">\(\rho: G \to GL(V)\)</span>. По определению
@@ -304,13 +325,13 @@ class="math inline">\(\operatorname{Hom}(\rho, \rho)\cong V \cong
 id="групповая-алгебра-изоморфна-прямой-сумме-матричных">Групповая
 алгебра изоморфна прямой сумме матричных</h2>
 <div id="theorem-40">
-<p><strong>Теорема:</strong> <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span><span
 class="math inline">\(\mathbb{C}[G]\cong
 M_{n_1}(\mathbb{C})\oplus\ldots\oplus M_{n_k}(\mathbb{C})\)</span>, где
 <span class="math inline">\(n_i\)</span> – размерности неприводимых
 комплексных представлений группы <span
 class="math inline">\(G\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>Построим изоморфизм: <span class="math inline">\(\mathbb{C}[G] \to
 M_{n_1}(\mathbb{C})\oplus\ldots\oplus M_{n_k}(\mathbb{C}): e_{g} \mapsto
 (\varphi_{n_1}(g), \ldots, \varphi_{n_k}(g))\)</span>, где <span
@@ -320,42 +341,44 @@ class="math inline">\(\varphi_{n_i}\)</span> – неприводимые ком
 <h2 data-number="25.4" id="центр-групповой-алгебры">Центр групповой
 алгебры</h2>
 <div id="statement-53">
-<p><strong>Утверждение:</strong> Центр алгебры – это подалгебра.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Центр
+алгебры – это подалгебра.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquared\)</span></p>
 </div>
 <div id="statement-54">
-<p><strong>Утверждение:</strong> Размерность центра групповой алгебры
-равна количеству классов сопряженности группы.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Размерность центра групповой алгебры равна количеству
+классов сопряженности группы.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 <h3 data-number="25.4.1" id="матрицы-коммутирующие-со-всеми">Матрицы,
 коммутирующие со всеми</h3>
 <div id="statement-55">
-<p><strong>Утверждение:</strong> Матрицы в <span
-class="math inline">\(M_n(\mathbb{C})\)</span>, коммутирующие со всеми –
-это скалярные матрицы, то есть матрицы вида <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Матрицы
+в <span class="math inline">\(M_n(\mathbb{C})\)</span>, коммутирующие со
+всеми – это скалярные матрицы, то есть матрицы вида <span
 class="math inline">\(\lambda E, \,\,\,\, \lambda \in
 \mathbb{C}\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 <div id="theorem-41">
-<p><strong>Теорема:</strong> Число неизоморфных неприводимых комплексных
-представлений конечной группы равно числу классов сопряженности этой
-группы.</p>
-<p><em>Доказательство:</em> Число классов сопряженности – это
-размерность центра групповой алгебры. Групповая алгебра изоморфна прямой
-сумме матричных, а ее центр изоморфен прямой сумме центров. Центр
-матричной алгебры состоит из скалярных матриц, следовательно одномерный.
-Получаем, что размерность центра групповой алгебры совпадает с суммой
-размерностей центров матричных алгебр, а эти размерности <span
-class="math inline">\(1\)</span> <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Число
+неизоморфных неприводимых комплексных представлений конечной группы
+равно числу классов сопряженности этой группы.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Число
+классов сопряженности – это размерность центра групповой алгебры.
+Групповая алгебра изоморфна прямой сумме матричных, а ее центр изоморфен
+прямой сумме центров. Центр матричной алгебры состоит из скалярных
+матриц, следовательно одномерный. Получаем, что размерность центра
+групповой алгебры совпадает с суммой размерностей центров матричных
+алгебр, а эти размерности <span class="math inline">\(1\)</span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="представления-абелевых-групп.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

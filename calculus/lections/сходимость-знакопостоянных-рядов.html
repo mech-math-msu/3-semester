@@ -11,7 +11,10 @@
     
     <title>Сходимость знакопостоянных рядов</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="ряды.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="сходимость-знакопостоянных-рядов-продолжение.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="ряды.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="сходимость-знакопостоянных-рядов-продолжение.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -258,21 +277,22 @@ class="math inline">\(\forall n \in \mathbb{N}\)</span>, можно писать
 <span class="math inline">\(\exists k \in \mathbb{N}: \,\,\,\, \forall n
 &gt; k\)</span>.</p>
 <div id="definition-3">
-<p><strong>Определение:</strong> Если <span
-class="math inline">\(\forall n \in \mathbb{N} \,\,\,\, a_n \geqslant
-0\)</span>, то ряд <span class="math inline">\(\displaystyle \sum_{n =
-1}^{\infty}a_n\)</span> – <em>знакопостоянный</em>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Если
+<span class="math inline">\(\forall n \in \mathbb{N} \,\,\,\, a_n
+\geqslant 0\)</span>, то ряд <span class="math inline">\(\displaystyle
+\sum_{n = 1}^{\infty}a_n\)</span> – <em>знакопостоянный</em>.</p>
 </div>
 <div id="theorem-3">
-<p><strong>Теорема:</strong> (<em>сходимость знакопостоянного
-монотонного ряда</em>) Пусть <span class="math inline">\(a_n \geqslant 0
-\,\,\,\, \forall n \in \mathbb{N}\)</span> и <span
-class="math inline">\(\{S_n\}_{n = 1}^{\infty}\)</span> ограничена.
-Тогда ряд <span class="math inline">\(\displaystyle \sum_{n =
-1}^{\infty}a_n\)</span> сходится.</p>
-<p><em>Доказательство:</em> <span class="math inline">\(a_n \geqslant 0
-\implies S_n\)</span> монотонно возрастает <span
-class="math inline">\(\implies\)</span> (<span
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>сходимость знакопостоянного монотонного ряда</em>)
+Пусть <span class="math inline">\(a_n \geqslant 0 \,\,\,\, \forall n \in
+\mathbb{N}\)</span> и <span class="math inline">\(\{S_n\}_{n =
+1}^{\infty}\)</span> ограничена. Тогда ряд <span
+class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
+сходится.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(a_n \geqslant 0 \implies S_n\)</span> монотонно
+возрастает <span class="math inline">\(\implies\)</span> (<span
 class="math inline">\(\{S_n\}_{n = 1}^{\infty}\)</span> ограничена)
 <span class="math inline">\(\exists \displaystyle \lim_{x\to \infty}S_n
 \,\,\,\,\blacksquare\)</span></p>
@@ -281,7 +301,8 @@ class="math inline">\(\{S_n\}_{n = 1}^{\infty}\)</span> ограничена)
 <span class="math inline">\(\iff\)</span> сходится хотя бы одна
 подпоследовательность последовательности его частичных сумм.</p>
 <div id="theorem-4">
-<p><strong>Теорема:</strong> (<em>признак сравнения</em>) Пусть <span
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>признак сравнения</em>) Пусть <span
 class="math inline">\(a_n \geqslant b_n \geqslant 0 \,\,\,\, \forall n
 \in \mathbb{N}\)</span>.</p>
 <p>Тогда, если <span class="math inline">\(\displaystyle \sum_{n =
@@ -292,31 +313,33 @@ class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}b_n\)</span>
 1}^{\infty}b_n\)</span> расходится, то <span
 class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
 расходится.</p>
-<p><em>Доказательство:</em> <span class="math inline">\(0 \leqslant
-\displaystyle \sum^{N}b_n \leqslant \displaystyle \sum^{N}a_n
-\,\,\,\,\blacksquare\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(0 \leqslant \displaystyle \sum^{N}b_n \leqslant
+\displaystyle \sum^{N}a_n \,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="theorem-5">
-<p><strong>Теорема:</strong> (<em>признак сравнения в предельной
-форме</em>) Пусть <span class="math inline">\(a_n \geqslant b_n &gt; 0
-\,\,\,\, \forall n \in \mathbb{N}\)</span>. Пусть <span
-class="math inline">\(\exists \displaystyle \lim_{n\to
-\infty}\frac{a_n}{b_n} = R &gt; 0\)</span> <a href="#fn1"
-class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.
-Тогда ряды <span class="math inline">\(\displaystyle \sum_{n =
-1}^{\infty}a_n\)</span> и <span class="math inline">\(\displaystyle
-\sum_{n = 1}^{\infty}b_n\)</span> сходятся или расходятся
-одновременно.</p>
-<p><em>Доказательство:</em> <span class="math inline">\(\forall n \in
-\mathbb{N} \,\,\,\, \frac{R}{2} \leqslant \frac{a_n}{b_n} \leqslant
-\frac{3R}{2} \implies \frac12 R \cdot b_n \leqslant a_n \leqslant
-\frac32 R \cdot b_n \,\,\,\,\blacksquare\)</span></p>
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>признак сравнения в предельной форме</em>) Пусть
+<span class="math inline">\(a_n \geqslant b_n &gt; 0 \,\,\,\, \forall n
+\in \mathbb{N}\)</span>. Пусть <span class="math inline">\(\exists
+\displaystyle \lim_{n\to \infty}\frac{a_n}{b_n} = R &gt; 0\)</span> <a
+href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>. Тогда ряды <span
+class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span> и
+<span class="math inline">\(\displaystyle \sum_{n =
+1}^{\infty}b_n\)</span> сходятся или расходятся одновременно.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\forall n \in \mathbb{N} \,\,\,\, \frac{R}{2}
+\leqslant \frac{a_n}{b_n} \leqslant \frac{3R}{2} \implies \frac12 R
+\cdot b_n \leqslant a_n \leqslant \frac32 R \cdot b_n
+\,\,\,\,\blacksquare\)</span></p>
 </div>
 <h2 data-number="2.2" id="интегральный-признак-коши">Интегральный
 признак Коши</h2>
 <div id="theorem-6">
-<p><strong>Теорема:</strong> (<em>интегральный признак Коши</em>) Пусть
-<span class="math inline">\(f(x) \geqslant 0\)</span> на <span
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>интегральный признак Коши</em>) Пусть <span
+class="math inline">\(f(x) \geqslant 0\)</span> на <span
 class="math inline">\([0, +\infty)\)</span> и <span
 class="math inline">\(f(x)\)</span> монотонно убывает на <span
 class="math inline">\([1, +\infty)\)</span>. Пусть <span
@@ -326,13 +349,14 @@ class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span> и
 f(x)dx\)</span> <a href="#fn2" class="footnote-ref" id="fnref2"
 role="doc-noteref"><sup>2</sup></a> сходятся или расходятся
 одновременно.</p>
-<p><em>Доказательство:</em> <span class="math display">\[\forall x \in
-[n, n + 1] \,\,\,\, f(n + 1) \leqslant f(x) \leqslant f(n)\]</span>
-Интегрируем от <span class="math inline">\(n\)</span> до <span
-class="math inline">\(n + 1\)</span>: <span class="math display">\[f(n +
-1) \leqslant \displaystyle\int\limits_n^{n + 1} f(x)dx \leqslant
-f(n)\]</span> Суммируем от <span class="math inline">\(1\)</span> до
-<span class="math inline">\(N\)</span>: <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math display">\[\forall x \in [n, n + 1] \,\,\,\, f(n + 1)
+\leqslant f(x) \leqslant f(n)\]</span> Интегрируем от <span
+class="math inline">\(n\)</span> до <span class="math inline">\(n +
+1\)</span>: <span class="math display">\[f(n + 1) \leqslant
+\displaystyle\int\limits_n^{n + 1} f(x)dx \leqslant f(n)\]</span>
+Суммируем от <span class="math inline">\(1\)</span> до <span
+class="math inline">\(N\)</span>: <span
 class="math display">\[\displaystyle \sum_{n = 1}^{N}f(n + 1) \leqslant
 \displaystyle\int\limits_1^{N + 1} f(x)dx \leqslant \displaystyle
 \sum_{n = 1}^{N + 1}f(n)\]</span> Далее по признаку сравнения <span
@@ -343,7 +367,8 @@ id="пример-степенно-логарифмическая-шкала">П�
 степенно-логарифмическая шкала</h3>
 <h2 data-number="2.3" id="признаки-сходимости">Признаки сходимости</h2>
 <div id="theorem-7">
-<p><strong>Теорема:</strong> (<em>признак Д’Аламбера</em>) Пусть <span
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>признак Д’Аламбера</em>) Пусть <span
 class="math inline">\(a_n &gt; 0 \,\,\,\, \forall n \in
 \mathbb{N}\)</span>.</p>
 <p>Если <span class="math inline">\(\forall n \in \mathbb{N} \,\,\,\,
@@ -354,7 +379,7 @@ class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
 \frac{a_{n + 1}}{a_n} \leqslant q &lt; 1\)</span>, то ряд <span
 class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
 сходится.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p><span class="math inline">\(\forall n \in \mathbb{N} \,\,\,\,
 \frac{a_{n + 1}}{a_n} \geqslant 1 \implies a_{n + 1} \geqslant a_n
 \,\,\,\,\blacksquare\)</span></p>
@@ -364,9 +389,10 @@ class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
 \,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="theorem-8">
-<p><strong>Теорема:</strong> (<em>признак Д’Аламбера в предельной
-форме</em>) Пусть <span class="math inline">\(a_n &gt; 0 \,\,\,\,
-\forall n \in \mathbb{N}\)</span>.</p>
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>признак Д’Аламбера в предельной форме</em>) Пусть
+<span class="math inline">\(a_n &gt; 0 \,\,\,\, \forall n \in
+\mathbb{N}\)</span>.</p>
 <p><span class="math inline">\(\exists \displaystyle \lim_{n\to
 \infty}\frac{a_{n + 1}}{a_n} = \alpha\)</span></p>
 <p>Если <span class="math inline">\(\alpha &gt; 1\)</span>, то ряд <span
@@ -375,17 +401,19 @@ class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
 <p>Если <span class="math inline">\(\alpha &lt; 1\)</span>, то ряд <span
 class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
 сходится.</p>
-<p><em>Доказательство:</em> <span class="math inline">\(\forall
-\varepsilon &gt; 0 \,\,\,\, \exists N \in \mathbb{N}: \,\,\,\, \forall n
-&gt; N \,\,\,\, \left|\frac{a_{n + 1}}{a_n} - \alpha \right| &lt;
-\varepsilon \,\,\,\,\blacksquare\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\forall \varepsilon &gt; 0 \,\,\,\, \exists N \in
+\mathbb{N}: \,\,\,\, \forall n &gt; N \,\,\,\, \left|\frac{a_{n +
+1}}{a_n} - \alpha \right| &lt; \varepsilon
+\,\,\,\,\blacksquare\)</span></p>
 </div>
 <blockquote>
 <p>Столько всего названо в честь Коши, что приходится выкручиваться и
 это просто признак :)</p>
 </blockquote>
 <div id="theorem-9">
-<p><strong>Теорема:</strong> (<em>признак Коши</em>) Пусть <span
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>признак Коши</em>) Пусть <span
 class="math inline">\(a_n \geqslant 0 \,\,\,\, \forall n \in
 \mathbb{N}\)</span>.</p>
 <p>Если <span class="math inline">\(\forall n \in \mathbb{N} \,\,\,\,
@@ -396,9 +424,10 @@ class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
 \sqrt[n]{a_n} \leqslant q &lt; 1\)</span>, то ряд <span
 class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
 сходится.</p>
-<p><em>Доказательство:</em> <span class="math inline">\(\forall n \in
-\mathbb{N} \,\,\,\, \sqrt[n]{a_n} \leqslant q &lt; 1 \implies a_n
-\leqslant q^n \,\,\,\,\blacksquare\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\forall n \in \mathbb{N} \,\,\,\, \sqrt[n]{a_n}
+\leqslant q &lt; 1 \implies a_n \leqslant q^n
+\,\,\,\,\blacksquare\)</span></p>
 <p>Если <span class="math inline">\(\forall n \in \mathbb{N} \,\,\,\,
 \sqrt[n]{a_n} \geqslant 1\)</span>, то не выполнено необходимое условие
 сходимости <span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
@@ -419,7 +448,7 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="ряды.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

@@ -1,0 +1,357 @@
+[
+    {
+        "keyword": "топология открытое точка окрестность точки топологическое пространство",
+        "html": "<p><a href=\"основные-определения.html#definition-0\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть задано множество <span class=\"math inline\">\\(X\\)</span>.\nРассмотрим семейство <span class=\"math inline\">\\(\\tau_X\\)</span>\nподмножеств множества <span class=\"math inline\">\\(X\\)</span>,\nудовлетворяющих условиям:</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(\\varnothing \\in \\tau_X\\)</span> и <span\nclass=\"math inline\">\\(X \\in \\tau_X\\)</span>,</li>\n<li><span class=\"math inline\">\\(\\forall U, V \\in \\tau_X \\,\\,\\,\\, U \\cap\nV \\in \\tau_X\\)</span>,</li>\n<li><span class=\"math inline\">\\(\\forall \\Lambda \\,\\,\\,\\, \\cup_{\\alpha\n\\in \\Lambda}U_{\\alpha} \\in \\tau_X\\)</span>.</li>\n</ol>\n<p><span class=\"math inline\">\\(\\tau_X\\)</span> – <em>топология</em> на\nмножестве <span class=\"math inline\">\\(X\\)</span>.</p>\n<p>Элемент <span class=\"math inline\">\\(\\tau_X\\)</span> –\n<em>открытое</em> множество.</p>\n<p>Элемент <span class=\"math inline\">\\(x \\in X\\)</span> – <em>точка</em>\nпространства <span class=\"math inline\">\\(X\\)</span>.</p>\n<p>Если <span class=\"math inline\">\\(x \\in U \\in \\tau_X\\)</span>, то\n<span class=\"math inline\">\\(U\\)</span> – <em>окрестность точки</em>\n<span class=\"math inline\">\\(x\\)</span>.</p>\n<p>Если на множестве <span class=\"math inline\">\\(X\\)</span> задана\nтопология <span class=\"math inline\">\\(\\tau_X\\)</span>, то <span\nclass=\"math inline\">\\(\\langle X, \\tau_X \\rangle\\)</span> –\n<em>топологическое пространство</em>.</p>",
+        "url": "основные-определения.html#definition-0"
+    },
+    {
+        "keyword": "замкнутое множество",
+        "html": "<p><a href=\"основные-определения.html#definition-1\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть задано топологическое пространство <span\nclass=\"math inline\">\\(X\\)</span>. <span class=\"math inline\">\\(V \\subset\n\\tau_X\\)</span> – <em>замкнутое множество</em>, если <span\nclass=\"math inline\">\\(U = X \\setminus V\\)</span> – открытое\nмножество.</p>",
+        "url": "основные-определения.html#definition-1"
+    },
+    {
+        "keyword": "топология через замкнутые множества",
+        "html": "<p><a href=\"основные-определения.html#definition-2\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n(<em>топология через замкнутые множества</em>) Топологию можно задать\nчерез набор замкнутых множеств, для которых любое пересечение будет\nпринадлежать топологии и любое конечное объединение будет принадлежать\nтопологии.</p>",
+        "url": "основные-определения.html#definition-2"
+    },
+    {
+        "keyword": "база",
+        "html": "<p><a href=\"основные-определения.html#definition-3\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>База</em> на <span class=\"math inline\">\\(X\\)</span> – это набор\n<span class=\"math inline\">\\(B\\)</span> подмножеств <span\nclass=\"math inline\">\\(X\\)</span> такой, что:</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(\\forall x \\in X \\,\\,\\,\\, \\exists \\beta\n\\in B: \\,\\,\\,\\, x \\in \\beta\\)</span>.</li>\n<li><span class=\"math inline\">\\(\\exists \\beta: \\,\\,\\,\\, x \\in \\beta\n\\subset \\beta_1 \\cap \\beta_2 \\,\\,\\,\\, \\forall x \\in \\beta_1 \\cap\n\\beta_2\\)</span>.</li>\n</ol>",
+        "url": "основные-определения.html#definition-3"
+    },
+    {
+        "keyword": "порождена базой",
+        "html": "<p><a href=\"основные-определения.html#definition-4\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(B\\)</span> база на множестве <span\nclass=\"math inline\">\\(X\\)</span>. Топология <span\nclass=\"math inline\">\\(\\tau_B\\)</span> из предыдущего утверждения\n<em>порождена базой</em> <span class=\"math inline\">\\(B\\)</span>.</p>",
+        "url": "основные-определения.html#definition-4"
+    },
+    {
+        "keyword": "база топологии (топологического пространства)",
+        "html": "<p><a href=\"основные-определения.html#definition-5\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>База топологии (топологического пространства)</em> <span\nclass=\"math inline\">\\(\\rangle X, \\tau_X\\langle\\)</span> – это база на\nмножестве <span class=\"math inline\">\\(X\\)</span>, такая что <span\nclass=\"math inline\">\\(\\tau_B = \\tau_X\\)</span>.</p>",
+        "url": "основные-определения.html#definition-5"
+    },
+    {
+        "keyword": "предбаза",
+        "html": "<p><a href=\"основные-определения.html#definition-6\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Предбаза</em> – это такой набор множеств, что все конечные\nпересечения элементов предбазы составляют базу.</p>",
+        "url": "основные-определения.html#definition-6"
+    },
+    {
+        "keyword": "покрытие множества",
+        "html": "<p><a href=\"основные-определения.html#definition-7\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Покрытие множества</em> <span class=\"math inline\">\\(X\\)</span> – это\nнабор множеств, объединение которых содержит <span\nclass=\"math inline\">\\(X\\)</span>.</p>",
+        "url": "основные-определения.html#definition-7"
+    },
+    {
+        "keyword": "точка прикосновения внутренняя точка",
+        "html": "<p><a href=\"основные-определения.html#definition-8\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(X\\)</span> – топологическое\nпространство. <span class=\"math inline\">\\(x \\in A \\subset X\\)</span> –\n<em>точка прикосновения</em> подмножества <span\nclass=\"math inline\">\\(A\\)</span>, если пересечение любой окрестности\nточки <span class=\"math inline\">\\(x\\)</span> и <span\nclass=\"math inline\">\\(A\\)</span> непусто.</p>\n<p><span class=\"math inline\">\\(x \\in A \\subset X\\)</span> –\n<em>внутренняя точка</em> подмножества <span\nclass=\"math inline\">\\(A\\)</span>, если существует окрестность точки\n<span class=\"math inline\">\\(x\\)</span>, содержащаяся в <span\nclass=\"math inline\">\\(A\\)</span>.</p>",
+        "url": "основные-определения.html#definition-8"
+    },
+    {
+        "keyword": "замыкание внутренность",
+        "html": "<p><a href=\"основные-определения.html#definition-9\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Замыкание</em> множества <span class=\"math inline\">\\(A \\subset\nX\\)</span> – это множество всех точек прикосновения <span\nclass=\"math inline\">\\(X\\)</span>. Обозначается <span\nclass=\"math inline\">\\(\\overline{A}\\)</span> или <span\nclass=\"math inline\">\\(\\operatorname{Cl}A\\)</span>.</p>\n<p><em>Внутренность</em> множества <span class=\"math inline\">\\(A \\subset\nX\\)</span> – это множество всех внутренних точек <span\nclass=\"math inline\">\\(X\\)</span>. Обозначается <span\nclass=\"math inline\">\\(\\operatorname{Int}A\\)</span>.</p>",
+        "url": "основные-определения.html#definition-9"
+    },
+    {
+        "keyword": "прообраз точки прообраз подмножества",
+        "html": "<p><a href=\"непрерывные-отображения.html#definition-10\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(f: X \\to Y\\)</span> – отображение.</p>\n<p><em>Прообраз точки</em> <span class=\"math inline\">\\(y \\in Y\\)</span>\nпри отображении <span class=\"math inline\">\\(f\\)</span> – это <span\nclass=\"math inline\">\\(f^{-1}(x) = \\{x \\in X: \\,\\,\\,\\, f(x) =\ny\\}\\)</span>.</p>\n<p><em>Прообраз подмножества</em> <span class=\"math inline\">\\(V \\in\nY\\)</span> при отображении <span class=\"math inline\">\\(f\\)</span> – это\n<span class=\"math inline\">\\(f^{-1}(V) = \\cup_{y \\in\nV}f^{-1}(y)\\)</span>.</p>",
+        "url": "непрерывные-отображения.html#definition-10"
+    },
+    {
+        "keyword": "непрерывно в точке",
+        "html": "<p><a href=\"непрерывные-отображения.html#definition-11\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(X\\)</span> и <span\nclass=\"math inline\">\\(Y\\)</span> – топологические пространства.\nОтображение <span class=\"math inline\">\\(f: X \\to Y\\)</span>\n<em>непрерывно в точке</em> <span class=\"math inline\">\\(x \\in\nX\\)</span>, если прообраз любого открытого в <span\nclass=\"math inline\">\\(Y\\)</span> множества открыт в <span\nclass=\"math inline\">\\(X\\)</span>.</p>",
+        "url": "непрерывные-отображения.html#definition-11"
+    },
+    {
+        "keyword": "непрерывно",
+        "html": "<p><a href=\"непрерывные-отображения.html#definition-12\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(X\\)</span> и <span\nclass=\"math inline\">\\(Y\\)</span> – топологические пространства.\nОтображение <span class=\"math inline\">\\(f: X \\to Y\\)</span>\n<em>непрерывно</em>, если <span class=\"math inline\">\\(f\\)</span>\nнепрерывно в каждой точке множества <span\nclass=\"math inline\">\\(X\\)</span>.</p>",
+        "url": "непрерывные-отображения.html#definition-12"
+    },
+    {
+        "keyword": "гомеоморфизм",
+        "html": "<p><a href=\"гомеоморфизм.html#definition-13\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(X\\)</span> и <span\nclass=\"math inline\">\\(Y\\)</span> – топологические пространства.\nОтображение <span class=\"math inline\">\\(f: X \\to Y\\)</span>\n<em>гомеоморфизм</em>, если <span class=\"math inline\">\\(f\\)</span>\nнепрерывно, биективно и <span class=\"math inline\">\\(f^{-1}\\)</span>\nнепрерывно.</p>",
+        "url": "гомеоморфизм.html#definition-13"
+    },
+    {
+        "keyword": "гомеоморфны",
+        "html": "<p><a href=\"гомеоморфизм.html#definition-14\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nТопологические пространства <span class=\"math inline\">\\(X\\)</span> и\n<span class=\"math inline\">\\(Y\\)</span> <em>гомеоморфны</em>, если\nсуществует гомеоморфизм <span class=\"math inline\">\\(f: X \\to\nY\\)</span>.</p>",
+        "url": "гомеоморфизм.html#definition-14"
+    },
+    {
+        "keyword": "функция",
+        "html": "<p><a href=\"различные-топологии.html#definition-15\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nОтображение <span class=\"math inline\">\\(f: X \\to \\mathbb{R}\\)</span> –\n<em>функция</em>.</p>",
+        "url": "различные-топологии.html#definition-15"
+    },
+    {
+        "keyword": "метрика",
+        "html": "<p><a href=\"различные-топологии.html#definition-16\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nФункция <span class=\"math inline\">\\(\\rho: X\\times X \\to\n\\mathbb{R}\\)</span> – <em>метрика</em>, если <span\nclass=\"math inline\">\\(\\forall x, y, z \\in X\\)</span></p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(\\rho(x, y) \\geqslant 0\\)</span> и <span\nclass=\"math inline\">\\(\\rho(x, y) = 0 \\iff x = y\\)</span>,</li>\n<li><span class=\"math inline\">\\(\\rho(x, y) = \\rho(y, x)\\)</span>,</li>\n<li><span class=\"math inline\">\\(\\rho(x, y) + \\rho(y, z) \\geqslant\n\\rho(x, z)\\)</span>.</li>\n</ol>",
+        "url": "различные-топологии.html#definition-16"
+    },
+    {
+        "keyword": "открытый шар радиуса с центром в точке",
+        "html": "<p><a href=\"различные-топологии.html#definition-17\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть на <span class=\"math inline\">\\(X\\)</span> задана метрика <span\nclass=\"math inline\">\\(\\rho\\)</span>. <em>Открытый шар радиуса</em> <span\nclass=\"math inline\">\\(\\varepsilon\\)</span> <em>с центром в точке</em>\n<span class=\"math inline\">\\(x_0 \\in X\\)</span> – это <span\nclass=\"math inline\">\\(O_{\\varepsilon}(x_0) = \\{x \\in X: \\,\\,\\,\\, \\rho(x,\nx_0) &lt; \\varepsilon\\}\\)</span>.</p>\n<p>Если неважно какой центр у шара, то будем писать <span\nclass=\"math inline\">\\(O_{\\varepsilon}\\)</span>.</p>",
+        "url": "различные-топологии.html#definition-17"
+    },
+    {
+        "keyword": "метрическое пространство",
+        "html": "<p><a href=\"различные-топологии.html#definition-18\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Метрическое пространство</em> – это топологическое пространство,\nпорожденное базой открытых шаров.</p>",
+        "url": "различные-топологии.html#definition-18"
+    },
+    {
+        "keyword": "метризуемое множество",
+        "html": "<p><a href=\"различные-топологии.html#definition-19\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nЕсли на <span class=\"math inline\">\\(X\\)</span> можно ввести метрику, то\n<span class=\"math inline\">\\(X\\)</span> – <em>метризуемое\nмножество</em>.</p>",
+        "url": "различные-топологии.html#definition-19"
+    },
+    {
+        "keyword": "норма",
+        "html": "<p><a href=\"различные-топологии.html#definition-20\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(X\\)</span> – векторное пространство.\nФункция <span class=\"math inline\">\\(h: X \\to \\mathbb{R}\\)</span> –\n<em>норма</em>, если <span class=\"math inline\">\\(\\forall x, y \\in\nX\\)</span></p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(h(x) \\geqslant 0\\)</span> и <span\nclass=\"math inline\">\\(h(x) = 0 \\iff x = 0\\)</span>,</li>\n<li><span class=\"math inline\">\\(\\lambda\\cdot h(x) = h(\\lambda\\cdot\nx)\\)</span>,</li>\n<li><span class=\"math inline\">\\(h(x + y) \\geqslant h(x) +\nh(y)\\)</span>.</li>\n</ol>",
+        "url": "различные-топологии.html#definition-20"
+    },
+    {
+        "keyword": "индуцированная топология",
+        "html": "<p><a href=\"различные-топологии.html#definition-21\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(A\\)</span> подмножество\nтопологического пространства <span class=\"math inline\">\\(X\\)</span>.\n<em>Индуцированная топология</em> – это топология на <span\nclass=\"math inline\">\\(A\\)</span>, в которой открытыми множествами\nявляются множества вида <span class=\"math inline\">\\(U \\cap A, \\,\\,\\,\\, U\n\\in \\tau_X\\)</span>.</p>",
+        "url": "различные-топологии.html#definition-21"
+    },
+    {
+        "keyword": "несвязно связно",
+        "html": "<p><a\nhref=\"инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-22\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nТопологичекое пространство <span class=\"math inline\">\\(X\\)</span>\n<em>несвязно</em>, если представляется в виде объединения\nнепересекающихся открытых подмножеств.</p>\n<p>Иначе <span class=\"math inline\">\\(X\\)</span> <em>связно</em>.</p>",
+        "url": "инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-22"
+    },
+    {
+        "keyword": "(непрерывная) кривая соединяющая",
+        "html": "<p><a\nhref=\"инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-23\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nОбраз отрезка с естественной топологией при непрерывном отображении в\nтопологическое пространство – <em>(непрерывная) кривая</em>,\n<em>соединяющая</em> образы концов отрезка.</p>",
+        "url": "инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-23"
+    },
+    {
+        "keyword": "линейно связно",
+        "html": "<p><a\nhref=\"инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-24\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПространство <em>линейно связно</em>, если любые две точки можно\nсоединить непрерывной кривой.</p>",
+        "url": "инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-24"
+    },
+    {
+        "keyword": "компакт",
+        "html": "<p><a\nhref=\"инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-25\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПространство <span class=\"math inline\">\\(X\\)</span> – <em>компакт</em>,\nесли из любого его открытого покрытия можно выделить конечное\nподпокрытие.</p>",
+        "url": "инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-25"
+    },
+    {
+        "keyword": "компактно",
+        "html": "<p><a\nhref=\"инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-26\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПодмножество <span class=\"math inline\">\\(A \\subset X\\)</span>\nтопологического пространства <span class=\"math inline\">\\(X\\)</span> –\n<em>компактно</em>, если из любого его открытого покрытия можно выделить\nконечное подпокрытие.</p>",
+        "url": "инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-26"
+    },
+    {
+        "keyword": "число лебега",
+        "html": "<p><a\nhref=\"инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-27\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nМаксимальное <span class=\"math inline\">\\(r\\)</span>, удовлетворяющее\nусловиям предыдущей леммы, – <em>число Лебега</em> покрытия <span\nclass=\"math inline\">\\(U_{\\alpha}\\)</span>.</p>",
+        "url": "инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-27"
+    },
+    {
+        "keyword": "",
+        "html": "<p><a\nhref=\"инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-28\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n(<span class=\"math inline\">\\(\\operatorname{T_1}\\)</span>) Топологическое\nпространство <span class=\"math inline\">\\(X\\)</span> обладает <span\nclass=\"math inline\">\\(\\operatorname{T_1}\\)</span>, если <span\nclass=\"math inline\">\\(\\forall x, y \\in X \\,\\,\\,\\, \\exists U_x, U_y \\in\n\\tau_X: \\,\\,\\,\\, x \\not\\in U_y\\)</span> и <span class=\"math inline\">\\(y\n\\not\\in U_x\\)</span>.</p>",
+        "url": "инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-28"
+    },
+    {
+        "keyword": "хаусдорфово",
+        "html": "<p><a\nhref=\"инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-29\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n(<span class=\"math inline\">\\(\\operatorname{T_2}\\)</span>) Топологическое\nпространство <span class=\"math inline\">\\(X\\)</span>\n<em>хаусдорфово</em>, если <span class=\"math inline\">\\(\\forall x, y \\in\nX \\,\\,\\,\\, \\exists U_x, U_y \\in \\tau_X: \\,\\,\\,\\, U_x \\cap U_y =\n\\varnothing\\)</span>.</p>",
+        "url": "инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-29"
+    },
+    {
+        "keyword": "предел",
+        "html": "<p><a\nhref=\"инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-30\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(\\{x_n\\}_{n = 1}^{\\infty}\\)</span> –\nпоследовательность точек <span class=\"math inline\">\\(X\\)</span>. <span\nclass=\"math inline\">\\(x \\in X\\)</span> – <em>предел</em>\nпоследовательности <span class=\"math inline\">\\(x_n\\)</span>, если\nдополнение любой окрестности <span class=\"math inline\">\\(x\\)</span>\nсодержит конечное количество членов последовательнсти.</p>",
+        "url": "инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-30"
+    },
+    {
+        "keyword": "",
+        "html": "<p><a\nhref=\"инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-31\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n(<span class=\"math inline\">\\(\\operatorname{T_3}\\)</span>) Топологическое\nпространство <span class=\"math inline\">\\(X\\)</span> обладает <span\nclass=\"math inline\">\\(\\operatorname{T_3}\\)</span>, если <span\nclass=\"math inline\">\\(\\forall x \\in X\\)</span> и любого замкнутого <span\nclass=\"math inline\">\\(A \\subset X: \\,\\,\\,\\, x \\not\\in A \\,\\,\\,\\, \\exists\nU_x, U_A \\in \\tau_X: \\,\\,\\,\\, U_x \\cap U_A = \\varnothing\\)</span>.</p>",
+        "url": "инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-31"
+    },
+    {
+        "keyword": "",
+        "html": "<p><a\nhref=\"инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-32\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n(<span class=\"math inline\">\\(\\operatorname{T_4}\\)</span>) Топологическое\nпространство <span class=\"math inline\">\\(X\\)</span> обладает <span\nclass=\"math inline\">\\(\\operatorname{T_4}\\)</span>, если для любых\nзамкнутых <span class=\"math inline\">\\(A, B \\subset X: \\,\\,\\,\\, A \\cap B\n= \\varnothing \\,\\,\\,\\, \\exists U_A, U_B \\in \\tau_X: \\,\\,\\,\\, U_A \\cap\nU_B = \\varnothing\\)</span>.</p>",
+        "url": "инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-32"
+    },
+    {
+        "keyword": "регулярно",
+        "html": "<p><a\nhref=\"инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-33\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nЕсли <span class=\"math inline\">\\(X\\)</span> обладает <span\nclass=\"math inline\">\\(\\operatorname{T_1}\\)</span> и <span\nclass=\"math inline\">\\(\\operatorname{T_3}\\)</span>, то <span\nclass=\"math inline\">\\(X\\)</span> – <em>регулярно</em>.</p>",
+        "url": "инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-33"
+    },
+    {
+        "keyword": "нормально",
+        "html": "<p><a\nhref=\"инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-34\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nЕсли <span class=\"math inline\">\\(X\\)</span> обладает <span\nclass=\"math inline\">\\(\\operatorname{T_1}\\)</span> и <span\nclass=\"math inline\">\\(\\operatorname{T_4}\\)</span>, то <span\nclass=\"math inline\">\\(X\\)</span> – <em>нормально</em>.</p>",
+        "url": "инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-34"
+    },
+    {
+        "keyword": "",
+        "html": "<p><a\nhref=\"инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-35\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nНорма функции <span class=\"math inline\">\\(f: X \\to \\mathbb{R}\\)</span>\nограниченной на <span class=\"math inline\">\\(\\mathbb{R}\\)</span> – это\n<span class=\"math inline\">\\(||f|| = \\displaystyle\\sup_{x \\in\nX}|f(x)|\\)</span>.</p>",
+        "url": "инварианты-топологичеких-пространств-при-непрерывных-отображениях.html#definition-35"
+    },
+    {
+        "keyword": "разделяет точки",
+        "html": "<p><a href=\"теорема-стоуна-вейерштрасса.html#definition-36\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nНабор функций <span class=\"math inline\">\\(A \\subset C(X)\\)</span>\n<em>разделяет точки</em> топологического пространства <span\nclass=\"math inline\">\\(X\\)</span>, если <span\nclass=\"math inline\">\\(\\forall x, y \\in X \\,\\,\\,\\, \\exists f \\in A:\n\\,\\,\\,\\, f(x) = 0\\)</span> и <span class=\"math inline\">\\(f(y) =\n1\\)</span>.</p>",
+        "url": "теорема-стоуна-вейерштрасса.html#definition-36"
+    },
+    {
+        "keyword": "топология произведения",
+        "html": "<p><a\nhref=\"еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-37\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\((X, \\tau_X)\\)</span> и <span\nclass=\"math inline\">\\((Y, \\tau_Y)\\)</span> – топологические\nпространства. <em>Топология произведения</em> <span\nclass=\"math inline\">\\(X\\times Y\\)</span> – это топология, порожденная\nбазой <span class=\"math inline\">\\(\\{U\\times V: \\,\\,\\,\\, U \\in \\tau_X,\n\\,\\,\\,\\, V \\in \\tau_Y\\}\\)</span> на декартовом произведении <span\nclass=\"math inline\">\\(X\\times Y\\)</span>.</p>",
+        "url": "еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-37"
+    },
+    {
+        "keyword": "проекция на",
+        "html": "<p><a\nhref=\"еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-38\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(X\\times Y\\)</span> – топология\nпроизведения.</p>\n<p>Отображение <span class=\"math inline\">\\(\\pi_X: X \\times Y \\to X,\n\\,\\,\\,\\, \\pi_X: (x, y) \\mapsto x\\)</span> – <em>проекция на</em> <span\nclass=\"math inline\">\\(X\\)</span>.</p>",
+        "url": "еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-38"
+    },
+    {
+        "keyword": "диагональное отображение диагональ",
+        "html": "<p><a\nhref=\"еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-39\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(X\\)</span> – топологическое\nпространство. Отображение <span class=\"math inline\">\\(x \\mapsto (x, x)\n\\in X\\times X\\)</span> – <em>диагональное отображение</em>. Образ <span\nclass=\"math inline\">\\(X\\)</span> при диагональном отображении –\n<em>диагональ</em>. Обозначается: <span\nclass=\"math inline\">\\(\\triangle\\)</span>.</p>",
+        "url": "еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-39"
+    },
+    {
+        "keyword": "отображение проекции фактор-топология",
+        "html": "<p><a\nhref=\"еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-40\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть на <span class=\"math inline\">\\(X\\)</span> задано отношение\nэквивалентности – <span class=\"math inline\">\\(\\sim\\)</span>. Пусть <span\nclass=\"math inline\">\\(X\\)</span> – топологическое пространство.\n<em>Отображение проекции</em> – это <span class=\"math inline\">\\(\\pi: X\n\\to \\{[x]_{\\sim}|\\,\\,\\,\\, x \\in X\\}, \\,\\,\\,\\, x \\mapsto\n[x]_{\\sim}\\)</span>, где <span class=\"math inline\">\\([x]_{\\sim}\\)</span>\n– класс эквивалентности точки <span class=\"math inline\">\\(x\\)</span>.\nЗададим на множестве классов эквивалентности <span\nclass=\"math inline\">\\(\\{[x]_{\\sim}|\\,\\,\\,\\, x \\in X\\}\\)</span>\nтопологию. Открытыми считаются множества, прообраз которых при\nотображении проекции открыт в <span\nclass=\"math inline\">\\(X\\)</span>.</p>\n<p>Такая топология – <em>фактор-топология</em> и обозначается <span\nclass=\"math inline\">\\(X/\\sim\\)</span>.</p>",
+        "url": "еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-40"
+    },
+    {
+        "keyword": "стягиванием подпространства в точку",
+        "html": "<p><a\nhref=\"еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-41\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nОбозначение <span class=\"math inline\">\\(X/A\\)</span>, где <span\nclass=\"math inline\">\\(A \\subset X\\)</span> обозначает, что берется\nфактор-топология относительно отношения эквивалентности, при котором\n<span class=\"math inline\">\\(x \\sim y \\iff x = y\\)</span> или <span\nclass=\"math inline\">\\(x \\in A\\)</span> и <span class=\"math inline\">\\(y\n\\in A\\)</span>. Топология <span class=\"math inline\">\\(X/A\\)</span>\nполучена <em>стягиванием подпространства в точку</em>.</p>",
+        "url": "еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-41"
+    },
+    {
+        "keyword": "",
+        "html": "<p><a\nhref=\"еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-42\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nФактор-пространство <span class=\"math inline\">\\((X \\sqcup Y) /\n\\sim\\)</span> несвязной суммы пространств <span class=\"math inline\">\\(X\n\\sqcup Y\\)</span> по отношению эквивалентности <span\nclass=\"math inline\">\\(x \\sim y \\iff x = y\\)</span> или <span\nclass=\"math inline\">\\(x = x_0\\)</span> и <span class=\"math inline\">\\(y =\ny_0\\)</span>, где <span class=\"math inline\">\\(x_0 \\in X\\)</span> и <span\nclass=\"math inline\">\\(y_0 \\in Y\\)</span> – фиксированные точки.</p>",
+        "url": "еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-42"
+    },
+    {
+        "keyword": "цилиндр верхнее основание цилинра нижнее основание цилиндра",
+        "html": "<p><a\nhref=\"еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-43\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Цилиндр</em> – это топология произведения <span\nclass=\"math inline\">\\(X\\times I\\)</span>.</p>\n<p><span class=\"math inline\">\\(X \\times 1\\)</span> – <em>верхнее\nоснование цилинра</em>, <span class=\"math inline\">\\(X \\times 0\\)</span>\n– <em>нижнее основание цилиндра</em>.</p>",
+        "url": "еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-43"
+    },
+    {
+        "keyword": "конус вершина конуса основание конуса",
+        "html": "<p><a\nhref=\"еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-44\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Конус</em> – это <span class=\"math inline\">\\((X\\times I)/(X\\times\n1)\\)</span> (стягиваем верхнее основание цилиндра в точку).</p>\n<p><span class=\"math inline\">\\([X\\times 1]_{\\sim}\\)</span> – <em>вершина\nконуса</em>, <span class=\"math inline\">\\(X\\times 0\\)</span> –\n<em>основание конуса</em>.</p>",
+        "url": "еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-44"
+    },
+    {
+        "keyword": "",
+        "html": "<p><a\nhref=\"еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-45\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nОбозначим за <span class=\"math inline\">\\(\\mathcal{C}(X, Y)\\)</span> или\n<span class=\"math inline\">\\(Y^X\\)</span> множество непрерывных\nотображений <span class=\"math inline\">\\(X \\to Y\\)</span>. Рассмотрим\nтопологию на <span class=\"math inline\">\\(\\mathcal{C}(X, Y)\\)</span> с\nпредбазой <span class=\"math inline\">\\(\\{W(K, U)\\}\\)</span>, где <span\nclass=\"math inline\">\\(W(K, U) \\subset \\mathcal{C}(X, Y)\\)</span>, <span\nclass=\"math inline\">\\(K\\)</span> – компакт и <span\nclass=\"math inline\">\\(f(K) \\subset U\\)</span>.</p>\n<p>Множество непрерывных функций <span class=\"math inline\">\\(X \\to\n\\mathbb{R}\\)</span> обозначается: <span\nclass=\"math inline\">\\(\\mathcal{C}(X)\\)</span>.</p>",
+        "url": "еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-45"
+    },
+    {
+        "keyword": "отображение вычисления",
+        "html": "<p><a\nhref=\"еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-46\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nУниверсальное отображение <span class=\"math inline\">\\(l: X\\times\n\\mathcal{C}(X, Y) \\to Y, \\,\\,\\,\\, x \\mapsto f(x)\\)</span> –\n<em>отображение вычисления</em>.</p>",
+        "url": "еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-46"
+    },
+    {
+        "keyword": "локально компактно",
+        "html": "<p><a\nhref=\"еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-47\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПространство <span class=\"math inline\">\\((X, \\tau_X)\\)</span>\n<em>локально компактно</em>, если <span class=\"math inline\">\\(\\forall x\n\\in X, \\,\\,\\,\\, \\exists U_x \\in \\tau_X: \\,\\,\\,\\,\n\\operatorname{Cl}U_x\\)</span> компактно.</p>",
+        "url": "еще-способы-получить-новую-топологию-из-уже-имеющихся.html#definition-47"
+    },
+    {
+        "keyword": "гомотопные гомотопия",
+        "html": "<p><a href=\"гомотопии.html#definition-48\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nНепрерывные отображения <span class=\"math inline\">\\(f, g: X \\to\nY\\)</span> <em>гомотопные</em>, если существует непрерывное отображение\n<span class=\"math inline\">\\(F: X\\times I \\to Y\\)</span>, такое что <span\nclass=\"math inline\">\\(F(x, 0) = f(x)\\)</span> и <span\nclass=\"math inline\">\\(F(x, 1) = g(x)\\)</span>. Отображение <span\nclass=\"math inline\">\\(F\\)</span> – <em>гомотопия</em>.</p>\n<p>Зафиксируем <span class=\"math inline\">\\(t \\in I\\)</span>. Отображение\n<span class=\"math inline\">\\(F(x, t)\\)</span> обозначается <span\nclass=\"math inline\">\\(F_t(x)\\)</span>. <span class=\"math inline\">\\(F_0 =\nf\\)</span> и <span class=\"math inline\">\\(F_1 = g\\)</span>.</p>",
+        "url": "гомотопии.html#definition-48"
+    },
+    {
+        "keyword": "",
+        "html": "<p><a href=\"гомотопии.html#definition-49\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nФактор-множество гомотопных отображений <span class=\"math inline\">\\(X\n\\to Y\\)</span> обозначается <span class=\"math inline\">\\([X, Y]\\)</span>\nили <span class=\"math inline\">\\(\\pi(X, Y)\\)</span>.</p>",
+        "url": "гомотопии.html#definition-49"
+    },
+    {
+        "keyword": "гомотопически эквивалентны гомотопически обратные гомотопически обратимо гомотопическая эквивалентность",
+        "html": "<p><a href=\"гомотопии.html#definition-50\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nТопологические пространства <span class=\"math inline\">\\(X\\)</span> и\n<span class=\"math inline\">\\(Y\\)</span> <em>гомотопически\nэквивалентны</em>, если существуют непрерывные <span\nclass=\"math inline\">\\(f: X \\to Y\\)</span> и <span\nclass=\"math inline\">\\(g: Y \\to X\\)</span>, такие что <span\nclass=\"math inline\">\\(f\\circ g\\)</span> гомотопно <span\nclass=\"math inline\">\\(\\operatorname{id}_X\\)</span> и <span\nclass=\"math inline\">\\(g\\circ f\\)</span> гомотопно <span\nclass=\"math inline\">\\(\\operatorname{id}_Y\\)</span>.</p>\n<p>При этом <span class=\"math inline\">\\(f\\)</span> и <span\nclass=\"math inline\">\\(g\\)</span> – <em>гомотопически обратные</em>\nотображения.</p>\n<p>Если <span class=\"math inline\">\\(f\\)</span> имеет гомотопически\nобратное отображение, то <span class=\"math inline\">\\(f\\)</span> –\n<em>гомотопически обратимо</em> или <em>гомотопическая\nэквивалентность</em>.</p>\n<p>Гомотопически эквивалентные пространства\n<strong>обозначаются</strong> <span class=\"math inline\">\\(X \\simeq\nY\\)</span>. Далее изоморфные пространства обозначаются <span\nclass=\"math inline\">\\(X \\cong Y\\)</span>.</p>",
+        "url": "гомотопии.html#definition-50"
+    },
+    {
+        "keyword": "связана на a-гомотопия",
+        "html": "<p><a href=\"ретракции.html#definition-51\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nГомотопия <span class=\"math inline\">\\(H: X \\times I \\to Y\\)</span>\n<em>связана на</em> <span class=\"math inline\">\\(A \\subset X\\)</span>,\nесли <span class=\"math inline\">\\(\\forall t \\in I, \\,\\,\\,\\, \\forall a \\in\nA \\,\\,\\,\\, H(a, t) = H(a, 0)\\)</span>.</p>\n<p>Такая гомотопия еще называется <em><span\nclass=\"math inline\">\\(A\\)</span>-гомотопия</em>. Существование <span\nclass=\"math inline\">\\(A\\)</span>-гомотопии функций <span\nclass=\"math inline\">\\(f\\)</span> и <span\nclass=\"math inline\">\\(g\\)</span> <strong>обозначим</strong> <span\nclass=\"math inline\">\\(f \\sim_{A} g\\)</span>.</p>",
+        "url": "ретракции.html#definition-51"
+    },
+    {
+        "keyword": "ретракция деформационная ретракция строгая деформационная ретракция ретракт",
+        "html": "<p><a href=\"ретракции.html#definition-52\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(X\\)</span> – топологическое пространство,\n<span class=\"math inline\">\\(A \\subset X\\)</span>. Непрерывное\nотображение <span class=\"math inline\">\\(\\rho: X \\to A\\)</span> –\n<em>ретракция</em>, если <span class=\"math inline\">\\(\\rho_{|A} =\n\\operatorname{id}_A\\)</span> <a href=\"#fn1\" class=\"footnote-ref\"\nid=\"fnref1\" role=\"doc-noteref\"><sup>1</sup></a>.</p>\n<p><span class=\"math inline\">\\(\\rho\\)</span> – <em>деформационная\nретракция</em>, если <span class=\"math inline\">\\(\\rho\\)</span> –\nретракция и <span class=\"math inline\">\\(\\rho\\)</span> гомотопно <span\nclass=\"math inline\">\\(\\operatorname{id}_X\\)</span>.</p>\n<p><span class=\"math inline\">\\(\\rho\\)</span> – <em>строгая\nдеформационная ретракция</em>, если <span\nclass=\"math inline\">\\(\\rho\\)</span> – деформационная ретракция и\nгомотопия <span class=\"math inline\">\\(\\rho\\)</span> и <span\nclass=\"math inline\">\\(\\operatorname{id}_X\\)</span> связана на <span\nclass=\"math inline\">\\(A\\)</span>.</p>\n<p>Если существует ретракция <span class=\"math inline\">\\(X \\to\nA\\)</span>, то <span class=\"math inline\">\\(A\\)</span> –\n<em>ретракт</em>.</p>\n<section id=\"footnotes\" class=\"footnotes footnotes-end-of-document\"\nrole=\"doc-endnotes\">\n<hr />\n<ol>\n<li id=\"fn1\"><p>Или, что тоже самое <span class=\"math inline\">\\(\\rho^2 =\n\\rho\\)</span>. Да-да, это почти проектор.<a href=\"#fnref1\"\nclass=\"footnote-back\" role=\"doc-backlink\">↩︎</a></p></li>\n</ol>\n</section>",
+        "url": "ретракции.html#definition-52"
+    },
+    {
+        "keyword": "обладает свойством продолжения гомотопии",
+        "html": "<p><a href=\"ретракции.html#definition-53\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(A \\subset X\\)</span>, <span\nclass=\"math inline\">\\(X\\)</span> – топологическое пространство. Пара\n<span class=\"math inline\">\\((X, A)\\)</span> <em>обладает свойством\nпродолжения гомотопии</em>, если любое непрерывное отображение <span\nclass=\"math inline\">\\(f: X\\times \\{0\\} \\cup A\\times I \\to Y\\)</span>\nпродолжается до непрерывного отображения <span class=\"math inline\">\\(F:\nX \\times I \\to Y\\)</span>. <a href=\"#fn1\" class=\"footnote-ref\"\nid=\"fnref1\" role=\"doc-noteref\"><sup>1</sup></a></p>\n<p><strong>Почему свойство продолжения гомотопии?</strong> Потому что\nзадано отображение <span class=\"math inline\">\\(f_0: X \\to Y\\)</span>\n(это <span class=\"math inline\">\\(f|_{X\\times 0}\\)</span>) и гомотопия\n<span class=\"math inline\">\\(A\\times I \\to Y\\)</span>, которую надо\nпродолжить до гомотопии <span class=\"math inline\">\\(f_t: X\\times I \\to\nY\\)</span>.</p>\n<section id=\"footnotes\" class=\"footnotes footnotes-end-of-document\"\nrole=\"doc-endnotes\">\n<hr />\n<ol>\n<li id=\"fn1\"><p>Что вообще значит значок <span\nclass=\"math inline\">\\(\\cup\\)</span> в определении? Что любая пара\nотображений <span class=\"math inline\">\\(X\\times \\{0\\} \\to Y\\)</span> и\n<span class=\"math inline\">\\(A\\times I \\to Y\\)</span>, которые совпадают\nна <span class=\"math inline\">\\(A\\times \\{0\\}\\)</span> могут быть\nпродолжены до отображения <span class=\"math inline\">\\(X \\times I \\to\nY\\)</span>.<a href=\"#fnref1\" class=\"footnote-back\"\nrole=\"doc-backlink\">↩︎</a></p></li>\n</ol>\n</section>",
+        "url": "ретракции.html#definition-53"
+    },
+    {
+        "keyword": "стягиваемо гомотопно нулю",
+        "html": "<p><a href=\"ретракции.html#definition-54\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПространство <em>стягиваемо</em>, если оно гомотопически эквивалентно\nточке или, что тоже самое, тождественное отображение <span\nclass=\"math inline\">\\(\\operatorname{id}: X \\to X\\)</span> <em>гомотопно\nнулю</em>, то есть постоянному отображению <span class=\"math inline\">\\(X\n\\to \\operatorname{pt}\\)</span>.</p>",
+        "url": "ретракции.html#definition-54"
+    },
+    {
+        "keyword": "путь в соединяющий точки петля в точке",
+        "html": "<p><a href=\"пути.html#definition-55\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nНепрерывное отображение <span class=\"math inline\">\\(\\gamma: I \\to\nX\\)</span> – <em>путь в</em> <span class=\"math inline\">\\(X\\)</span>,\n<em>соединяющий точки</em> <span\nclass=\"math inline\">\\(\\gamma(0)\\)</span> и <span\nclass=\"math inline\">\\(\\gamma(1)\\)</span>.</p>\n<p>Путь – <em>петля</em>, если <span class=\"math inline\">\\(\\gamma(0) =\n\\gamma(1)\\)</span>. Это петля <em>в точке</em> <span\nclass=\"math inline\">\\(X \\ni x_0 = \\gamma(0) = \\gamma(1)\\)</span>.</p>",
+        "url": "пути.html#definition-55"
+    },
+    {
+        "keyword": "пути гомотопны",
+        "html": "<p><a href=\"пути.html#definition-56\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Пути</em> <span class=\"math inline\">\\(\\gamma_1: I \\to X\\)</span> и\n<span class=\"math inline\">\\(\\gamma_2: I \\to X\\)</span>\n<em>гомотопны</em>, если существует <span class=\"math inline\">\\(\\{0,\n1\\}\\)</span>-гомотопия между ними, то есть <span\nclass=\"math inline\">\\(\\exists F: I\\times I \\to X: \\,\\,\\,\\, F(t, 0) =\n\\gamma_1(t)\\)</span>, <span class=\"math inline\">\\(F(t, 1) =\n\\gamma_2(t)\\)</span> и <span class=\"math inline\">\\(F(0, t) = F(0, 0) =\n\\gamma(0)\\)</span> и <span class=\"math inline\">\\(F(1, t) = F(1, 0) =\n\\gamma(1)\\)</span>.</p>\n<p><span class=\"math inline\">\\(\\{0, 1\\}\\)</span>-гомотопический класс\nпути <span class=\"math inline\">\\(s\\)</span>\n<strong>обозначается</strong> <span class=\"math inline\">\\([s]\\)</span>.\nВ дальнейшем пишу просто гомотопический класс.</p>",
+        "url": "пути.html#definition-56"
+    },
+    {
+        "keyword": "произведение путей",
+        "html": "<p><a href=\"пути.html#definition-57\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(\\gamma_1\\)</span> и <span\nclass=\"math inline\">\\(\\gamma_2\\)</span> пути и <span\nclass=\"math inline\">\\(\\gamma_1(1) = \\gamma_2(0)\\)</span>.\n<em>Произведение путей</em> <span class=\"math inline\">\\(\\gamma_1\n\\gamma_2\\)</span> – это путь <span class=\"math inline\">\\(\\gamma:\n\\begin{cases}\\gamma_1(t),\\,\\,\\,\\, t \\in [0, \\frac12]\\\\ \\gamma_2(2t - 1),\n\\,\\,\\,\\, t \\in [\\frac12, 1]\\end{cases}\\)</span>.</p>",
+        "url": "пути.html#definition-57"
+    },
+    {
+        "keyword": "произведение \{0, 1\}-гомотопических классов путей",
+        "html": "<p><a href=\"пути.html#definition-58\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n(<em>Произведение <span class=\"math inline\">\\(\\{0,\n1\\}\\)</span>-гомотопических классов путей</em>)</p>\n<p><span class=\"math inline\">\\([u][v] = [uv], \\,\\,\\,\\, u, v\\)</span> –\nпути, которые можно перемножать.</p>",
+        "url": "пути.html#definition-58"
+    },
+    {
+        "keyword": "перепараметризация пути",
+        "html": "<p><a href=\"фундаментальная-группа.html#definition-59\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Перепараметризация пути</em> <span class=\"math inline\">\\(\\gamma: I\n\\to X\\)</span> – это композиция <span class=\"math inline\">\\(\\gamma\\circ\n\\varphi\\)</span>, где <span class=\"math inline\">\\(\\varphi: I \\to\nI\\)</span> – непрерывное отображение.</p>",
+        "url": "фундаментальная-группа.html#definition-59"
+    },
+    {
+        "keyword": "единичная петля (путь)",
+        "html": "<p><a href=\"фундаментальная-группа.html#definition-60\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(x_0 \\in X\\)</span>.\n<strong>Обозначим</strong> <span class=\"math inline\">\\(e_{x_0}\\)</span>\nпетлю (путь) <span class=\"math inline\">\\(I \\to X: t \\mapsto\nx_0\\)</span>. <span class=\"math inline\">\\(e_{x_0}\\)</span> –\n<em>единичная петля (путь)</em>.</p>",
+        "url": "фундаментальная-группа.html#definition-60"
+    },
+    {
+        "keyword": "обратный путь",
+        "html": "<p><a href=\"фундаментальная-группа.html#definition-61\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(u: I \\to X\\)</span> – путь.\n<em>Обратный путь</em> <span class=\"math inline\">\\(u^{-1}\\)</span> – это\n<span class=\"math inline\">\\(I \\to X: t \\mapsto u(t - 1)\\)</span>.</p>",
+        "url": "фундаментальная-группа.html#definition-61"
+    },
+    {
+        "keyword": "фундаментальная группа",
+        "html": "<p><a href=\"фундаментальная-группа.html#definition-62\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Фундаментальная группа</em> пространства <span\nclass=\"math inline\">\\(X\\)</span> в точке <span\nclass=\"math inline\">\\(x_0\\)</span> – это <span\nclass=\"math inline\">\\(\\pi_1(X, x_0)\\)</span> с операцией умножения <span\nclass=\"math inline\">\\(\\{0, 1\\}\\)</span>-гомотопических классов\nпетель.</p>",
+        "url": "фундаментальная-группа.html#definition-62"
+    },
+    {
+        "keyword": "индуцированный",
+        "html": "<p><a href=\"фундаментальная-группа.html#definition-63\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(f_{\\ast}\\)</span> – <em>индуцированный</em>\nотображением <span class=\"math inline\">\\(f\\)</span> гомоморфизм.</p>",
+        "url": "фундаментальная-группа.html#definition-63"
+    },
+    {
+        "keyword": "свободное произведение групп",
+        "html": "<p><a\nhref=\"свободное-произведение-и-теорема-ван-кампена.html#definition-64\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(G\\)</span> и <span\nclass=\"math inline\">\\(H\\)</span> группы. Множество <span\nclass=\"math inline\">\\(G\\ast H\\)</span>, состоящее из приведенных слов, с\nоперацией конкатенации – <em>свободное произведение групп</em> <span\nclass=\"math inline\">\\(G\\)</span> и <span\nclass=\"math inline\">\\(H\\)</span>.</p>\n<p>Понятно что делать, если группа задана не более чем счетным набором\nпорождающих <a href=\"#fn1\" class=\"footnote-ref\" id=\"fnref1\"\nrole=\"doc-noteref\"><sup>1</sup></a>, а что делать иначе непонятно и\nнепонятно какая группа задается более чем счетным набором\nпорождающих?</p>\n<section id=\"footnotes\" class=\"footnotes footnotes-end-of-document\"\nrole=\"doc-endnotes\">\n<hr />\n<ol>\n<li id=\"fn1\"><p>Вообще, набор порождающих – это не свободная группа?<a\nhref=\"#fnref1\" class=\"footnote-back\" role=\"doc-backlink\">↩︎</a></p></li>\n</ol>\n</section>",
+        "url": "свободное-произведение-и-теорема-ван-кампена.html#definition-64"
+    },
+    {
+        "keyword": "амальгамированное произведение групп по группе с заданными гомоморфизмами",
+        "html": "<p><a\nhref=\"свободное-произведение-и-теорема-ван-кампена.html#definition-65\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Амальгамированное произведение групп</em> <span\nclass=\"math inline\">\\(G\\)</span> и <span\nclass=\"math inline\">\\(H\\)</span> <em>по группе</em> <span\nclass=\"math inline\">\\(K\\)</span> <em>с заданными гомоморфизмами</em>\n<span class=\"math inline\">\\(\\varphi: K \\to G\\)</span> и <span\nclass=\"math inline\">\\(\\psi: K \\to H\\)</span> – это факторгруппа <span\nclass=\"math inline\">\\(G\\ast H / N\\)</span>, где <span\nclass=\"math inline\">\\(N\\)</span> – нормальное замыкание группы,\nпорожденной <span\nclass=\"math inline\">\\(\\{\\varphi(k)\\psi(k^{-1})|\\,\\,\\,\\, k \\in\nK\\}\\)</span>.</p>",
+        "url": "свободное-произведение-и-теорема-ван-кампена.html#definition-65"
+    },
+    {
+        "keyword": "вкладывается вложение",
+        "html": "<p><a\nhref=\"свободное-произведение-и-теорема-ван-кампена.html#definition-66\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nТопологическое пространство <span class=\"math inline\">\\(X\\)</span>\n<em>вкладывается</em> в топологическое пространство <span\nclass=\"math inline\">\\(Y\\)</span>, если <span\nclass=\"math inline\">\\(X\\)</span> гомеоморфно некоторому подпространству\n<span class=\"math inline\">\\(Y\\)</span>. Такой гомеоморфизм –\n<em>вложение</em>.</p>",
+        "url": "свободное-произведение-и-теорема-ван-кампена.html#definition-66"
+    },
+    {
+        "keyword": "локально линейно связно",
+        "html": "<p><a href=\"накрытия.html#definition-67\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nТопологическое пространство <span class=\"math inline\">\\(X\\)</span>\n<em>локально линейно связно</em>, если у любой точки <span\nclass=\"math inline\">\\(x \\in X\\)</span> и любой окрестности <span\nclass=\"math inline\">\\(U_x\\)</span> точки <span\nclass=\"math inline\">\\(x\\)</span> существует линейно связная окрестность\n<span class=\"math inline\">\\(V_x \\subset U_x\\)</span>.</p>",
+        "url": "накрытия.html#definition-67"
+    },
+    {
+        "keyword": "гребень",
+        "html": "<p><a href=\"накрытия.html#definition-68\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Гребень</em> – это <span class=\"math inline\">\\(\\{(t, 0)|\\,\\,\\,\\, t\n\\in [0, 1]\\}\\cap\\{(0, t)|\\,\\,\\,\\, t \\in [0, 1]\\}\\cap\\{(\\frac1n,\nt)|\\,\\,\\,\\, t \\in [0, 1]\\}\\)</span>.</p>\n<center>\n<canvas id=\"canvas-comb\">\n</canvas>\n</center>",
+        "url": "накрытия.html#definition-68"
+    },
+    {
+        "keyword": "накрытие",
+        "html": "<p><a href=\"накрытия.html#definition-69\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(Y\\)</span> и <span\nclass=\"math inline\">\\(X\\)</span> – линейно связные и локально линейно\nсвязные топологические пространства и <span class=\"math inline\">\\(p: Y\n\\to X\\)</span> – непрерывное (сюръективное) отображение. Пусть у каждой\nточки <span class=\"math inline\">\\(x \\in X\\)</span> существует\nокрестность <span class=\"math inline\">\\(U_x \\in \\tau_X\\)</span>, такая\nчто <span class=\"math inline\">\\(p^{-1}(U_x) =\n\\sqcup_{\\alpha}V_{\\alpha}\\)</span> и <span class=\"math inline\">\\(\\forall\n\\alpha \\,\\,\\,\\, p_{|V_{\\alpha}}: V_{\\alpha} \\to U_x\\)</span> –\nгомеоморфизм. Тогда <span class=\"math inline\">\\(p\\)</span> –\n<em>накрытие</em> пространства <span class=\"math inline\">\\(X\\)</span>\nпространством <span class=\"math inline\">\\(Y\\)</span>.</p>",
+        "url": "накрытия.html#definition-69"
+    },
+    {
+        "keyword": "универсальное",
+        "html": "<p><a href=\"накрытия.html#definition-70\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nНакрытие <span class=\"math inline\">\\((\\tilde{X}, p, X)\\)</span>\n<em>универсальное</em>, если <span\nclass=\"math inline\">\\(\\pi_1(\\tilde{X}) = \\{e\\}\\)</span>.</p>\n<h3 id=\"пример\">Пример</h3>\n<p><span class=\"math inline\">\\((\\mathbb{R}^1, p, S^1)\\)</span> –\nуниверсально.</p>",
+        "url": "накрытия.html#definition-70"
+    }
+]

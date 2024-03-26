@@ -11,7 +11,10 @@
     
     <title>Собственные интегралы с параметром</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="бесконечные-произведения.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="несобственные-интегралы-с-параметром.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="бесконечные-произведения.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="несобственные-интегралы-с-параметром.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -248,11 +267,11 @@
 <h1 data-number="14" id="собственные-интегралы-с-параметром">Собственные
 интегралы с параметром</h1>
 <div id="definition-23">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(\forall y \in [a, b] \,\,\,\, \varphi(y) \leqslant
-\psi(y)\)</span>. Пусть <span class="math inline">\(G = \{(x, y):
-\,\,\,\, \varphi(y) \leqslant x \leqslant \psi(y), \,\,\,\, y \in [a,
-b]\}\)</span>. Пусть <span class="math inline">\(f(x, y)\)</span>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(\forall y \in [a, b] \,\,\,\, \varphi(y)
+\leqslant \psi(y)\)</span>. Пусть <span class="math inline">\(G = \{(x,
+y): \,\,\,\, \varphi(y) \leqslant x \leqslant \psi(y), \,\,\,\, y \in
+[a, b]\}\)</span>. Пусть <span class="math inline">\(f(x, y)\)</span>
 определена на <span class="math inline">\(G\)</span> и <span
 class="math inline">\(\forall y_0 \,\,\,\, f(x, y_0) \in R[\varphi(y_0),
 \psi(y_0)]\)</span>.</p>
@@ -261,11 +280,12 @@ class="math inline">\(\forall y_0 \,\,\,\, f(x, y_0) \in R[\varphi(y_0),
 <em>интеграл с параметром</em>.</p>
 </div>
 <div id="theorem-39">
-<p><strong>Теорема:</strong> (<em>Непрерывность интеграла с параметром
-непрерывных функций</em>) Если <span class="math inline">\(f(x, y) \in
-C(G), \,\,\,\, \varphi(y), \psi(y) \in C[a, b]\)</span>, то <span
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Непрерывность интеграла с параметром непрерывных
+функций</em>) Если <span class="math inline">\(f(x, y) \in C(G),
+\,\,\,\, \varphi(y), \psi(y) \in C[a, b]\)</span>, то <span
 class="math inline">\(F(y) \in C[a, b]\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p><span class="math display">\[\forall y \in [a, b] \,\,\,\, \left|F(y
 + \Delta y) - F(y)\right| = \left|\displaystyle\int\limits_{\varphi(y +
 \Delta y)}^{\psi(y + \Delta y)} f(x, y)dx -
@@ -287,15 +307,16 @@ y)|+\]</span> <span class="math display">\[+ |\varphi(y) -
 id="дифференцируемость-интеграла-с-параметром">Дифференцируемость
 интеграла с параметром</h2>
 <div id="theorem-40">
-<p><strong>Теорема:</strong> Пусть <span class="math inline">\(\varphi,
-\psi \in C^{1}[a, b]\)</span>. Пусть <span class="math inline">\(f(x, y)
-\in C(G)\)</span> и <span class="math inline">\(f’_y(x, y) \in
-C(G)\)</span>. Тогда <span class="math inline">\(F(y) \in C^{1}[a,
-b]\)</span> и <span class="math inline">\(F’(y) =
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(\varphi, \psi \in C^{1}[a, b]\)</span>. Пусть
+<span class="math inline">\(f(x, y) \in C(G)\)</span> и <span
+class="math inline">\(f’_y(x, y) \in C(G)\)</span>. Тогда <span
+class="math inline">\(F(y) \in C^{1}[a, b]\)</span> и <span
+class="math inline">\(F’(y) =
 \displaystyle\int\limits_{\varphi(y)}^{\psi(y)} f’_y(x, y)dx +
 f(\psi(y), y)\cdot \psi’(y) - f(\varphi(y), y)\cdot
 \varphi’(y)\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p><span class="math display">\[\frac1{\Delta y}\left(F(y + \Delta y) -
 F(y)\right)=\]</span> <span class="math display">\[= \frac1{\Delta
 y}\left(\displaystyle\int\limits_{\varphi(y + \Delta y)}^{\varphi(y)}
@@ -320,16 +341,16 @@ class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 id="интегрирование-интеграла-с-параметром">Интегрирование интеграла с
 параметром</h2>
 <div id="theorem-41">
-<p><strong>Теорема:</strong> Пусть <span class="math inline">\(G = [a,
-b]\times [c, d]\)</span>. Пусть <span class="math inline">\(f(x, y) \in
-C(G)\)</span>. Тогда <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(G = [a, b]\times [c, d]\)</span>. Пусть <span
+class="math inline">\(f(x, y) \in C(G)\)</span>. Тогда <span
 class="math inline">\(\displaystyle\int\limits_c^d F(y)dy =
 \displaystyle\int\limits_c^d \left(\displaystyle\int\limits_a^b f(x,
 y)dx\right) dy = \displaystyle\int\limits_a^b
 \left(\displaystyle\int\limits_c^d f(x, y)dy\right) dx\)</span>.</p>
-<p><em>Доказательство:</em> Рассмотрим <span
-class="math inline">\(\varphi(t, y) = \displaystyle\int\limits_a^t f(x,
-y)dx\)</span>. Покажем, что <span class="math inline">\(\varphi(t,
+<p><span class="margin-lft"><em>Доказательство:</em></span> Рассмотрим
+<span class="math inline">\(\varphi(t, y) = \displaystyle\int\limits_a^t
+f(x, y)dx\)</span>. Покажем, что <span class="math inline">\(\varphi(t,
 y)\)</span> непрерывна на <span class="math inline">\(G\)</span>.</p>
 <p><span class="math display">\[|\varphi(t + \Delta t, y + \Delta y) -
 \varphi(t, y)| = \left|\displaystyle\int\limits_a^{t+\Delta t} f(x, y +
@@ -356,7 +377,7 @@ class="math inline">\(t\)</span> в каждый из интегралов, по
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="бесконечные-произведения.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

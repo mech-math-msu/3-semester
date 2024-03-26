@@ -11,7 +11,10 @@
     
     <title>Классификация конечных полей</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="поле-разложения.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="автоморфизм-фробениуса.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="поле-разложения.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="автоморфизм-фробениуса.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -248,11 +267,11 @@
 <h1 data-number="19" id="классификация-конечных-полей">Классификация
 конечных полей</h1>
 <div id="theorem-33">
-<p><strong>Теорема:</strong> Поле из <span class="math inline">\(n \in
-\mathbb{N}\)</span> элементов существует <span
-class="math inline">\(\iff n = p^k\)</span>, где <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Поле из
+<span class="math inline">\(n \in \mathbb{N}\)</span> элементов
+существует <span class="math inline">\(\iff n = p^k\)</span>, где <span
 class="math inline">\(p\)</span> – простое.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p><span class="math inline">\(\boxed{\Longrightarrow}\)</span> <span
 class="math inline">\(|F| &lt; \infty \implies \operatorname{char}F =
 p\)</span>, где <span class="math inline">\(p\)</span> – простое.
@@ -284,14 +303,15 @@ class="math inline">\(f(\alpha_i + \alpha_j) = (\alpha_i +
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="theorem-34">
-<p><strong>Теорема:</strong> Поле из <span
-class="math inline">\(p^k\)</span> изоморфно полю разложения <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Поле из
+<span class="math inline">\(p^k\)</span> изоморфно полю разложения <span
 class="math inline">\(F\)</span> многочлена <span
 class="math inline">\(f = x^{p^k} - x\)</span> над <span
 class="math inline">\(\mathbb{Z}_p\)</span>.</p>
-<p><em>Доказательство:</em> Пусть <span class="math inline">\(F\)</span>
-– поле и <span class="math inline">\(|F| = p^k\)</span>. Докажем, что
-<span class="math inline">\(\forall \alpha \in F \,\,\,\, f(\alpha) =
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть <span
+class="math inline">\(F\)</span> – поле и <span
+class="math inline">\(|F| = p^k\)</span>. Докажем, что <span
+class="math inline">\(\forall \alpha \in F \,\,\,\, f(\alpha) =
 0\)</span>.</p>
 <ol type="1">
 <li><span class="math inline">\(\alpha = 0 \implies f(\alpha) = 0 =
@@ -310,9 +330,9 @@ class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 <h2 data-number="19.1" id="о-мультипликативной-группе-поля">О
 мультипликативной группе поля</h2>
 <div id="statement-45">
-<p><strong>Утверждение:</strong> Мультипликативная группа конечного поля
-циклическая.</p>
-<p><em>Доказательство:</em> Пусть <span
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Мультипликативная группа конечного поля циклическая.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть <span
 class="math inline">\(F^{*}\)</span> не является циклической. Порядок
 <span class="math inline">\(|F^{*}| = p^k - 1\)</span>. Пусть порядки
 элементов равны <span class="math inline">\(\operatorname{ord}g_1,
@@ -330,28 +350,28 @@ class="math inline">\(F^{*}\)</span> в силу совпадения поряд
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="corollary-6">
-<p><strong>Следствие:</strong> Пусть <span
-class="math inline">\(F\)</span> – конечное поле и <span
+<p><span class="margin-lft"><strong>Следствие: </strong></span>Пусть
+<span class="math inline">\(F\)</span> – конечное поле и <span
 class="math inline">\(|F| = p^k\)</span>. По теореме мультипликативная
 группа поля <span class="math inline">\(F^{*}\)</span> циклическая.
 Пусть <span class="math inline">\(F^{*} = \langle \alpha
 \rangle\)</span>. <span class="math inline">\(F = \mathbb{Z}_p(\alpha)
 \simeq \mathbb{Z}_p[x]/\mu_{\alpha}(x)\mathbb{Z}_p[x]\)</span>.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <h2 data-number="19.2"
 id="критерий-вложимости-для-конечных-полей">Критерий вложимости для
 конечных полей</h2>
 <div id="theorem-35">
-<p><strong>Теорема:</strong> Пусть <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
 class="math inline">\(F\)</span> и <span
 class="math inline">\(G\)</span> – поля, <span class="math inline">\(|F|
 = p^k\)</span> и <span class="math inline">\(|G| = q^m\)</span>. Тогда
 <span class="math inline">\(F\)</span> вкладывается в <span
 class="math inline">\(G \iff p = q\)</span> и <span
 class="math inline">\(k \,\,|\,\, m\)</span>.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <section id="footnotes" class="footnotes footnotes-end-of-document"
@@ -368,7 +388,7 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="поле-разложения.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

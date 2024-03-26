@@ -11,7 +11,10 @@
     
     <title>Ретракции</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -238,17 +246,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="гомотопии.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="пути.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="гомотопии.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="пути.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -256,11 +275,11 @@
 
 <h1 data-number="9" id="ретракции">Ретракции</h1>
 <div id="definition-51">
-<p><strong>Определение:</strong> Гомотопия <span
-class="math inline">\(H: X \times I \to Y\)</span> <em>связана на</em>
-<span class="math inline">\(A \subset X\)</span>, если <span
-class="math inline">\(\forall t \in I, \,\,\,\, \forall a \in A \,\,\,\,
-H(a, t) = H(a, 0)\)</span>.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Гомотопия <span class="math inline">\(H: X \times I \to
+Y\)</span> <em>связана на</em> <span class="math inline">\(A \subset
+X\)</span>, если <span class="math inline">\(\forall t \in I, \,\,\,\,
+\forall a \in A \,\,\,\, H(a, t) = H(a, 0)\)</span>.</p>
 <p>Такая гомотопия еще называется <em><span
 class="math inline">\(A\)</span>-гомотопия</em>. Существование <span
 class="math inline">\(A\)</span>-гомотопии функций <span
@@ -269,13 +288,13 @@ class="math inline">\(g\)</span> <strong>обозначим</strong> <span
 class="math inline">\(f \sim_{A} g\)</span>.</p>
 </div>
 <div id="definition-52">
-<p><strong>Определение:</strong> <span class="math inline">\(X\)</span>
-– топологическое пространство, <span class="math inline">\(A \subset
-X\)</span>. Непрерывное отображение <span class="math inline">\(\rho: X
-\to A\)</span> – <em>ретракция</em>, если <span
-class="math inline">\(\rho_{|A} = \operatorname{id}_A\)</span> <a
-href="#fn1" class="footnote-ref" id="fnref1"
-role="doc-noteref"><sup>1</sup></a>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(X\)</span> – топологическое пространство, <span
+class="math inline">\(A \subset X\)</span>. Непрерывное отображение
+<span class="math inline">\(\rho: X \to A\)</span> – <em>ретракция</em>,
+если <span class="math inline">\(\rho_{|A} =
+\operatorname{id}_A\)</span> <a href="#fn1" class="footnote-ref"
+id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <p><span class="math inline">\(\rho\)</span> – <em>деформационная
 ретракция</em>, если <span class="math inline">\(\rho\)</span> –
 ретракция и <span class="math inline">\(\rho\)</span> гомотопно <span
@@ -291,22 +310,23 @@ A\)</span>, то <span class="math inline">\(A\)</span> –
 <em>ретракт</em>.</p>
 </div>
 <div id="lemma-9">
-<p><strong>Лемма:</strong> Не существует ретракции <span
-class="math inline">\([0, 1] \to \{0, 1\}\)</span>.</p>
-<p><em>Доказательство:</em> Пусть существует. <span
-class="math inline">\(\{0, 1\}\)</span> с индуцированной топологией
-несвязно, а следовательно отрезок несвязен <span
-class="math inline">\(\blades\)</span></p>
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Не существует
+ретракции <span class="math inline">\([0, 1] \to \{0, 1\}\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть
+существует. <span class="math inline">\(\{0, 1\}\)</span> с
+индуцированной топологией несвязно, а следовательно отрезок несвязен
+<span class="math inline">\(\blades\)</span></p>
 </div>
 <div id="lemma-10">
-<p><strong>Лемма:</strong> Пусть <span class="math inline">\(X\)</span>
-– топологическое пространство. <span class="math inline">\(A \subset
-X\)</span> – ретракт <span class="math inline">\(X\iff\)</span> любое
-непрерывное отображение <span class="math inline">\(g: A \to Y\)</span>
-в произвольное топологическое пространство <span
-class="math inline">\(Y\)</span> продолжается до непрерывного
-отображения <span class="math inline">\(X \to Y\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Пусть <span
+class="math inline">\(X\)</span> – топологическое пространство. <span
+class="math inline">\(A \subset X\)</span> – ретракт <span
+class="math inline">\(X\iff\)</span> любое непрерывное отображение <span
+class="math inline">\(g: A \to Y\)</span> в произвольное топологическое
+пространство <span class="math inline">\(Y\)</span> продолжается до
+непрерывного отображения <span class="math inline">\(X \to
+Y\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p><span class="math inline">\(\boxed{\Longrightarrow}\)</span> <span
 class="math inline">\(A \subset X\)</span> – ретракт <span
 class="math inline">\(\implies \exists f: X \to A\)</span> – непрерывное
@@ -331,15 +351,15 @@ class="math inline">\(n\)</span>-мерная сфера.</p>
 id="свойство-продолжения-гомотопии-homotopy-extension-property">Свойство
 продолжения гомотопии (homotopy extension property)</h2>
 <div id="definition-53">
-<p><strong>Определение:</strong> Пусть <span class="math inline">\(A
-\subset X\)</span>, <span class="math inline">\(X\)</span> –
-топологическое пространство. Пара <span class="math inline">\((X,
-A)\)</span> <em>обладает свойством продолжения гомотопии</em>, если
-любое непрерывное отображение <span class="math inline">\(f: X\times
-\{0\} \cup A\times I \to Y\)</span> продолжается до непрерывного
-отображения <span class="math inline">\(F: X \times I \to Y\)</span>. <a
-href="#fn2" class="footnote-ref" id="fnref2"
-role="doc-noteref"><sup>2</sup></a></p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(A \subset X\)</span>, <span
+class="math inline">\(X\)</span> – топологическое пространство. Пара
+<span class="math inline">\((X, A)\)</span> <em>обладает свойством
+продолжения гомотопии</em>, если любое непрерывное отображение <span
+class="math inline">\(f: X\times \{0\} \cup A\times I \to Y\)</span>
+продолжается до непрерывного отображения <span class="math inline">\(F:
+X \times I \to Y\)</span>. <a href="#fn2" class="footnote-ref"
+id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p><strong>Почему свойство продолжения гомотопии?</strong> Потому что
 задано отображение <span class="math inline">\(f_0: X \to Y\)</span>
 (это <span class="math inline">\(f|_{X\times 0}\)</span>) и гомотопия
@@ -351,34 +371,35 @@ Y\)</span>.</p>
 id="первый-признак-гомотопической-эквивалентности-пространств">Первый
 признак гомотопической эквивалентности пространств</h2>
 <div id="statement-27">
-<p><strong>Утверждение:</strong> Пусть <span class="math inline">\(A
-\subset X\)</span> замкнуто. Пара <span class="math inline">\((X,
-A)\)</span> обладает свойством продолжения гомотопии <span
-class="math inline">\(\iff X\times \{0\} \cup A\times I\)</span> –
-ретракт <span class="math inline">\(X\times I\)</span>.</p>
-<p><em>Доказательство:</em> <a
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(A \subset X\)</span> замкнуто. Пара <span
+class="math inline">\((X, A)\)</span> обладает свойством продолжения
+гомотопии <span class="math inline">\(\iff X\times \{0\} \cup A\times
+I\)</span> – ретракт <span class="math inline">\(X\times I\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <a
 href="основные-определения.html#lemma-2">см. лемму</a> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 <p><strong>Вопрос:</strong> где в доказательстве используется
 замкнутость <span class="math inline">\(A\)</span>?</p>
 </div>
 <div id="definition-54">
-<p><strong>Определение:</strong> Пространство <em>стягиваемо</em>, если
-оно гомотопически эквивалентно точке или, что тоже самое, тождественное
-отображение <span class="math inline">\(\operatorname{id}: X \to
-X\)</span> <em>гомотопно нулю</em>, то есть постоянному отображению
-<span class="math inline">\(X \to \operatorname{pt}\)</span>.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Пространство <em>стягиваемо</em>, если оно гомотопически
+эквивалентно точке или, что тоже самое, тождественное отображение <span
+class="math inline">\(\operatorname{id}: X \to X\)</span> <em>гомотопно
+нулю</em>, то есть постоянному отображению <span class="math inline">\(X
+\to \operatorname{pt}\)</span>.</p>
 </div>
 <h2 data-number="9.3"
 id="второй-признак-гомотопической-эквивалентности-пространств">Второй
 признак гомотопической эквивалентности пространств</h2>
 <div id="statement-28">
-<p><strong>Утверждение:</strong> Пусть <span class="math inline">\((X,
-A)\)</span> обладает свойством продолжения гомотопии и <span
-class="math inline">\(A\)</span> стягиваемо. Тогда <span
-class="math inline">\(\pi: X \to X / A\)</span> – гомотопическая
-эквивалентность.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\((X, A)\)</span> обладает свойством
+продолжения гомотопии и <span class="math inline">\(A\)</span>
+стягиваемо. Тогда <span class="math inline">\(\pi: X \to X / A\)</span>
+– гомотопическая эквивалентность.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>Нужно доказать, что <span class="math inline">\(\exists \pi^{-1}: X /
 A \to X: \,\,\,\, \pi\circ \pi^{-1} \sim \operatorname{id}_{X /
 A}\)</span> и <span class="math inline">\(\pi^{-1}\circ \pi \sim
@@ -439,7 +460,7 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="гомотопии.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

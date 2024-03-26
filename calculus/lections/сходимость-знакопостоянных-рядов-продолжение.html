@@ -11,7 +11,10 @@
     
     <title>Сходимость знакопостоянных рядов: продолжение</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="сходимость-знакопостоянных-рядов.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="условно-сходящиеся-ряды.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="сходимость-знакопостоянных-рядов.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="условно-сходящиеся-ряды.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -250,8 +269,8 @@ id="сходимость-знакопостоянных-рядов-продол�
 знакопостоянных рядов: продолжение</h1>
 <h2 data-number="3.1" id="схема-куммера">Схема Куммера</h2>
 <div id="theorem-10">
-<p><strong>Теорема:</strong> (<em>схема Куммера или фабрика по
-производству новых признаков сходимости</em>)</p>
+<p><span class="margin-lft"><strong>Теорема: </strong></span>(<em>схема
+Куммера или фабрика по производству новых признаков сходимости</em>)</p>
 <p>Рассмотрим ряд <span class="math inline">\(\displaystyle \sum_{n =
 1}^{\infty}a_n\)</span> и последовательность <span
 class="math inline">\(\{c_n\}_{n = 1}^{\infty}\)</span>. Пусть <span
@@ -269,7 +288,7 @@ class="math inline">\(\gamma_n = c_n \cdot \frac{a_n}{a_{n + 1}} - c_{n
 class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
 расходится.</p></li>
 </ol>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <ol type="1">
 <li><span class="math display">\[c_n \cdot \frac{a_n}{a_{n + 1}} - c_{n
 + 1} \geqslant \alpha &gt; 0\]</span> <span class="math display">\[c_n
@@ -307,10 +326,11 @@ class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 id="следствя-из-схемы-куммера-признаки-раабе-бертрана-и-гаусса">Следствя
 из схемы Куммера: признаки Раабе, Бертрана и Гаусса</h2>
 <div id="theorem-11">
-<p><strong>Теорема:</strong> (<em>признак Раабе</em>) Рассмотрим ряд
-<span class="math inline">\(\displaystyle \sum_{n =
-1}^{\infty}a_n\)</span>. Пусть <span class="math inline">\(a_n &gt; 0
-\,\,\,\, \forall n \in \mathbb{N}\)</span>.</p>
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>признак Раабе</em>) Рассмотрим ряд <span
+class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>.
+Пусть <span class="math inline">\(a_n &gt; 0 \,\,\,\, \forall n \in
+\mathbb{N}\)</span>.</p>
 <p>Тогда, если <span class="math inline">\(n\cdot\left(\frac{a_n}{a_{n +
 1}} - 1\right) &gt; 1\)</span>, то ряд <span
 class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
@@ -319,8 +339,8 @@ class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
 1\right) \leqslant 1\)</span>, то ряд <span
 class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
 расходится.</p>
-<p><em>Доказательство:</em> <span class="math inline">\(c_n = n
-\,\,\,\,\blacksquare\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(c_n = n \,\,\,\,\blacksquare\)</span></p>
 </div>
 <blockquote>
 <p>Почему вообще кто-то придумал признак Раабе? Потому что в <a
@@ -331,10 +351,11 @@ href="lection-series-convergence.html#theorem-5">признаке Д’Алам�
 id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 </blockquote>
 <div id="corollary-0">
-<p><strong>Следствие:</strong> (<em>признак Раабе в предельной
-форме</em>) Рассмотрим ряд <span class="math inline">\(\displaystyle
-\sum_{n = 1}^{\infty}a_n\)</span>. Пусть <span class="math inline">\(a_n
-&gt; 0 \,\,\,\, \forall n \in \mathbb{N}\)</span>.</p>
+<p><span class="margin-lft"><strong>Следствие:
+</strong></span>(<em>признак Раабе в предельной форме</em>) Рассмотрим
+ряд <span class="math inline">\(\displaystyle \sum_{n =
+1}^{\infty}a_n\)</span>. Пусть <span class="math inline">\(a_n &gt; 0
+\,\,\,\, \forall n \in \mathbb{N}\)</span>.</p>
 <p>Тогда, если <span class="math inline">\(\exists \displaystyle
 \lim_{n\to \infty}\left(n\cdot\left(\frac{a_n}{a_{n + 1}} -
 1\right)\right) &gt; 1\)</span>, то ряд <span
@@ -344,14 +365,16 @@ class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
 \infty}\left(n\cdot\left(\frac{a_n}{a_{n + 1}} - 1\right)\right) &lt;
 1\)</span>, то ряд <span class="math inline">\(\displaystyle \sum_{n =
 1}^{\infty}a_n\)</span> расходится.</p>
-<p><em>Доказательство:</em> Понять почему исчезает равенство <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> Понять
+почему исчезает равенство <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="theorem-12">
-<p><strong>Теорема:</strong> (<em>Признак Бертрана</em>) Рассмотрим ряд
-<span class="math inline">\(\displaystyle \sum_{n =
-1}^{\infty}a_n\)</span>. Пусть <span class="math inline">\(a_n &gt; 0
-\,\,\,\, \forall n \in \mathbb{N}\)</span>. Тогда</p>
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Признак Бертрана</em>) Рассмотрим ряд <span
+class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>.
+Пусть <span class="math inline">\(a_n &gt; 0 \,\,\,\, \forall n \in
+\mathbb{N}\)</span>. Тогда</p>
 <ol type="1">
 <li>Если <span class="math inline">\(\ln(n)\left[ n\left(\frac{a_n}{a_{n
 + 1}} - 1\right) - 1\right] &gt; 1\)</span>, то ряд <span
@@ -362,8 +385,8 @@ class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
 class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
 расходится.</li>
 </ol>
-<p><em>Доказательство:</em> <span class="math inline">\(c_n = n
-\ln(n)\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(c_n = n \ln(n)\)</span></p>
 <p><span class="math display">\[\gamma_n = n \ln(n)  \frac{a_n}{a_{n +
 1}} - (n + 1) \ln(n + 1)=\]</span> <span class="math display">\[= n
 \ln(n)  \frac{a_n}{a_{n + 1}} + n \ln(n) - n \ln(n) - (n + 1) \ln(n +
@@ -404,10 +427,11 @@ class="math inline">\(\,\,\,\,\blacksquare\)</span></li>
 </ol>
 </div>
 <div id="corollary-1">
-<p><strong>Следствие:</strong> (<em>признак Бертрана в предельной
-форме</em>) Рассмотрим ряд <span class="math inline">\(\displaystyle
-\sum_{n = 1}^{\infty}a_n\)</span>. Пусть <span class="math inline">\(a_n
-&gt; 0 \,\,\,\, \forall n \in \mathbb{N}\)</span>. Тогда</p>
+<p><span class="margin-lft"><strong>Следствие:
+</strong></span>(<em>признак Бертрана в предельной форме</em>)
+Рассмотрим ряд <span class="math inline">\(\displaystyle \sum_{n =
+1}^{\infty}a_n\)</span>. Пусть <span class="math inline">\(a_n &gt; 0
+\,\,\,\, \forall n \in \mathbb{N}\)</span>. Тогда</p>
 <ol type="1">
 <li>Если <span class="math inline">\(\exists\displaystyle \lim_{n\to
 \infty}\ln(n)\left[ n\left(\frac{a_n}{a_{n + 1}} - 1\right) - 1\right]
@@ -418,17 +442,17 @@ class="math inline">\(\,\,\,\,\blacksquare\)</span></li>
 &lt; 1\)</span>, то ряд <span class="math inline">\(\displaystyle
 \sum_{n = 1}^{\infty}a_n\)</span> расходится.</li>
 </ol>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="theorem-13">
-<p><strong>Теорема:</strong> (<em>признак Гаусса</em>) Рассмотрим ряд
-<span class="math inline">\(\displaystyle \sum_{n =
-1}^{\infty}a_n\)</span>. Пусть <span class="math inline">\(a_n &gt; 0
-\,\,\,\, \forall n \in \mathbb{N}\)</span> и <span
-class="math inline">\(\frac{a_n}{a_{n + 1}} = \lambda + \frac{\mu}{n} +
-\underline{\underline{O}}\left(\frac{1}{n^{1 + \delta}}\right), \,\,\,\,
-\delta &gt; 0\)</span>. Тогда</p>
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>признак Гаусса</em>) Рассмотрим ряд <span
+class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>.
+Пусть <span class="math inline">\(a_n &gt; 0 \,\,\,\, \forall n \in
+\mathbb{N}\)</span> и <span class="math inline">\(\frac{a_n}{a_{n + 1}}
+= \lambda + \frac{\mu}{n} + \underline{\underline{O}}\left(\frac{1}{n^{1
++ \delta}}\right), \,\,\,\, \delta &gt; 0\)</span>. Тогда</p>
 <ul>
 <li>Если <span class="math inline">\(\lambda &gt; 1\)</span>, то ряд
 <span class="math inline">\(\displaystyle \sum_{n =
@@ -441,7 +465,7 @@ class="math inline">\(\frac{a_n}{a_{n + 1}} = \lambda + \frac{\mu}{n} +
 <span class="math inline">\(\mu \leqslant 1\)</span> ряд
 расходится.</li>
 </ul>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>Если <span class="math inline">\(\lambda &gt; 1\)</span> или <span
 class="math inline">\(\lambda &lt; 1\)</span>, то <a
 href="lection-series-convergence.html#theorem-5">по признаку Д’Аламбера
@@ -473,10 +497,10 @@ class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
 <h2 data-number="3.3" id="абсолютная-сходимость">Абсолютная
 сходимость</h2>
 <div id="definition-4">
-<p><strong>Определение:</strong> Ряд <span
-class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
-<em>сходится абсолютно</em>, если сходится ряд <span
-class="math inline">\(\displaystyle \sum_{n =
+<p><span class="margin-lft"><strong>Определение: </strong></span>Ряд
+<span class="math inline">\(\displaystyle \sum_{n =
+1}^{\infty}a_n\)</span> <em>сходится абсолютно</em>, если сходится ряд
+<span class="math inline">\(\displaystyle \sum_{n =
 1}^{\infty}|a_n|\)</span>.</p>
 <p>Если ряд <span class="math inline">\(\displaystyle \sum_{n =
 1}^{\infty}a_n\)</span> сходится, а ряд <span
@@ -485,48 +509,49 @@ class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}|a_n|\)</span>
 1}^{\infty}a_n\)</span> <em>сходится условно</em>.</p>
 </div>
 <div id="theorem-14">
-<p><strong>Теорема:</strong> Если ряд <span
-class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}|a_n|\)</span>
-сходится, то ряд <span class="math inline">\(\displaystyle \sum_{n =
-1}^{\infty}a_n\)</span> сходится.</p>
-<p><em>Доказательство:</em> <a
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Если ряд
+<span class="math inline">\(\displaystyle \sum_{n =
+1}^{\infty}|a_n|\)</span> сходится, то ряд <span
+class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
+сходится.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <a
 href="lection-series.html#theorem-0">Критерий Коши</a> и <span
 class="math inline">\(\displaystyle \left|\sum_{n = k + 1}^{m}a_n\right|
 \leqslant \left|\sum_{n = k + 1}^{m}|a_n|\right|  &lt; \varepsilon
 \,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="definition-5">
-<p><strong>Определение:</strong> Биекция <span
-class="math inline">\(\sigma: \mathbb{N} \to \mathbb{N}\)</span> –
+<p><span class="margin-lft"><strong>Определение: </strong></span>Биекция
+<span class="math inline">\(\sigma: \mathbb{N} \to \mathbb{N}\)</span> –
 <em>перестановка</em>.</p>
 </div>
 <div id="lemma-0">
-<p><strong>Лемма:</strong> Пусть <span class="math inline">\(\sigma:
-\mathbb{N} \to  \mathbb{N}\)</span> – биекция, ряд <span
-class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
-сходится и <span class="math inline">\(a_n \geqslant 0 \,\,\,\, \forall
-n \in \mathbb{N}\)</span>. Тогда ряд <span
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Пусть <span
+class="math inline">\(\sigma: \mathbb{N} \to  \mathbb{N}\)</span> –
+биекция, ряд <span class="math inline">\(\displaystyle \sum_{n =
+1}^{\infty}a_n\)</span> сходится и <span class="math inline">\(a_n
+\geqslant 0 \,\,\,\, \forall n \in \mathbb{N}\)</span>. Тогда ряд <span
 class="math inline">\(\displaystyle \sum_{n =
 1}^{\infty}a_{\sigma(n)}\)</span> сходится.</p>
-<p><em>Доказательство:</em> Обозначим частичные суммы рядов <span
-class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span> и
-<span class="math inline">\(\displaystyle \sum_{n =
-1}^{\infty}a_{\sigma(n)} \,\,\,\, S_k\)</span> и <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> Обозначим
+частичные суммы рядов <span class="math inline">\(\displaystyle \sum_{n
+= 1}^{\infty}a_n\)</span> и <span class="math inline">\(\displaystyle
+\sum_{n = 1}^{\infty}a_{\sigma(n)} \,\,\,\, S_k\)</span> и <span
 class="math inline">\(S^{\sigma}_k\)</span> соответственно. Пусть <span
 class="math inline">\(N = \displaystyle\max_{0 \leqslant n \leqslant
 k}\{\sigma(n)\}\)</span>. Тогда <span class="math inline">\(S^{\sigma}_k
 \leqslant S_N\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="theorem-15">
-<p><strong>Теорема:</strong> Пусть <span class="math inline">\(\sigma:
-\mathbb{N} \to  \mathbb{N}\)</span> – биекция, ряд <span
-class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span>
-сходится абсолютно.</p>
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(\sigma: \mathbb{N} \to  \mathbb{N}\)</span> –
+биекция, ряд <span class="math inline">\(\displaystyle \sum_{n =
+1}^{\infty}a_n\)</span> сходится абсолютно.</p>
 <p>Тогда ряд <span class="math inline">\(\displaystyle \sum_{n =
 1}^{\infty}a_{\sigma(n)}\)</span> сходится абсолютно и <span
 class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n =
 \displaystyle \sum_{n = 1}^{\infty}a_{\sigma(n)}\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>Рассмотрим ряды <span class="math inline">\(\displaystyle \sum_{n =
 1}^{\infty}(a_n + |a_n|)\)</span> и <span
 class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}(a_{\sigma(n)}
@@ -543,7 +568,8 @@ href="сходимость-знакопостоянных-рядов-продо�
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="definition-6">
-<p><strong>Определение:</strong> Рассмотрим ряды <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Рассмотрим ряды <span
 class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span> и
 <span class="math inline">\(\displaystyle \sum_{k =
 1}^{\infty}b_k\)</span>. Пусть <span class="math inline">\(\varkappa:
@@ -556,10 +582,10 @@ class="math inline">\(\displaystyle \sum_{k = 1}^{\infty}b_k\)</span>
 <em>по правилу</em> <span class="math inline">\(\varkappa\)</span>.</p>
 </div>
 <div id="theorem-16">
-<p><strong>Теорема:</strong> Пусть ряды <span
-class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}a_n\)</span> и
-<span class="math inline">\(\displaystyle \sum_{k =
-1}^{\infty}b_k\)</span> сходятся абсолютно, <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть ряды
+<span class="math inline">\(\displaystyle \sum_{n =
+1}^{\infty}a_n\)</span> и <span class="math inline">\(\displaystyle
+\sum_{k = 1}^{\infty}b_k\)</span> сходятся абсолютно, <span
 class="math inline">\(\varkappa: \mathbb{N} \to \mathbb{N} \times
 \mathbb{N}\)</span> – биекция. Тогда ряд <span
 class="math inline">\(\displaystyle \sum_{\substack{\varkappa = 1\\
@@ -569,7 +595,7 @@ class="math inline">\(\displaystyle \sum_{\substack{\varkappa = 1\\
 B\)</span>, где <span class="math inline">\(A = \displaystyle \sum_{n =
 1}^{\infty}a_n\)</span> и <span class="math inline">\(B = \displaystyle
 \sum_{k = 1}^{\infty}b_k\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>Записываем члены ряда в табличку:</p>
 <p><span class="math display">\[\begin{array}{cccc} a_1b_1 &amp; a_2b_1
 &amp; a_3b_1 &amp; \ldots\\
@@ -611,7 +637,7 @@ href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="сходимость-знакопостоянных-рядов.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

@@ -11,7 +11,10 @@
     
     <title>Metapost</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -229,7 +233,7 @@
             }
             @media print {
             pre > code.sourceCode { white-space: pre-wrap; }
-            pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+            pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
             }
             pre.numberSource code
               { counter-reset: source-line 0; }
@@ -283,7 +287,11 @@
             code span.va { color: #27aeae; } /* Variable */
             code span.vs { color: #da4453; } /* VerbatimString */
             code span.wa { color: #da4453; } /* Warning */
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -299,16 +307,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="gnuplot-cheatsheet.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="gnuplot-cheatsheet.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -918,6 +938,40 @@ class="sourceCode mp"><code class="sourceCode metafont"><span id="cb22-1"><a hre
 <span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
 <span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
 <img src="8fcdc4ef7b40d67f265e6c48a003d7c712f5f1f4.svg" />
+<p>Версия от умных людей:</p>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co">% M est sur la bissectrice de l&#39;angle A</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="re">vardef</span> bissectrice(<span class="at">expr</span> M,A,B,C) <span class="op">=</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  (M<span class="op">-</span>A) <span class="op">=</span> <span class="kw">whatever</span> <span class="op">*</span> (</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    (A<span class="op">-</span>C) <span class="at">rotated</span> <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>(<span class="bu">angle</span>(B<span class="op">-</span>A) <span class="op">-</span> <span class="bu">angle</span>(C<span class="op">-</span>A)))</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="re">enddef</span>;</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co">% Le cercle inscrit</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="re">vardef</span> cercle_inscrit(<span class="at">expr</span> A,B,C) <span class="op">=</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">save</span> M, <span class="kw">h</span>; <span class="dt">pair</span> M, <span class="kw">h</span>;</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  bissectrice(M,A,B,C);</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>  bissectrice(M,B,C,A);</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>  M<span class="op">-</span><span class="kw">h</span> <span class="op">=</span> <span class="kw">whatever</span> <span class="op">*</span> (B<span class="op">-</span>C) <span class="at">rotated</span> <span class="dv">90</span>;</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">h</span> <span class="op">=</span> <span class="kw">whatever</span>[B,C];</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>  <span class="kw">fullcircle</span> <span class="at">scaled</span> <span class="dv">2</span> <span class="bu">length</span>(M<span class="op">-</span><span class="kw">h</span>) <span class="at">shifted</span> M</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="re">enddef</span>;</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>  <span class="dt">pair</span> A,B,C,M;</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>  u<span class="op">:=</span><span class="dv">2</span>cm;</span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>  A<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">0</span>); B<span class="op">=</span>(<span class="dv">2</span>u,<span class="op">-</span>.<span class="dv">5</span>u); C<span class="op">=</span>(u,u);</span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>  <span class="kw">draw</span> A<span class="op">--</span>B<span class="op">--</span>C<span class="op">--</span><span class="at">cycle</span>;</span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>  bissectrice(M, A,B,C);</span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>  bissectrice(M, B,C,A);</span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>  <span class="kw">draw</span> M<span class="op">--</span>A; <span class="kw">draw</span> M<span class="op">--</span>B; <span class="kw">draw</span> M<span class="op">--</span>C;</span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a>  <span class="kw">draw</span> cercle_inscrit(A,B,C);</span>
+<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="7fd71ade48af9caa6767e54fc1683d8daf483233.svg" />
 <h2 data-number="2.8" id="стрелки-arrow">Стрелки <code>Arrow</code></h2>
 <ul>
 <li><code>drawarrow</code> вместо <code>draw</code>, чтобы нарисовать
@@ -941,29 +995,29 @@ class="sourceCode mp"><code class="sourceCode metafont"><span id="cb22-1"><a hre
 <h4 data-number="2.8.2.1"
 id="какой-то-сложный-пример-на-стиль-стрелки">Какой-то сложный пример на
 стиль стрелки</h4>
-<div class="sourceCode" id="cb23"><pre
-class="sourceCode mp"><code class="sourceCode metafont"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="at">save</span> <span class="kw">arrowhead</span>; <span class="co">% чтобы это могло значить?</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="re">vardef</span> <span class="kw">arrowhead</span> <span class="at">expr</span> p <span class="op">=</span> <span class="co">% полуфункция arrowhead получает на вход путь</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">save</span> A, a, slope; <span class="dt">pair</span> A, slope; <span class="dt">path</span> a;</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    A <span class="op">=</span> <span class="at">point</span> (<span class="bu">length</span>(p) <span class="op">/</span> <span class="dv">2</span>) <span class="at">of</span> p; <span class="co">% точка на кривой на расстоянии длина кривой пополам</span></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    slope <span class="op">=</span> <span class="kw">direction</span> (<span class="bu">length</span>(p) <span class="op">/</span> <span class="dv">2</span>) <span class="at">of</span> p; <span class="co">% касательная в этой точке</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="kw">halfcircle</span> <span class="at">scaled</span> <span class="kw">ahlength</span> <span class="at">rotated</span> (<span class="op">-</span><span class="dv">90</span> <span class="op">+</span> <span class="bu">angle</span>(slope)) <span class="at">shifted</span> A;</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">% полукруг повернутый перпендикулярно касательной и уевличенный до ahlength</span></span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    a<span class="op">--</span><span class="at">cycle</span></span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="re">enddef</span>;</span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="dv">2</span>cm;</span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="kw">ahlength</span> <span class="op">:=</span> <span class="fl">0.3</span>cm;</span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="kw">drawarrow</span> (<span class="dv">0</span>, <span class="dv">0</span>)<span class="op">..</span>(<span class="dv">2</span>u, <span class="dv">3</span>u)<span class="op">..</span>(<span class="dv">5</span>u, <span class="op">-</span>u);</span>
-<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
-<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="at">save</span> <span class="kw">arrowhead</span>; <span class="co">% чтобы это могло значить?</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="re">vardef</span> <span class="kw">arrowhead</span> <span class="at">expr</span> p <span class="op">=</span> <span class="co">% полуфункция arrowhead получает на вход путь</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">save</span> A, a, slope; <span class="dt">pair</span> A, slope; <span class="dt">path</span> a;</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    A <span class="op">=</span> <span class="at">point</span> (<span class="bu">length</span>(p) <span class="op">/</span> <span class="dv">2</span>) <span class="at">of</span> p; <span class="co">% точка на кривой на расстоянии длина кривой пополам</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>    slope <span class="op">=</span> <span class="kw">direction</span> (<span class="bu">length</span>(p) <span class="op">/</span> <span class="dv">2</span>) <span class="at">of</span> p; <span class="co">% касательная в этой точке</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="kw">halfcircle</span> <span class="at">scaled</span> <span class="kw">ahlength</span> <span class="at">rotated</span> (<span class="op">-</span><span class="dv">90</span> <span class="op">+</span> <span class="bu">angle</span>(slope)) <span class="at">shifted</span> A;</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">% полукруг повернутый перпендикулярно касательной и уевличенный до ahlength</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>    a<span class="op">--</span><span class="at">cycle</span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="re">enddef</span>;</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="dv">2</span>cm;</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="kw">ahlength</span> <span class="op">:=</span> <span class="fl">0.3</span>cm;</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a><span class="kw">drawarrow</span> (<span class="dv">0</span>, <span class="dv">0</span>)<span class="op">..</span>(<span class="dv">2</span>u, <span class="dv">3</span>u)<span class="op">..</span>(<span class="dv">5</span>u, <span class="op">-</span>u);</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
 <img src="fe5034b4685d709f7fc33d1260d1232123decdf9.svg" />
 <h2 data-number="2.9"
 id="кружки-эллипсы-квадраты-и-прямоугольники">Кружки, эллипсы, квадраты
@@ -995,35 +1049,35 @@ class="math inline">\(\frac{\pi}2\)</span>) <code>fullcircle</code></li>
 <h3 data-number="2.10.1"
 id="большой-пример-на-трансформации-и-кружочки-квадраты">Большой пример
 на трансформации и кружочки / квадраты</h3>
-<div class="sourceCode" id="cb24"><pre
-class="sourceCode mp"><code class="sourceCode metafont"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="dv">2</span>cm;</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="op">=</span> <span class="op">-</span><span class="dv">1</span> <span class="cf">upto</span> <span class="dv">9</span>: <span class="kw">draw</span> (i <span class="op">*</span> u, <span class="dv">4</span>u) <span class="op">--</span> (i <span class="op">*</span> u, <span class="op">-</span><span class="dv">3</span>u) <span class="at">withcolor</span> <span class="fl">0.7</span>white; <span class="cf">endfor</span>;</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="op">=</span> <span class="op">-</span><span class="dv">3</span> <span class="cf">upto</span> <span class="dv">4</span>: <span class="kw">draw</span> (<span class="op">-</span>u, i <span class="op">*</span> u) <span class="op">--</span> (<span class="dv">9</span>u, i <span class="op">*</span> u) <span class="at">withcolor</span> <span class="fl">0.7</span>white; <span class="cf">endfor</span>;</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="kw">dotlabel</span>(<span class="st">&quot;&quot;</span>, <span class="kw">origin</span>); <span class="co">% отрисовка сетки</span></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="kw">fullcircle</span> <span class="at">scaled</span> u;</span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="kw">halfcircle</span> <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">2</span>u, <span class="dv">0</span>);</span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="kw">quartercircle</span> <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">4</span>u, <span class="dv">0</span>);</span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="kw">fullcircle</span> <span class="at">xscaled</span> <span class="dv">2</span>u <span class="at">yscaled</span> u <span class="at">shifted</span> (<span class="dv">6</span>u, <span class="dv">0</span>);</span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="kw">fullcircle</span> <span class="at">xscaled</span> <span class="dv">2</span>u <span class="at">yscaled</span> u <span class="at">rotated</span> <span class="op">-</span><span class="dv">45</span> <span class="at">shifted</span> (<span class="dv">8</span>u, <span class="dv">0</span>);</span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> <span class="kw">fullcircle</span> <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">0</span>, <span class="op">-</span><span class="dv">2</span>u);</span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> <span class="kw">halfcircle</span> <span class="op">--</span> <span class="at">cycle</span> <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">2</span>u, <span class="op">-</span><span class="dv">2</span>u);</span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a><span class="dt">path</span> quarterdisk; quarterdisk <span class="op">:=</span> <span class="kw">quartercircle</span> <span class="op">--</span> <span class="kw">origin</span> <span class="op">--</span> <span class="at">cycle</span>;</span>
-<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> quarterdisk <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">4</span>u, <span class="op">-</span><span class="dv">2</span>u);</span>
-<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> quarterdisk <span class="at">scaled</span> u <span class="at">rotated</span> <span class="op">-</span><span class="dv">45</span> <span class="at">shifted</span> (<span class="dv">6</span>u, <span class="op">-</span><span class="dv">2</span>u);</span>
-<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> quarterdisk <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">6</span>u, <span class="op">-</span><span class="dv">2</span>u) <span class="at">rotated</span> <span class="dv">45</span>;</span>
-<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> quarterdisk <span class="at">rotated</span> <span class="op">-</span><span class="dv">90</span> <span class="at">scaled</span> <span class="dv">2</span>u <span class="at">shifted</span> (<span class="dv">8</span>u, <span class="dv">3</span>u);</span>
-<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> <span class="kw">unitsquare</span> <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">0</span>, <span class="dv">2</span>u);</span>
-<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> <span class="kw">unitsquare</span> <span class="at">xscaled</span> u <span class="at">yscaled</span> <span class="dv">3</span><span class="op">/</span><span class="dv">2</span>u <span class="at">shifted</span> (<span class="dv">2</span>u, <span class="dv">2</span>u);</span>
-<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
-<span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="dv">2</span>cm;</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="op">=</span> <span class="op">-</span><span class="dv">1</span> <span class="cf">upto</span> <span class="dv">9</span>: <span class="kw">draw</span> (i <span class="op">*</span> u, <span class="dv">4</span>u) <span class="op">--</span> (i <span class="op">*</span> u, <span class="op">-</span><span class="dv">3</span>u) <span class="at">withcolor</span> <span class="fl">0.7</span>white; <span class="cf">endfor</span>;</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="op">=</span> <span class="op">-</span><span class="dv">3</span> <span class="cf">upto</span> <span class="dv">4</span>: <span class="kw">draw</span> (<span class="op">-</span>u, i <span class="op">*</span> u) <span class="op">--</span> (<span class="dv">9</span>u, i <span class="op">*</span> u) <span class="at">withcolor</span> <span class="fl">0.7</span>white; <span class="cf">endfor</span>;</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="kw">dotlabel</span>(<span class="st">&quot;&quot;</span>, <span class="kw">origin</span>); <span class="co">% отрисовка сетки</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="kw">fullcircle</span> <span class="at">scaled</span> u;</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="kw">halfcircle</span> <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">2</span>u, <span class="dv">0</span>);</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="kw">quartercircle</span> <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">4</span>u, <span class="dv">0</span>);</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="kw">fullcircle</span> <span class="at">xscaled</span> <span class="dv">2</span>u <span class="at">yscaled</span> u <span class="at">shifted</span> (<span class="dv">6</span>u, <span class="dv">0</span>);</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="kw">fullcircle</span> <span class="at">xscaled</span> <span class="dv">2</span>u <span class="at">yscaled</span> u <span class="at">rotated</span> <span class="op">-</span><span class="dv">45</span> <span class="at">shifted</span> (<span class="dv">8</span>u, <span class="dv">0</span>);</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> <span class="kw">fullcircle</span> <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">0</span>, <span class="op">-</span><span class="dv">2</span>u);</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> <span class="kw">halfcircle</span> <span class="op">--</span> <span class="at">cycle</span> <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">2</span>u, <span class="op">-</span><span class="dv">2</span>u);</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="dt">path</span> quarterdisk; quarterdisk <span class="op">:=</span> <span class="kw">quartercircle</span> <span class="op">--</span> <span class="kw">origin</span> <span class="op">--</span> <span class="at">cycle</span>;</span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> quarterdisk <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">4</span>u, <span class="op">-</span><span class="dv">2</span>u);</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> quarterdisk <span class="at">scaled</span> u <span class="at">rotated</span> <span class="op">-</span><span class="dv">45</span> <span class="at">shifted</span> (<span class="dv">6</span>u, <span class="op">-</span><span class="dv">2</span>u);</span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> quarterdisk <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">6</span>u, <span class="op">-</span><span class="dv">2</span>u) <span class="at">rotated</span> <span class="dv">45</span>;</span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> quarterdisk <span class="at">rotated</span> <span class="op">-</span><span class="dv">90</span> <span class="at">scaled</span> <span class="dv">2</span>u <span class="at">shifted</span> (<span class="dv">8</span>u, <span class="dv">3</span>u);</span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> <span class="kw">unitsquare</span> <span class="at">scaled</span> u <span class="at">shifted</span> (<span class="dv">0</span>, <span class="dv">2</span>u);</span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a><span class="kw">fill</span> <span class="kw">unitsquare</span> <span class="at">xscaled</span> u <span class="at">yscaled</span> <span class="dv">3</span><span class="op">/</span><span class="dv">2</span>u <span class="at">shifted</span> (<span class="dv">2</span>u, <span class="dv">2</span>u);</span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
 <img src="3f8df45318da62f8491d5619c63cb2c1a679e76d.svg" />
 <h2 data-number="2.11" id="текст-в-metapost">Текст в
 <code>metapost</code></h2>
@@ -1032,62 +1086,62 @@ class="sourceCode mp"><code class="sourceCode metafont"><span id="cb24-1"><a hre
 <code>pair</code>, сдвинув текст относительно точки в
 <code>suffix</code>.</p>
 <p>Какие бывают <code>suffix</code>?</p>
-<div class="sourceCode" id="cb25"><pre
-class="sourceCode mp"><code class="sourceCode metafont"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="dv">3</span>cm;</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>n <span class="op">:=</span> <span class="dv">8</span>;</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="op">:=</span> <span class="dv">0</span> <span class="cf">upto</span> n:</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">draw</span> (<span class="dv">0</span>, <span class="dv">0</span>) <span class="op">--</span> <span class="kw">dir</span>(<span class="dv">360</span> <span class="op">/</span> n <span class="op">*</span> k) <span class="op">*</span> u;</span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="cf">endfor</span>;</span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">top</span>(<span class="st">&quot;top&quot;</span>, (<span class="dv">0</span>, u));</span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">rt</span>(<span class="st">&quot;rt&quot;</span>, (u, <span class="dv">0</span>));</span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">bot</span>(<span class="st">&quot;bot&quot;</span>, (<span class="dv">0</span>, <span class="op">-</span>u));</span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">lft</span>(<span class="st">&quot;lft&quot;</span>, (<span class="op">-</span>u, <span class="dv">0</span>));</span>
-<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">urt</span>(<span class="st">&quot;urt&quot;</span>, <span class="kw">dir</span>(<span class="dv">45</span>) <span class="op">*</span> u);</span>
-<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">lrt</span>(<span class="st">&quot;lrt&quot;</span>, <span class="kw">dir</span>(<span class="op">-</span><span class="dv">45</span>) <span class="op">*</span> u);</span>
-<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">llft</span>(<span class="st">&quot;llft&quot;</span>, <span class="kw">dir</span>(<span class="op">-</span><span class="dv">3</span> <span class="op">*</span> <span class="dv">45</span>) <span class="op">*</span> u);</span>
-<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">ulft</span>(<span class="st">&quot;ulft&quot;</span>, <span class="kw">dir</span>(<span class="dv">3</span> <span class="op">*</span> <span class="dv">45</span>) <span class="op">*</span> u);</span>
-<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
-<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
-<img src="ac7de5040b1937bcfea613c3f22bf8d0b22b15ef.svg" />
-<h2 data-number="2.12" id="как-поменять-шрифт-и-его-размер">Как поменять
-шрифт и его размер?</h2>
 <div class="sourceCode" id="cb26"><pre
 class="sourceCode mp"><code class="sourceCode metafont"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="kw">defaultfont</span> <span class="op">:=</span> <span class="st">&quot;psyro&quot;</span>; <span class="co">% надо написать название, угадав его</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co">% в папке, где tex в поддиректории .\texmf-dist\fonts\tfm\ должен быть файл название-шрифта.tfm</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co">% нда, почему такие крутые вещи никому не нужны?</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="kw">defaultscale</span> <span class="op">:=</span> <span class="dv">12</span>pt <span class="op">/</span> <span class="at">fontsize</span>(<span class="kw">defaultfont</span>);</span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="dv">3</span>cm;</span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>n <span class="op">:=</span> <span class="dv">8</span>;</span>
-<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="op">:=</span> <span class="dv">0</span> <span class="cf">upto</span> n:</span>
-<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">draw</span> (<span class="dv">0</span>, <span class="dv">0</span>) <span class="op">--</span> <span class="kw">dir</span>(<span class="dv">360</span> <span class="op">/</span> n <span class="op">*</span> k) <span class="op">*</span> u;</span>
-<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="cf">endfor</span>;</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="dv">3</span>cm;</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>n <span class="op">:=</span> <span class="dv">8</span>;</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="op">:=</span> <span class="dv">0</span> <span class="cf">upto</span> n:</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">draw</span> (<span class="dv">0</span>, <span class="dv">0</span>) <span class="op">--</span> <span class="kw">dir</span>(<span class="dv">360</span> <span class="op">/</span> n <span class="op">*</span> k) <span class="op">*</span> u;</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="cf">endfor</span>;</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">top</span>(<span class="st">&quot;top&quot;</span>, (<span class="dv">0</span>, u));</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">rt</span>(<span class="st">&quot;rt&quot;</span>, (u, <span class="dv">0</span>));</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">bot</span>(<span class="st">&quot;bot&quot;</span>, (<span class="dv">0</span>, <span class="op">-</span>u));</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">lft</span>(<span class="st">&quot;lft&quot;</span>, (<span class="op">-</span>u, <span class="dv">0</span>));</span>
 <span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">top</span>(<span class="st">&quot;top&quot;</span>, (<span class="dv">0</span>, u));</span>
-<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">rt</span>(<span class="st">&quot;rt&quot;</span>, (u, <span class="dv">0</span>));</span>
-<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">bot</span>(<span class="st">&quot;bot&quot;</span>, (<span class="dv">0</span>, <span class="op">-</span>u));</span>
-<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">lft</span>(<span class="st">&quot;lft&quot;</span>, (<span class="op">-</span>u, <span class="dv">0</span>));</span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">urt</span>(<span class="st">&quot;urt&quot;</span>, <span class="kw">dir</span>(<span class="dv">45</span>) <span class="op">*</span> u);</span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">lrt</span>(<span class="st">&quot;lrt&quot;</span>, <span class="kw">dir</span>(<span class="op">-</span><span class="dv">45</span>) <span class="op">*</span> u);</span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">llft</span>(<span class="st">&quot;llft&quot;</span>, <span class="kw">dir</span>(<span class="op">-</span><span class="dv">3</span> <span class="op">*</span> <span class="dv">45</span>) <span class="op">*</span> u);</span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">ulft</span>(<span class="st">&quot;ulft&quot;</span>, <span class="kw">dir</span>(<span class="dv">3</span> <span class="op">*</span> <span class="dv">45</span>) <span class="op">*</span> u);</span>
 <span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">urt</span>(<span class="st">&quot;urt&quot;</span>, <span class="kw">dir</span>(<span class="dv">45</span>) <span class="op">*</span> u);</span>
-<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">lrt</span>(<span class="st">&quot;lrt&quot;</span>, <span class="kw">dir</span>(<span class="op">-</span><span class="dv">45</span>) <span class="op">*</span> u);</span>
-<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">llft</span>(<span class="st">&quot;llft&quot;</span>, <span class="kw">dir</span>(<span class="op">-</span><span class="dv">3</span> <span class="op">*</span> <span class="dv">45</span>) <span class="op">*</span> u);</span>
-<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">ulft</span>(<span class="st">&quot;ulft&quot;</span>, <span class="kw">dir</span>(<span class="dv">3</span> <span class="op">*</span> <span class="dv">45</span>) <span class="op">*</span> u);</span>
-<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
-<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="ac7de5040b1937bcfea613c3f22bf8d0b22b15ef.svg" />
+<h2 data-number="2.12" id="как-поменять-шрифт-и-его-размер">Как поменять
+шрифт и его размер?</h2>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="kw">defaultfont</span> <span class="op">:=</span> <span class="st">&quot;psyro&quot;</span>; <span class="co">% надо написать название, угадав его</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co">% в папке, где tex в поддиректории .\texmf-dist\fonts\tfm\ должен быть файл название-шрифта.tfm</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co">% нда, почему такие крутые вещи никому не нужны?</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="kw">defaultscale</span> <span class="op">:=</span> <span class="dv">12</span>pt <span class="op">/</span> <span class="at">fontsize</span>(<span class="kw">defaultfont</span>);</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>u <span class="op">:=</span> <span class="dv">3</span>cm;</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>n <span class="op">:=</span> <span class="dv">8</span>;</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="op">:=</span> <span class="dv">0</span> <span class="cf">upto</span> n:</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">draw</span> (<span class="dv">0</span>, <span class="dv">0</span>) <span class="op">--</span> <span class="kw">dir</span>(<span class="dv">360</span> <span class="op">/</span> n <span class="op">*</span> k) <span class="op">*</span> u;</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a><span class="cf">endfor</span>;</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">top</span>(<span class="st">&quot;top&quot;</span>, (<span class="dv">0</span>, u));</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">rt</span>(<span class="st">&quot;rt&quot;</span>, (u, <span class="dv">0</span>));</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">bot</span>(<span class="st">&quot;bot&quot;</span>, (<span class="dv">0</span>, <span class="op">-</span>u));</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">lft</span>(<span class="st">&quot;lft&quot;</span>, (<span class="op">-</span>u, <span class="dv">0</span>));</span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">urt</span>(<span class="st">&quot;urt&quot;</span>, <span class="kw">dir</span>(<span class="dv">45</span>) <span class="op">*</span> u);</span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">lrt</span>(<span class="st">&quot;lrt&quot;</span>, <span class="kw">dir</span>(<span class="op">-</span><span class="dv">45</span>) <span class="op">*</span> u);</span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">llft</span>(<span class="st">&quot;llft&quot;</span>, <span class="kw">dir</span>(<span class="op">-</span><span class="dv">3</span> <span class="op">*</span> <span class="dv">45</span>) <span class="op">*</span> u);</span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">ulft</span>(<span class="st">&quot;ulft&quot;</span>, <span class="kw">dir</span>(<span class="dv">3</span> <span class="op">*</span> <span class="dv">45</span>) <span class="op">*</span> u);</span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
 <img src="50c144933d81730d81c1c2c11d615e494a168641.svg" />
 <h2 data-number="2.13" id="оператор-конкатенации">Оператор
 конкатенации</h2>
@@ -1096,31 +1150,169 @@ class="sourceCode mp"><code class="sourceCode metafont"><span id="cb26-1"><a hre
 <h3 data-number="2.13.1"
 id="использование-latex-в-metapost">Использование <code>latex</code> в
 <code>metapost</code></h3>
-<div class="sourceCode" id="cb27"><pre
-class="sourceCode mp"><code class="sourceCode metafont"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="va">z0</span> <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>);</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="va">z1</span> <span class="op">=</span> (<span class="bu">sqrt</span>(<span class="dv">3</span>)<span class="op">*</span><span class="fl">cm</span>, <span class="dv">0</span>);</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="va">z2</span> <span class="op">=</span> (<span class="bu">sqrt</span>(<span class="dv">3</span>)<span class="op">*</span><span class="fl">cm</span>, <span class="dv">1</span>cm);</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="va">z0</span> <span class="op">--</span> <span class="va">z1</span> <span class="op">--</span> <span class="va">z2</span> <span class="op">--</span> <span class="at">cycle</span>;</span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">bot</span>(<span class="re">btex</span> <span class="ss">$</span><span class="fu">\lbrace</span><span class="ss">$</span> <span class="re">etex</span> <span class="at">rotated</span> <span class="dv">90</span> <span class="at">xscaled</span> <span class="dv">5</span> <span class="at">yscaled</span> <span class="fl">1.4</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z0</span>, <span class="va">z1</span>]);</span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">rt</span>((<span class="re">btex</span> <span class="ss">$</span><span class="fu">\rbrace</span><span class="ss">$</span> <span class="re">etex</span>) <span class="at">xscaled</span> <span class="fl">1.3</span> <span class="at">yscaled</span> <span class="dv">3</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z1</span>, <span class="va">z2</span>]);</span>
-<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>(<span class="re">btex</span> <span class="ss">$</span><span class="fu">\lbrace</span><span class="ss">$</span> <span class="re">etex</span> <span class="at">xscaled</span> <span class="fl">1.5</span> <span class="at">yscaled</span> <span class="fl">5.7</span> <span class="at">rotated</span> <span class="op">-</span><span class="dv">60</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z0</span>, <span class="va">z2</span>] <span class="op">+</span> <span class="kw">dir</span>(<span class="dv">120</span>)<span class="op">*</span><span class="dv">2</span>mm);</span>
-<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="kw">labeloffset</span> <span class="op">:=</span> <span class="fl">3.5</span>mm; <span class="co">% на каком расстоянии от точки рисовать метку</span></span>
-<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">bot</span>(<span class="re">btex</span> <span class="ss">$</span><span class="fu">\sqrt</span><span class="ss">{3}$</span> <span class="re">etex</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z0</span>, <span class="va">z1</span>]);</span>
-<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">rt</span>(<span class="re">btex</span> 1 <span class="re">etex</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z1</span>, <span class="va">z2</span>]);</span>
-<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>(<span class="re">btex</span> 2 <span class="re">etex</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z0</span>, <span class="va">z2</span>] <span class="op">+</span> <span class="kw">dir</span>(<span class="dv">120</span>)<span class="op">*</span><span class="dv">5</span>mm);</span>
-<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
-<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="va">z0</span> <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>);</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="va">z1</span> <span class="op">=</span> (<span class="bu">sqrt</span>(<span class="dv">3</span>)<span class="op">*</span><span class="fl">cm</span>, <span class="dv">0</span>);</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="va">z2</span> <span class="op">=</span> (<span class="bu">sqrt</span>(<span class="dv">3</span>)<span class="op">*</span><span class="fl">cm</span>, <span class="dv">1</span>cm);</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="va">z0</span> <span class="op">--</span> <span class="va">z1</span> <span class="op">--</span> <span class="va">z2</span> <span class="op">--</span> <span class="at">cycle</span>;</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">bot</span>(<span class="re">btex</span> <span class="ss">$</span><span class="fu">\lbrace</span><span class="ss">$</span> <span class="re">etex</span> <span class="at">rotated</span> <span class="dv">90</span> <span class="at">xscaled</span> <span class="dv">5</span> <span class="at">yscaled</span> <span class="fl">1.4</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z0</span>, <span class="va">z1</span>]);</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">rt</span>((<span class="re">btex</span> <span class="ss">$</span><span class="fu">\rbrace</span><span class="ss">$</span> <span class="re">etex</span>) <span class="at">xscaled</span> <span class="fl">1.3</span> <span class="at">yscaled</span> <span class="dv">3</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z1</span>, <span class="va">z2</span>]);</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>(<span class="re">btex</span> <span class="ss">$</span><span class="fu">\lbrace</span><span class="ss">$</span> <span class="re">etex</span> <span class="at">xscaled</span> <span class="fl">1.5</span> <span class="at">yscaled</span> <span class="fl">5.7</span> <span class="at">rotated</span> <span class="op">-</span><span class="dv">60</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z0</span>, <span class="va">z2</span>] <span class="op">+</span> <span class="kw">dir</span>(<span class="dv">120</span>)<span class="op">*</span><span class="dv">2</span>mm);</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="kw">labeloffset</span> <span class="op">:=</span> <span class="fl">3.5</span>mm; <span class="co">% на каком расстоянии от точки рисовать метку</span></span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">bot</span>(<span class="re">btex</span> <span class="ss">$</span><span class="fu">\sqrt</span><span class="ss">{3}$</span> <span class="re">etex</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z0</span>, <span class="va">z1</span>]);</span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>.<span class="kw">rt</span>(<span class="re">btex</span> 1 <span class="re">etex</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z1</span>, <span class="va">z2</span>]);</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a><span class="kw">label</span>(<span class="re">btex</span> 2 <span class="re">etex</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">2</span>[<span class="va">z0</span>, <span class="va">z2</span>] <span class="op">+</span> <span class="kw">dir</span>(<span class="dv">120</span>)<span class="op">*</span><span class="dv">5</span>mm);</span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
 <img src="013069e4a33d0fa399c04816bb193abc0c3b207a.svg" />
+<h2 data-number="2.14"
+id="красивые-кривые-что-то-типо-гомотопии">Красивые кривые (что-то типо
+гомотопии)</h2>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> a<span class="op">=</span><span class="dv">0</span> <span class="cf">upto</span> <span class="dv">9</span>:</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">draw</span> (<span class="dv">0</span>,<span class="dv">0</span>){<span class="kw">dir</span> <span class="dv">45</span>}<span class="op">..</span>{<span class="kw">dir</span> <span class="op">-</span><span class="dv">10</span>a}(<span class="dv">6</span>cm,<span class="dv">0</span>);</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="cf">endfor</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="5be9d96b677773a508f1dd89551bb66afbe4b8db.svg" />
+<h2 data-number="2.15" id="whatever"><code>whatever</code></h2>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="va">z1</span><span class="op">=-</span><span class="va">z2</span><span class="op">=</span>(.<span class="dv">2</span>in,<span class="dv">0</span>);</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="va">x3</span><span class="op">=-</span><span class="va">x6</span><span class="op">=</span>.<span class="dv">3</span>in;</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="va">x3</span><span class="op">+</span><span class="va">y3</span><span class="op">=</span><span class="va">x6</span><span class="op">+</span><span class="va">y6</span><span class="op">=</span><span class="fl">1.1</span>in;</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="va">z4</span><span class="op">=</span><span class="dv">1</span><span class="op">/</span><span class="dv">3</span>[<span class="va">z3</span>,<span class="va">z6</span>];</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="va">z5</span><span class="op">=</span><span class="dv">2</span><span class="op">/</span><span class="dv">3</span>[<span class="va">z3</span>,<span class="va">z6</span>];</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="va">z20</span><span class="op">=</span><span class="kw">whatever</span>[<span class="va">z1</span>,<span class="va">z3</span>]<span class="op">=</span><span class="kw">whatever</span>[<span class="va">z2</span>,<span class="va">z4</span>];</span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="va">z30</span><span class="op">=</span><span class="kw">whatever</span>[<span class="va">z1</span>,<span class="va">z4</span>]<span class="op">=</span><span class="kw">whatever</span>[<span class="va">z2</span>,<span class="va">z5</span>];</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a><span class="va">z40</span><span class="op">=</span><span class="kw">whatever</span>[<span class="va">z1</span>,<span class="va">z5</span>]<span class="op">=</span><span class="kw">whatever</span>[<span class="va">z2</span>,<span class="va">z6</span>];</span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="va">z1</span><span class="op">--</span><span class="va">z20</span><span class="op">--</span><span class="va">z2</span><span class="op">--</span><span class="va">z30</span><span class="op">--</span><span class="va">z1</span><span class="op">--</span><span class="va">z40</span><span class="op">--</span><span class="va">z2</span>;</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a><span class="kw">pickup</span> <span class="at">pencircle</span> <span class="at">scaled</span> <span class="dv">1</span>pt;</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="va">z1</span><span class="op">--</span><span class="va">z2</span>;</span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> <span class="va">z3</span><span class="op">--</span><span class="va">z6</span>;</span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="20e2f9281518f883ae083a3310f5a56ba9d2271d.svg" />
+<h2 data-number="2.16"
+id="треугольник-с-обозначенными-углами">Треугольник с обозначенными
+углами</h2>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="re">def</span> draw_angle(<span class="at">expr</span> A, O, B, n) <span class="op">=</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    draw_angle_(A, O, B, <span class="dv">5</span>mm);</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n &gt; <span class="dv">1</span>: draw_angle_(A, O, B, <span class="fl">4.5</span>mm); <span class="cf">fi</span>;</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n &gt; <span class="dv">2</span>: draw_angle_(A, O, B, <span class="dv">4</span>mm);   <span class="cf">fi</span>;</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n &gt; <span class="dv">3</span>: draw_angle_(A, O, B, <span class="fl">5.5</span>mm); <span class="cf">fi</span>;</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="re">enddef</span>;</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="re">def</span> draw_angle_(<span class="at">expr</span> A, O, B, <span class="kw">d</span>) <span class="op">=</span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">draw</span> (O <span class="op">+</span> <span class="kw">d</span> <span class="op">*</span> <span class="kw">unitvector</span>(A <span class="op">-</span> O)){ <span class="kw">d</span> <span class="op">*</span> <span class="kw">unitvector</span>(A <span class="op">-</span> O) <span class="at">rotated</span> <span class="dv">90</span> }</span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>    <span class="op">..</span></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>    { <span class="kw">d</span> <span class="op">*</span> <span class="kw">unitvector</span>(B <span class="op">-</span> O) <span class="at">rotated</span> <span class="dv">90</span> }(O <span class="op">+</span> <span class="kw">d</span> <span class="op">*</span> <span class="kw">unitvector</span>(B <span class="op">-</span> O));</span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a><span class="re">enddef</span>;</span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a><span class="dt">pair</span> A, B, C;</span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>A <span class="op">:=</span> (<span class="dv">0</span>, <span class="dv">0</span>);</span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>B <span class="op">:=</span> (<span class="dv">3</span>cm, <span class="dv">0</span>);</span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>C <span class="op">:=</span> (<span class="dv">1</span>cm, <span class="dv">2</span>cm);</span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a><span class="kw">draw</span> A <span class="op">--</span> B <span class="op">--</span> C <span class="op">--</span> <span class="at">cycle</span>;</span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>draw_angle(B, A, C, <span class="dv">1</span>);</span>
+<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>draw_angle(C, B, A, <span class="dv">2</span>);</span>
+<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>draw_angle(A, C, B, <span class="dv">3</span>);</span>
+<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="cdc1b6e9c22eec9cb2bf94b456a9399ab20079c6.svg" />
+<h2 data-number="2.17" id="крутящийся-квадрат">Крутящийся квадрат</h2>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="dt">pair</span> A,B,C,<span class="kw">D</span>;</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    u<span class="op">:=</span><span class="dv">2</span>cm;</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    A<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">0</span>); B<span class="op">=</span>(u,<span class="dv">0</span>); C<span class="op">=</span>(u,u); <span class="kw">D</span><span class="op">=</span>(<span class="dv">0</span>,u);</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">transform</span> T;</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>    A <span class="at">transformed</span> T <span class="op">=</span> <span class="dv">1</span><span class="op">/</span><span class="dv">5</span>[A,B];</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>    B <span class="at">transformed</span> T <span class="op">=</span> <span class="dv">1</span><span class="op">/</span><span class="dv">5</span>[B,C];</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>    C <span class="at">transformed</span> T <span class="op">=</span> <span class="dv">1</span><span class="op">/</span><span class="dv">5</span>[C,<span class="kw">D</span>];</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">path</span> p;</span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> A<span class="op">--</span>B<span class="op">--</span>C<span class="op">--</span><span class="kw">D</span><span class="op">--</span><span class="at">cycle</span>;</span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i<span class="op">=</span><span class="dv">0</span> <span class="cf">upto</span> <span class="dv">100</span>:</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>      <span class="kw">draw</span> p;</span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>      p<span class="op">:=</span> p <span class="at">transformed</span> T;</span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">endfor</span>;</span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="2117c2324e76a08816045d7581921849449d7048.svg" />
+<h2 data-number="2.18" id="как-сделать-кривую-еще-кривее">Как сделать
+кривую еще кривее</h2>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode mp"><code class="sourceCode metafont"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>outputtemplate <span class="op">:=</span> <span class="st">&quot;%j.svg&quot;</span>;</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>outputformat <span class="op">:=</span> <span class="st">&quot;svg&quot;</span>;</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="re">beginfig</span>(<span class="dv">1</span>)</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="re">def</span> degrade(<span class="at">expr</span> p, q, N) <span class="op">=</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    <span class="re">begingroup</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">save</span> n, m, M;</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">numeric</span> n, m, M;</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>      n <span class="op">:=</span> <span class="bu">length</span>(p);</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>      m <span class="op">:=</span> <span class="bu">length</span>(q);</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>      M <span class="op">:=</span> n<span class="op">*</span>m; <span class="co">% Il faudrait prendre le ppcm</span></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> i<span class="op">=</span><span class="dv">0</span> <span class="cf">upto</span> N:</span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>        <span class="kw">draw</span></span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>        (i<span class="op">/</span>N)[ <span class="at">point</span> <span class="dv">0</span> <span class="at">of</span> p, <span class="at">point</span> <span class="dv">0</span> <span class="at">of</span> q ]</span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>        { (i<span class="op">/</span>N)[ <span class="kw">direction</span> <span class="dv">0</span> <span class="at">of</span> p, <span class="kw">direction</span> <span class="dv">0</span> <span class="at">of</span> q ] }</span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j<span class="op">=</span><span class="dv">1</span> <span class="cf">upto</span> M<span class="op">-</span><span class="dv">1</span>:</span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>          <span class="op">..</span></span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>          { (i<span class="op">/</span>N) [ <span class="kw">direction</span> <span class="dv">1</span> <span class="at">of</span> <span class="at">subpath</span>((j<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>n<span class="op">/</span>M,j<span class="op">*</span>n<span class="op">/</span>M) <span class="at">of</span> p,</span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">direction</span> <span class="dv">1</span> <span class="at">of</span> <span class="at">subpath</span>((j<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>m<span class="op">/</span>M,j<span class="op">*</span>m<span class="op">/</span>M) <span class="at">of</span> q  ] }</span>
+<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>          (i<span class="op">/</span>N)[ <span class="at">point</span> (j<span class="op">*</span>n<span class="op">/</span>M) <span class="at">of</span> p, <span class="at">point</span> (j<span class="op">*</span>m<span class="op">/</span>M) <span class="at">of</span> q ]</span>
+<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>          { (i<span class="op">/</span>N) [ <span class="kw">direction</span> <span class="dv">0</span> <span class="at">of</span> <span class="at">subpath</span>(j<span class="op">*</span>n<span class="op">/</span>M,(j<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span>n<span class="op">/</span>M) <span class="at">of</span> p,</span>
+<span id="cb33-22"><a href="#cb33-22" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">direction</span> <span class="dv">0</span> <span class="at">of</span> <span class="at">subpath</span>(j<span class="op">*</span>m<span class="op">/</span>M,(j<span class="op">+</span><span class="dv">1</span>)<span class="op">*</span>m<span class="op">/</span>M) <span class="at">of</span> q  ] }</span>
+<span id="cb33-23"><a href="#cb33-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">endfor</span></span>
+<span id="cb33-24"><a href="#cb33-24" aria-hidden="true" tabindex="-1"></a>        <span class="op">..</span></span>
+<span id="cb33-25"><a href="#cb33-25" aria-hidden="true" tabindex="-1"></a>        { (i<span class="op">/</span>N)[ <span class="kw">direction</span> n <span class="at">of</span> p, <span class="kw">direction</span> m <span class="at">of</span> q ] }</span>
+<span id="cb33-26"><a href="#cb33-26" aria-hidden="true" tabindex="-1"></a>        (i<span class="op">/</span>N)[ <span class="at">point</span> n <span class="at">of</span> p, <span class="at">point</span> m <span class="at">of</span> q ]</span>
+<span id="cb33-27"><a href="#cb33-27" aria-hidden="true" tabindex="-1"></a>        ;</span>
+<span id="cb33-28"><a href="#cb33-28" aria-hidden="true" tabindex="-1"></a>      <span class="cf">endfor</span>;</span>
+<span id="cb33-29"><a href="#cb33-29" aria-hidden="true" tabindex="-1"></a>    <span class="re">endgroup</span>;</span>
+<span id="cb33-30"><a href="#cb33-30" aria-hidden="true" tabindex="-1"></a>  <span class="re">enddef</span>;</span>
+<span id="cb33-31"><a href="#cb33-31" aria-hidden="true" tabindex="-1"></a>  <span class="dt">numeric</span> u;</span>
+<span id="cb33-32"><a href="#cb33-32" aria-hidden="true" tabindex="-1"></a>  u <span class="op">:=</span> <span class="dv">2</span>cm;</span>
+<span id="cb33-33"><a href="#cb33-33" aria-hidden="true" tabindex="-1"></a>  <span class="dt">path</span> p, q;</span>
+<span id="cb33-34"><a href="#cb33-34" aria-hidden="true" tabindex="-1"></a>  p <span class="op">:=</span> <span class="kw">fullcircle</span> <span class="at">scaled</span> u;</span>
+<span id="cb33-35"><a href="#cb33-35" aria-hidden="true" tabindex="-1"></a>  q <span class="op">:=</span> (<span class="op">-</span>u,<span class="op">-</span>u)<span class="op">--</span>(u,<span class="op">-</span>u)<span class="op">--</span>(u,u)<span class="op">--</span>(<span class="op">-</span>u,u)<span class="op">--</span><span class="at">cycle</span>;</span>
+<span id="cb33-36"><a href="#cb33-36" aria-hidden="true" tabindex="-1"></a>  degrade(p,q,<span class="dv">10</span>);</span>
+<span id="cb33-37"><a href="#cb33-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-38"><a href="#cb33-38" aria-hidden="true" tabindex="-1"></a><span class="re">endfig</span></span>
+<span id="cb33-39"><a href="#cb33-39" aria-hidden="true" tabindex="-1"></a><span class="kw">bye</span>.</span></code></pre></div>
+<img src="0b04ab94b4c85caf910b37b54e87eaa315cf6664.svg" />
 <section id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
@@ -1133,7 +1325,7 @@ role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="gnuplot-cheatsheet.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>
@@ -1141,6 +1333,7 @@ role="doc-backlink">↩︎</a></p></li>
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
+                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>

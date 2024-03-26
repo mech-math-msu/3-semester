@@ -12,7 +12,10 @@
     <title>Инварианты топологичеких пространств при непрерывных
 отображениях</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -84,13 +87,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -99,19 +102,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -217,7 +221,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -239,17 +247,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="различные-топологии.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="теорема-стоуна-вейерштрасса.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="различные-топологии.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="теорема-стоуна-вейерштрасса.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -264,16 +283,18 @@ class="math inline">\(X = U \sqcup V\)</span>, то <span
 class="math inline">\(X = U \cup V\)</span> и <span
 class="math inline">\(U \cap V = \varnothing\)</span>.</p>
 <div id="definition-22">
-<p><strong>Определение:</strong> Топологичекое пространство <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Топологичекое пространство <span
 class="math inline">\(X\)</span> <em>несвязно</em>, если представляется
 в виде объединения непересекающихся открытых подмножеств.</p>
 <p>Иначе <span class="math inline">\(X\)</span> <em>связно</em>.</p>
 </div>
 <div id="statement-6">
-<p><strong>Утверждение:</strong> Образ связного множества при
-непрерывном отображении связен.</p>
-<p><em>Доказательство:</em> Предположим обратное. Пусть при непрерывном
-отображении <span class="math inline">\(f: X \to Y\)</span> образ <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Образ
+связного множества при непрерывном отображении связен.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Предположим
+обратное. Пусть при непрерывном отображении <span
+class="math inline">\(f: X \to Y\)</span> образ <span
 class="math inline">\(f(A)\)</span> связного множества <span
 class="math inline">\(A \subset X\)</span> несвязен, то есть <span
 class="math inline">\(f(A) = U \sqcup V\)</span> и <span
@@ -287,30 +308,33 @@ A\)</span> несвязно <span class="math inline">\(\blades\)</span></p>
 </div>
 <h3 data-number="5.1.1" id="линейная-связность">Линейная связность</h3>
 <div id="statement-7">
-<p><strong>Утверждение:</strong> Отрезок, как подмножество вещественной
-прямой с естественной топологией, – связен.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Отрезок, как подмножество вещественной прямой с
+естественной топологией, – связен.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 <div id="definition-23">
-<p><strong>Определение:</strong> Образ отрезка с естественной топологией
-при непрерывном отображении в топологическое пространство –
-<em>(непрерывная) кривая</em>, <em>соединяющая</em> образы концов
-отрезка.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Образ
+отрезка с естественной топологией при непрерывном отображении в
+топологическое пространство – <em>(непрерывная) кривая</em>,
+<em>соединяющая</em> образы концов отрезка.</p>
 </div>
 <div id="definition-24">
-<p><strong>Определение:</strong> Пространство <em>линейно связно</em>,
-если любые две точки можно соединить непрерывной кривой.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Пространство <em>линейно связно</em>, если любые две
+точки можно соединить непрерывной кривой.</p>
 </div>
 <div id="statement-8">
-<p><strong>Утверждение:</strong> Пространство <span
-class="math inline">\(X\)</span> линейно связно <span
-class="math inline">\(\implies\)</span> пространство <span
-class="math inline">\(X\)</span> связно.</p>
-<p><em>Доказательство:</em> <span class="math inline">\(X\)</span> –
-линейно связно <span class="math inline">\(\implies \forall x, y \in X
-\,\,\,\, \exists f: [a, b] \in X: \,\,\,\, f(a) = x, \,\,\,\, f(b) =
-y\)</span> и <span class="math inline">\(f\)</span> – непрерывно. Пусть
-<span class="math inline">\(X\)</span> несвязно, то есть <span
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Пространство <span class="math inline">\(X\)</span>
+линейно связно <span class="math inline">\(\implies\)</span>
+пространство <span class="math inline">\(X\)</span> связно.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(X\)</span> – линейно связно <span
+class="math inline">\(\implies \forall x, y \in X \,\,\,\, \exists f:
+[a, b] \in X: \,\,\,\, f(a) = x, \,\,\,\, f(b) = y\)</span> и <span
+class="math inline">\(f\)</span> – непрерывно. Пусть <span
+class="math inline">\(X\)</span> несвязно, то есть <span
 class="math inline">\(X = U \sqcap V\)</span>, где <span
 class="math inline">\(U\)</span> и <span
 class="math inline">\(V\)</span> открыты. Взяв точки <span
@@ -322,20 +346,22 @@ class="math inline">\([a, b] = f^{-1}(U)\sqcup f^{-1}(V)\)</span> –
 </div>
 <h2 data-number="5.2" id="компактность">Компактность</h2>
 <div id="definition-25">
-<p><strong>Определение:</strong> Пространство <span
-class="math inline">\(X\)</span> – <em>компакт</em>, если из любого его
-открытого покрытия можно выделить конечное подпокрытие.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Пространство <span class="math inline">\(X\)</span> –
+<em>компакт</em>, если из любого его открытого покрытия можно выделить
+конечное подпокрытие.</p>
 </div>
 <div id="definition-26">
-<p><strong>Определение:</strong> Подмножество <span
-class="math inline">\(A \subset X\)</span> топологического пространства
-<span class="math inline">\(X\)</span> – <em>компактно</em>, если из
-любого его открытого покрытия можно выделить конечное подпокрытие.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Подмножество <span class="math inline">\(A \subset
+X\)</span> топологического пространства <span
+class="math inline">\(X\)</span> – <em>компактно</em>, если из любого
+его открытого покрытия можно выделить конечное подпокрытие.</p>
 </div>
 <div id="statement-9">
-<p><strong>Утверждение:</strong> Образ компактного подмножества при
-непрерывном отображении компактен.</p>
-<p><em>Доказательство:</em> Пусть <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Образ
+компактного подмножества при непрерывном отображении компактен.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть <span
 class="math inline">\(\cup_{\alpha \in \Lambda}U_{\alpha}\)</span> –
 открытое покрытие образа <span class="math inline">\(f(K)\)</span>
 компактного множества <span class="math inline">\(K\)</span>
@@ -352,15 +378,17 @@ class="math inline">\(\cup_{i = 1}^{n}f(U_{\alpha_i})\)</span> искомое
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="statement-10">
-<p><strong>Утверждение:</strong> Замкнутое подмножество компактного
-пространства компактно.</p>
-<p><em>Доказательство:</em> Рассмотрим покрытие <span
-class="math inline">\(U = \cup_{\alpha \in \Lambda}U_{\alpha}\)</span>
-замкнутого множества <span class="math inline">\(V\)</span> в компактном
-пространстве <span class="math inline">\(X\)</span>. Хотим выделить
-конечное подпокрытие. <span class="math inline">\(V\)</span> закнуто
-<span class="math inline">\(\implies X \setminus V\)</span> – открыто.
-Добавим <span class="math inline">\(X \setminus V\)</span> к <span
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Замкнутое подмножество компактного пространства
+компактно.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Рассмотрим
+покрытие <span class="math inline">\(U = \cup_{\alpha \in
+\Lambda}U_{\alpha}\)</span> замкнутого множества <span
+class="math inline">\(V\)</span> в компактном пространстве <span
+class="math inline">\(X\)</span>. Хотим выделить конечное подпокрытие.
+<span class="math inline">\(V\)</span> закнуто <span
+class="math inline">\(\implies X \setminus V\)</span> – открыто. Добавим
+<span class="math inline">\(X \setminus V\)</span> к <span
 class="math inline">\(U\)</span>, получим покрытие всего <span
 class="math inline">\(X\)</span>. <span class="math inline">\(X\)</span>
 компактно <span class="math inline">\(\implies \exists \cup_{i =
@@ -371,14 +399,15 @@ class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <h3 data-number="5.2.1" id="лемма-лебега">Лемма Лебега</h3>
 <div id="lemma-4">
-<p><strong>Лемма:</strong> (<em>Лебега</em>) Пусть <span
+<p><span class="margin-lft"><strong>Лемма:
+</strong></span>(<em>Лебега</em>) Пусть <span
 class="math inline">\(X\)</span> компактное метрическое пространство.
 Пусть <span class="math inline">\(\{U_{\alpha}\}\)</span> открытое
 покрытие <span class="math inline">\(X\)</span>. Тогда <span
 class="math inline">\(\exists r &gt; 0\)</span>, такое что любой
 открытый шар радиуса <span class="math inline">\(r\)</span> целиком
 лежит в одном из <span class="math inline">\(U_{\alpha}\)</span>.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\{U_{\alpha}\}\)</span> – покрытие, следовательно
 <span class="math inline">\(\forall x \in X \,\,\,\, \exists
 O_{\varepsilon_x}(x) \subset U_{\alpha}\)</span> для некоторого <span
@@ -403,14 +432,14 @@ r\)</span> и <span class="math inline">\(\rho(x_i, y) \leqslant
 \,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="definition-27">
-<p><strong>Определение:</strong> Максимальное <span
-class="math inline">\(r\)</span>, удовлетворяющее условиям предыдущей
-леммы, – <em>число Лебега</em> покрытия <span
-class="math inline">\(U_{\alpha}\)</span>.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Максимальное <span class="math inline">\(r\)</span>,
+удовлетворяющее условиям предыдущей леммы, – <em>число Лебега</em>
+покрытия <span class="math inline">\(U_{\alpha}\)</span>.</p>
 </div>
 <h2 data-number="5.3" id="отделимость">Отделимость</h2>
 <div id="definition-28">
-<p><strong>Определение:</strong> (<span
+<p><span class="margin-lft"><strong>Определение: </strong></span>(<span
 class="math inline">\(\operatorname{T_1}\)</span>) Топологическое
 пространство <span class="math inline">\(X\)</span> обладает <span
 class="math inline">\(\operatorname{T_1}\)</span>, если <span
@@ -419,10 +448,11 @@ class="math inline">\(\forall x, y \in X \,\,\,\, \exists U_x, U_y \in
 \not\in U_x\)</span>.</p>
 </div>
 <div id="lemma-5">
-<p><strong>Лемма:</strong> <span class="math inline">\(X\)</span>
-обладает <span class="math inline">\(\operatorname{T_1}\iff\)</span>
-любая точка <span class="math inline">\(X\)</span> замкнута.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Лемма: </strong></span><span
+class="math inline">\(X\)</span> обладает <span
+class="math inline">\(\operatorname{T_1}\iff\)</span> любая точка <span
+class="math inline">\(X\)</span> замкнута.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p><span class="math inline">\(\boxed{\Longrightarrow}\)</span>
 Зафиксируем <span class="math inline">\(x_0 \in X\)</span>. Докажем, что
 <span class="math inline">\(\{x_0\}\)</span> – замкнуто. <span
@@ -436,7 +466,7 @@ class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <h3 data-number="5.3.1" id="хаусдорфовость">Хаусдорфовость</h3>
 <div id="definition-29">
-<p><strong>Определение:</strong> (<span
+<p><span class="margin-lft"><strong>Определение: </strong></span>(<span
 class="math inline">\(\operatorname{T_2}\)</span>) Топологическое
 пространство <span class="math inline">\(X\)</span>
 <em>хаусдорфово</em>, если <span class="math inline">\(\forall x, y \in
@@ -444,8 +474,8 @@ X \,\,\,\, \exists U_x, U_y \in \tau_X: \,\,\,\, U_x \cap U_y =
 \varnothing\)</span>.</p>
 </div>
 <div id="definition-30">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(\{x_n\}_{n = 1}^{\infty}\)</span> –
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(\{x_n\}_{n = 1}^{\infty}\)</span> –
 последовательность точек <span class="math inline">\(X\)</span>. <span
 class="math inline">\(x \in X\)</span> – <em>предел</em>
 последовательности <span class="math inline">\(x_n\)</span>, если
@@ -453,10 +483,10 @@ class="math inline">\(x \in X\)</span> – <em>предел</em>
 содержит конечное количество членов последовательнсти.</p>
 </div>
 <div id="statement-11">
-<p><strong>Утверждение:</strong> Если <span
-class="math inline">\(X\)</span> хаусдорфово, то любая
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Если
+<span class="math inline">\(X\)</span> хаусдорфово, то любая
 последовательность имеет не более одного предела.</p>
-<p><em>Доказательство:</em> Пусть <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть <span
 class="math inline">\(x_1\)</span> и <span
 class="math inline">\(x_2\)</span> пределы последовательности <span
 class="math inline">\(\{a_n\}_{n = 1}^{\infty}\)</span>. <span
@@ -468,7 +498,7 @@ class="math inline">\(\implies \exists U_{x_1}, U_{x_2} \in \tau_X:
 количество точек <span class="math inline">\(\blades\)</span></p>
 </div>
 <div id="definition-31">
-<p><strong>Определение:</strong> (<span
+<p><span class="margin-lft"><strong>Определение: </strong></span>(<span
 class="math inline">\(\operatorname{T_3}\)</span>) Топологическое
 пространство <span class="math inline">\(X\)</span> обладает <span
 class="math inline">\(\operatorname{T_3}\)</span>, если <span
@@ -477,7 +507,7 @@ class="math inline">\(A \subset X: \,\,\,\, x \not\in A \,\,\,\, \exists
 U_x, U_A \in \tau_X: \,\,\,\, U_x \cap U_A = \varnothing\)</span>.</p>
 </div>
 <div id="definition-32">
-<p><strong>Определение:</strong> (<span
+<p><span class="margin-lft"><strong>Определение: </strong></span>(<span
 class="math inline">\(\operatorname{T_4}\)</span>) Топологическое
 пространство <span class="math inline">\(X\)</span> обладает <span
 class="math inline">\(\operatorname{T_4}\)</span>, если для любых
@@ -486,15 +516,15 @@ class="math inline">\(\operatorname{T_4}\)</span>, если для любых
 U_B = \varnothing\)</span>.</p>
 </div>
 <div id="definition-33">
-<p><strong>Определение:</strong> Если <span
-class="math inline">\(X\)</span> обладает <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Если
+<span class="math inline">\(X\)</span> обладает <span
 class="math inline">\(\operatorname{T_1}\)</span> и <span
 class="math inline">\(\operatorname{T_3}\)</span>, то <span
 class="math inline">\(X\)</span> – <em>регулярно</em>.</p>
 </div>
 <div id="definition-34">
-<p><strong>Определение:</strong> Если <span
-class="math inline">\(X\)</span> обладает <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Если
+<span class="math inline">\(X\)</span> обладает <span
 class="math inline">\(\operatorname{T_1}\)</span> и <span
 class="math inline">\(\operatorname{T_4}\)</span>, то <span
 class="math inline">\(X\)</span> – <em>нормально</em>.</p>
@@ -504,12 +534,13 @@ class="math inline">\(\implies\)</span> регулярно <span
 class="math inline">\(\implies\)</span> хаусдорфово <span
 class="math inline">\(\implies \operatorname{T_1}\)</span>.</p>
 <div id="statement-12">
-<p><strong>Утверждение:</strong> Если пространство <span
-class="math inline">\(X\)</span> компактно и хаусдорфово, то оно
-нормально.</p>
-<p><em>Доказательство:</em> <span class="math inline">\(X\)</span>
-хаусдорфово <span class="math inline">\(\implies X\)</span> обладает
-<span class="math inline">\(T_1\)</span>.</p>
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Если
+пространство <span class="math inline">\(X\)</span> компактно и
+хаусдорфово, то оно нормально.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(X\)</span> хаусдорфово <span
+class="math inline">\(\implies X\)</span> обладает <span
+class="math inline">\(T_1\)</span>.</p>
 <p>Докажем, что <span class="math inline">\(X\)</span> регулярно. Пусть
 <span class="math inline">\(A \subset X\)</span> – замкнуто и <span
 class="math inline">\(X \ni x_0 \not\in A\)</span>. <span
@@ -546,13 +577,14 @@ class="math inline">\(\cap_{i = 1}^{n}U_{B, \,\, x_i} \supset B
 \,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="lemma-6">
-<p><strong>Лемма:</strong> Компактное подмножество <span
-class="math inline">\(K\)</span> хаусдорфова пространства <span
-class="math inline">\(X\)</span> замкнуто.</p>
-<p><em>Доказательство:</em> Рассмотрим <span class="math inline">\(x_0
-\in X \setminus K\)</span>. <span class="math inline">\(X\)</span>
-хаусдорфово <span class="math inline">\(\implies \forall x \in K \exists
-U_x, U_{x,\,\, x_0} \in \tau_X: \,\,\,\, U_x \cap U_{x,\,\, x_0} =
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Компактное
+подмножество <span class="math inline">\(K\)</span> хаусдорфова
+пространства <span class="math inline">\(X\)</span> замкнуто.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Рассмотрим
+<span class="math inline">\(x_0 \in X \setminus K\)</span>. <span
+class="math inline">\(X\)</span> хаусдорфово <span
+class="math inline">\(\implies \forall x \in K \exists U_x, U_{x,\,\,
+x_0} \in \tau_X: \,\,\,\, U_x \cap U_{x,\,\, x_0} =
 \varnothing\)</span>. Рассмотрим открытое покрытие <span
 class="math inline">\(\{U_x\}_{x \in K}\)</span> множества <span
 class="math inline">\(K\)</span>. <span class="math inline">\(K\)</span>
@@ -567,22 +599,23 @@ class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <h2 data-number="5.4" id="урысоновость">Урысоновость</h2>
 <div id="lemma-7">
-<p><strong>Лемма:</strong> (<em>Урысона</em>) Пусть <span
+<p><span class="margin-lft"><strong>Лемма:
+</strong></span>(<em>Урысона</em>) Пусть <span
 class="math inline">\(X\)</span> – нормальное пространство, <span
 class="math inline">\(A, B \subset X\)</span> замкнуты и <span
 class="math inline">\(A \cap B = \varnothing\)</span>. Тогда <span
 class="math inline">\(\exists f: X \to [0, 1]: \,\,\,\, f_{|A} = 0,
 f_{|B} = 1\)</span> и <span class="math inline">\(f\)</span>
 непрерывна.</p>
-<p><em>Доказательство:</em> Рассмотрим множество <span
-class="math inline">\(\Lambda = \{\frac{k}{2^n}, \,\,\,\, k, n \in
-\mathbb{N}\cup \{0\}, \,\,\,\, k \leqslant 2^n\}\)</span>. Докажем, что
-существуют такие открытые подмножества <span
-class="math inline">\(\{U_{\alpha}\}_{\alpha \in \Lambda}\)</span>, что
-<span class="math inline">\(A \subset U_0\)</span> и <span
-class="math inline">\(B \subset U_1\)</span> и <span
-class="math inline">\(\operatorname{Cl}U_{\alpha} \subset U_{\beta},
-\,\,\,\, \forall \alpha &lt; \beta\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Рассмотрим
+множество <span class="math inline">\(\Lambda = \{\frac{k}{2^n},
+\,\,\,\, k, n \in \mathbb{N}\cup \{0\}, \,\,\,\, k \leqslant
+2^n\}\)</span>. Докажем, что существуют такие открытые подмножества
+<span class="math inline">\(\{U_{\alpha}\}_{\alpha \in
+\Lambda}\)</span>, что <span class="math inline">\(A \subset
+U_0\)</span> и <span class="math inline">\(B \subset U_1\)</span> и
+<span class="math inline">\(\operatorname{Cl}U_{\alpha} \subset
+U_{\beta}, \,\,\,\, \forall \alpha &lt; \beta\)</span>.</p>
 <p>Пусть <span class="math inline">\(U_1 = X\)</span>. Так как
 пространство нормально <span class="math inline">\(\exists U_0 \supset
 A: \,\,\,\, \operatorname{Cl}U_0 \cap B = \varnothing \implies \exists
@@ -597,14 +630,15 @@ class="math inline">\(f\)</span> непрерывно. Рассмотрим пр
 class="math inline">\((b, 1]\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="definition-35">
-<p><strong>Определение:</strong> Норма функции <span
-class="math inline">\(f: X \to \mathbb{R}\)</span> ограниченной на <span
-class="math inline">\(\mathbb{R}\)</span> – это <span
-class="math inline">\(||f|| = \displaystyle\sup_{x \in
+<p><span class="margin-lft"><strong>Определение: </strong></span>Норма
+функции <span class="math inline">\(f: X \to \mathbb{R}\)</span>
+ограниченной на <span class="math inline">\(\mathbb{R}\)</span> – это
+<span class="math inline">\(||f|| = \displaystyle\sup_{x \in
 X}|f(x)|\)</span>.</p>
 </div>
 <div id="theorem-1">
-<p><strong>Теорема:</strong> (<em>Титце</em>) Пусть <span
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Титце</em>) Пусть <span
 class="math inline">\(X\)</span> – нормальное пространство, <span
 class="math inline">\(A \subset X\)</span> замкнуто. Тогда для любой
 непрерывной функции <span class="math inline">\(f: A \to
@@ -613,9 +647,9 @@ class="math inline">\(F: X \to \mathbb{R}\)</span>, такая, что <span
 class="math inline">\(F_{|A} = f\)</span>. Если <span
 class="math inline">\(||f|| \leqslant 1\)</span>, то <span
 class="math inline">\(||F|| \leqslant 1\)</span>.</p>
-<p><em>Доказательство:</em> Достаточно доказать, для <span
-class="math inline">\(f: A \to [-1, 1]\)</span>, так как <span
-class="math inline">\(\tan: [-1, 1] \to \mathbb{R}\)</span> –
+<p><span class="margin-lft"><em>Доказательство:</em></span> Достаточно
+доказать, для <span class="math inline">\(f: A \to [-1, 1]\)</span>, так
+как <span class="math inline">\(\tan: [-1, 1] \to \mathbb{R}\)</span> –
 непрерывен.</p>
 <p>Индуктивно построим последовательность функций <span
 class="math inline">\(F_n\)</span>, равномерно сходящуюся к <span
@@ -685,7 +719,7 @@ role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="различные-топологии.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

@@ -11,7 +11,10 @@
     
     <title>Модальная логика</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="элиминация-кванторов-в-поле-действительных-чисел.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="построение-модели-теории-в-логике-отношений.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="элиминация-кванторов-в-поле-действительных-чисел.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="построение-модели-теории-в-логике-отношений.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -250,8 +269,8 @@
 id="модальная-логика.-содержательный-смысл-модальностей">Модальная
 логика. Содержательный смысл модальностей</h2>
 <div id="definition-37">
-<p><strong>Определение:</strong></p>
-<p><em>Пропозициональный язык (сигнатура)</em> – это</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Пропозициональный язык (сигнатура)</em> – это</p>
 <ol type="1">
 <li>Множество <em>пропозициональных переменных</em>: <span
 class="math inline">\(\operatorname{Prop} = \{P_1, P_2,
@@ -264,16 +283,16 @@ class="math inline">\(\Box\)</span> (<em>возможность</em> и
 <li>Скобки: <span class="math inline">\((\)</span>, <span
 class="math inline">\()\)</span>.</li>
 </ol>
-<h3 data-number="9.1.1"
+<h2 data-number="9.2"
 id="модальная-логика.-индуктивное-построение-формул">Модальная логика.
-Индуктивное построение формул</h3>
+Индуктивное построение формул</h2>
 <p>Формулы определяются как и везде.</p>
 </div>
-<h2 data-number="9.2" id="модальная-логика.-семантика-крипке">Модальная
+<h2 data-number="9.3" id="модальная-логика.-семантика-крипке">Модальная
 логика. Семантика Крипке</h2>
 <div id="definition-38">
-<p><strong>Определение:</strong> Семантика модальной логики – это модели
-Крипке.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Семантика модальной логики – это модели Крипке.</p>
 <p><em>Шкала Крипке</em> – это непустое множество <span
 class="math inline">\(W\)</span> и бинарное отношение <span
 class="math inline">\(R \subset W\times W\)</span> на <span
@@ -289,9 +308,9 @@ R)\)</span>.</p>
 оценка в шкале</em> <span class="math inline">\(F\)</span>.</p>
 <p><em>Модель Крипке</em> – это <span class="math inline">\(K = (W, R,
 v)\)</span>.</p>
-<h3 data-number="9.2.1"
+<h2 data-number="9.4"
 id="модальная-логика.-свойства-истинности">Модальная логика. Свойства
-истинности</h3>
+истинности</h2>
 <ol type="1">
 <li><p>Пропозиционная переменная <span class="math inline">\(P\)</span>
 <em>истинна в мире</em> <span class="math inline">\(w \in W\)</span>
@@ -320,13 +339,14 @@ class="math inline">\(w \models \varphi\)</span>.</p>
 class="math inline">\(\varphi\)</span> истинна в любой шкале.
 Обозначается: <span class="math inline">\(\models \varphi\)</span>.</p>
 </div>
-<h2 data-number="9.3"
+<h2 data-number="9.5"
 id="модальная-логика.-выводимость.-непротиворечивость.-полнота-без-доказательства">Модальная
 логика. Выводимость. Непротиворечивость. Полнота (без
 доказательства)</h2>
 <div id="definition-39">
-<p><strong>Определение:</strong> <em>Исчисление</em> – это
-<em>аксиомы</em> и <em>правила вывода</em>.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Исчисление</em> – это <em>аксиомы</em> и <em>правила
+вывода</em>.</p>
 <p>Для модальной логики аксиомы – это тавтологии и формулы вида <span
 class="math inline">\(\Box(\varphi \to \psi) \to (\Box \varphi \to \Box
 \psi)\)</span>. Аксиомы <em>выводимы</em>.</p>
@@ -340,14 +360,14 @@ class="math inline">\(\Box A\)</span> <em>выводима</em>.</p>
 <p>Исчисление <em>полно</em>, если все истины выводимы.</p>
 </div>
 <div id="theorem-5">
-<p><strong>Теорема:</strong> Исчисление модальной логики полно и
-непротиворечиво.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Исчисление
+модальной логики полно и непротиворечиво.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="элиминация-кванторов-в-поле-действительных-чисел.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

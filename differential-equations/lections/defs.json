@@ -1,0 +1,32 @@
+[
+    {
+        "keyword": "(обыкновенное) дифференциальное уравнение независимая переменная неизвестная функция порядок уравнения уравнение, не разрешённое относительно старшей производной уравнение, разрешённое относительно старшей производной",
+        "html": "<p><a\nhref=\"обыкновенные-дифференциальные-уравнения.html#definition-0\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(f(x, y, \\ldots, y^{(n)}) = 0\\)</span> <a\nhref=\"#fn1\" class=\"footnote-ref\" id=\"fnref1\"\nrole=\"doc-noteref\"><sup>1</sup></a> – <em>(обыкновенное)\nдифференциальное уравнение</em>.</p>\n<p><span class=\"math inline\">\\(x\\)</span> – <em>независимая\nпеременная</em>,</p>\n<p><span class=\"math inline\">\\(y = y(x)\\)</span> – <em>неизвестная\nфункция</em>,</p>\n<p><span class=\"math inline\">\\(n\\)</span> – <em>порядок\nуравнения</em>.</p>\n<p><span class=\"math inline\">\\(f(x, y, \\ldots, y^{(n)}) = 0\\)</span> –\n<em>уравнение, не разрешённое относительно старшей производной</em>.</p>\n<p><span class=\"math inline\">\\(y^{(n)} = F(x, y, \\ldots, y^{(n -\n1)})\\)</span> – <em>уравнение, разрешённое относительно старшей\nпроизводной</em>.</p>\n<section id=\"footnotes\" class=\"footnotes footnotes-end-of-document\"\nrole=\"doc-endnotes\">\n<hr />\n<ol>\n<li id=\"fn1\"><p><span class=\"math inline\">\\(f\\)</span> – произвольная\nфункция.<a href=\"#fnref1\" class=\"footnote-back\"\nrole=\"doc-backlink\">↩︎</a></p></li>\n</ol>\n</section>",
+        "url": "обыкновенные-дифференциальные-уравнения.html#definition-0"
+    },
+    {
+        "keyword": "решение дифференциального уравнения",
+        "html": "<p><a\nhref=\"обыкновенные-дифференциальные-уравнения.html#definition-1\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nФункция <span class=\"math inline\">\\(y = \\varphi(x)\\)</span>, <span\nclass=\"math inline\">\\(n\\)</span> раз дифференцируемая и обращающаяя\nуравнение <span class=\"math inline\">\\(f(x, y, \\ldots, y^{(n)}) =\n0\\)</span> в тождество, – <em>решение дифференциального\nуравнения</em>.</p>",
+        "url": "обыкновенные-дифференциальные-уравнения.html#definition-1"
+    },
+    {
+        "keyword": "поле направлений",
+        "html": "<p><a\nhref=\"обыкновенные-дифференциальные-уравнения.html#definition-2\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nСовокупность касательных векторов – <em>поле направлений</em> <a\nhref=\"#fn1\" class=\"footnote-ref\" id=\"fnref1\"\nrole=\"doc-noteref\"><sup>1</sup></a>.</p>\n<section id=\"footnotes\" class=\"footnotes footnotes-end-of-document\"\nrole=\"doc-endnotes\">\n<hr />\n<ol>\n<li id=\"fn1\"><p>По-английски: slope field.<a href=\"#fnref1\"\nclass=\"footnote-back\" role=\"doc-backlink\">↩︎</a></p></li>\n</ol>\n</section>",
+        "url": "обыкновенные-дифференциальные-уравнения.html#definition-2"
+    },
+    {
+        "keyword": "изоклины",
+        "html": "<p><a\nhref=\"обыкновенные-дифференциальные-уравнения.html#definition-3\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nЛинии, вдоль которых поле постоянно, – <em>изоклины</em>.</p>",
+        "url": "обыкновенные-дифференциальные-уравнения.html#definition-3"
+    },
+    {
+        "keyword": "интегральная кривая поля направлений",
+        "html": "<p><a\nhref=\"обыкновенные-дифференциальные-уравнения.html#definition-4\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nКривая, касающаяся в каждой своей точке поля направлений, –\n<em>интегральная кривая поля направлений</em> <a href=\"#fn1\"\nclass=\"footnote-ref\" id=\"fnref1\"\nrole=\"doc-noteref\"><sup>1</sup></a>.</p>\n<section id=\"footnotes\" class=\"footnotes footnotes-end-of-document\"\nrole=\"doc-endnotes\">\n<hr />\n<ol>\n<li id=\"fn1\"><p>По-английски: integral curves.<a href=\"#fnref1\"\nclass=\"footnote-back\" role=\"doc-backlink\">↩︎</a></p></li>\n</ol>\n</section>",
+        "url": "обыкновенные-дифференциальные-уравнения.html#definition-4"
+    },
+    {
+        "keyword": "общее решение дифференциального уравнения",
+        "html": "<p><a\nhref=\"обыкновенные-дифференциальные-уравнения.html#definition-5\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Общее решение дифференциального уравнения</em> – это функция или\nсовокупность функций, содержащаяя все решения дифференциального\nуравнения.</p>",
+        "url": "обыкновенные-дифференциальные-уравнения.html#definition-5"
+    }
+]

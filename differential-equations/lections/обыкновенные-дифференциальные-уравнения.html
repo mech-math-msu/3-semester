@@ -11,7 +11,10 @@
     
     <title>Обыкновенные дифференциальные уравнения</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,16 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="index.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="index.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -248,9 +268,10 @@
 id="обыкновенные-дифференциальные-уравнения">Обыкновенные
 дифференциальные уравнения</h1>
 <div id="definition-0">
-<p><strong>Определение:</strong> <span class="math inline">\(f(x, y,
-\ldots, y^{(n)}) = 0\)</span> <a href="#fn1" class="footnote-ref"
-id="fnref1" role="doc-noteref"><sup>1</sup></a> – <em>(обыкновенное)
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\(f(x, y, \ldots, y^{(n)}) = 0\)</span> <a
+href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a> – <em>(обыкновенное)
 дифференциальное уравнение</em>.</p>
 <p><span class="math inline">\(x\)</span> – <em>независимая
 переменная</em>,</p>
@@ -265,11 +286,12 @@ id="fnref1" role="doc-noteref"><sup>1</sup></a> – <em>(обыкновенно�
 производной</em>.</p>
 </div>
 <div id="definition-1">
-<p><strong>Определение:</strong> Функция <span class="math inline">\(y =
-\varphi(x)\)</span>, <span class="math inline">\(n\)</span> раз
-дифференцируемая и обращающаяя уравнение <span
-class="math inline">\(f(x, y, \ldots, y^{(n)}) = 0\)</span> в тождество,
-– <em>решение дифференциального уравнения</em>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Функция
+<span class="math inline">\(y = \varphi(x)\)</span>, <span
+class="math inline">\(n\)</span> раз дифференцируемая и обращающаяя
+уравнение <span class="math inline">\(f(x, y, \ldots, y^{(n)}) =
+0\)</span> в тождество, – <em>решение дифференциального
+уравнения</em>.</p>
 </div>
 <h2 data-number="1.1"
 id="методы-интегрирования-дифференциальных-уравнений-первого-порядка">Методы
@@ -285,19 +307,20 @@ id="геометрический-смысл-дифференциального-�
 задаёт направление касательных к графику решения в каждой точке, где оно
 определено.</p>
 <div id="definition-2">
-<p><strong>Определение:</strong> Совокупность касательных векторов –
-<em>поле направлений</em> <a href="#fn3" class="footnote-ref"
-id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Совокупность касательных векторов – <em>поле
+направлений</em> <a href="#fn3" class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a>.</p>
 </div>
 <div id="definition-3">
-<p><strong>Определение:</strong> Линии, вдоль которых поле постоянно, –
-<em>изоклины</em>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Линии,
+вдоль которых поле постоянно, – <em>изоклины</em>.</p>
 </div>
 <div id="definition-4">
-<p><strong>Определение:</strong> Кривая, касающаяся в каждой своей точке
-поля направлений, – <em>интегральная кривая поля направлений</em> <a
-href="#fn4" class="footnote-ref" id="fnref4"
-role="doc-noteref"><sup>4</sup></a>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Кривая,
+касающаяся в каждой своей точке поля направлений, – <em>интегральная
+кривая поля направлений</em> <a href="#fn4" class="footnote-ref"
+id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
 </div>
 <p>Если интегральные кривые поля направлений – функции, то они задают
 график решения.</p>
@@ -312,9 +335,10 @@ class="math inline">\(c = y(x) - x^2\)</span></p>
 x = 0\)</span></p>
 <p><img src="img/integral-curves-slope-field-2.svg" /></p>
 <div id="definition-5">
-<p><strong>Определение:</strong> <em>Общее решение дифференциального
-уравнения</em> – это функция или совокупность функций, содержащаяя все
-решения дифференциального уравнения.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Общее решение дифференциального уравнения</em> – это
+функция или совокупность функций, содержащаяя все решения
+дифференциального уравнения.</p>
 </div>
 <section id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
@@ -336,7 +360,7 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="index.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>
@@ -344,6 +368,7 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
+                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>

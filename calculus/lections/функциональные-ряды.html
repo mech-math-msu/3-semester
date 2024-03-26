@@ -11,7 +11,10 @@
     
     <title>Функциональные ряды</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="теоремы-о-равномерной-сходимости-функциональных-последовательностей.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="степенные-ряды.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="теоремы-о-равномерной-сходимости-функциональных-последовательностей.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="степенные-ряды.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -248,10 +267,10 @@
 <h1 data-number="8" id="функциональные-ряды">Функциональные ряды</h1>
 <h2 data-number="8.1" id="определения-1">Определения</h2>
 <div id="definition-13">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(\{f_n(x)\}_{n = 1}^{\infty}\)</span> определена на
-<span class="math inline">\(X \subset \mathbb{R}\)</span>. Пара <span
-class="math inline">\((f_n(x)\}_{n = 1}^{\infty}, \{S_N(x) =
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(\{f_n(x)\}_{n = 1}^{\infty}\)</span>
+определена на <span class="math inline">\(X \subset \mathbb{R}\)</span>.
+Пара <span class="math inline">\((f_n(x)\}_{n = 1}^{\infty}, \{S_N(x) =
 \displaystyle \sum_{n = 1}^{N}f_n(x)\}_{n = 1}^{\infty})\)</span> –
 <em>функциональный ряд на</em> <span
 class="math inline">\(X\)</span>.</p>
@@ -260,18 +279,20 @@ class="math inline">\(\displaystyle \sum_{n =
 1}^{\infty}f_n(x)\)</span></p>
 </div>
 <div id="definition-14">
-<p><strong>Определение:</strong> (<em>сходимость функционального
-ряда</em>) Ряд <span class="math inline">\(\displaystyle \sum_{n =
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>(<em>сходимость функционального ряда</em>) Ряд <span
+class="math inline">\(\displaystyle \sum_{n =
 1}^{\infty}f_n(x)\underset{X}{\rightarrow} S(x)\)</span> <a href="#fn1"
 class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>,
 если <span class="math inline">\(\exists \displaystyle \lim_{n\to
 \infty}S_n(x) = S(x)\)</span>.</p>
 </div>
 <div id="definition-15">
-<p><strong>Определение:</strong> (<em>равномерная сходимость
-функционального ряда</em>) <span class="math inline">\(\displaystyle
-\sum_{n = 1}^{\infty}f_n(x) \underset{X}{\rightrightarrows}\)</span>,
-если <span class="math inline">\(S_n(x) \underset{X}{\rightrightarrows}
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>(<em>равномерная сходимость функционального ряда</em>)
+<span class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}f_n(x)
+\underset{X}{\rightrightarrows}\)</span>, если <span
+class="math inline">\(S_n(x) \underset{X}{\rightrightarrows}
 S(x)\)</span>. <a href="#fn2" class="footnote-ref" id="fnref2"
 role="doc-noteref"><sup>2</sup></a></p>
 </div>
@@ -279,30 +300,32 @@ role="doc-noteref"><sup>2</sup></a></p>
 сходимости и прочие теоремы <a href="#fn3" class="footnote-ref"
 id="fnref3" role="doc-noteref"><sup>3</sup></a></h2>
 <div id="theorem-23">
-<p><strong>Теорема:</strong> (<em>критерий Коши сходимости
-функционального ряда</em>) <span class="math inline">\(\displaystyle
-\sum_{n = 1}^{\infty}f_n(x)\underset{X}{\rightrightarrows} S(x) \iff
-\forall \varepsilon &gt; 0 \,\,\,\, \exists N \in \mathbb{N}:
-\,\,\,\,\forall x \in X, \,\,\,\, \forall k, m &gt; N \,\,\,\,
-\left|\displaystyle \sum_{n = k + 1}^{m}f_n(x)\right| &lt;
-\varepsilon\)</span>.</p>
-<p><em>Доказательство:</em> см. определение функционального ряда <a
-href="#fn4" class="footnote-ref" id="fnref4"
-role="doc-noteref"><sup>4</sup></a> <span
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>критерий Коши сходимости функционального ряда</em>)
+<span class="math inline">\(\displaystyle \sum_{n =
+1}^{\infty}f_n(x)\underset{X}{\rightrightarrows} S(x) \iff \forall
+\varepsilon &gt; 0 \,\,\,\, \exists N \in \mathbb{N}: \,\,\,\,\forall x
+\in X, \,\,\,\, \forall k, m &gt; N \,\,\,\, \left|\displaystyle \sum_{n
+= k + 1}^{m}f_n(x)\right| &lt; \varepsilon\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> см.
+определение функционального ряда <a href="#fn4" class="footnote-ref"
+id="fnref4" role="doc-noteref"><sup>4</sup></a> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="theorem-24">
-<p><strong>Теорема:</strong> (<em>необходимое условие равномерной
-сходимости функционального ряда</em>) <span
-class="math inline">\(\displaystyle \sum_{n =
-1}^{\infty}f_n(x)\underset{X}{\rightrightarrows}S(x) \implies
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>необходимое условие равномерной сходимости
+функционального ряда</em>) <span class="math inline">\(\displaystyle
+\sum_{n = 1}^{\infty}f_n(x)\underset{X}{\rightrightarrows}S(x) \implies
 \left|f_n(x)\right|\underset{X}{\rightrightarrows} 0\)</span>.</p>
-<p><em>Доказательство:</em> Критерий Коши при <span
-class="math inline">\(m = k \,\,\,\,\blacksquare\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Критерий
+Коши при <span class="math inline">\(m = k
+\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="theorem-25">
-<p><strong>Теорема:</strong> (<em>признак Вейерштрасса равномерной
-сходимости функционального ряда</em>) Рассмотрим <span
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>признак Вейерштрасса равномерной сходимости
+функционального ряда</em>) Рассмотрим <span
 class="math inline">\(\displaystyle \sum_{n =
 1}^{\infty}f_n(x)\)</span>. Если <span class="math inline">\(\exists
 \{c_n\}_{n = 1}^{\infty}\)</span>, такая что <span
@@ -311,7 +334,7 @@ class="math inline">\(\displaystyle \sum_{n = 1}^{\infty}c_n\)</span>
 \forall x \in X \,\,\,\, |f_n(x)| &lt; c_n\)</span>, то <span
 class="math inline">\(\displaystyle \sum_{n =
 1}^{\infty}f_n(x)\underset{X}{\rightrightarrows}\)</span>.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math display">\[\left|\displaystyle \sum_{n = k +
 1}^{m}f_n(x)\right| \leqslant \displaystyle \sum_{n = k +
 1}^{m}\left|f_n(x)\right| \leqslant \displaystyle \sum_{n = k +
@@ -319,7 +342,8 @@ class="math display">\[\left|\displaystyle \sum_{n = k +
 \,\,\,\,\blacksquare\]</span></p>
 </div>
 <div id="theorem-26">
-<p><strong>Теорема:</strong> (<em>признак Дирихле</em>)</p>
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>признак Дирихле</em>)</p>
 <p>Ряд <span class="math inline">\(\displaystyle \sum_{n =
 1}^{\infty}f_n(x)g_n(x)\underset{X}{\rightrightarrows}\)</span>,
 если</p>
@@ -331,11 +355,13 @@ M\)</span>,</li>
 0, \,\,\,\, \forall x \in X \,\,\,\, \{f_n(x)\}_{n =
 1}^{\infty}\)</span> монотонна.</li>
 </ol>
-<p><em>Доказательство:</em> аналогично признаку Дирихле <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> аналогично
+признаку Дирихле <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="theorem-27">
-<p><strong>Теорема:</strong> (<em>признак Абеля</em>)</p>
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>признак Абеля</em>)</p>
 <p>Ряд <span class="math inline">\(\displaystyle \sum_{n =
 1}^{\infty}f_n(x)g_n(x)\underset{X}{\rightrightarrows}\)</span>,
 если</p>
@@ -346,7 +372,8 @@ class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 последовательность <span class="math inline">\(\{g_n(x)\}_{n =
 1}^{\infty}\)</span> монотонна и ограничена.</li>
 </ol>
-<p><em>Доказательство:</em> аналогично признаку Абеля <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> аналогично
+признаку Абеля <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <section id="footnotes" class="footnotes footnotes-end-of-document"
@@ -372,7 +399,7 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="теоремы-о-равномерной-сходимости-функциональных-последовательностей.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

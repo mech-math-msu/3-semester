@@ -12,7 +12,10 @@
     <title>Любая подгруппа конечного индекса содержит нормальную
 подгруппу конечного индекса</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -84,13 +87,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -99,19 +102,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -217,7 +221,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -230,17 +238,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="основная-теорема-о-гомоморфизме.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="прямое-произведение-групп.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="основная-теорема-о-гомоморфизме.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="прямое-произведение-групп.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -251,14 +270,14 @@ id="любая-подгруппа-конечного-индекса-содерж
 подгруппа конечного индекса содержит нормальную подгруппу конечного
 индекса</h1>
 <div id="theorem-6">
-<p><strong>Теорема:</strong> Пусть <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
 class="math inline">\(H\)</span> подгруппа группы <span
 class="math inline">\(G\)</span> и <span class="math inline">\(|G:H|
 &lt; \infty\)</span>. Тогда <span class="math inline">\(\exists N
 \vartriangleleft G \,\,\,\, N \subset H \subset G: \,\,\,\, |G:N|
 \leqslant |G:H|!\)</span> <a href="#fn1" class="footnote-ref"
 id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>Пусть <span class="math inline">\(G = g_1H \sqcup g_2H \sqcup \ldots
 \sqcup g_nH\)</span>. Построим гомоморфизм <span
 class="math inline">\(\varphi: G \to S_{|G:H|}\,\,\,\, g \mapsto
@@ -279,24 +298,26 @@ class="math inline">\(|G:N| = |G/N| = |G/\operatorname{Ker}\varphi| =
 \,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="corollary-3">
-<p><strong>Следствие:</strong> Любая подгруппа конечного индекса
-содержит нормальную подгруппу конечного индекса.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><strong>Следствие: </strong></span>Любая
+подгруппа конечного индекса содержит нормальную подгруппу конечного
+индекса.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <p><strong>Вопрос:</strong> Пример выполнения условия следствия, так
 чтобы нормальная подгруппа была бесконечного индекса.</p>
 <div id="theorem-7">
-<p><strong>Теорема:</strong> (<em>теорема Кэли</em>) Любая конечная
-группа <span class="math inline">\(G\)</span> изоморфна некоторой
-подгруппе <span class="math inline">\(S_{|G|}\)</span>. <a href="#fn3"
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>теорема Кэли</em>) Любая конечная группа <span
+class="math inline">\(G\)</span> изоморфна некоторой подгруппе <span
+class="math inline">\(S_{|G|}\)</span>. <a href="#fn3"
 class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<p><em>Доказательство:</em> <span class="math inline">\(H =
-\{e\}\)</span> погруппа <span class="math inline">\(G\)</span>. По
-предыдущей теореме существует гомоморфизм <span
-class="math inline">\(\varphi: G \to S_{|G|}\)</span> и <span
-class="math inline">\(\operatorname{Ker}\varphi \subset H = \{e\}
-\implies \varphi\)</span> – инъективно <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(H = \{e\}\)</span> погруппа <span
+class="math inline">\(G\)</span>. По предыдущей теореме существует
+гомоморфизм <span class="math inline">\(\varphi: G \to S_{|G|}\)</span>
+и <span class="math inline">\(\operatorname{Ker}\varphi \subset H =
+\{e\} \implies \varphi\)</span> – инъективно <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <section id="footnotes" class="footnotes footnotes-end-of-document"
@@ -316,7 +337,7 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="основная-теорема-о-гомоморфизме.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

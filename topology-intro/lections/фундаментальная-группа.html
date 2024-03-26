@@ -11,7 +11,10 @@
     
     <title>Фундаментальная группа</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -238,17 +246,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="пути.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="свободное-произведение-и-теорема-ван-кампена.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="пути.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="свободное-произведение-и-теорема-ван-кампена.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -313,21 +332,23 @@ class="math inline">\(\Omega_1(X, x_0)\)</span>, а множество клас�
 <span class="math inline">\(\{0, 1\}\)</span>-гомотопности таких петель
 за <span class="math inline">\(\pi_1(X, x_0)\)</span>.</p>
 <div id="definition-59">
-<p><strong>Определение:</strong> <em>Перепараметризация пути</em> <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Перепараметризация пути</em> <span
 class="math inline">\(\gamma: I \to X\)</span> – это композиция <span
 class="math inline">\(\gamma\circ \varphi\)</span>, где <span
 class="math inline">\(\varphi: I \to I\)</span> – непрерывное
 отображение.</p>
 </div>
 <div id="lemma-11">
-<p><strong>Лемма:</strong> Перепараметризация пути сохраняет класс
-гомотопической эквивалентности пути, то есть <span
-class="math inline">\(\forall \gamma: I \to X\)</span> и <span
-class="math inline">\(\forall \varphi: I \to I \,\,\,\, \gamma\circ
-\varphi \sim_{\{0, 1\}} \gamma\)</span>.</p>
-<p><em>Доказательство:</em> Рассмотрим гомотопию <span
-class="math inline">\(\gamma\circ \varphi_t\)</span>, где <span
-class="math inline">\(\varphi_t(s): (1 - t)\varphi(s) + ts
+<p><span class="margin-lft"><strong>Лемма:
+</strong></span>Перепараметризация пути сохраняет класс гомотопической
+эквивалентности пути, то есть <span class="math inline">\(\forall
+\gamma: I \to X\)</span> и <span class="math inline">\(\forall \varphi:
+I \to I \,\,\,\, \gamma\circ \varphi \sim_{\{0, 1\}}
+\gamma\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Рассмотрим
+гомотопию <span class="math inline">\(\gamma\circ \varphi_t\)</span>,
+где <span class="math inline">\(\varphi_t(s): (1 - t)\varphi(s) + ts
 \,\,\,\,\blacksquare\)</span></p>
 <p>Если <span class="math inline">\(\varphi: I \to I: s \mapsto
 s^2\)</span> (на графике <span style="color:#d6430d">рыжий</span>), то
@@ -349,9 +370,9 @@ style="color:#7bc99a">бирюзовый</span>)</p>
 id="ассоциативность-умножения-гомотопных-классов-путей">Ассоциативность
 умножения гомотопных классов путей</h2>
 <div id="theorem-3">
-<p><strong>Теорема:</strong> Умножение гомотопических классов путей
-ассоциативно.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Умножение
+гомотопических классов путей ассоциативно.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>Хотим для любых <span class="math inline">\(u \in [u], \,\,\,\, v \in
 [v], \,\,\,\, w \in [w] \,\,\,\, (uv)w \sim_{\{0, 1\}}
 u(vw)\)</span>.</p>
@@ -377,19 +398,19 @@ class="math inline">\(u(vw)\)</span> имеют одну и ту же траек
 id="наличие-единицы-при-умножении-гомотопических-классов-путей">Наличие
 единицы при умножении гомотопических классов путей</h2>
 <div id="definition-60">
-<p><strong>Определение:</strong> Пусть <span class="math inline">\(x_0
-\in X\)</span>. <strong>Обозначим</strong> <span
-class="math inline">\(e_{x_0}\)</span> петлю (путь) <span
-class="math inline">\(I \to X: t \mapsto x_0\)</span>. <span
-class="math inline">\(e_{x_0}\)</span> – <em>единичная петля
-(путь)</em>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(x_0 \in X\)</span>.
+<strong>Обозначим</strong> <span class="math inline">\(e_{x_0}\)</span>
+петлю (путь) <span class="math inline">\(I \to X: t \mapsto
+x_0\)</span>. <span class="math inline">\(e_{x_0}\)</span> –
+<em>единичная петля (путь)</em>.</p>
 </div>
 <div id="statement-30">
-<p><strong>Утверждение:</strong> <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span><span
 class="math inline">\([e_{x_0}]\)</span> – единица относительно
 умножения гомотопных классов путей, начинающихся в точке <span
 class="math inline">\(x_0\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>Пусть <span class="math inline">\(\gamma: I \to X\)</span> и <span
 class="math inline">\(\gamma(0) = x_0\)</span>. Тогда <span
 class="math inline">\(e_{x_0}\gamma\)</span> – это перепараметризация
@@ -416,22 +437,23 @@ class="math inline">\(e_{x_0}\gamma\)</span> – это перепараметр
 id="существование-обратного-элемента-при-умножении-гомотопных-классов-путей">Существование
 обратного элемента при умножении гомотопных классов путей</h2>
 <div id="definition-61">
-<p><strong>Определение:</strong> Пусть <span class="math inline">\(u: I
-\to X\)</span> – путь. <em>Обратный путь</em> <span
-class="math inline">\(u^{-1}\)</span> – это <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(u: I \to X\)</span> – путь. <em>Обратный
+путь</em> <span class="math inline">\(u^{-1}\)</span> – это <span
 class="math inline">\(I \to X: t \mapsto u(t - 1)\)</span>.</p>
 </div>
 <div id="statement-31">
-<p><strong>Утверждение:</strong> Для любого пути <span
-class="math inline">\(u\)</span> класс гомотопической эквивалентности
-обратного пути <span class="math inline">\([u^{-1}]\)</span> является
-обратным по умножению к <span class="math inline">\(u\)</span>, то есть
-<span class="math inline">\([u][u^{-1}] = [e]\)</span>, где <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Для
+любого пути <span class="math inline">\(u\)</span> класс гомотопической
+эквивалентности обратного пути <span
+class="math inline">\([u^{-1}]\)</span> является обратным по умножению к
+<span class="math inline">\(u\)</span>, то есть <span
+class="math inline">\([u][u^{-1}] = [e]\)</span>, где <span
 class="math inline">\(e\)</span> некоторая единица.</p>
-<p><em>Доказательство:</em> <span class="math inline">\(u u^{-1}
-\sim_{\{0, 1\}} e_{u(0)}\)</span> посредством гомотопии <span
-class="math inline">\(f_t f^{-1}_t\)</span>, где <span
-class="math display">\[f_t: \begin{cases}
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(u u^{-1} \sim_{\{0, 1\}} e_{u(0)}\)</span>
+посредством гомотопии <span class="math inline">\(f_t f^{-1}_t\)</span>,
+где <span class="math display">\[f_t: \begin{cases}
     u(s), \,\,\,\, s \in [0, 1 - t]\\
     u(1 - t), \,\,\,\, s \in [1 - t, 1]
 \end{cases} \,\,\,\,\blacksquare\]</span></p>
@@ -439,8 +461,9 @@ class="math display">\[f_t: \begin{cases}
 <h2 data-number="11.4" id="собственно-фундаментальная-группа">Собственно
 фундаментальная группа</h2>
 <div id="definition-62">
-<p><strong>Определение:</strong> <em>Фундаментальная группа</em>
-пространства <span class="math inline">\(X\)</span> в точке <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Фундаментальная группа</em> пространства <span
+class="math inline">\(X\)</span> в точке <span
 class="math inline">\(x_0\)</span> – это <span
 class="math inline">\(\pi_1(X, x_0)\)</span> с операцией умножения <span
 class="math inline">\(\{0, 1\}\)</span>-гомотопических классов
@@ -450,12 +473,13 @@ class="math inline">\(\{0, 1\}\)</span>-гомотопических класс�
 id="самый-простой-пример-фундаментальной-группы">Самый простой пример
 фундаментальной группы</h3>
 <div id="statement-32">
-<p><strong>Утверждение:</strong> Фундаментальная группа выпуклого
-пространства <span class="math inline">\(X\)</span> в <span
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Фундаментальная группа выпуклого пространства <span
+class="math inline">\(X\)</span> в <span
 class="math inline">\(\mathbb{R}^n\)</span> с отмеченной точкой <span
 class="math inline">\(x_0\)</span> тривиальна.</p>
-<p><em>Доказательство:</em> Любые две петли <span
-class="math inline">\(\gamma_1\)</span> и <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> Любые две
+петли <span class="math inline">\(\gamma_1\)</span> и <span
 class="math inline">\(\gamma_2\)</span> можно соединить гомотопией <span
 class="math inline">\(f_t: (1 - t)\gamma_1(s) + \gamma_2(s)t
 \,\,\,\,\blacksquare\)</span></p>
@@ -482,12 +506,12 @@ id="гомоморфизм-фундаментальных-групп">Гомом
 Y\)</span> – непрерывное отображение, такое что <span
 class="math inline">\(f(x_0) = y_0\)</span>.</p>
 <div id="statement-33">
-<p><strong>Утверждение:</strong> Пусть <span class="math inline">\(f:
-(X, x_0) \to (Y, y_0)\)</span>. Тогда <span
-class="math inline">\(f_{\ast}: [u] \mapsto [f\circ u]\)</span> –
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(f: (X, x_0) \to (Y, y_0)\)</span>. Тогда
+<span class="math inline">\(f_{\ast}: [u] \mapsto [f\circ u]\)</span> –
 гомоморфизм фундаментальных групп <span class="math inline">\(\pi_1(X,
 x_0)\)</span> и <span class="math inline">\(\pi_1(Y, y_0)\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>Корректность определения <span
 class="math inline">\(f_{\ast}\)</span>. Пусть <span
 class="math inline">\(u \sim_{\{0, 1\}} v \implies f\circ u \sim_{\{0,
@@ -501,12 +525,13 @@ class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
 <span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="definition-63">
-<p><strong>Определение:</strong> <span
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
 class="math inline">\(f_{\ast}\)</span> – <em>индуцированный</em>
 отображением <span class="math inline">\(f\)</span> гомоморфизм.</p>
 </div>
 <div id="statement-34">
-<p><strong>Утверждение:</strong> (<em>основные свойства индуцированного
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>(<em>основные свойства индуцированного
 гомоморфизма</em>)</p>
 <ol type="1">
 <li><span class="math inline">\(\operatorname{id}_{\ast} =
@@ -514,7 +539,7 @@ class="math inline">\(f_{\ast}\)</span> – <em>индуцированный</em
 <li><span class="math inline">\((\varphi \psi)_{\ast} = \varphi_{\ast}
 \psi_{\ast}\)</span></li>
 </ol>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <ol start="2" type="1">
 <li><span class="math inline">\((\varphi \psi)u = \varphi (\psi u)
 \implies (\varphi \psi)_{\ast}([u]) = [(\varphi \psi)u] = [\varphi (\psi
@@ -553,11 +578,11 @@ class="math inline">\(x_1\)</span>. Определим отображение <s
 class="math inline">\(T_{\gamma}: \pi_1(X, x_0) \to \pi_1(X, x_1):
 \,\,\,\, [\delta] \mapsto [\gamma]^{-1}[\delta][\gamma]\)</span>.</p>
 <div id="statement-35">
-<p><strong>Утверждение:</strong> <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span><span
 class="math inline">\(T_{\gamma}\)</span> изоморфизм групп <span
 class="math inline">\(\pi_1(X, x_0)\)</span> и <span
 class="math inline">\(\pi_1(X, x_1)\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <ol type="1">
 <li>Гомоморфность: <span class="math inline">\(T_{\gamma}(\delta \sigma)
 = [\gamma]^{-1}[\delta \sigma][\gamma] =
@@ -577,17 +602,18 @@ class="math inline">\(T_{\gamma^{-1}}\circ T_{\gamma}
 </ol>
 </div>
 <div id="statement-36">
-<p><strong>Утверждение:</strong> Если точки <span
-class="math inline">\(x_0\)</span> и <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Если
+точки <span class="math inline">\(x_0\)</span> и <span
 class="math inline">\(x_1\)</span> лежат в одной и той же компоненте
 линейной связности пространства <span class="math inline">\(X\)</span>,
 то группы <span class="math inline">\(\pi_1(X, x_0)\)</span> и <span
 class="math inline">\(\pi_1(X, x_1)\)</span> изоморфны.</p>
-<p><em>Доказательство:</em> переформулировка предыдущего утверждения
-<span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span>
+переформулировка предыдущего утверждения <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="theorem-4">
-<p><strong>Теорема:</strong> Пусть <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
 class="math inline">\(x_0\)</span> и <span
 class="math inline">\(x_1\)</span> точки топологического пространства
 <span class="math inline">\(X\)</span>, путь <span
@@ -597,16 +623,17 @@ class="math inline">\(x_1\)</span>.</p>
 <p>Изоморфизм <span class="math inline">\(T_{\gamma}\)</span> не зависит
 от выбора <span class="math inline">\(\gamma \iff \pi_1(X, x_0)\)</span>
 абелева.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 <h2 data-number="11.8"
 id="изоморфизм-фундаментальных-групп-гомотопически-эквивалентных-пространств">Изоморфизм
 фундаментальных групп гомотопически эквивалентных пространств</h2>
 <div id="statement-37">
-<p><strong>Утверждение:</strong> Пусть <span class="math inline">\(f, g:
-X \to Y\)</span>, <span class="math inline">\(f \sim g\)</span> и в
-пространстве <span class="math inline">\(X\)</span> зафиксирована точка
-<span class="math inline">\(x_0\)</span>. Обозначим <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(f, g: X \to Y\)</span>, <span
+class="math inline">\(f \sim g\)</span> и в пространстве <span
+class="math inline">\(X\)</span> зафиксирована точка <span
+class="math inline">\(x_0\)</span>. Обозначим <span
 class="math inline">\(F_t(x_0) = \gamma(t)\)</span>. <span
 class="math inline">\(\gamma: I \to Y\)</span>, то есть путь в <span
 class="math inline">\(Y\)</span>. Построим по этому пути отображение
@@ -614,7 +641,7 @@ class="math inline">\(Y\)</span>. Построим по этому пути от
 \pi_1(Y, \gamma(1) = g(x_0)): [\delta] \mapsto
 [\gamma]^{-1}[\delta][\gamma]\)</span>. Тогда <span
 class="math inline">\(g_{\ast} = T_{\gamma}\circ f_{\ast}\)</span>.</p>
-<p><em>Доказательство:</em> Пусть <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть <span
 class="math inline">\(\gamma_t(s) = \gamma(ts)\)</span>. Тогда
 отображение <span class="math inline">\(u \mapsto \gamma_t (F_t u)
 \gamma_t^{-1}\)</span> – гомотопия петель <span
@@ -622,11 +649,12 @@ class="math inline">\(gu\)</span> и <span class="math inline">\(\gamma
 fu \gamma^{-1}\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="theorem-5">
-<p><strong>Теорема:</strong> Если пространства <span
-class="math inline">\(X\)</span> и <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Если
+пространства <span class="math inline">\(X\)</span> и <span
 class="math inline">\(Y\)</span> линейно связны и гомотопически
 эквивалентны, то их фундаментальные группы изоморфны.</p>
-<p><em>Доказательство:</em> следует из предыдущего <a
+<p><span class="margin-lft"><em>Доказательство:</em></span> следует из
+предыдущего <a
 href="еще-способы-получить-новую-топологию-из-уже-имеющихся.html#statement-21">утверждения</a>
 <span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
@@ -637,20 +665,21 @@ id="фундаментальная-группа-окружности">Фунда
 y)| \,\,\,\, x^2 + y^2 = 1\} = \{z \in \mathbb{C}| \,\,\,\, |z| =
 1\}\)</span>.</p>
 <div id="statement-38">
-<p><strong>Утверждение:</strong> (<em>фундаментальная группа
-окружности</em>) <span class="math display">\[\pi_1(S^1) \simeq
-\mathbb{Z}\]</span></p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>(<em>фундаментальная группа окружности</em>) <span
+class="math display">\[\pi_1(S^1) \simeq \mathbb{Z}\]</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 <div id="lemma-12">
-<p><strong>Лемма:</strong> (<em>Теорема Борсука в размерности два</em>)
-Не существует ретракции <span class="math inline">\(D^2\)</span> на его
-границу.</p>
-<p><em>Доказательство:</em> Пусть существует ретракция <span
-class="math inline">\(\rho: D^2 \to S^1\)</span> и <span
-class="math inline">\(\rho_{|S^1} = \operatorname{id}_{S^1}\)</span>, то
-есть <span class="math inline">\(S^1 \hookrightarrow D^1
-\overset{\rho}{\to} S^1\)</span> – это <span
+<p><span class="margin-lft"><strong>Лемма: </strong></span>(<em>Теорема
+Борсука в размерности два</em>) Не существует ретракции <span
+class="math inline">\(D^2\)</span> на его границу.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть
+существует ретракция <span class="math inline">\(\rho: D^2 \to
+S^1\)</span> и <span class="math inline">\(\rho_{|S^1} =
+\operatorname{id}_{S^1}\)</span>, то есть <span
+class="math inline">\(S^1 \hookrightarrow D^1 \overset{\rho}{\to}
+S^1\)</span> – это <span
 class="math inline">\(\operatorname{id}_{S^1}\)</span>. Имеем <span
 class="math inline">\(\pi_1(S^1) \hookrightarrow_{\ast} \pi_1(D^2)
 \overset{\rho_{\ast}}{\to} \pi_1(S^1)\)</span>, что невозможно, так как
@@ -661,12 +690,13 @@ class="math inline">\(\pi_1(S^1) \hookrightarrow_{\ast} \pi_1(D^2)
 <h2 data-number="11.10" id="теорема-о-неподвижной-точке-брауэра">Теорема
 о неподвижной точке (Брауэра)</h2>
 <div id="theorem-6">
-<p><strong>Теорема:</strong> (<em>Брауэра</em>) Для любого непрерывного
-отображения <span class="math inline">\(f: D^2 \to D^2 \,\,\,\, \exists
-x \in D^2: \,\,\,\, f(x) = x\)</span>.</p>
-<p><em>Доказательство:</em> Предположить обратное и построить ретракцию
-<span class="math inline">\(D^2\)</span> на <span
-class="math inline">\(S^1\)</span>, проведя прямую через <span
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Брауэра</em>) Для любого непрерывного отображения
+<span class="math inline">\(f: D^2 \to D^2 \,\,\,\, \exists x \in D^2:
+\,\,\,\, f(x) = x\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Предположить
+обратное и построить ретракцию <span class="math inline">\(D^2\)</span>
+на <span class="math inline">\(S^1\)</span>, проведя прямую через <span
 class="math inline">\(x\)</span> и <span
 class="math inline">\(f(x)\)</span> и взяв ее пересечение с <span
 class="math inline">\(S^1 \,\,\,\,\blacksquare\)</span></p>
@@ -674,11 +704,11 @@ class="math inline">\(S^1 \,\,\,\,\blacksquare\)</span></p>
 <h2 data-number="11.11" id="основная-теорема-алгебры">Основная теорема
 алгебры</h2>
 <div id="theorem-7">
-<p><strong>Теорема:</strong> У любого многочлена <span
-class="math inline">\(f(z) = z^n + a_{n - 1}z^{n - 1} + \ldots + a_1 z +
-a_0\)</span> над полем <span class="math inline">\(\mathbb{C}\)</span>
-существует корень.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Теорема: </strong></span>У любого
+многочлена <span class="math inline">\(f(z) = z^n + a_{n - 1}z^{n - 1} +
+\ldots + a_1 z + a_0\)</span> над полем <span
+class="math inline">\(\mathbb{C}\)</span> существует корень.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 <blockquote>
 <p>Топология – это прекрасно!</p>
@@ -861,7 +891,7 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="пути.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

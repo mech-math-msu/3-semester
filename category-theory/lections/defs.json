@@ -1,0 +1,67 @@
+[
+    {
+        "keyword": "универсум малые множества большие множества",
+        "html": "<p><a href=\"теория-категорий.html#definition-0\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Универсум</em> – некоторый класс. <a href=\"#fn1\"\nclass=\"footnote-ref\" id=\"fnref1\" role=\"doc-noteref\"><sup>1</sup></a></p>\n<p><em>Малые множества</em> – элементы универсума.</p>\n<p><em>Большие множества</em> – множества, не являющиеся малыми.</p>\n<blockquote>\n<p>Если взять <span class=\"math inline\">\\(U = \\{x|\\,\\,\\,\\, \\exists y:\n\\,\\,\\,\\, x \\in y\\}\\)</span>, то малые множества – это множества, а\nбольшие множества – это классы, не являющиеся множествами. <a\nhref=\"#fn2\" class=\"footnote-ref\" id=\"fnref2\"\nrole=\"doc-noteref\"><sup>2</sup></a></p>\n</blockquote>\n<section id=\"footnotes\" class=\"footnotes footnotes-end-of-document\"\nrole=\"doc-endnotes\">\n<hr />\n<ol>\n<li id=\"fn1\"><p>Достаточно большое «множество»<a href=\"#fnref1\"\nclass=\"footnote-back\" role=\"doc-backlink\">↩︎</a></p></li>\n<li id=\"fn2\"><p>Например, в смысле этого определения универсума, класс\nвсех малых множеств – <em>большое множество</em>.<a href=\"#fnref2\"\nclass=\"footnote-back\" role=\"doc-backlink\">↩︎</a></p></li>\n</ol>\n</section>",
+        "url": "теория-категорий.html#definition-0"
+    },
+    {
+        "keyword": "1-е определение категории категория множество объектов множество морфизмов",
+        "html": "<p><a href=\"теория-категорий.html#definition-1\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n(<em>1-е определение категории</em>)</p>\n<p><em>Категория</em> <span class=\"math inline\">\\(\\C\\)</span> – это пара\n<span class=\"math inline\">\\((\\Ob \\C, \\Mor \\C)\\)</span>, где</p>\n<p><span class=\"math inline\">\\(\\Ob \\C\\)</span> – <em>множество\nобъектов</em>,</p>\n<p><span class=\"math inline\">\\(\\Mor\\C\\)</span> – <em>множество\nморфизмов</em> <a href=\"#fn1\" class=\"footnote-ref\" id=\"fnref1\"\nrole=\"doc-noteref\"><sup>1</sup></a>, такая что:</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(\\forall f \\in \\Mor\\C\\,\\,\\,\\, \\exists a\n\\in \\Ob\\C\\)</span>, обозначается <span class=\"math inline\">\\(\\dom\nf\\)</span> и <span class=\"math inline\">\\(\\exists b \\in \\Ob\\C\\)</span>,\nобозначается <span class=\"math inline\">\\(\\cod f\\)</span> <a href=\"#fn2\"\nclass=\"footnote-ref\" id=\"fnref2\"\nrole=\"doc-noteref\"><sup>2</sup></a>,</li>\n<li><span class=\"math inline\">\\(\\forall a \\in \\Ob\\C \\,\\,\\,\\, \\exists \\id\n_a \\in \\Mor\\C: \\,\\,\\,\\, \\cod \\id_a = \\dom \\id_a = a\\)</span>.</li>\n</ol>\n<p>По определению <span class=\"math inline\">\\(\\Mor\\C \\times_{\\Ob\\C}\n\\Mor\\C = \\{(f, g): \\,\\,\\,\\, f, g \\in \\Mor\\C, \\,\\,\\,\\, \\dom f = \\cod g\n\\}\\)</span>. Определена операция <span class=\"math inline\">\\(\\circ:\n\\,\\,\\,\\, \\Mor\\C \\times_{\\Ob\\C} \\Mor\\C \\to \\Mor\\C\\)</span>, такая\nчто:</p>\n<ol start=\"3\" type=\"1\">\n<li><span class=\"math inline\">\\(\\forall (f, g) \\in \\Mor\\C \\times_{\\Ob\\C}\n\\Mor\\C \\,\\,\\,\\, \\dom f\\circ g = \\dom g\\)</span>,</li>\n<li><span class=\"math inline\">\\(\\forall (f, g) \\in \\Mor\\C \\times_{\\Ob\\C}\n\\Mor\\C \\,\\,\\,\\, \\cod f\\circ g = \\cod f\\)</span>,</li>\n<li><span class=\"math inline\">\\(f(gh) = (fg)h\\)</span>,</li>\n<li><span class=\"math inline\">\\(\\forall f: a \\to b \\,\\,\\,\\, \\id_b f =\nf\\id_a = f\\)</span>.</li>\n</ol>\n<p>Множество всех морфизмов <span class=\"math inline\">\\(a \\to b\\)</span>\nобозначается <span class=\"math inline\">\\(\\Hom_{\\C}(a, b)\\)</span> или\n<span class=\"math inline\">\\(\\C(a, b)\\)</span>.</p>\n<blockquote>\n<p>Вообще категория задается набором морфизмов, так как каждый объект\nзадается своей единичной стрелкой.</p>\n</blockquote>\n<section id=\"footnotes\" class=\"footnotes footnotes-end-of-document\"\nrole=\"doc-endnotes\">\n<hr />\n<ol>\n<li id=\"fn1\"><p>Стрелки между объектами.<a href=\"#fnref1\"\nclass=\"footnote-back\" role=\"doc-backlink\">↩︎</a></p></li>\n<li id=\"fn2\"><p>Пишут <span class=\"math inline\">\\(f: a \\to b\\)</span> и\nговорят, что <span class=\"math inline\">\\(f\\)</span> стрелка из <span\nclass=\"math inline\">\\(a\\)</span> в <span\nclass=\"math inline\">\\(b\\)</span>.<a href=\"#fnref2\" class=\"footnote-back\"\nrole=\"doc-backlink\">↩︎</a></p></li>\n</ol>\n</section>",
+        "url": "теория-категорий.html#definition-1"
+    },
+    {
+        "keyword": "предпорядок рефлексивность транзитивность",
+        "html": "<p><a href=\"теория-категорий.html#definition-2\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nБинарное отношение <span class=\"math inline\">\\(\\leqslant\\)</span> на\nмножестве <span class=\"math inline\">\\(M\\)</span> – <em>предпорядок</em>,\nесли <span class=\"math inline\">\\(\\forall a, b, c \\in M\\)</span>:</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(a \\leqslant a\\)</span>\n(<em>рефлексивность</em>),</li>\n<li><span class=\"math inline\">\\(a \\leqslant b\\)</span> и <span\nclass=\"math inline\">\\(b \\leqslant c \\implies a \\leqslant c\\)</span>\n(<em>транзитивность</em>)</li>\n</ol>",
+        "url": "теория-категорий.html#definition-2"
+    },
+    {
+        "keyword": "двойственная к категория",
+        "html": "<p><a href=\"теория-категорий.html#definition-3\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(\\C\\)</span> – категория.\n<em>Двойственная к</em> <span class=\"math inline\">\\(\\C\\)</span>\n<em>категория</em> – это категория <span\nclass=\"math inline\">\\(\\C^{\\operatorname{op}}\\)</span>, у которой <span\nclass=\"math inline\">\\(\\Ob \\C^{\\operatorname{op}} = \\Ob \\C\\)</span> и\nстрелки развернуты.</p>",
+        "url": "теория-категорий.html#definition-3"
+    },
+    {
+        "keyword": "",
+        "html": "<p><a href=\"функторы.html#definition-4\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(\\C\\)</span> и <span\nclass=\"math inline\">\\(\\D\\)</span> категории. Функтор <span\nclass=\"math inline\">\\(F: \\C \\to \\D\\)</span> – это пара отображений <a\nhref=\"#fn1\" class=\"footnote-ref\" id=\"fnref1\"\nrole=\"doc-noteref\"><sup>1</sup></a> <span class=\"math inline\">\\(F: \\Ob\n\\C \\to \\Ob \\D\\)</span> и <span class=\"math inline\">\\(F: \\Mor \\C \\to \\Mor\n\\D\\)</span>, причем:</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(F\\id_a = \\id_{F_a} \\,\\,\\,\\, \\forall a\n\\in \\Ob \\C\\)</span> <a href=\"#fn2\" class=\"footnote-ref\" id=\"fnref2\"\nrole=\"doc-noteref\"><sup>2</sup></a>,</li>\n<li><span class=\"math inline\">\\(F(fg) = (Ff)(Fg) \\,\\,\\,\\,\\forall (f, g)\n\\in \\Mor\\C\\times_{\\Ob C}\\Mor\\C\\)</span> <a href=\"#fn3\"\nclass=\"footnote-ref\" id=\"fnref3\"\nrole=\"doc-noteref\"><sup>3</sup></a>.</li>\n</ol>\n<section id=\"footnotes\" class=\"footnotes footnotes-end-of-document\"\nrole=\"doc-endnotes\">\n<hr />\n<ol>\n<li id=\"fn1\"><p>Оба отображения обозначаются <span\nclass=\"math inline\">\\(F\\)</span>.<a href=\"#fnref1\" class=\"footnote-back\"\nrole=\"doc-backlink\">↩︎</a></p></li>\n<li id=\"fn2\"><p>Сохранение единицы.<a href=\"#fnref2\"\nclass=\"footnote-back\" role=\"doc-backlink\">↩︎</a></p></li>\n<li id=\"fn3\"><p>Для любых морфизмов, у которых определена композиция,\nфунктор сохраняет композицию.<a href=\"#fnref3\" class=\"footnote-back\"\nrole=\"doc-backlink\">↩︎</a></p></li>\n</ol>\n</section>",
+        "url": "функторы.html#definition-4"
+    },
+    {
+        "keyword": "ковариантные контравариантные",
+        "html": "<p><a href=\"функторы.html#definition-5\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nФункторы из <span class=\"math inline\">\\(\\C \\to \\D\\)</span> –\n<em>ковариантные</em>.</p>\n<p>Функторы из <span class=\"math inline\">\\(\\C \\to\n\\D^{\\operatorname{op}}\\)</span> – <em>контравариантные</em>.</p>",
+        "url": "функторы.html#definition-5"
+    },
+    {
+        "keyword": "унивалентный полный",
+        "html": "<p><a href=\"функторы.html#definition-6\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(F: \\C \\to \\D\\)</span> – функтор.</p>\n<p>Если <span class=\"math inline\">\\(\\forall a, b \\in \\Ob\\C\\)</span>\nотображение <span class=\"math inline\">\\(\\C(a, b) \\to \\D(F_a,\nF_b)\\)</span> инъективно, то функтор <span\nclass=\"math inline\">\\(F\\)</span> – <em>унивалентный</em>.</p>\n<p>Если <span class=\"math inline\">\\(\\forall a, b \\in \\Ob\\C\\)</span>\nотображение <span class=\"math inline\">\\(\\C(a, b) \\to \\D(F_a,\nF_b)\\)</span> сюръективно, то функтор <span\nclass=\"math inline\">\\(F\\)</span> – <em>полный</em>.</p>",
+        "url": "функторы.html#definition-6"
+    },
+    {
+        "keyword": "подкатегория",
+        "html": "<p><a href=\"функторы.html#definition-7\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Подкатегория</em> категории <span class=\"math inline\">\\(\\C\\)</span>\n– это категория, множеством объектов которой является подмножеством\nобъектов категории <span class=\"math inline\">\\(\\C\\)</span> и множество\nморфизмов является подмножеством морфизмов.</p>",
+        "url": "функторы.html#definition-7"
+    },
+    {
+        "keyword": "изоморфизм",
+        "html": "<p><a href=\"изоморфизмы.html#definition-8\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(\\C\\)</span> – категория. Морфизм <span\nclass=\"math inline\">\\(f: a \\to b \\,\\,\\,\\, a, b \\in \\Ob\\C\\)</span> –\n<em>изоморфизм</em>, если <span class=\"math inline\">\\(\\exists g \\in \\Mor\n\\C: \\,\\,\\,\\, gf = \\id_a\\)</span> и <span class=\"math inline\">\\(fg =\n\\id_b\\)</span>.</p>",
+        "url": "изоморфизмы.html#definition-8"
+    },
+    {
+        "keyword": "изоморфизм категорий",
+        "html": "<p><a href=\"изоморфизмы.html#definition-9\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nФунктор <span class=\"math inline\">\\(F: \\C \\to \\D\\)</span> –\n<em>изоморфизм категорий</em> <span class=\"math inline\">\\(\\C\\)</span> и\n<span class=\"math inline\">\\(\\D\\)</span>, если <span\nclass=\"math inline\">\\(F: \\Ob \\C \\to \\Ob \\D\\)</span> – биекция и <span\nclass=\"math inline\">\\(F: \\Mor \\C \\to \\Mor \\D\\)</span> – биекция.</p>",
+        "url": "изоморфизмы.html#definition-9"
+    },
+    {
+        "keyword": "коммутативна",
+        "html": "<p><a href=\"естественные-отображения.html#definition-10\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nДиаграмма <em>коммутативна</em>, если композиции функций над стрелками,\nпримененные к объектам в вершинах дают одинаковый результат при любом\nпути по диаграмме.</p>",
+        "url": "естественные-отображения.html#definition-10"
+    },
+    {
+        "keyword": "естественное преобразование функторов",
+        "html": "<p><a href=\"естественные-отображения.html#definition-11\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть заданы функторы <span class=\"math inline\">\\(F, G: \\C \\to\n\\D\\)</span>. <span class=\"math inline\">\\(\\alpha: F \\Rightarrow\nG\\)</span> – <em>естественное преобразование функторов</em>, если <span\nclass=\"math inline\">\\(\\forall c \\in \\Ob \\C \\exists \\alpha_c \\in\n\\Hom_{\\C}(F_c, G_c)\\)</span>, причем <span class=\"math inline\">\\(\\forall\nc, c’ \\in \\Ob \\C\\)</span> и <span class=\"math inline\">\\(\\forall f \\in\n\\C(c, c’)\\)</span> следующая диаграмма коммутативна:</p>\n<p><span class=\"math display\">\\[\\begin{CD}\n    Fc @&gt;\\alpha_c&gt;&gt; Gc\\\\\n    @VFfVV @VVGfV\\\\\n    Fc’ @&gt;\\alpha_{c’}&gt;&gt; Gc’\n\\end{CD}\n\\]</span></p>\n<p>Если существует естественное преобразование между функторами <span\nclass=\"math inline\">\\(F\\)</span> и <span\nclass=\"math inline\">\\(G\\)</span>, то пишут <span class=\"math inline\">\\(F\n\\cong G\\)</span>.</p>",
+        "url": "естественные-отображения.html#definition-11"
+    },
+    {
+        "keyword": "эквивалентность категорий",
+        "html": "<p><a href=\"естественные-отображения.html#definition-12\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nФунктор <span class=\"math inline\">\\(F: \\C \\to \\D\\)</span> –\n<em>эквивалентность категорий</em>, если <span\nclass=\"math inline\">\\(\\exists\\)</span> функтор <span\nclass=\"math inline\">\\(G: \\D \\to \\C\\)</span>, такой что <span\nclass=\"math inline\">\\(FG \\cong \\id_{\\D}\\)</span> и <span\nclass=\"math inline\">\\(GF \\cong \\id_{\\C}\\)</span>.</p>",
+        "url": "естественные-отображения.html#definition-12"
+    }
+]

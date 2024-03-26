@@ -11,7 +11,10 @@
     
     <title>Ряды Тейлора</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="теорема-таубера-и-литтлвуда.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="бесконечные-произведения.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="теорема-таубера-и-литтлвуда.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="бесконечные-произведения.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -247,9 +266,9 @@
 
 <h1 data-number="12" id="ряды-тейлора">Ряды Тейлора</h1>
 <div id="definition-18">
-<p><strong>Определение:</strong> Пусть <span class="math inline">\(f(x)
-\subset C^{\infty}(B(x_0))\)</span>. Ряд <span
-class="math inline">\(\displaystyle \sum_{n =
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(f(x) \subset C^{\infty}(B(x_0))\)</span>.
+Ряд <span class="math inline">\(\displaystyle \sum_{n =
 0}^{\infty}\frac{f^{(n)}(x_0)}{n!}(x - x_0)^n\)</span> – <em>ряд
 Тейлора</em> функции <span class="math inline">\(f(x)\)</span>.</p>
 </div>
@@ -266,28 +285,30 @@ id="ряды-тейлора-разных-функци-могут-совпада�
 0}^{\infty}\frac{g^{(n)}(0)}{n!}x^n\]</span></p>
 <p><img src="img/etominusxsquared.png" /></p>
 <div id="theorem-33">
-<p><strong>Теорема:</strong> Пусть <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
 class="math inline">\(\displaystyle \sum_{n = 0}^{\infty}a_nx^n =
 f(x)\)</span> в <span class="math inline">\(B(0)\)</span>. Тогда <span
 class="math inline">\(a_n = \frac{f^{(n)}(0)}{n!}\)</span>, то есть
 <span class="math inline">\(\displaystyle \sum_{n =
 0}^{\infty}\frac{f^{(n)}(0)}{n!}x^n\)</span> ряд Тейлора функции <span
 class="math inline">\(f(x)\)</span>.</p>
-<p><em>Доказательство:</em> Сумма степенного ряда бесконечно
-дифференцируема в интервале сходимости <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> Сумма
+степенного ряда бесконечно дифференцируема в интервале сходимости <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <h2 data-number="12.2" id="признак-сходимости-ряда-тейлора">Признак
 сходимости ряда Тейлора</h2>
 <div id="theorem-34">
-<p><strong>Теорема:</strong> Пусть <span class="math inline">\(f(x) \in
-C^{\infty}(B(0))\)</span> и <span class="math inline">\([-\delta,
-\delta] \subset B(0)\)</span>. Если <span class="math inline">\(\exists
-A &gt; 0 \,\,\,\, \forall x \in [-\delta, \delta]\,\,\,\, \forall n \in
-\mathbb{N} \,\,\,\, |f^{(n)}(x)| &lt; A^n\)</span>, то при <span
-class="math inline">\(x \in [-\delta, \delta] \,\,\,\, \displaystyle
-\sum_{n = 0}^{\infty}\frac{f^{(n)}(0)}{n!}x^n = f(x)\)</span>.</p>
-<p><em>Доказательство:</em> Оценим остаток формулы Тейлора:</p>
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(f(x) \in C^{\infty}(B(0))\)</span> и <span
+class="math inline">\([-\delta, \delta] \subset B(0)\)</span>. Если
+<span class="math inline">\(\exists A &gt; 0 \,\,\,\, \forall x \in
+[-\delta, \delta]\,\,\,\, \forall n \in \mathbb{N} \,\,\,\, |f^{(n)}(x)|
+&lt; A^n\)</span>, то при <span class="math inline">\(x \in [-\delta,
+\delta] \,\,\,\, \displaystyle \sum_{n =
+0}^{\infty}\frac{f^{(n)}(0)}{n!}x^n = f(x)\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Оценим
+остаток формулы Тейлора:</p>
 <p><span class="math display">\[\left|f(x) - \displaystyle \sum_{n =
 0}^{N}\frac{f^{(n)}(0)}{n!}x^n\right| = \left|\frac{f^{(N + 1)}(\xi)}{(N
 + 1)!}x^{N + 1}\right| \leqslant \frac{A^{N + 1}\cdot \delta^{N + 1}}{(N
@@ -296,7 +317,7 @@ class="math inline">\(x \in [-\delta, \delta] \,\,\,\, \displaystyle
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="теорема-таубера-и-литтлвуда.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

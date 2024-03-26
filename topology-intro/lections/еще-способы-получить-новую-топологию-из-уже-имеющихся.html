@@ -11,7 +11,10 @@
     
     <title>Еще способы получить новую топологию из уже имеющихся</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -238,17 +246,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="теорема-стоуна-вейерштрасса.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="гомотопии.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="теорема-стоуна-вейерштрасса.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="гомотопии.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -265,52 +284,57 @@ transform: rotate(225deg)}{\Large{\dagger}}}\)</span></p>
 <h2 data-number="7.1" id="топология-произведения">Топология
 произведения</h2>
 <div id="definition-37">
-<p><strong>Определение:</strong> Пусть <span class="math inline">\((X,
-\tau_X)\)</span> и <span class="math inline">\((Y, \tau_Y)\)</span> –
-топологические пространства. <em>Топология произведения</em> <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\((X, \tau_X)\)</span> и <span
+class="math inline">\((Y, \tau_Y)\)</span> – топологические
+пространства. <em>Топология произведения</em> <span
 class="math inline">\(X\times Y\)</span> – это топология, порожденная
 базой <span class="math inline">\(\{U\times V: \,\,\,\, U \in \tau_X,
 \,\,\,\, V \in \tau_Y\}\)</span> на декартовом произведении <span
 class="math inline">\(X\times Y\)</span>.</p>
 </div>
 <div id="statement-14">
-<p><strong>Утверждение:</strong> Предбаза топологии произведения <span
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Предбаза топологии произведения <span
 class="math inline">\(X\times Y\)</span> – это <span
 class="math inline">\(\{U\times Y| \,\,\,\,U \in \tau_X\}\cup \{X\times
 V|\,\,\,\, V \in \tau_Y\}\)</span>.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="definition-38">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(X\times Y\)</span> – топология произведения.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(X\times Y\)</span> – топология
+произведения.</p>
 <p>Отображение <span class="math inline">\(\pi_X: X \times Y \to X,
 \,\,\,\, \pi_X: (x, y) \mapsto x\)</span> – <em>проекция на</em> <span
 class="math inline">\(X\)</span>.</p>
 </div>
 <div id="statement-15">
-<p><strong>Утверждение:</strong> Проекции <span
-class="math inline">\(\pi_X\)</span> и <span
-class="math inline">\(\pi_Y\)</span> непрерывны, как отображения <span
-class="math inline">\(X\times Y \to X\)</span> и <span
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Проекции <span class="math inline">\(\pi_X\)</span> и
+<span class="math inline">\(\pi_Y\)</span> непрерывны, как отображения
+<span class="math inline">\(X\times Y \to X\)</span> и <span
 class="math inline">\(X\times Y \to Y\)</span> соответственно.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="statement-16">
-<p><strong>Утверждение:</strong> Топология произведения – это топология
-с наименьшим количеством открытых множеств, относительно которой
-отображения проекции непрерывны.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Топология произведения – это топология с наименьшим
+количеством открытых множеств, относительно которой отображения проекции
+непрерывны.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="statement-17">
-<p><strong>Утверждение:</strong> (<em>универсальность произведения</em>)
-<span class="math inline">\(\varphi: Z \to X\times Y\)</span> непрерывно
-<span class="math inline">\(\iff\)</span> непрерывны композиции <span
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>(<em>универсальность произведения</em>) <span
+class="math inline">\(\varphi: Z \to X\times Y\)</span> непрерывно <span
+class="math inline">\(\iff\)</span> непрерывны композиции <span
 class="math inline">\(\varphi \circ \pi_X\)</span> и <span
 class="math inline">\(\varphi\circ \pi_Y\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p><span class="math inline">\(\boxed{\Longrightarrow}\)</span>
 Композиция непрерывных отображений непрерывна.</p>
 <p><span class="math inline">\(\boxed{\Longleftarrow}\)</span> Прообраз
@@ -318,8 +342,8 @@ class="math inline">\(\varphi\circ \pi_Y\)</span>.</p>
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="definition-39">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(X\)</span> – топологическое пространство.
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(X\)</span> – топологическое пространство.
 Отображение <span class="math inline">\(x \mapsto (x, x) \in X\times
 X\)</span> – <em>диагональное отображение</em>. Образ <span
 class="math inline">\(X\)</span> при диагональном отображении –
@@ -327,21 +351,21 @@ class="math inline">\(X\)</span> при диагональном отображ�
 class="math inline">\(\triangle\)</span>.</p>
 </div>
 <div id="statement-18">
-<p><strong>Утверждение:</strong> <span class="math inline">\(X\)</span>
-– хаусдорфово <span class="math inline">\(\iff \triangle\)</span> –
-замкнуто.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Утверждение: </strong></span><span
+class="math inline">\(X\)</span> – хаусдорфово <span
+class="math inline">\(\iff \triangle\)</span> – замкнуто.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p><span class="math inline">\((x, y) \in (X \times X) \setminus
 \triangle \iff x \ne y \iff \exists U_x, U_y \in \tau_X: \,\,\,\, U_x
 \cap U_y = \varnothing \iff U_x \times U_y \subset (X \times X)
 \setminus \triangle \,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="statement-19">
-<p><strong>Утверждение:</strong> Пусть <span
-class="math inline">\(X\)</span> и <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(X\)</span> и <span
 class="math inline">\(Y\)</span> компактны. Тогда <span
 class="math inline">\(X\times Y\)</span> компактно.</p>
-<p><em>Доказательство:</em> Пусть <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть <span
 class="math inline">\(\{W_{\alpha}\}\)</span> – покрытие. Для каждой
 точки <span class="math inline">\((x, y) \in X \times Y\)</span> выберем
 окрестность <span class="math inline">\(U_{x}\times V_{y}\)</span>, так
@@ -366,9 +390,9 @@ class="math inline">\(\{U^{y_j}_{i}\times V^{y_j}_{i}\}
 <p>И как мы до сюда добрались без этого?</p>
 </blockquote>
 <div id="definition-40">
-<p><strong>Определение:</strong> Пусть на <span
-class="math inline">\(X\)</span> задано отношение эквивалентности –
-<span class="math inline">\(\sim\)</span>. Пусть <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+на <span class="math inline">\(X\)</span> задано отношение
+эквивалентности – <span class="math inline">\(\sim\)</span>. Пусть <span
 class="math inline">\(X\)</span> – топологическое пространство.
 <em>Отображение проекции</em> – это <span class="math inline">\(\pi: X
 \to \{[x]_{\sim}|\,\,\,\, x \in X\}, \,\,\,\, x \mapsto
@@ -383,63 +407,69 @@ class="math inline">\(X\)</span>.</p>
 class="math inline">\(X/\sim\)</span>.</p>
 </div>
 <div id="statement-20">
-<p><strong>Утверждение:</strong> Отображении проекции <span
-class="math inline">\(\pi: X \to X/\sim\)</span> непрерывно.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Отображении проекции <span class="math inline">\(\pi: X
+\to X/\sim\)</span> непрерывно.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="statement-21">
-<p><strong>Утверждение:</strong> <em>Фактор-топология</em> – топология с
-наибольшим количеством открытых множеств, относительно которой
-отображение проекции непрерывно.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span><em>Фактор-топология</em> – топология с наибольшим
+количеством открытых множеств, относительно которой отображение проекции
+непрерывно.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <h3 data-number="7.2.1"
 id="стягивание-подпространства-в-точку">Стягивание подпространства в
 точку</h3>
 <div id="definition-41">
-<p><strong>Определение:</strong> Обозначение <span
-class="math inline">\(X/A\)</span>, где <span class="math inline">\(A
-\subset X\)</span> обозначает, что берется фактор-топология относительно
-отношения эквивалентности, при котором <span class="math inline">\(x
-\sim y \iff x = y\)</span> или <span class="math inline">\(x \in
-A\)</span> и <span class="math inline">\(y \in A\)</span>. Топология
-<span class="math inline">\(X/A\)</span> получена <em>стягиванием
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Обозначение <span class="math inline">\(X/A\)</span>,
+где <span class="math inline">\(A \subset X\)</span> обозначает, что
+берется фактор-топология относительно отношения эквивалентности, при
+котором <span class="math inline">\(x \sim y \iff x = y\)</span> или
+<span class="math inline">\(x \in A\)</span> и <span
+class="math inline">\(y \in A\)</span>. Топология <span
+class="math inline">\(X/A\)</span> получена <em>стягиванием
 подпространства в точку</em>.</p>
 </div>
 <div id="lemma-8">
-<p><strong>Лемма:</strong> Пусть <span class="math inline">\(X\)</span>
-регулярно, <span class="math inline">\(A \subset X\)</span> замкнуто.
-Тогда <span class="math inline">\(X/A\)</span> хаусдорфово.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Пусть <span
+class="math inline">\(X\)</span> регулярно, <span
+class="math inline">\(A \subset X\)</span> замкнуто. Тогда <span
+class="math inline">\(X/A\)</span> хаусдорфово.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <h3 data-number="7.2.2"
 id="пространство-с-отмеченной-точкой">Пространство с отмеченной
 точкой</h3>
 <div id="definition-42">
-<p><strong>Определение:</strong> Фактор-пространство <span
-class="math inline">\((X \sqcup Y) / \sim\)</span> несвязной суммы
-пространств <span class="math inline">\(X \sqcup Y\)</span> по отношению
-эквивалентности <span class="math inline">\(x \sim y \iff x = y\)</span>
-или <span class="math inline">\(x = x_0\)</span> и <span
-class="math inline">\(y = y_0\)</span>, где <span
-class="math inline">\(x_0 \in X\)</span> и <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Фактор-пространство <span class="math inline">\((X
+\sqcup Y) / \sim\)</span> несвязной суммы пространств <span
+class="math inline">\(X \sqcup Y\)</span> по отношению эквивалентности
+<span class="math inline">\(x \sim y \iff x = y\)</span> или <span
+class="math inline">\(x = x_0\)</span> и <span class="math inline">\(y =
+y_0\)</span>, где <span class="math inline">\(x_0 \in X\)</span> и <span
 class="math inline">\(y_0 \in Y\)</span> – фиксированные точки.</p>
 </div>
 <h2 data-number="7.3" id="цилиндр-и-конус">Цилиндр и конус</h2>
 <p><strong>Обозначение:</strong> <span class="math inline">\(I = [0,
 1]\)</span>.</p>
 <div id="definition-43">
-<p><strong>Определение:</strong> <em>Цилиндр</em> – это топология
-произведения <span class="math inline">\(X\times I\)</span>.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Цилиндр</em> – это топология произведения <span
+class="math inline">\(X\times I\)</span>.</p>
 <p><span class="math inline">\(X \times 1\)</span> – <em>верхнее
 основание цилинра</em>, <span class="math inline">\(X \times 0\)</span>
 – <em>нижнее основание цилиндра</em>.</p>
 </div>
 <div id="definition-44">
-<p><strong>Определение:</strong> <em>Конус</em> – это <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Конус</em> – это <span
 class="math inline">\((X\times I)/(X\times 1)\)</span> (стягиваем
 верхнее основание цилиндра в точку).</p>
 <p><span class="math inline">\([X\times 1]_{\sim}\)</span> – <em>вершина
@@ -450,29 +480,30 @@ class="math inline">\((X\times I)/(X\times 1)\)</span> (стягиваем
 id="компактно-открытая-топология-на-пространстве-непрерывных-отображений">Компактно-открытая
 топология на пространстве непрерывных отображений</h2>
 <div id="definition-45">
-<p><strong>Определение:</strong> Обозначим за <span
-class="math inline">\(\mathcal{C}(X, Y)\)</span> или <span
-class="math inline">\(Y^X\)</span> множество непрерывных отображений
-<span class="math inline">\(X \to Y\)</span>. Рассмотрим топологию на
-<span class="math inline">\(\mathcal{C}(X, Y)\)</span> с предбазой <span
-class="math inline">\(\{W(K, U)\}\)</span>, где <span
-class="math inline">\(W(K, U) \subset \mathcal{C}(X, Y)\)</span>, <span
-class="math inline">\(K\)</span> – компакт и <span
-class="math inline">\(f(K) \subset U\)</span>.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Обозначим за <span class="math inline">\(\mathcal{C}(X,
+Y)\)</span> или <span class="math inline">\(Y^X\)</span> множество
+непрерывных отображений <span class="math inline">\(X \to Y\)</span>.
+Рассмотрим топологию на <span class="math inline">\(\mathcal{C}(X,
+Y)\)</span> с предбазой <span class="math inline">\(\{W(K,
+U)\}\)</span>, где <span class="math inline">\(W(K, U) \subset
+\mathcal{C}(X, Y)\)</span>, <span class="math inline">\(K\)</span> –
+компакт и <span class="math inline">\(f(K) \subset U\)</span>.</p>
 <p>Множество непрерывных функций <span class="math inline">\(X \to
 \mathbb{R}\)</span> обозначается: <span
 class="math inline">\(\mathcal{C}(X)\)</span>.</p>
 </div>
 <div id="statement-22">
-<p><strong>Утверждение:</strong> Пусть <span
-class="math inline">\(X\)</span> – компактное пространство, <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(X\)</span> – компактное пространство, <span
 class="math inline">\(Y\)</span> – метрическое, с метрикой <span
 class="math inline">\(\rho_0\)</span>. Тогда метрика <span
 class="math inline">\(\rho(f, g) = \sup_{x \in X}\{\rho_0(f(x),
 g(x))\}\)</span> задает компактно-открытую топологию на <span
 class="math inline">\(\mathcal{C}(X, Y)\)</span>.</p>
-<p><em>Доказательство:</em> Докажем корректность определения метрики.
-<span class="math inline">\(\rho_0(f(x), g(x))\)</span> непрерывна, как
+<p><span class="margin-lft"><em>Доказательство:</em></span> Докажем
+корректность определения метрики. <span
+class="math inline">\(\rho_0(f(x), g(x))\)</span> непрерывна, как
 отображение <span class="math inline">\(f: X \to \mathbb{R}, \,\,\,\, f:
 x \mapsto \rho_0(f(x), g(x))\)</span>. Непрерывный образ компактного
 множества – компакт, а следовательно <span
@@ -517,19 +548,22 @@ U|\,\,\,\, f(K) \subset U\}\)</span> было открыто в <span
 class="math inline">\(\mathcal{C}(X, Y)\)</span>.</p>
 </div>
 <div id="definition-46">
-<p><strong>Определение:</strong> Универсальное отображение <span
-class="math inline">\(l: X\times \mathcal{C}(X, Y) \to Y, \,\,\,\, x
-\mapsto f(x)\)</span> – <em>отображение вычисления</em>.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Универсальное отображение <span class="math inline">\(l:
+X\times \mathcal{C}(X, Y) \to Y, \,\,\,\, x \mapsto f(x)\)</span> –
+<em>отображение вычисления</em>.</p>
 </div>
 <div id="definition-47">
-<p><strong>Определение:</strong> Пространство <span
-class="math inline">\((X, \tau_X)\)</span> <em>локально компактно</em>,
-если <span class="math inline">\(\forall x \in X, \,\,\,\, \exists U_x
-\in \tau_X: \,\,\,\, \operatorname{Cl}U_x\)</span> компактно.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Пространство <span class="math inline">\((X,
+\tau_X)\)</span> <em>локально компактно</em>, если <span
+class="math inline">\(\forall x \in X, \,\,\,\, \exists U_x \in \tau_X:
+\,\,\,\, \operatorname{Cl}U_x\)</span> компактно.</p>
 </div>
 <div id="statement-23">
-<p><strong>Утверждение:</strong> (<em>экспоненциальный закон</em>)
-Определено каноническое отображение <span class="math inline">\(\Phi:
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>(<em>экспоненциальный закон</em>) Определено
+каноническое отображение <span class="math inline">\(\Phi:
 \mathcal{C}(X\times Y, Z) \to \mathcal{C}(X, \mathcal{C}(Y, Z))\)</span>
 или <span class="math inline">\(\Phi: Z^{X\times Y} \to
 (Z^{Y})^X\)</span>.</p>
@@ -546,13 +580,13 @@ class="math inline">\(\Phi\)</span> – непрерывно,</li>
 class="math inline">\(Y\)</span> хаусдорфово и локально компактно, то
 <span class="math inline">\(\Phi\)</span> – гомеоморфизм.</li>
 </ol>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p><img src="img/exponential-law.png" /></p>
 </div>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="теорема-стоуна-вейерштрасса.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

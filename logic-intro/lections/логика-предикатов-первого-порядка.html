@@ -11,7 +11,10 @@
     
     <title>Логика предикатов первого порядка</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="логика-высказываний-логика-предикатов-нулевого-порядка.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="модальная-логика.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="логика-высказываний-логика-предикатов-нулевого-порядка.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="модальная-логика.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -248,8 +267,8 @@
 <h1 data-number="3" id="логика-предикатов-первого-порядка">Логика
 предикатов первого порядка</h1>
 <div id="definition-7">
-<p><strong>Определение:</strong> Пусть <span class="math inline">\(M \ne
-\varnothing\)</span>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(M \ne \varnothing\)</span>.</p>
 <p><span class="math inline">\(Q \subset M^n\)</span> – <span
 class="math inline">\(n\)</span>-<em>арный предикат на</em>
 (<em>отношение</em>) <span class="math inline">\(M\)</span>.</p>
@@ -260,7 +279,8 @@ class="math inline">\(M\)</span>.</p>
 <h2 data-number="3.1" id="синтаксис-логики-первого-порядка">Синтаксис
 логики первого порядка</h2>
 <div id="definition-8">
-<p><strong>Определение:</strong></p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><strong>Определение:</strong></p>
 <p><span class="math inline">\(\operatorname{Pred}_{\Sigma} \ne
 \varnothing\)</span> – алфавит <em>предикатных символов</em>.</p>
 <p><span class="math inline">\(\operatorname{Func}_{\Sigma}\)</span> –
@@ -321,8 +341,9 @@ class="math inline">\(x \in \operatorname{Var}_{\Sigma}\)</span>, то
 <h2 data-number="3.2" id="сигнатура-логики-первого-порядка">Сигнатура
 логики первого порядка</h2>
 <div id="definition-9">
-<p><strong>Определение:</strong> Зафиксируем <span
-class="math inline">\(U \ne \varnothing\)</span>.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Зафиксируем <span class="math inline">\(U \ne
+\varnothing\)</span>.</p>
 <p>Пусть <span class="math inline">\(\operatorname{I}: c_i \mapsto
 \overline{c}_i \in U\)</span>,</p>
 <p><span class="math inline">\(\operatorname{I}: P^n_i \mapsto
@@ -346,8 +367,8 @@ class="math inline">\(A_{\Sigma}\)</span> – это интерпретация 
 универсум.</p>
 </div>
 <div id="definition-10">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(\varphi\)</span> – формула. В формулах <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(\varphi\)</span> – формула. В формулах <span
 class="math inline">\((\forall x \varphi)\)</span> и <span
 class="math inline">\((\exists x \varphi) \,\,\,\, \varphi\)</span> –
 это <em>область действия квантора</em>.</p>
@@ -359,8 +380,8 @@ class="math inline">\(x\)</span> – <em>связанная переменная
 <p>Формула <em>замкнутая</em>, если в ней нет свободных переменных.</p>
 </div>
 <div id="definition-11">
-<p><strong>Определение:</strong></p>
-<p>Отображение <span class="math inline">\(\theta:
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Отображение <span class="math inline">\(\theta:
 \operatorname{Var}_{\Sigma} \to U\)</span> – <em>оценка переменных</em>
 или <em>контекст</em>.</p>
 <p>Бескванторная формула при заданной оценке переменных – это формула
@@ -379,10 +400,10 @@ class="math inline">\(\varphi\)</span> – истинна.</p>
 \varphi\)</span>.</p>
 </div>
 <div id="definition-12">
-<p><strong>Определение:</strong> Формула <span
-class="math inline">\(\varphi\)</span> <em>общезначима</em>, если <span
-class="math inline">\(\varphi\)</span> истинна в любой алгебраической
-структуре в любом контексте. Обозначается: <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Формула
+<span class="math inline">\(\varphi\)</span> <em>общезначима</em>, если
+<span class="math inline">\(\varphi\)</span> истинна в любой
+алгебраической структуре в любом контексте. Обозначается: <span
 class="math inline">\(\models \varphi\)</span>.</p>
 <p>Формулы <span class="math inline">\(\varphi\)</span> и <span
 class="math inline">\(\psi\)</span> <em>эквивалентны</em>, если <span
@@ -392,7 +413,7 @@ class="math inline">\(\models \psi \to \varphi\)</span>.</p>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="логика-высказываний-логика-предикатов-нулевого-порядка.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

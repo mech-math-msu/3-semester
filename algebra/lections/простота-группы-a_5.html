@@ -11,7 +11,10 @@
     
     <title>Простота группы A_5</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="композиционные-и-субнормальные-ряды.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="алгебраические-структуры.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="композиционные-и-субнормальные-ряды.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="алгебраические-структуры.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -248,14 +267,14 @@
 <h1 data-number="16" id="простота-группы-a_5">Простота группы <span
 class="math inline">\(A_5\)</span></h1>
 <div id="theorem-25">
-<p><strong>Теорема:</strong> <span class="math inline">\(A_n\)</span> –
-простая группа при <span class="math inline">\(n \geqslant
-5\)</span>.</p>
-<p><em>Доказательство:</em> Пусть <span class="math inline">\(\{e\} \ne
-N \vartriangleleft A_n\)</span>. Хотим доказать, что <span
-class="math inline">\(N = A_n\)</span>. Для этого достаточно показать,
-что <span class="math inline">\(A_n\)</span> содержит тройной цикл, так
-как все тройные циклы сопряжены в <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span><span
+class="math inline">\(A_n\)</span> – простая группа при <span
+class="math inline">\(n \geqslant 5\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть <span
+class="math inline">\(\{e\} \ne N \vartriangleleft A_n\)</span>. Хотим
+доказать, что <span class="math inline">\(N = A_n\)</span>. Для этого
+достаточно показать, что <span class="math inline">\(A_n\)</span>
+содержит тройной цикл, так как все тройные циклы сопряжены в <span
 class="math inline">\(A_n\)</span> и порождают <span
 class="math inline">\(A_n\)</span>.</p>
 <p>Рассмотрим <span class="math inline">\(\operatorname{id} = \sigma \in
@@ -273,24 +292,25 @@ id="существование-неабелевой-группы-порядка-
 class="math inline">\(1\)</span> по модулю <span
 class="math inline">\(p\)</span></h2>
 <div id="statement-33">
-<p><strong>Утверждение:</strong> Если <span class="math inline">\(p &lt;
-q \,\,\,\, q \equiv 1 \mod p, \,\,\,\, p, q\)</span> – простые, то <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Если
+<span class="math inline">\(p &lt; q \,\,\,\, q \equiv 1 \mod p,
+\,\,\,\, p, q\)</span> – простые, то <span
 class="math inline">\(\exists\)</span> неабелева группа порядка <span
 class="math inline">\(p\cdot q\)</span>.</p>
-<p><em>Доказательство:</em> Рассмотрим группу <span
-class="math inline">\(\left\{\left(\begin{array}{cc} \alpha &amp; \beta
-\\ 0 &amp; 1 \end{array}\right)| \,\,\,\, \alpha, \beta \in
+<p><span class="margin-lft"><em>Доказательство:</em></span> Рассмотрим
+группу <span class="math inline">\(\left\{\left(\begin{array}{cc} \alpha
+&amp; \beta \\ 0 &amp; 1 \end{array}\right)| \,\,\,\, \alpha, \beta \in
 \mathbb{Z}_q, \,\,\,\, \alpha^p = 1\right\}
 \,\,\,\,\blacksquare\)</span></p>
 </div>
 <h2 data-number="16.2" id="группы-порядка-p2-абелевы">Группы порядка
 <span class="math inline">\(p^2\)</span> абелевы</h2>
 <div id="theorem-26">
-<p><strong>Теорема:</strong> Группы порядка <span
-class="math inline">\(p^2\)</span> абелевы.</p>
-<p><em>Доказательство:</em> Порядок центра группы делит <span
-class="math inline">\(p^2\)</span> и не равен <span
-class="math inline">\(1\)</span> <a
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Группы
+порядка <span class="math inline">\(p^2\)</span> абелевы.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Порядок
+центра группы делит <span class="math inline">\(p^2\)</span> и не равен
+<span class="math inline">\(1\)</span> <a
 href="lection-group-action.html#theorem-2">по теореме</a>.</p>
 <p>Пусть <span class="math inline">\(|Z(G)| = p^2 \implies Z(G) = G
 \implies G\)</span> – абелева.</p>
@@ -308,7 +328,7 @@ class="math inline">\(Z(G) = g’Z(G) = g^m Z(G) \implies g = g’\)</span>.
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="композиционные-и-субнормальные-ряды.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

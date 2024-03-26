@@ -1,0 +1,457 @@
+[
+    {
+        "keyword": "бинарная операция",
+        "html": "<p><a href=\"группы.html#definition-0\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Бинарная операция</em> – это отображение <span\nclass=\"math inline\">\\(\\boxdot: G \\times G \\to G\\)</span>.</p>",
+        "url": "группы.html#definition-0"
+    },
+    {
+        "keyword": "группоид",
+        "html": "<p><a href=\"группы.html#definition-1\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Группоид</em> – это множество с бинарной операцией.</p>",
+        "url": "группы.html#definition-1"
+    },
+    {
+        "keyword": "группа ассоциативность нейтральный элемент единица ноль обратный элемент противоположный элемент полугруппа моноид",
+        "html": "<p><a href=\"группы.html#definition-2\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Группа</em> – множество <span class=\"math inline\">\\(G\\)</span> с\nбинарной операцией <span class=\"math inline\">\\(\\boxdot: G \\times G \\to\nG\\)</span> (операцию называют сложение или умножение), для которой\nвыполнено:</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\((a \\boxdot b) \\boxdot c = a \\boxdot (b\n\\boxdot c) \\,\\,\\,\\, \\forall a, b, c \\in G\\)</span>\n(<em>ассоциативность</em>)</li>\n<li><span class=\"math inline\">\\(\\exists e \\in G: \\,\\,\\,\\, \\forall a \\in\nG \\,\\,\\,\\, a \\boxdot e = e \\boxdot a = a\\)</span> (<span\nclass=\"math inline\">\\(e\\)</span> – <em>нейтральный элемент</em>, <span\nclass=\"math inline\">\\(e\\)</span> – <em>единица</em>, если операция\nназывается умножением, и <span class=\"math inline\">\\(e\\)</span> –\n<em>ноль</em>, если сложением)</li>\n<li><span class=\"math inline\">\\(\\forall a \\in G \\,\\,\\,\\, \\exists a^{-1}\n\\in G: \\,\\,\\,\\, a \\boxdot a^{-1} = a^{-1} \\boxdot a = e\\)</span> (<span\nclass=\"math inline\">\\(a^{-1}\\)</span> – <em>обратный элемент</em>, если\nоперация называется умножением, и <span\nclass=\"math inline\">\\(a^{-1}\\)</span> – <em>противоположный\nэлемент</em>, если сложением)</li>\n</ol>\n<p>Множество, для которого выполнено 1, – <em>полугруппа</em>.</p>\n<p>Множество, для которого выполнено 1 и 2, – <em>моноид</em>.</p>",
+        "url": "группы.html#definition-2"
+    },
+    {
+        "keyword": "абелева",
+        "html": "<p><a href=\"группы.html#definition-3\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nЕсли операция на группе ассоциативна <span class=\"math inline\">\\((a\n\\boxdot b = b \\boxdot a)\\)</span>, то группа <em>абелева</em>.</p>",
+        "url": "группы.html#definition-3"
+    },
+    {
+        "keyword": "преобразование множества",
+        "html": "<p><a href=\"группы.html#definition-4\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Преобразование множества</em> – это его отображение в себя.</p>",
+        "url": "группы.html#definition-4"
+    },
+    {
+        "keyword": "группа преобразований множества",
+        "html": "<p><a href=\"группы.html#definition-5\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Группа преобразований множества</em> <span\nclass=\"math inline\">\\(X\\)</span> – это группа, состоящая из биективных\nпреобразований множества <span class=\"math inline\">\\(X\\)</span> с\nоперацией композиции.</p>",
+        "url": "группы.html#definition-5"
+    },
+    {
+        "keyword": "симметрическая группа множества",
+        "html": "<p><a href=\"группы.html#definition-6\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nГруппа преобразований множества <span class=\"math inline\">\\(X\\)</span>,\nсостоящая из всех биективных преобразований – это <em>симметрическая\nгруппа множества</em> <span class=\"math inline\">\\(X\\)</span>.</p>",
+        "url": "группы.html#definition-6"
+    },
+    {
+        "keyword": "группа симметрий группа симметрий",
+        "html": "<p><a href=\"группы.html#definition-7\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n(<em>Группа симметрий</em>)</p>\n<p>Пусть <span class=\"math inline\">\\(X\\)</span> – метрическое\nпространство, <span class=\"math inline\">\\(A \\subset X\\)</span>.</p>\n<p><span class=\"math inline\">\\(\\operatorname{Sym} A = \\{\\varphi: A \\to\nA: \\,\\,\\,\\, \\rho(\\varphi(x), \\varphi(y)) = \\rho(x, y)\\}\\)</span> –\n<em>группа симметрий</em> множества <span\nclass=\"math inline\">\\(A\\)</span>. <a href=\"#fn1\" class=\"footnote-ref\"\nid=\"fnref1\" role=\"doc-noteref\"><sup>1</sup></a></p>\n<section id=\"footnotes\" class=\"footnotes footnotes-end-of-document\"\nrole=\"doc-endnotes\">\n<hr />\n<ol>\n<li id=\"fn1\"><p><span class=\"math inline\">\\(\\rho\\)</span> – метрика в\nпространстве <span class=\"math inline\">\\(X\\)</span>.<a href=\"#fnref1\"\nclass=\"footnote-back\" role=\"doc-backlink\">↩︎</a></p></li>\n</ol>\n</section>",
+        "url": "группы.html#definition-7"
+    },
+    {
+        "keyword": "группа диэдра",
+        "html": "<p><a href=\"группы.html#definition-8\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nГруппа симметрий правильного <span\nclass=\"math inline\">\\(n\\)</span>-угольника – <em>группа Диэдра</em>.</p>\n<p><strong>Обозначается:</strong> <span\nclass=\"math inline\">\\(D_n\\)</span></p>",
+        "url": "группы.html#definition-8"
+    },
+    {
+        "keyword": "порядок группы",
+        "html": "<p><a href=\"группы.html#definition-9\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Порядок группы</em> <span class=\"math inline\">\\(G\\)</span> – это\nмощность множества <span class=\"math inline\">\\(G\\)</span>.</p>",
+        "url": "группы.html#definition-9"
+    },
+    {
+        "keyword": "подгруппа",
+        "html": "<p><a href=\"способы-получения-групп.html#definition-10\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(G\\)</span> – группа, <span\nclass=\"math inline\">\\(H \\subset G\\)</span>. <span\nclass=\"math inline\">\\(H\\)</span> – <em>подгруппа</em> группы <span\nclass=\"math inline\">\\(G\\)</span>, если <span\nclass=\"math inline\">\\(H\\)</span> – группа относительно операции группы\n<span class=\"math inline\">\\(G\\)</span>.</p>",
+        "url": "способы-получения-групп.html#definition-10"
+    },
+    {
+        "keyword": "подгруппа, порожденная множеством",
+        "html": "<p><a href=\"способы-получения-групп.html#definition-11\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(G\\)</span> – группа, <span\nclass=\"math inline\">\\(S \\subset G\\)</span>. Множество <span\nclass=\"math inline\">\\(\\langle S \\rangle = \\{g_1^{\\varepsilon_1}\\cdot\n\\ldots \\cdot g_k^{\\varepsilon_k}| \\,\\,\\,\\, k \\in \\mathbb{N}, \\,\\,\\,\\,\ng_1, \\ldots, g_k \\in H, \\,\\,\\,\\, \\varepsilon_1, \\ldots, \\varepsilon_k\n\\in \\{-1, 1\\}\\}\\)</span> – <em>подгруппа, порожденная множеством</em>\n<span class=\"math inline\">\\(S\\)</span>.</p>",
+        "url": "способы-получения-групп.html#definition-11"
+    },
+    {
+        "keyword": "гомоморфизм",
+        "html": "<p><a href=\"способы-получения-групп.html#definition-12\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\((G, \\star)\\)</span> и <span\nclass=\"math inline\">\\((H, \\cdot)\\)</span> группы. Отображение <span\nclass=\"math inline\">\\(\\varphi: G \\to H\\)</span>, такое, что <span\nclass=\"math inline\">\\(\\varphi(g_1\\star g_2) = \\varphi(g_1)\\cdot\n\\varphi(g_2)\\)</span> – <em>гомоморфизм</em> групп <span\nclass=\"math inline\">\\(G\\)</span> и <span\nclass=\"math inline\">\\(H\\)</span>.</p>",
+        "url": "способы-получения-групп.html#definition-12"
+    },
+    {
+        "keyword": "изоморфны",
+        "html": "<p><a href=\"способы-получения-групп.html#definition-13\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nГруппы <span class=\"math inline\">\\((G, \\star)\\)</span> и <span\nclass=\"math inline\">\\((H, \\cdot)\\)</span> <em>изоморфны</em>, если\nсуществует биективный гомоморфизм <span class=\"math inline\">\\(\\varphi: G\n\\to H\\)</span> <a href=\"#fn1\" class=\"footnote-ref\" id=\"fnref1\"\nrole=\"doc-noteref\"><sup>1</sup></a>.</p>\n<p><strong>Обозначение:</strong> <span class=\"math inline\">\\(G \\cong\nH\\)</span></p>\n<section id=\"footnotes\" class=\"footnotes footnotes-end-of-document\"\nrole=\"doc-endnotes\">\n<hr />\n<ol>\n<li id=\"fn1\"><p>биективное отображение <span\nclass=\"math inline\">\\(\\varphi: G \\to H\\)</span>, такое, что <span\nclass=\"math inline\">\\(\\varphi(g_1\\star g_2) = \\varphi(g_1)\\cdot\n\\varphi(g_2)\\)</span>.<a href=\"#fnref1\" class=\"footnote-back\"\nrole=\"doc-backlink\">↩︎</a></p></li>\n</ol>\n</section>",
+        "url": "способы-получения-групп.html#definition-13"
+    },
+    {
+        "keyword": "вкладывается в",
+        "html": "<p><a href=\"способы-получения-групп.html#definition-14\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nЕсли группа <span class=\"math inline\">\\(H\\)</span> изоморфна некоторой\nподгруппе группы <span class=\"math inline\">\\(G\\)</span>, то <span\nclass=\"math inline\">\\(H\\)</span> <em>вкладывается в</em> <span\nclass=\"math inline\">\\(G\\)</span>.</p>",
+        "url": "способы-получения-групп.html#definition-14"
+    },
+    {
+        "keyword": "циклическая",
+        "html": "<p><a href=\"способы-получения-групп.html#definition-15\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nГруппа <em>циклическая</em>, если она порождается одним элементом.</p>",
+        "url": "способы-получения-групп.html#definition-15"
+    },
+    {
+        "keyword": "порядок элемента",
+        "html": "<p><a href=\"способы-получения-групп.html#definition-16\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Порядок элемента</em> <span class=\"math inline\">\\(g\\)</span> группы\n<span class=\"math inline\">\\(G\\)</span> – это минимальное натуральное\n<span class=\"math inline\">\\(n\\)</span>, такое, что <span\nclass=\"math inline\">\\(g^n = e\\)</span>. Если такого <span\nclass=\"math inline\">\\(n\\)</span> не существует, то порядок –\nбесконечность.</p>",
+        "url": "способы-получения-групп.html#definition-16"
+    },
+    {
+        "keyword": "левый смежный класс элемента по подгруппе",
+        "html": "<p><a\nhref=\"смежные-классы,-нормальные-подгруппы,-автоморфизмы.html#definition-17\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(G\\)</span> группа, <span\nclass=\"math inline\">\\(H \\subset G\\)</span> погруппа, <span\nclass=\"math inline\">\\(g \\in G\\)</span>. <em>Левый смежный класс\nэлемента</em> <span class=\"math inline\">\\(g\\)</span> <em>по\nподгруппе</em> <span class=\"math inline\">\\(H\\)</span> – это <span\nclass=\"math inline\">\\(\\{g\\cdot h|\\,\\,\\,\\, h \\in H\\}\\)</span>.</p>",
+        "url": "смежные-классы,-нормальные-подгруппы,-автоморфизмы.html#definition-17"
+    },
+    {
+        "keyword": "индекс погруппы",
+        "html": "<p><a\nhref=\"смежные-классы,-нормальные-подгруппы,-автоморфизмы.html#definition-18\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(G\\)</span> группа, <span\nclass=\"math inline\">\\(H\\)</span> погруппа группы <span\nclass=\"math inline\">\\(G\\)</span>. Число смежных классов группы <span\nclass=\"math inline\">\\(G\\)</span> по подгруппе <span\nclass=\"math inline\">\\(H\\)</span> – <em>индекс погруппы</em> <span\nclass=\"math inline\">\\(H\\)</span>.</p>\n<p><strong>Обозначается:</strong> <span\nclass=\"math inline\">\\(|G:H|\\)</span></p>",
+        "url": "смежные-классы,-нормальные-подгруппы,-автоморфизмы.html#definition-18"
+    },
+    {
+        "keyword": "нормальна",
+        "html": "<p><a\nhref=\"смежные-классы,-нормальные-подгруппы,-автоморфизмы.html#definition-19\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПодгруппа <span class=\"math inline\">\\(H \\subset G\\)</span>\n<em>нормальна</em>, если выполнено одно из условий:</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(\\forall g \\in G \\,\\,\\,\\, gH =\nHg\\)</span></li>\n<li><span class=\"math inline\">\\(\\forall g \\in G \\,\\,\\,\\, gHg^{-1} =\nH\\)</span></li>\n<li><span class=\"math inline\">\\(\\forall g \\in G \\,\\,\\,\\, \\forall h \\in H\n\\,\\,\\,\\, ghg^{-1} \\in H\\)</span></li>\n</ol>\n<p><strong>Обозначается:</strong> <span class=\"math inline\">\\(H\n\\vartriangleleft G\\)</span></p>",
+        "url": "смежные-классы,-нормальные-подгруппы,-автоморфизмы.html#definition-19"
+    },
+    {
+        "keyword": "эндоморфизм",
+        "html": "<p><a\nhref=\"смежные-классы,-нормальные-подгруппы,-автоморфизмы.html#definition-20\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Эндоморфизм</em> группы <span class=\"math inline\">\\(G\\)</span> – это\nгомоморфизм <span class=\"math inline\">\\(\\varphi: \\,\\,\\,\\, G \\to\nG\\)</span>.</p>",
+        "url": "смежные-классы,-нормальные-подгруппы,-автоморфизмы.html#definition-20"
+    },
+    {
+        "keyword": "автоморфизм",
+        "html": "<p><a\nhref=\"смежные-классы,-нормальные-подгруппы,-автоморфизмы.html#definition-21\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Автоморфизм</em> группы <span class=\"math inline\">\\(G\\)</span> – это\nизоморфизм <span class=\"math inline\">\\(\\varphi: \\,\\,\\,\\, G \\to\nG\\)</span>.</p>",
+        "url": "смежные-классы,-нормальные-подгруппы,-автоморфизмы.html#definition-21"
+    },
+    {
+        "keyword": "сопряженный элемент к",
+        "html": "<p><a\nhref=\"смежные-классы,-нормальные-подгруппы,-автоморфизмы.html#definition-22\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(G\\)</span> группа, <span\nclass=\"math inline\">\\(g \\in G\\)</span>. <span\nclass=\"math inline\">\\(\\forall x \\in G \\,\\,\\,\\, gxg^{-1} \\in G\\)</span> –\n<em>сопряженный элемент к</em> <span\nclass=\"math inline\">\\(x\\)</span>.</p>",
+        "url": "смежные-классы,-нормальные-подгруппы,-автоморфизмы.html#definition-22"
+    },
+    {
+        "keyword": "образ ядро",
+        "html": "<p><a\nhref=\"смежные-классы,-нормальные-подгруппы,-автоморфизмы.html#definition-23\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(\\varphi: G \\to H\\)</span> –\nгомоморфизм групп <span class=\"math inline\">\\(G\\)</span> и <span\nclass=\"math inline\">\\(H\\)</span>.</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(\\operatorname{Img} \\varphi =\n\\{\\varphi(g)| \\,\\,\\,\\, g \\in G\\}\\)</span> – <em>образ</em> <span\nclass=\"math inline\">\\(\\varphi\\)</span>.</li>\n<li><span class=\"math inline\">\\(\\operatorname{Ker} \\varphi = \\{g \\in G:\n\\,\\,\\,\\, \\varphi(g) = e \\in H\\}\\)</span> – <em>ядро</em> <span\nclass=\"math inline\">\\(\\varphi\\)</span>.</li>\n</ol>",
+        "url": "смежные-классы,-нормальные-подгруппы,-автоморфизмы.html#definition-23"
+    },
+    {
+        "keyword": "факторгруппа",
+        "html": "<p><a href=\"факторгруппы.html#definition-24\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Факторгруппа</em> группы <span class=\"math inline\">\\(G\\)</span> по\n<span style=\"color:#7bc99a\">нормальной</span> подгруппе <span\nclass=\"math inline\">\\(H\\)</span> – это множество <span\nclass=\"math inline\">\\(G / H = \\{g H|\\,\\,\\,\\, g \\in G\\}\\)</span>.</p>",
+        "url": "факторгруппы.html#definition-24"
+    },
+    {
+        "keyword": "центр",
+        "html": "<p><a href=\"основная-теорема-о-гомоморфизме.html#definition-25\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\operatorname{Ker}\\Phi = \\{g \\in G: \\,\\,\\,\\,\n\\varphi_g(x) = x \\,\\,\\,\\, \\forall x \\in G\\}=\\)</span> <span\nclass=\"math inline\">\\(= \\{g \\in G: \\,\\,\\,\\, gxg^{-1} = x \\,\\,\\,\\,\n\\forall x \\in G\\} = \\{g \\in G: \\,\\,\\,\\, gx = xg \\,\\,\\,\\, \\forall x \\in\nG\\} = Z(G)\\)</span> – <em>центр</em> группы <span\nclass=\"math inline\">\\(G\\)</span>.</p>",
+        "url": "основная-теорема-о-гомоморфизме.html#definition-25"
+    },
+    {
+        "keyword": "группа внутренних автоморфизмов",
+        "html": "<p><a href=\"основная-теорема-о-гомоморфизме.html#definition-26\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\operatorname{Img}\\Phi =\n\\operatorname{Inn}G\\)</span> – <em>группа внутренних автоморфизмов</em>\n<span class=\"math inline\">\\(G\\)</span>.</p>",
+        "url": "основная-теорема-о-гомоморфизме.html#definition-26"
+    },
+    {
+        "keyword": "група внешних автоморфизмов",
+        "html": "<p><a href=\"основная-теорема-о-гомоморфизме.html#definition-27\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\operatorname{Aut}G / \\operatorname{Inn}G =\n\\operatorname{Out}G\\)</span> – <em>група внешних автоморфизмов</em>.</p>",
+        "url": "основная-теорема-о-гомоморфизме.html#definition-27"
+    },
+    {
+        "keyword": "нормальное замыкание",
+        "html": "<p><a href=\"основная-теорема-о-гомоморфизме.html#definition-28\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(G\\)</span> – группа, <span\nclass=\"math inline\">\\(H \\subset G\\)</span>. <span\nclass=\"math inline\">\\(&lt;\\displaystyle\\cup_{g \\in G}gHg^{-1}&gt;  =\n&lt;&lt;H&gt;&gt; \\vartriangleleft G\\)</span> – <em>нормальное\nзамыкание</em> <span class=\"math inline\">\\(H\\)</span>.</p>",
+        "url": "основная-теорема-о-гомоморфизме.html#definition-28"
+    },
+    {
+        "keyword": "прямое произведение групп",
+        "html": "<p><a href=\"прямое-произведение-групп.html#definition-29\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(A\\)</span> и <span\nclass=\"math inline\">\\(B\\)</span> группы. Зададим на множестве <span\nclass=\"math inline\">\\(A\\times B = \\{(a, b)|\\,\\,\\,\\, a \\in A, \\,\\,\\,\\, b\n\\in B\\}\\)</span> бинарную операцию: <span class=\"math inline\">\\((a,\nb)\\cdot (a’, b’) = (aa’, bb’)\\)</span>. Множество <span\nclass=\"math inline\">\\(A\\times B\\)</span> с такой операцией – <em>прямое\nпроизведение групп</em> <span class=\"math inline\">\\(A\\)</span> и <span\nclass=\"math inline\">\\(B\\)</span>.</p>\n<p><strong>Обозначается:</strong> <span class=\"math inline\">\\(A\\times\nB\\)</span></p>",
+        "url": "прямое-произведение-групп.html#definition-29"
+    },
+    {
+        "keyword": "внутренним прямым произведением",
+        "html": "<p><a href=\"прямое-произведение-групп.html#definition-30\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nГруппа <span class=\"math inline\">\\(G\\)</span> является <em>внутренним\nпрямым произведением</em> своих подгрупп <span\nclass=\"math inline\">\\(A\\)</span> и <span\nclass=\"math inline\">\\(B\\)</span>, если:</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(A \\vartriangleleft G\\)</span> и <span\nclass=\"math inline\">\\(B \\vartriangleleft G\\)</span>.</li>\n<li><span class=\"math inline\">\\(A \\cap B = \\{e\\}\\)</span>.</li>\n<li><span class=\"math inline\">\\(G = \\{ab|\\,\\,\\,\\, a \\in A, \\,\\,\\,\\, b\n\\in B\\} = A\\cdot B\\)</span>.</li>\n</ol>",
+        "url": "прямое-произведение-групп.html#definition-30"
+    },
+    {
+        "keyword": "свободна базис линейно независимое",
+        "html": "<p><a href=\"конечно-порожденные-абелевы-группы.html#definition-31\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nКонечно порожденная абелева группа <span class=\"math inline\">\\((G,\n+)\\)</span> – <em>свободна</em>, если в <span class=\"math inline\">\\((G,\n+)\\)</span> существует <em>базис</em>, то есть множество <span\nclass=\"math inline\">\\(X \\subset G\\)</span>, такое что:</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(\\langle X \\rangle = G\\)</span>, то есть\n<span class=\"math inline\">\\(\\forall g \\in G \\,\\,\\,\\, \\exists \\lambda_1,\n\\ldots, \\lambda_n \\in \\mathbb{Z}: \\,\\,\\,\\, g = \\lambda_1 x_1 + \\ldots +\n\\lambda_n x_n, \\,\\,\\,\\, x_i \\in X\\)</span>.</li>\n<li><span class=\"math inline\">\\(X\\)</span> – <em>линейно\nнезависимое</em>, то есть только тривиальная линейная комбинация\nэлементов <span class=\"math inline\">\\(X\\)</span> равна <span\nclass=\"math inline\">\\(0\\)</span>.</li>\n</ol>",
+        "url": "конечно-порожденные-абелевы-группы.html#definition-31"
+    },
+    {
+        "keyword": "примитивный",
+        "html": "<p><a href=\"конечно-порожденные-абелевы-группы.html#definition-32\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nЭлемент <span class=\"math inline\">\\(g\\)</span> свободной конечно\nпорожденной абелевой группы <span class=\"math inline\">\\(G\\)</span>\n<em>примитивный</em>, если существует базис <span\nclass=\"math inline\">\\(G\\)</span>, содержащий <span\nclass=\"math inline\">\\(g\\)</span>.</p>",
+        "url": "конечно-порожденные-абелевы-группы.html#definition-32"
+    },
+    {
+        "keyword": "периодическая часть группы",
+        "html": "<p><a href=\"конечно-порожденные-абелевы-группы.html#definition-33\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(T(G) = \\{g \\in G: \\,\\,\\,\\,\n\\operatorname{ord}g &lt; \\infty\\}\\)</span> – <em>периодическая часть\nгруппы</em>.</p>",
+        "url": "конечно-порожденные-абелевы-группы.html#definition-33"
+    },
+    {
+        "keyword": "без кручения",
+        "html": "<p><a href=\"конечно-порожденные-абелевы-группы.html#definition-34\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nГруппа <span class=\"math inline\">\\(G\\)</span> <em>без кручения</em>,\nесли в ней нет нетривиальных элементов конечного порядка.</p>",
+        "url": "конечно-порожденные-абелевы-группы.html#definition-34"
+    },
+    {
+        "keyword": "p-компонента",
+        "html": "<p><a href=\"конечно-порожденные-абелевы-группы.html#definition-35\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(p\\)</span> – простое. <span\nclass=\"math inline\">\\(T_p(G) = \\{g \\in G| \\operatorname{ord}g =\np\\}\\)</span> – <em><span\nclass=\"math inline\">\\(p\\)</span>-компонента</em> группы <span\nclass=\"math inline\">\\(G\\)</span>.</p>",
+        "url": "конечно-порожденные-абелевы-группы.html#definition-35"
+    },
+    {
+        "keyword": "действие группы на множестве",
+        "html": "<p><a href=\"действие-группы.html#definition-36\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Действие группы</em> <span class=\"math inline\">\\(G\\)</span> <em>на\nмножестве</em> <span class=\"math inline\">\\(X\\)</span> – это отображение\n<span class=\"math inline\">\\(G\\times X \\overset{\\circ}{\\to}X, \\,\\,\\,\\,\n(g, x)\\mapsto g\\circ x\\)</span> и</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\((g g’)\\circ x = g\\circ (g’\\circ x)\n\\,\\,\\,\\, \\forall g, g’ \\in G\\)</span>.</li>\n<li><span class=\"math inline\">\\(e\\circ x = x \\,\\,\\,\\, \\forall x \\in\nX\\)</span>.</li>\n</ol>",
+        "url": "действие-группы.html#definition-36"
+    },
+    {
+        "keyword": "орбита",
+        "html": "<p><a href=\"действие-группы.html#definition-37\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Орбита</em> элемента <span class=\"math inline\">\\(x \\in X\\)</span>\nпри действии группы <span class=\"math inline\">\\(G\\)</span> – это <span\nclass=\"math inline\">\\(G\\circ x = \\{g\\circ x \\,\\,\\,\\, \\forall g \\in\nG\\}\\)</span>.</p>",
+        "url": "действие-группы.html#definition-37"
+    },
+    {
+        "keyword": "стабилизатор точки",
+        "html": "<p><a href=\"действие-группы.html#definition-38\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\operatorname{St}(x) = \\{g \\in G: \\,\\,\\,\\,\ng\\circ x = x\\}\\)</span> – <em>стабилизатор точки</em> <span\nclass=\"math inline\">\\(x \\in X\\)</span>.</p>",
+        "url": "действие-группы.html#definition-38"
+    },
+    {
+        "keyword": "длина орбиты",
+        "html": "<p><a href=\"действие-группы.html#definition-39\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(|G\\circ x|\\)</span> – <em>длина\nорбиты</em>.</p>",
+        "url": "действие-группы.html#definition-39"
+    },
+    {
+        "keyword": "централизатор",
+        "html": "<p><a href=\"действие-группы.html#definition-40\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(\\operatorname{C}(x) = \\{g \\in G: \\,\\,\\,\\, gx\n= xg\\}\\)</span> – <em>централизатор</em> элемента <span\nclass=\"math inline\">\\(x \\in G\\)</span>.</p>",
+        "url": "действие-группы.html#definition-40"
+    },
+    {
+        "keyword": "левыми сдвигами правыми сдвигами сопряжением действие левыми сдвигами по подгруппе",
+        "html": "<ol type=\"1\">\n<li><a href=\"действие-группы.html#definition-41\"><span\nclass=\"margin-lft\"><strong>Перейти к\nопределению:</strong></span></a></li>\n<li> </li>\n<li><span class=\"math inline\">\\(G\\)</span> действует на себя <em>левыми\nсдвигами</em> <span class=\"math inline\">\\(g\\circ x = gx\\)</span>. При\nтаком действии одна орбита и все стабилизаторы тривиальны.</li>\n<li><span class=\"math inline\">\\(G\\)</span> действует на себя <em>правыми\nсдвигами</em> <span class=\"math inline\">\\(g\\circ x = xg^{-1}\\)</span>.\nПри таком действии одна орбита и все стабилизаторы тривиальны.</li>\n<li><span class=\"math inline\">\\(G\\)</span> действует на себя\n<em>сопряжением</em> <span class=\"math inline\">\\(g\\circ x =\ngxg^{-1}\\)</span>. Орбиты – классы сопряженности, стабилизаторы –\nцентрализаторы элементов.</li>\n<li>Пусть <span class=\"math inline\">\\(H \\subset G\\)</span> – подгруппа.\n<span class=\"math inline\">\\(G\\)</span> действует на <span\nclass=\"math inline\">\\(\\{gH|\\,\\,\\,\\, g \\in G\\}: \\,\\,\\,\\ g\\circ (x H) =\ngxH\\)</span> – <em>действие левыми сдвигами по подгруппе</em> <span\nclass=\"math inline\">\\(H\\)</span>.</li>\n</ol>",
+        "url": "действие-группы.html#definition-41"
+    },
+    {
+        "keyword": "силовская подгруппа",
+        "html": "<p><a href=\"теоремы-силова.html#definition-42\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(G\\)</span> – конечная группа и <span\nclass=\"math inline\">\\(|G| = p^k\\cdot m\\)</span>, причем <span\nclass=\"math inline\">\\(p \\nmid m\\)</span>. Тогда подгруппа <span\nclass=\"math inline\">\\(G\\)</span> порядка <span\nclass=\"math inline\">\\(p^k\\)</span> – <em>силовская</em> <span\nclass=\"math inline\">\\(p\\)</span>-<em>подгруппа</em>.</p>",
+        "url": "теоремы-силова.html#definition-42"
+    },
+    {
+        "keyword": "нормализатор",
+        "html": "<p><a href=\"теоремы-силова.html#definition-43\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Нормализатор</em> <span\nclass=\"math inline\">\\(\\operatorname{N}(H)\\)</span> подгруппы <span\nclass=\"math inline\">\\(H\\)</span> – это <span class=\"math inline\">\\(\\{g\n\\in G| \\,\\,\\,\\, gH g^{-1} = H\\}\\)</span>.</p>",
+        "url": "теоремы-силова.html#definition-43"
+    },
+    {
+        "keyword": "",
+        "html": "<p><a href=\"теоремы-силова.html#definition-44\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть группа <span class=\"math inline\">\\(G\\)</span> действует на\nмножестве <span class=\"math inline\">\\(X\\)</span>. <span\nclass=\"math inline\">\\(\\operatorname{Fix}(g) = \\{x \\in X: \\,\\,\\,\\, g\\circ\nx = x\\}\\)</span>.</p>",
+        "url": "теоремы-силова.html#definition-44"
+    },
+    {
+        "keyword": "точка неподвижна",
+        "html": "<p><a href=\"теоремы-силова.html#definition-45\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Точка неподвижна</em></p>",
+        "url": "теоремы-силова.html#definition-45"
+    },
+    {
+        "keyword": "коммутатор элементов",
+        "html": "<p><a href=\"коммутант-группы.html#definition-46\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(G\\)</span> – группа, <span\nclass=\"math inline\">\\(g, h \\in G\\)</span>. Множество <span\nclass=\"math inline\">\\([g, h] \\rightleftharpoons g^{-1}h^{-1}gh\\)</span>\n– <em>коммутатор элементов</em> <span class=\"math inline\">\\(g\\)</span> и\n<span class=\"math inline\">\\(h\\)</span>.</p>",
+        "url": "коммутант-группы.html#definition-46"
+    },
+    {
+        "keyword": "коммутант группы",
+        "html": "<p><a href=\"коммутант-группы.html#definition-47\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(G\\)</span> – группа. Множество <span\nclass=\"math inline\">\\([G, G] \\rightleftharpoons \\langle\\{[g, h]|\\,\\,\\,\\,\ng, h \\in G\\}\\rangle\\)</span> – <em>коммутант группы</em> <span\nclass=\"math inline\">\\(G\\)</span>.</p>",
+        "url": "коммутант-группы.html#definition-47"
+    },
+    {
+        "keyword": "трансвекция",
+        "html": "<p><a href=\"коммутант-группы.html#definition-48\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Трансвекция</em> – это матрица вида: <span\nclass=\"math inline\">\\(\\left(\\begin{array}{lllll}\n1 &amp; 0 &amp; \\dots &amp; 0 &amp; 0 \\\\\n0 &amp; 1 &amp; 0 &amp; \\dots &amp; 0 \\\\\n0 &amp; \\ddots &amp; \\ddots &amp; \\lambda &amp; 0 \\\\\n0 &amp; \\dots &amp; 0 &amp; 1 &amp; 0 \\\\\n0 &amp; 0 &amp; \\dots &amp; 0 &amp; 1\n\\end{array}\\right)\\)</span>, где <span class=\"math inline\">\\(\\lambda \\ne\n0\\)</span> и <span class=\"math inline\">\\(\\lambda\\)</span> на позиции\n<span class=\"math inline\">\\(i \\ne j\\)</span>.</p>",
+        "url": "коммутант-группы.html#definition-48"
+    },
+    {
+        "keyword": "разрешима разрешимая ступени",
+        "html": "<p><a href=\"разрешимые-группы.html#definition-49\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nГруппа <span class=\"math inline\">\\(G\\)</span> – <em>разрешима</em>, если\n<span class=\"math inline\">\\(G \\vartriangleright G’ \\vartriangleright G’’\n\\vartriangleright G’’’ \\vartriangleright \\ldots \\vartriangleright\nG^{\\underbrace{’’’\\dots’’}_{n}}  =\\{e\\}\\)</span>.</p>\n<p><span class=\"math inline\">\\(G\\)</span> – <em>разрешимая ступени</em>\n<span class=\"math inline\">\\(n\\)</span>.</p>",
+        "url": "разрешимые-группы.html#definition-49"
+    },
+    {
+        "keyword": "субнормальный ряд",
+        "html": "<p><a\nhref=\"композиционные-и-субнормальные-ряды.html#definition-50\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nРяд вида <span class=\"math inline\">\\(G_0 = G \\vartriangleright G_1\n\\vartriangleright G_2 \\vartriangleright \\ldots \\vartriangleright G_n =\n\\{e\\}\\)</span> – <em>субнормальный ряд</em> группы <span\nclass=\"math inline\">\\(G\\)</span>.</p>",
+        "url": "композиционные-и-субнормальные-ряды.html#definition-50"
+    },
+    {
+        "keyword": "неуплотняемый максимальной длины",
+        "html": "<p><a\nhref=\"композиционные-и-субнормальные-ряды.html#definition-51\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nСубнормальный ряд <span class=\"math inline\">\\(G_0 = G \\vartriangleright\nG_1 \\vartriangleright G_2 \\vartriangleright \\ldots \\vartriangleright G_n\n= \\{e\\}\\)</span> <em>неуплотняемый</em> (<em>максимальной длины</em>),\nесли <span class=\"math inline\">\\(\\forall i \\in \\{1, \\ldots n\\} \\,\\,\\,\\,\n\\not \\exists G_{i’}: \\,\\,\\,\\, G_i \\vartriangleright G_{i’}\n\\vartriangleright G_{i + 1}\\)</span>.</p>",
+        "url": "композиционные-и-субнормальные-ряды.html#definition-51"
+    },
+    {
+        "keyword": "простая",
+        "html": "<p><a\nhref=\"композиционные-и-субнормальные-ряды.html#definition-52\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nГруппа <em>простая</em>, если в ней нет собственных нормальных\nподгрупп.</p>",
+        "url": "композиционные-и-субнормальные-ряды.html#definition-52"
+    },
+    {
+        "keyword": "композиционный ряд",
+        "html": "<p><a\nhref=\"композиционные-и-субнормальные-ряды.html#definition-53\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<span class=\"math inline\">\\(G_0 = G \\vartriangleright G_1\n\\vartriangleright G_2 \\vartriangleright \\ldots \\vartriangleright G_n =\n\\{e\\}\\)</span> – <em>композиционный ряд</em>, если факторы <span\nclass=\"math inline\">\\(G_i/G_{i + 1}\\)</span> простые <span\nclass=\"math inline\">\\(\\forall i\\)</span>.</p>",
+        "url": "композиционные-и-субнормальные-ряды.html#definition-53"
+    },
+    {
+        "keyword": "кольцо",
+        "html": "<p><a href=\"алгебраические-структуры.html#definition-54\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Кольцо</em> – это <span class=\"math inline\">\\((R, +, \\cdot),\n\\,\\,\\,\\, R\\times R\\overset{+}{\\to} R\\)</span> и <span\nclass=\"math inline\">\\(R\\times R \\overset{\\cdot}{\\to} R\\)</span>, такая\nчто</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\((R, +)\\)</span> – абелева группа,</li>\n<li><span class=\"math inline\">\\(\\forall x, y, z \\in R \\,\\,\\,\\, x(y + z)\n= xy + xz\\)</span> и <span class=\"math inline\">\\((x + y)z = xz +\nyz\\)</span>.</li>\n</ol>",
+        "url": "алгебраические-структуры.html#definition-54"
+    },
+    {
+        "keyword": "тело",
+        "html": "<p><a href=\"алгебраические-структуры.html#definition-55\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Тело</em> – это ассоциативное кольцо с единицей не равной <span\nclass=\"math inline\">\\(0\\)</span>, в котором любой ненулевой элемент\nобратим.</p>",
+        "url": "алгебраические-структуры.html#definition-55"
+    },
+    {
+        "keyword": "поле",
+        "html": "<p><a href=\"алгебраические-структуры.html#definition-56\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Поле</em> – это коммутативное тело.</p>",
+        "url": "алгебраические-структуры.html#definition-56"
+    },
+    {
+        "keyword": "подполе",
+        "html": "<p><a href=\"алгебраические-структуры.html#definition-57\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(F\\)</span> – поле. <span\nclass=\"math inline\">\\(G\\)</span> – <em>подполе</em> поля <span\nclass=\"math inline\">\\(F\\)</span>, если <span class=\"math inline\">\\(G\n\\subset F\\)</span> и <span class=\"math inline\">\\(G\\)</span> – поле.</p>",
+        "url": "алгебраические-структуры.html#definition-57"
+    },
+    {
+        "keyword": "гомоморфизм колец полей изоморфизм эндоморфизм автоморфизм",
+        "html": "<p><a href=\"алгебраические-структуры.html#definition-58\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nОтображение <span class=\"math inline\">\\(\\varphi: R \\to S\\)</span> –\n<em>гомоморфизм колец</em> (<em>полей</em>) <span\nclass=\"math inline\">\\(R\\)</span> и <span\nclass=\"math inline\">\\(S\\)</span>, если <span\nclass=\"math inline\">\\(\\forall x, y \\in R\\)</span></p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(\\varphi(x + y) = \\varphi(x) +\n\\varphi(y)\\)</span>,</li>\n<li><span class=\"math inline\">\\(\\varphi(xy) =\n\\varphi(x)\\varphi(y)\\)</span>.</li>\n</ol>\n<p>Если гомоморфизм <span class=\"math inline\">\\(\\varphi\\)</span> –\nбиекция, то <span class=\"math inline\">\\(\\varphi\\)</span> –\n<em>изоморфизм</em>.</p>\n<p>Если <span class=\"math inline\">\\(\\varphi: R \\to R\\)</span> –\nгомоморфизм, то <span class=\"math inline\">\\(\\varphi\\)</span> –\n<em>эндоморфизм</em>.</p>\n<p>Биективный эндоморфизм или изоморфизм в себя –\n<em>автоморфизм</em>.</p>",
+        "url": "алгебраические-структуры.html#definition-58"
+    },
+    {
+        "keyword": "алгебра над полем",
+        "html": "<p><a href=\"алгебраические-структуры.html#definition-59\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Алгебра над полем</em> <span\nclass=\"math inline\">\\(\\mathbb{F}\\)</span> – это множество <span\nclass=\"math inline\">\\(A\\)</span> с операциями умножения <span\nclass=\"math inline\">\\(\\cdot: A \\times A \\to A\\)</span>, умножения на\nскаляр <span class=\"math inline\">\\(\\cdot: \\mathbb{F}\\times A \\to\nA\\)</span> и сложения <span class=\"math inline\">\\(+:A\\times A \\to\nA\\)</span>, такое что:</p>\n<ol type=\"1\">\n<li>Относительно сложения и умножения на скаляр <span\nclass=\"math inline\">\\(A\\)</span> – векторное пространство,</li>\n<li>Относительно сложения и умножения <span\nclass=\"math inline\">\\(A\\)</span> – кольцо,</li>\n<li><span class=\"math inline\">\\(\\forall x, y, z \\in A \\,\\,\\,\\, (\\lambda\nx) y = \\lambda (xy) = x (\\lambda y)\\)</span>.</li>\n</ol>",
+        "url": "алгебраические-структуры.html#definition-59"
+    },
+    {
+        "keyword": "алгебра кватернионов",
+        "html": "<p><a href=\"алгебраические-структуры.html#definition-60\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nМножество <span class=\"math inline\">\\(\\mathbb{H}\\)</span> формальных\nвыражений вида: <span class=\"math inline\">\\(a 1 + bi + cj + dk\\)</span>,\nгде <span class=\"math inline\">\\(a, b, c, d \\in \\mathbb{R}\\)</span> –\n<em>алгебра кватернионов</em>. <span\nclass=\"math inline\">\\(\\mathbb{H}\\)</span> – алгебра относительно\nумножения, заданного условиями <span class=\"math inline\">\\(i^2 = j^2 =\nk^2 = ijk = -1\\)</span> и <span class=\"math inline\">\\(1 =\n(-1)^2\\)</span> и покомпонентного сложения.</p>",
+        "url": "алгебраические-структуры.html#definition-60"
+    },
+    {
+        "keyword": "гомоморфизм алгебр",
+        "html": "<p><a href=\"алгебраические-структуры.html#definition-61\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nОтображение <span class=\"math inline\">\\(\\varphi: A_1 \\to A_2\\)</span> –\n<em>гомоморфизм алгебр</em> <span class=\"math inline\">\\(A_1\\)</span> и\n<span class=\"math inline\">\\(A_2\\)</span>, если <span\nclass=\"math inline\">\\(\\forall x, y \\in A_1\\)</span></p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(\\varphi(x + y) = \\varphi(x) +\n\\varphi(y)\\)</span>,</li>\n<li><span class=\"math inline\">\\(\\varphi(xy) =\n\\varphi(x)\\varphi(y)\\)</span>,</li>\n<li><span class=\"math inline\">\\(\\varphi(\\lambda x) = \\lambda\n\\varphi(x)\\)</span>.</li>\n</ol>",
+        "url": "алгебраические-структуры.html#definition-61"
+    },
+    {
+        "keyword": "идеал",
+        "html": "<p><a href=\"алгебраические-структуры.html#definition-62\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Идеал</em> – это <span class=\"math inline\">\\(I \\subset R\\)</span>,\nгде <span class=\"math inline\">\\(R\\)</span> – кольцо (алгебра), такое\nчто</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(I\\)</span> подгруппа по сложению\n(подпространство),</li>\n<li><span class=\"math inline\">\\(\\forall r \\in R \\,\\,\\,\\, \\forall i \\in I\n\\,\\,\\,\\, ri \\in I\\)</span> и <span class=\"math inline\">\\(ir \\in\nI\\)</span>.</li>\n</ol>\n<p><strong>Обозначается:</strong> <span class=\"math inline\">\\(I\n\\vartriangleleft R\\)</span>.</p>",
+        "url": "алгебраические-структуры.html#definition-62"
+    },
+    {
+        "keyword": "факторкольцо (факторалгебра)",
+        "html": "<p><a href=\"алгебраические-структуры.html#definition-63\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(R\\)</span> – кольцо (алгебра). Пусть\n<span class=\"math inline\">\\(I \\vartriangleleft R\\)</span>. Множество\n<span class=\"math inline\">\\(R/I\\)</span> с введенными выше операциями\nсложения и умножения – <em>факторкольцо (факторалгебра)</em>.</p>",
+        "url": "алгебраические-структуры.html#definition-63"
+    },
+    {
+        "keyword": "канонический гомоморфизм",
+        "html": "<p><a href=\"алгебраические-структуры.html#definition-64\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nГомоморфизм <span class=\"math inline\">\\(R \\overset{\\pi}{\\to} R/I: r\n\\mapsto r + I\\)</span> – <em>канонический гомоморфизм</em>.</p>\n<p><strong>Факт:</strong> <span\nclass=\"math inline\">\\(\\operatorname{ker}\\pi = I\\)</span>.</p>",
+        "url": "алгебраические-структуры.html#definition-64"
+    },
+    {
+        "keyword": "идеал, порожденный",
+        "html": "<p><a href=\"алгебраические-структуры.html#definition-65\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(A\\)</span> – ассоциативное\nкоммутативное кольцо с единицей. <span class=\"math inline\">\\(S \\subset\nA\\)</span>.</p>\n<p>Множество <span class=\"math inline\">\\((S) = \\{a_1s_1 +\\ldots +\na_ns_n| \\,\\,\\,\\, a_i \\in A, \\,\\,\\,\\, s_i \\in S, \\,\\,\\,\\, n \\in\n\\mathbb{N}\\}\\)</span> – <em>идеал, порожденный</em> <span\nclass=\"math inline\">\\(S\\)</span>.</p>",
+        "url": "алгебраические-структуры.html#definition-65"
+    },
+    {
+        "keyword": "главный",
+        "html": "<p><a href=\"алгебраические-структуры.html#definition-66\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nИдеал в кольце (алгебре) <em>главный</em>, если он порождается одним\nэлементом.</p>",
+        "url": "алгебраические-структуры.html#definition-66"
+    },
+    {
+        "keyword": "кольцо главных идеалов",
+        "html": "<p><a href=\"алгебраические-структуры.html#definition-67\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nКольцо (ассоциативное и коммутативное) без делителей нуля, в котором все\nидеалы главные – <em>кольцо главных идеалов</em>.</p>",
+        "url": "алгебраические-структуры.html#definition-67"
+    },
+    {
+        "keyword": "характеристика",
+        "html": "<p><a href=\"алгебраические-структуры.html#definition-68\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Характеристика</em> поля <span class=\"math inline\">\\(F\\)</span> –\nэто минимальное натуральное <span class=\"math inline\">\\(n\\)</span>,\nтакое что <span class=\"math inline\">\\(\\underbrace{1 + \\ldots +1}_{n} =\n0\\)</span>.</p>\n<p><strong>Обозначается:</strong> <span\nclass=\"math inline\">\\(\\operatorname{char}F\\)</span>.</p>\n<p>Если такого <span class=\"math inline\">\\(n\\)</span> не существует, то\n<span class=\"math inline\">\\(\\operatorname{char}F = 0\\)</span>.</p>",
+        "url": "алгебраические-структуры.html#definition-68"
+    },
+    {
+        "keyword": "простое(-я)",
+        "html": "<p><a href=\"алгебраические-структуры.html#definition-69\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nКольцо (алгебра) <em>простое(-я)</em>, если не содержит собственных\nидеалов.</p>",
+        "url": "алгебраические-структуры.html#definition-69"
+    },
+    {
+        "keyword": "простое расширение",
+        "html": "<p><a href=\"алгебраические-структуры.html#definition-70\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(F\\)</span> – поле, <span\nclass=\"math inline\">\\(G\\)</span> – его подполе. Множество <span\nclass=\"math inline\">\\(G(\\alpha) =\n\\left\\lbrace\\frac{f(\\alpha)}{g(\\alpha)}| \\,\\,\\,\\, f, g \\in G[x],\n\\,\\,\\,\\, g(\\alpha) \\ne 0\\right\\rbrace\\)</span> – <em>простое\nрасширение</em> <span class=\"math inline\">\\(G\\)</span>.</p>",
+        "url": "алгебраические-структуры.html#definition-70"
+    },
+    {
+        "keyword": "алгебраический элемент поля трансцендентный элемент",
+        "html": "<p><a href=\"алгебраические-структуры.html#definition-71\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(F\\)</span> – поле, <span\nclass=\"math inline\">\\(\\alpha \\in F\\)</span>.</p>\n<p>Если <span class=\"math inline\">\\(\\exists 0 \\ne f \\in F[x]: \\,\\,\\,\\,\nf(\\alpha) = 0\\)</span>, то <span class=\"math inline\">\\(\\alpha\\)</span> –\n<em>алгебраический элемент поля</em> <span\nclass=\"math inline\">\\(F\\)</span>.</p>\n<p>Иначе <span class=\"math inline\">\\(\\alpha\\)</span> –\n<em>трансцендентный элемент</em>.</p>",
+        "url": "алгебраические-структуры.html#definition-71"
+    },
+    {
+        "keyword": "аннулирующий минимальный",
+        "html": "<p><a href=\"алгебраические-структуры.html#definition-72\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(\\alpha\\)</span> – алгебраический\nэлемент поля <span class=\"math inline\">\\(F\\)</span>. Любой многочлен\n<span class=\"math inline\">\\(f \\in F[x]\\)</span>, такой что <span\nclass=\"math inline\">\\(f(\\alpha) = 0\\)</span> –\n<em>аннулирующий</em>.</p>\n<p>Аннулирующий многочлен минимальной степени со старшим коэффицентом\n<span class=\"math inline\">\\(1\\)</span> – <em>минимальный</em>.</p>\n<p><strong>Обозначается:</strong> <span\nclass=\"math inline\">\\(\\mu_{\\alpha}(x)\\)</span>.</p>",
+        "url": "алгебраические-структуры.html#definition-72"
+    },
+    {
+        "keyword": "алгебраическое",
+        "html": "<p><a href=\"алгебраические-структуры.html#definition-73\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(F\\)</span> подполе в поле <span\nclass=\"math inline\">\\(G\\)</span>. <span class=\"math inline\">\\(G\\)</span>\n<em>алгебраическое</em> расширение поля <span\nclass=\"math inline\">\\(F\\)</span>, если любой элемент <span\nclass=\"math inline\">\\(G\\)</span> удовлетворяет некоторому многочлену\n<span class=\"math inline\">\\(f \\in F[x]\\)</span>.</p>",
+        "url": "алгебраические-структуры.html#definition-73"
+    },
+    {
+        "keyword": "поле разложения для",
+        "html": "<p><a href=\"поле-разложения.html#definition-74\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Поле разложения для</em> <span class=\"math inline\">\\(f \\in\nF[x]\\)</span> – это поле <span class=\"math inline\">\\(G \\supset\nF\\)</span>:</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(f\\)</span> раскладывается на линейные\nмножители над <span class=\"math inline\">\\(G\\)</span>,</li>\n<li>Из <span class=\"math inline\">\\(F \\subset H \\subsetneq G\\)</span>\nследует, что <span class=\"math inline\">\\(f\\)</span> не раскладывается на\nлинейные множители над <span class=\"math inline\">\\(H\\)</span>.</li>\n</ol>",
+        "url": "поле-разложения.html#definition-74"
+    },
+    {
+        "keyword": "автоморфизм фробениуса",
+        "html": "<p><a href=\"автоморфизм-фробениуса.html#definition-75\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nАвтоморфизм <span class=\"math inline\">\\(F_{p^k} \\to F_{p^k}: x \\mapsto\nx^p\\)</span> – <em>автоморфизм Фробениуса</em>.</p>",
+        "url": "автоморфизм-фробениуса.html#definition-75"
+    },
+    {
+        "keyword": "группа галуа",
+        "html": "<p><a href=\"автоморфизм-фробениуса.html#definition-76\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Группа Галуа</em> конечного расширения <a href=\"#fn1\"\nclass=\"footnote-ref\" id=\"fnref1\" role=\"doc-noteref\"><sup>1</sup></a>\n<span class=\"math inline\">\\(G\\)</span> поля <span\nclass=\"math inline\">\\(F\\)</span> – это группа автоморфизмов поля,\nсохраняющих элементы <span class=\"math inline\">\\(F\\)</span>.</p>\n<section id=\"footnotes\" class=\"footnotes footnotes-end-of-document\"\nrole=\"doc-endnotes\">\n<hr />\n<ol>\n<li id=\"fn1\"><p>Это чтобы все работало. Вообще там расширение Галуа, то\nесть нормальное и сепарабельное.<a href=\"#fnref1\" class=\"footnote-back\"\nrole=\"doc-backlink\">↩︎</a></p></li>\n</ol>\n</section>",
+        "url": "автоморфизм-фробениуса.html#definition-76"
+    },
+    {
+        "keyword": "линейное представление группы над полем",
+        "html": "<p><a href=\"представления.html#definition-77\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Линейное представление группы</em> <span\nclass=\"math inline\">\\(G\\)</span> <em>над полем</em> <span\nclass=\"math inline\">\\(F\\)</span> – это гомоморфизм <span\nclass=\"math inline\">\\(G \\to GL(V)\\)</span>, где <span\nclass=\"math inline\">\\(V\\)</span> – векторное пространство над <span\nclass=\"math inline\">\\(F\\)</span>.</p>",
+        "url": "представления.html#definition-77"
+    },
+    {
+        "keyword": "матричное представление группы над полем",
+        "html": "<p><a href=\"представления.html#definition-78\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Матричное представление группы</em> <span\nclass=\"math inline\">\\(G\\)</span> <em>над полем</em> <span\nclass=\"math inline\">\\(F\\)</span> – это гомоморфизм <span\nclass=\"math inline\">\\(G \\to GL_n(V)\\)</span>, где <span\nclass=\"math inline\">\\(V\\)</span> – векторное пространство над <span\nclass=\"math inline\">\\(F\\)</span> размерности <span\nclass=\"math inline\">\\(n\\)</span>.</p>",
+        "url": "представления.html#definition-78"
+    },
+    {
+        "keyword": "тривиальное представление",
+        "html": "<p><a href=\"представления.html#definition-79\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Тривиальное представление</em> – это <span class=\"math inline\">\\(G\n\\to GL_n(F): g \\mapsto E\\)</span>, где <span\nclass=\"math inline\">\\(E\\)</span> – единичная матрица.</p>",
+        "url": "представления.html#definition-79"
+    },
+    {
+        "keyword": "мономиальное представление",
+        "html": "<p><a href=\"представления.html#definition-80\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(V = \\langle e_1, \\ldots, e_n\n\\rangle\\)</span>. Представление <span class=\"math inline\">\\(\\varphi: S_n\n\\to GL(V): \\varphi(\\sigma)(e_i) = e_{\\sigma(i)}\\)</span> –\n<em>мономиальное представление</em></p>",
+        "url": "представления.html#definition-80"
+    },
+    {
+        "keyword": "инвариантно",
+        "html": "<p><a href=\"представления.html#definition-81\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПодпространство <span class=\"math inline\">\\(U\\)</span> векторного\nпространства <span class=\"math inline\">\\(V\\)</span> <em>инвариантно</em>\nотносительно представления <span class=\"math inline\">\\(\\varphi: G \\to\nGL(V)\\)</span>, если <span class=\"math inline\">\\(\\forall g \\in G,\n\\,\\,\\,\\, \\forall u \\in U \\,\\,\\,\\, \\varphi(g)(u) \\in U\\)</span>.</p>",
+        "url": "представления.html#definition-81"
+    },
+    {
+        "keyword": "подпредстваление",
+        "html": "<p><a href=\"представления.html#definition-82\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Подпредстваление</em> – представления <span\nclass=\"math inline\">\\(\\varphi: G \\to GL(V)\\)</span> – это сужение <span\nclass=\"math inline\">\\(\\varphi\\)</span> на инвариантное подпространство\n<span class=\"math inline\">\\(U\\)</span>.</p>",
+        "url": "представления.html#definition-82"
+    },
+    {
+        "keyword": "неприводимо",
+        "html": "<p><a href=\"представления.html#definition-83\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПредставление <span class=\"math inline\">\\(\\varphi: G \\to GL(V)\\)</span>\n<em>неприводимо</em>, если существует ровно два инвариантных\nподпространства относительно этого представления, а именно <span\nclass=\"math inline\">\\(V\\)</span> и <span\nclass=\"math inline\">\\(\\{0\\}\\)</span>.</p>",
+        "url": "представления.html#definition-83"
+    },
+    {
+        "keyword": "прямая сумма представлений",
+        "html": "<p><a href=\"представления.html#definition-84\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Прямая сумма представлений</em> <span class=\"math inline\">\\(\\varphi:\nG \\to GL(V)\\)</span> и <span class=\"math inline\">\\(\\psi: G \\to\nGL(W)\\)</span> – это представление <span\nclass=\"math inline\">\\(\\varphi\\oplus \\psi: G \\to GL(V\\oplus W):\n(\\varphi\\oplus \\psi(g))(v + w) = \\varphi(g)(v)+\\psi(g)(w)\\)</span>.</p>\n<p>В матричной записи: <span class=\"math inline\">\\((\\varphi\\oplus\n\\psi(g)) = \\left(\\begin{array}{cc} \\varphi(g) &amp; 0 \\\\ 0 &amp; \\psi(g)\n\\end{array}\\right)\\)</span>.</p>",
+        "url": "представления.html#definition-84"
+    },
+    {
+        "keyword": "изоморфны изоморфизм представлений гомоморфизм представлений",
+        "html": "<p><a href=\"представления.html#definition-85\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПредставления <span class=\"math inline\">\\(\\varphi: G \\to GL(V)\\)</span>\nи <span class=\"math inline\">\\(\\psi: G \\to GL(W)\\)</span>\n<em>изоморфны</em>, если существует изоморфизм <span\nclass=\"math inline\">\\(\\alpha\\)</span> векторных пространств <span\nclass=\"math inline\">\\(V\\)</span> и <span\nclass=\"math inline\">\\(W\\)</span>, такой что <span\nclass=\"math inline\">\\(\\forall g \\in G, \\,\\,\\,\\,\\forall v \\in V \\,\\,\\,\\,\n\\alpha(\\varphi(g)(v)) = \\psi(g)\\alpha(v)\\)</span>. Отображение <span\nclass=\"math inline\">\\(\\alpha\\)</span> – <em>изоморфизм\nпредставлений</em>.</p>\n<p>Если <span class=\"math inline\">\\(\\alpha\\)</span> – гомоморфизм <span\nclass=\"math inline\">\\(V\\)</span> и <span\nclass=\"math inline\">\\(W\\)</span>, то <span\nclass=\"math inline\">\\(\\alpha\\)</span> – <em>гомоморфизм\nпредставлений</em>.</p>\n<p><strong>Упражнение:</strong> Записать определение в матричной\nформе.</p>",
+        "url": "представления.html#definition-85"
+    },
+    {
+        "keyword": "ядро",
+        "html": "<p><a href=\"представления.html#definition-86\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(\\alpha\\)</span> – гомоморфизм\nпредставлений <span class=\"math inline\">\\(\\varphi: G \\to GL(V)\\)</span>\nи <span class=\"math inline\">\\(\\psi: G \\to GL(W)\\)</span>. <em>Ядро</em>\n<span class=\"math inline\">\\(\\operatorname{ker} \\alpha\\)</span> –\nгомоморфизма <span class=\"math inline\">\\(\\alpha\\)</span> – это <span\nclass=\"math inline\">\\(\\{v \\in V| \\,\\,\\,\\, \\alpha(v) =\n\\vec{0}\\}\\)</span>.</p>",
+        "url": "представления.html#definition-86"
+    },
+    {
+        "keyword": "проектор проектор на вдоль",
+        "html": "<p><a href=\"представления.html#definition-87\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nОтображение <span class=\"math inline\">\\(p: V \\to V\\)</span> –\n<em>проектор</em>, если выполнено одно из условий:</p>\n<ol type=\"1\">\n<li><span class=\"math inline\">\\(p^2 = p\\)</span>,</li>\n<li><span class=\"math inline\">\\(p|_{p(V)} =\n\\operatorname{id}\\)</span>,</li>\n<li><span class=\"math inline\">\\(p = \\left(\\begin{array}{cccc}\n1 &amp; 0 &amp; \\dots &amp; 0\\\\\n0 &amp; \\ddots &amp; 0 &amp; \\vdots\\\\\n0 &amp; \\dots &amp; 1 &amp; 0\\\\\n0 &amp; \\dots &amp; 0 &amp; 0\n\\end{array}\\right)\\)</span>,</li>\n<li><span class=\"math inline\">\\(V = \\operatorname{Im}p \\oplus\n\\operatorname{Ker}p\\)</span>.</li>\n</ol>\n<p>Пусть <span class=\"math inline\">\\(\\operatorname{Im}p = U\\)</span> и\n<span class=\"math inline\">\\(\\operatorname{Ker}p = W\\)</span>. Тогда\n<span class=\"math inline\">\\(p\\)</span> – <em>проектор на</em> <span\nclass=\"math inline\">\\(U\\)</span> <em>вдоль</em> <span\nclass=\"math inline\">\\(W\\)</span>.</p>",
+        "url": "представления.html#definition-87"
+    },
+    {
+        "keyword": "регулярное",
+        "html": "<p><a href=\"регулярные-представления.html#definition-88\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(G\\)</span> – группа и <span\nclass=\"math inline\">\\(V\\)</span> – векторное пространство размерности\n<span class=\"math inline\">\\(n = |G|\\)</span>. Пусть базис <span\nclass=\"math inline\">\\(V\\)</span> – это <span\nclass=\"math inline\">\\(\\{e_g| \\,\\,\\,\\, g \\in G\\}\\)</span>. Представление\n<span class=\"math inline\">\\(\\rho: G \\to GL(V): \\rho(g)(e_{g’}) = e_{g\ng’}\\)</span> – <em>регулярное</em>.</p>",
+        "url": "регулярные-представления.html#definition-88"
+    },
+    {
+        "keyword": "размерность представления",
+        "html": "<p><a\nhref=\"число-неприводимых-представлений-конечной-группы.html#definition-89\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\n<em>Размерность представления</em> <span class=\"math inline\">\\(\\varphi:\nG \\to GL(V)\\)</span> – это размерность векторного пространства <span\nclass=\"math inline\">\\(V\\)</span>.</p>",
+        "url": "число-неприводимых-представлений-конечной-группы.html#definition-89"
+    },
+    {
+        "keyword": "групповая алгебра",
+        "html": "<p><a\nhref=\"количество-неприводимых-комплексных-представлений-группы.html#definition-90\"><span\nclass=\"margin-lft\"><strong>Перейти к определению:</strong></span></a>\nПусть <span class=\"math inline\">\\(G = \\{g_1, \\ldots, g_n\\}\\)</span> –\nконечная группа. <em>Групповая алгебра</em> <span\nclass=\"math inline\">\\(\\mathbb{C}[G]\\)</span> – это множество <span\nclass=\"math inline\">\\(\\{\\lambda_1g_1+\\ldots+\\lambda_ng_n|\n\\,\\,\\,\\,\\lambda_i \\in \\mathbb{C}\\}\\)</span> с операциями почленного\nсложения и умножения на <span class=\"math inline\">\\(\\lambda \\in\n\\mathbb{C}\\)</span> и произведения <span\nclass=\"math inline\">\\(\\left(\\displaystyle \\sum_{g \\in G}\\lambda_g\ng\\right)\\cdot\\left(\\displaystyle \\sum_{g’ \\in G}\\lambda_{g’} g’\\right) =\n\\displaystyle \\sum_{g’’ \\in G}\\left(\\displaystyle \\sum_{g’’ =\ngg’}\\lambda_g \\lambda_{g’}\\right)g’’\\)</span>.</p>",
+        "url": "количество-неприводимых-комплексных-представлений-группы.html#definition-90"
+    }
+]

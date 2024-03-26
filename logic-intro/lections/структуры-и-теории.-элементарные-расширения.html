@@ -11,7 +11,10 @@
     
     <title>Структуры и теории. Элементарные расширения</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="теория-моделей.-определения-и-примеры.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="полные-теории.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="теория-моделей.-определения-и-примеры.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="полные-теории.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -251,9 +270,9 @@ id="структуры-и-теории.-элементарные-расшире�
 <h2 data-number="12.1" id="теория-структуры-и-класса-структур">Теория
 структуры и класса структур</h2>
 <div id="definition-47">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(M\)</span> – структура, то есть интерпретация и
-универсум.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(M\)</span> – структура, то есть
+интерпретация и универсум.</p>
 <p><em>Теория структуры</em> <span
 class="math inline">\(\operatorname{Th}(M)\)</span> – это множество
 высказываний истинных в данной структуре.</p>
@@ -269,8 +288,8 @@ class="math inline">\(\operatorname{Th}\)</span> и <span
 class="math inline">\(\operatorname{Mod}\)</span>.</p>
 </div>
 <div id="statement-13">
-<p><strong>Утверждение:</strong> (<em>свойства отображений теория и
-модель</em>)</p>
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>(<em>свойства отображений теория и модель</em>)</p>
 <ol type="1">
 <li><span class="math inline">\(\operatorname{Th}\)</span> и <span
 class="math inline">\(\operatorname{Mod}\)</span> нестрого монотонно
@@ -282,15 +301,16 @@ class="math inline">\(\operatorname{Mod}\)</span> нестрого моното�
 <li><span class="math inline">\(m \subset
 \operatorname{Mod}(\operatorname{Th}(m))\)</span>.</li>
 </ol>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <h2 data-number="12.2"
 id="соответствие-галуа-между-теориями-и-классами-структур">Соответствие
 Галуа между теориями и классами структур</h2>
 <div id="definition-48">
-<p><strong>Определение:</strong> Пусть заданы два частично упорядоченных
-множества <span class="math inline">\(X\)</span> и <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+заданы два частично упорядоченных множества <span
+class="math inline">\(X\)</span> и <span
 class="math inline">\(Y\)</span>. Элементы первого множества обозначим
 <span class="math inline">\(x\)</span>, второго – <span
 class="math inline">\(y\)</span>, а оба отношения порядка обозначим
@@ -310,28 +330,32 @@ f(x)\)</span>,</li>
 </ol>
 </div>
 <div id="statement-14">
-<p><strong>Утверждение:</strong> <span class="math inline">\(\langle
-\operatorname{Th}, \operatorname{Mod}\rangle\)</span> – соответствие
-Галуа между теориями и классами структур.</p>
-<p><em>Доказательство:</em> см. свойства <span
-class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+<p><span class="margin-lft"><strong>Утверждение: </strong></span><span
+class="math inline">\(\langle \operatorname{Th},
+\operatorname{Mod}\rangle\)</span> – соответствие Галуа между теориями и
+классами структур.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> см. свойства
+<span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <h2 data-number="12.3"
 id="эквивалентность-структур.-соотношение-между-эквивалентностью-и-изоморфизмом">Эквивалентность
 структур. Соотношение между эквивалентностью и изоморфизмом</h2>
 <div id="definition-49">
-<p><strong>Определение:</strong> Структуры <em>эквивалентны</em>, если
-их теории совпадают.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Структуры <em>эквивалентны</em>, если их теории
+совпадают.</p>
 </div>
 <div id="statement-15">
-<p><strong>Утверждение:</strong> Изоморфные структуры эквивалентны.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Изоморфные структуры эквивалентны.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 <h2 data-number="12.4"
 id="элементарное-расширение-и-элементарная-подструктура-структуры">Элементарное
 расширение и элементарная подструктура структуры</h2>
 <div id="definition-50">
-<p><strong>Определение:</strong> <em>Подструктура</em> структуры <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Подструктура</em> структуры <span
 class="math inline">\(\langle U, I \rangle\)</span> с сигнатурой <span
 class="math inline">\(\Sigma\)</span> – это структура <span
 class="math inline">\(\langle U’, I’\rangle\)</span>, где <span
@@ -355,37 +379,40 @@ class="math inline">\(\forall P \in \operatorname{Pred}_{\Sigma},
 <h2 data-number="12.5" id="критерий-тарского-воота">Критерий Тарского –
 Воота</h2>
 <div id="theorem-11">
-<p><strong>Теорема:</strong> (<em>критерий Тарского-Воота</em>)
-Расширение <span class="math inline">\(\langle U’, I’\rangle\)</span>
-структуры <span class="math inline">\(\langle U, I \rangle\)</span>
-элементарное <span class="math inline">\(\iff \forall \Phi(\mathbf{x},
-y)\,\,\,\,\forall \mathbf{a} \in (U)^{*} \,\,\,\, \exists b \in U’:
-\,\,\,\, \Phi(\mathbf{a}, b) \implies \exists c \in U: \,\,\,\,
-\Phi(\mathbf{a}, c)\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>критерий Тарского-Воота</em>) Расширение <span
+class="math inline">\(\langle U’, I’\rangle\)</span> структуры <span
+class="math inline">\(\langle U, I \rangle\)</span> элементарное <span
+class="math inline">\(\iff \forall \Phi(\mathbf{x}, y)\,\,\,\,\forall
+\mathbf{a} \in (U)^{*} \,\,\,\, \exists b \in U’: \,\,\,\,
+\Phi(\mathbf{a}, b) \implies \exists c \in U: \,\,\,\, \Phi(\mathbf{a},
+c)\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 <h2 data-number="12.6"
 id="теоремы-левенгейма-сколема-об-элементарной-подструктуре">Теоремы
 Левенгейма – Сколема об элементарной подструктуре</h2>
 <div id="theorem-12">
-<p><strong>Теорема:</strong> (<em>Левегейма-Сколема</em>) Любая
-бесконечная структура с счетной или конечной сигнатурой содержит счетную
-элементарную подструктуру.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Левегейма-Сколема</em>) Любая бесконечная структура
+с счетной или конечной сигнатурой содержит счетную элементарную
+подструктуру.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 <h2 data-number="12.7"
 id="теоремы-левенгейма-сколема-об-элементарном-расширении">Теоремы
 Левенгейма – Сколема об элементарном расширении</h2>
 <div id="theorem-13">
-<p><strong>Теорема:</strong> (<em>Левегейма-Сколема</em>) Любая
-бесконечная нормальная структура с счетной или конечной сигнатурой имеет
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Левегейма-Сколема</em>) Любая бесконечная
+нормальная структура с счетной или конечной сигнатурой имеет
 элементарное нормальное расширение любой мощности.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="теория-моделей.-определения-и-примеры.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

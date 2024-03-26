@@ -11,7 +11,10 @@
     
     <title>Логические языки. Логика отношений</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="вполне-упорядоченные-множества.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="элиминация-кванторов-в-поле-действительных-чисел.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="вполне-упорядоченные-множества.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="элиминация-кванторов-в-поле-действительных-чисел.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -250,7 +269,8 @@
 <p>Знак <span class="math inline">\(\rightleftharpoons\)</span>
 обозначает равно по определению.</p>
 <div id="definition-28">
-<p><strong>Определение:</strong></p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><strong>Определение:</strong></p>
 <p><em>Алфавит</em> – это некоторое множество, его элементы –
 <em>символы</em> или <em>буквы</em>.</p>
 <p><em>Слово</em> в алфавите <span class="math inline">\(\Sigma\)</span>
@@ -279,7 +299,8 @@ class="math inline">\(\Sigma^{*}\)</span>.</p>
 id="имена-и-значения.-значения-составных-имен.-скобки">Имена и значения.
 Значения составных имен. Скобки</h2>
 <div id="definition-29">
-<p><strong>Определение:</strong> <em>Сигнатура</em> – это алфавит <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Сигнатура</em> – это алфавит <span
 class="math inline">\(\Sigma\)</span> допустимых при построении формулы
 символов. <a href="#fn1" class="footnote-ref" id="fnref1"
 role="doc-noteref"><sup>1</sup></a></p>
@@ -289,7 +310,8 @@ class="math inline">\(\Sigma^{*}\)</span>. Элементы синтаксиса
 <p><em>Семантика</em> – это про смысл формул.</p>
 </div>
 <div id="definition-30">
-<p><strong>Определение:</strong></p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><strong>Определение:</strong></p>
 <p><span class="math inline">\(\operatorname{Pred}_{\Sigma} \ne
 \varnothing\)</span> – алфавит <em>предикатных символов</em>, или
 <em>имен отношений</em>, или <em>предикатов</em>, или
@@ -310,8 +332,9 @@ class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 id="язык-и-структура.-универсум-значения-имен-объектов-и-отношений">Язык
 и структура. Универсум, значения имен объектов и отношений</h2>
 <div id="definition-31">
-<p><strong>Определение:</strong> Зафиксируем <span
-class="math inline">\(U \ne \varnothing\)</span>.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Зафиксируем <span class="math inline">\(U \ne
+\varnothing\)</span>.</p>
 <p>Пусть задано отображение <span class="math inline">\(I: \Sigma \to
 U\)</span> и</p>
 <p><span class="math inline">\(\operatorname{I}: P \mapsto \overline{P}
@@ -333,8 +356,8 @@ class="math inline">\(A_{\Sigma}\)</span> – это интерпретация 
 id="переменные.-контекст-в-универсуме.-термы-значения-термов-в-контексте">Переменные.
 Контекст в универсуме. Термы, значения термов в контексте</h2>
 <div id="definition-32">
-<p><strong>Определение:</strong> Пусть задана сигнатура <span
-class="math inline">\(\Sigma\)</span>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+задана сигнатура <span class="math inline">\(\Sigma\)</span>.</p>
 <p><span class="math inline">\(\operatorname{Var}\)</span> – алфавит
 <em>переменных</em>.</p>
 <p><em>Язык сигнатуры</em> – это <span
@@ -346,9 +369,9 @@ class="math inline">\(\operatorname{Var}\cup \{\neg, \vee, \wedge,
 class="math inline">\(\operatorname{Var} \to U\)</span>.</p>
 <p><em>Значение терма в контексте</em> – это элемент универсума,
 полученный при отображении, определенном выше.</p>
-<h3 data-number="7.3.1"
+<h2 data-number="7.4"
 id="атомные-формулы-их-значение-в-контексте">Атомные формулы, их
-значение в контексте</h3>
+значение в контексте</h2>
 <p><em>Атомарная формула (атом)</em> – это <span
 class="math inline">\(p(t_1, \ldots, t_n)\)</span>, где <span
 class="math inline">\(p \in \operatorname{Pred}_{\Sigma}, \,\,\,\,
@@ -357,9 +380,9 @@ class="math inline">\(p \in \operatorname{Pred}_{\Sigma}, \,\,\,\,
 формулами</em> по определению.</p>
 <p><em>Значение атомной формулы</em> <span class="math inline">\(p(t_1,
 \ldots, t_n)\)</span> <em>в контексте</em>.</p>
-<h3 data-number="7.3.2"
+<h2 data-number="7.5"
 id="формулы-логики-отношений-индуктивное-определение">Формулы логики
-отношений, индуктивное определение</h3>
+отношений, индуктивное определение</h2>
 <p><em>Формула</em> определяется индуктивно:</p>
 <ol type="1">
 <li>Атом – <em>формула</em>.</li>
@@ -386,15 +409,15 @@ class="math inline">\(x \in \operatorname{Var}\)</span>, то
 <p>При этом <span class="math inline">\(F\)</span> и <span
 class="math inline">\(F’\)</span> – <em>подформулы</em>.</p>
 </div>
-<h2 data-number="7.4" id="однозначность-анализа-формул">Однозначность
+<h2 data-number="7.6" id="однозначность-анализа-формул">Однозначность
 анализа формул</h2>
 <p>БЛА-БЛА-БЛА</p>
-<h2 data-number="7.5"
+<h2 data-number="7.7"
 id="связанные-и-свободные-вхождения-переменных.-свободные-переменные-формулы">Связанные
 и свободные вхождения переменных. Свободные переменные формулы</h2>
 <div id="definition-33">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(\varphi\)</span> – формула. В формулах <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(\varphi\)</span> – формула. В формулах <span
 class="math inline">\((\forall x \varphi)\)</span> и <span
 class="math inline">\((\exists x \varphi) \,\,\,\, \varphi\)</span> –
 это <em>область действия квантора</em>.</p>
@@ -407,39 +430,42 @@ class="math inline">\(x\)</span> – <em>связанная переменная
 <p>Формула <em>замкнутая</em> или <em>является высказыванием</em>, если
 в ней нет свободных переменных.</p>
 </div>
-<h2 data-number="7.6"
+<h2 data-number="7.8"
 id="контексты.-отношения-определяемые-формулами-бесконечноместное-и-на-конечной-степени-универсума">Контексты.
 Отношения, определяемые формулами – бесконечноместное и на конечной
 степени универсума</h2>
-<h2 data-number="7.7"
+<h2 data-number="7.9"
 id="высказывания.-истинность-высказывания-в-структуре.-выполнимость-высказывания">Высказывания.
 Истинность высказывания в структуре. Выполнимость высказывания</h2>
 <div id="definition-34">
-<p><strong>Определение:</strong> Высказывание <em>выполнимо</em>, если
-существует структура, в которой оно истинно.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Высказывание <em>выполнимо</em>, если существует
+структура, в которой оно истинно.</p>
 </div>
-<h2 data-number="7.8"
+<h2 data-number="7.10"
 id="эквивалентные-формулы.-дизъюнктивная-нормальная-форма-днф">Эквивалентные
 формулы. Дизъюнктивная нормальная форма (ДНФ)</h2>
 <div id="definition-35">
-<p><strong>Определение:</strong> Формулы эквивалентны, если их значения
-совпадают в любом контексте для любой структуры.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Формулы
+эквивалентны, если их значения совпадают в любом контексте для любой
+структуры.</p>
 <p>Дизъюнктивная нормальная форма – это эквивалентная данной формула,
 состоящая из дизъюнкций элементарных конъюнкций.</p>
 </div>
 <div id="statement-10">
-<p><strong>Утверждение:</strong> Любая бескванторная формула
-эквивалентна ДНФ.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Любая
+бескванторная формула эквивалентна ДНФ.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
-<h2 data-number="7.9" id="предваренная-нормальная-форма">Предваренная
+<h2 data-number="7.11" id="предваренная-нормальная-форма">Предваренная
 нормальная форма</h2>
 <div id="definition-36">
-<p><strong>Определение:</strong> <em>Предваренная нормальная форма</em>
-– это эквивалентная данной формула, где все кванторы стоят в начале
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Предваренная нормальная форма</em> – это
+эквивалентная данной формула, где все кванторы стоят в начале
 формулы.</p>
 </div>
-<h2 data-number="7.10" id="игровая-семантика-логики-отношений">Игровая
+<h2 data-number="7.12" id="игровая-семантика-логики-отношений">Игровая
 семантика логики отношений</h2>
 <p>А если природа тупая?</p>
 <section id="footnotes" class="footnotes footnotes-end-of-document"
@@ -460,7 +486,7 @@ href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="вполне-упорядоченные-множества.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

@@ -11,7 +11,10 @@
     
     <title>Бета-функция</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="формула-стирлинга.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="ряды-фурье.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="формула-стирлинга.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="ряды-фурье.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -247,31 +266,34 @@
 
 <h1 data-number="19" id="бета-функция">Бета-функция</h1>
 <div id="definition-26">
-<p><strong>Определение:</strong> (<em>второй интеграл Эйлера</em>)</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>(<em>второй интеграл Эйлера</em>)</p>
 <p><span class="math display">\[B(\alpha, \beta) =
 \displaystyle\int\limits_0^1 t^{\alpha - 1}(1 - t)^{\beta - 1}dt,
 \,\,\,\, \alpha &gt; 0, \,\,\,\, \beta &gt; 0\]</span></p>
 </div>
 <div id="statement-3">
-<p><strong>Утверждение:</strong> <span class="math display">\[B(\alpha,
-\beta) = B(\beta, \alpha)\]</span></p>
-<p><em>Доказательство:</em> <span class="math inline">\(t = 1 - x
-\,\,\,\,\blacksquare\)</span></p>
+<p><span class="margin-lft"><strong>Утверждение: </strong></span><span
+class="math display">\[B(\alpha, \beta) = B(\beta, \alpha)\]</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(t = 1 - x \,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="theorem-55">
-<p><strong>Теорема:</strong> <span class="math display">\[B(\alpha + 1,
-\beta) = \frac{\alpha}{\alpha + \beta}\cdot B(\alpha,
-\beta)\]</span></p>
-<p><em>Доказательство:</em> по частям</p>
+<p><span class="margin-lft"><strong>Теорема: </strong></span><span
+class="math display">\[B(\alpha + 1, \beta) = \frac{\alpha}{\alpha +
+\beta}\cdot B(\alpha, \beta)\]</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> по
+частям</p>
 </div>
 <h2 data-number="19.1" id="связь-бета-и-гамма-функций">Связь бета и
 гамма-функций</h2>
 <div id="theorem-56">
-<p><strong>Теорема:</strong> (<em>связь бета и гамма-функций</em>)</p>
+<p><span class="margin-lft"><strong>Теорема: </strong></span>(<em>связь
+бета и гамма-функций</em>)</p>
 <p><span class="math display">\[B(\alpha, \beta) =
 \frac{\Gamma(\alpha)\cdot \Gamma(\beta)}{\Gamma(\alpha +
 \beta)}\]</span></p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>Пусть <span class="math inline">\(t = \frac{1}{1 + x} \implies 1 - t
 = \frac{x}{1 + x}\)</span> и <span class="math inline">\(dt =
 -\frac{dx}{1 + x}^2\)</span>.</p>
@@ -304,12 +326,13 @@ class="math inline">\(\beta &gt; 1\)</span>.</p>
 id="теорема-вейерштрасса-о-приближении-непрерывной-функции-многочленами">Теорема
 Вейерштрасса о приближении непрерывной функции многочленами</h2>
 <div id="theorem-57">
-<p><strong>Теорема:</strong> (<em>Вейерштрасса о приближении
-многочленами</em>) Пусть <span class="math inline">\(f(x) \in C[a, b]
-\,\,\,\, \exists \{P_n(x)\}_{n = 1}, \,\,\,\, P_n\)</span> – многочлены,
-такие что <span class="math inline">\(P_n(x) \overset{[a,
-b]}{\rightrightarrows} f(x)\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Вейерштрасса о приближении многочленами</em>) Пусть
+<span class="math inline">\(f(x) \in C[a, b] \,\,\,\, \exists
+\{P_n(x)\}_{n = 1}, \,\,\,\, P_n\)</span> – многочлены, такие что <span
+class="math inline">\(P_n(x) \overset{[a, b]}{\rightrightarrows}
+f(x)\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>Без ограничения общности пусть <span class="math inline">\(f(x) \in
 C[0, 1]\)</span> и <span class="math inline">\(f(0) = f(1) = 0\)</span>,
 так как отрезок <span class="math inline">\([a, b]\)</span> можно
@@ -363,7 +386,7 @@ href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="формула-стирлинга.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

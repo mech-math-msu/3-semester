@@ -11,7 +11,10 @@
     
     <title>Гомеоморфизм</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -238,17 +246,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="непрерывные-отображения.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="различные-топологии.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="непрерывные-отображения.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="различные-топологии.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -256,8 +275,8 @@
 
 <h1 data-number="3" id="гомеоморфизм">Гомеоморфизм</h1>
 <div id="definition-13">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(X\)</span> и <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(X\)</span> и <span
 class="math inline">\(Y\)</span> – топологические пространства.
 Отображение <span class="math inline">\(f: X \to Y\)</span>
 <em>гомеоморфизм</em>, если <span class="math inline">\(f\)</span>
@@ -265,7 +284,8 @@ class="math inline">\(Y\)</span> – топологические простра
 непрерывно.</p>
 </div>
 <div id="definition-14">
-<p><strong>Определение:</strong> Топологические пространства <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Топологические пространства <span
 class="math inline">\(X\)</span> и <span
 class="math inline">\(Y\)</span> <em>гомеоморфны</em>, если существует
 гомеоморфизм <span class="math inline">\(f: X \to Y\)</span>.</p>
@@ -278,16 +298,16 @@ href="#fn1" class="footnote-ref" id="fnref1"
 role="doc-noteref"><sup>1</sup></a></p>
 </blockquote>
 <div id="theorem-0">
-<p><strong>Теорема:</strong> (<em>теорема о гомеоморфизме</em>)
-Непрерывное взаимно однозначное отображение <span
-class="math inline">\(f: X \to Y\)</span> из компактного пространства на
-хаусдорфово – гомеоморфизм.</p>
-<p><em>Доказательство:</em> Нужно доказать непрерывность обратного
-отображения <span class="math inline">\(g = f^{-1}: Y \to X\)</span>.
-Докажем, что прообраз при отображении <span
-class="math inline">\(g\)</span> любого замкнутого множества <span
-class="math inline">\(V \subset X\)</span> замкнут: <span
-class="math inline">\(g^{-1}(V) = f(V)\)</span>.</p>
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>теорема о гомеоморфизме</em>) Непрерывное взаимно
+однозначное отображение <span class="math inline">\(f: X \to Y\)</span>
+из компактного пространства на хаусдорфово – гомеоморфизм.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Нужно
+доказать непрерывность обратного отображения <span
+class="math inline">\(g = f^{-1}: Y \to X\)</span>. Докажем, что
+прообраз при отображении <span class="math inline">\(g\)</span> любого
+замкнутого множества <span class="math inline">\(V \subset X\)</span>
+замкнут: <span class="math inline">\(g^{-1}(V) = f(V)\)</span>.</p>
 <p>Хочу:</p>
 <ol type="1">
 <li><p>Замкнутое подмножество <span class="math inline">\(A\)</span>
@@ -321,7 +341,7 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="непрерывные-отображения.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

@@ -11,7 +11,10 @@
     
     <title>Теоремы о несобственных интегралах с параметром</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="несобственные-интегралы-с-параметром.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="эйлеровы-интегралы.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="несобственные-интегралы-с-параметром.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="эйлеровы-интегралы.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -252,18 +271,18 @@ id="теоремы-о-несобственных-интегралах-с-пар�
 id="дифференцируемость-несобственного-интеграла-с-параметром">Дифференцируемость
 несобственного интеграла с параметром</h2>
 <div id="theorem-46">
-<p><strong>Теорема:</strong> Пусть <span class="math inline">\(f(x, y)
-\in C([a, +\infty)\times[\alpha, \beta])\)</span>, <span
-class="math inline">\(f’_y(x, y) \in C([a, +\infty)\times[\alpha,
-\beta])\)</span>, <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(f(x, y) \in C([a, +\infty)\times[\alpha,
+\beta])\)</span>, <span class="math inline">\(f’_y(x, y) \in C([a,
++\infty)\times[\alpha, \beta])\)</span>, <span
 class="math inline">\(\displaystyle\int\limits_a^{+\infty} f(x, y)dx =
 F(y)\)</span> и <span
 class="math inline">\(\displaystyle\int\limits_a^{+\infty} f’_y(x, y)dx
 \overset{[\alpha, \beta]}{\rightrightarrows} G(y)\)</span>.</p>
 <p>Тогда <span class="math inline">\(\exists F’(y) = G(y)\)</span>.</p>
-<p><em>Доказательство:</em> Рассмотрим <span
-class="math inline">\(\{t_n\}_{n = 1}^{\infty} \,\,\,\, t_n \underset{n
-\to \infty}\to +\infty\)</span>. Пусть <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> Рассмотрим
+<span class="math inline">\(\{t_n\}_{n = 1}^{\infty} \,\,\,\, t_n
+\underset{n \to \infty}\to +\infty\)</span>. Пусть <span
 class="math inline">\(F_n(y) = \displaystyle\int\limits_a^{t_n} f(x,
 y)dx\)</span>. <span class="math inline">\(F_{n}(y)\)</span> непрерывна
 <span class="math inline">\(\forall n \in \mathbb{N}\)</span>, так как
@@ -282,8 +301,9 @@ href="lection-functional-series-theorems.html#theorem-1">по теореме</a>
 id="интегрирование-несобственного-интеграла-с-параметром">Интегрирование
 несобственного интеграла с параметром</h2>
 <div id="theorem-47">
-<p><strong>Теорема:</strong> Пусть <span class="math inline">\(f(x, y)
-\in C([a, +\infty)\times[\alpha, \beta])\)</span> и <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(f(x, y) \in C([a, +\infty)\times[\alpha,
+\beta])\)</span> и <span
 class="math inline">\(\displaystyle\int\limits_a^{+\infty} f(x, y)dx
 \overset{[\alpha, \beta]}{\rightrightarrows} F(y)\)</span>.</p>
 <p>Тогда <span
@@ -292,10 +312,10 @@ class="math inline">\(\displaystyle\int\limits_{\alpha}^{\beta}F(y)dy =
 f(x, y)dx\right)dy =
 \displaystyle\int\limits_a^{+\infty}\left(\displaystyle\int\limits_{\alpha}^{\beta}
 f(x, y)dy\right)dx\)</span>.</p>
-<p><em>Доказательство:</em> <span class="math inline">\(\forall \{t_n\},
-\,\,\,\, t_n \to \infty,\,\,\,\, n \to \infty \,\,\,\,
-\displaystyle\int\limits_a^{t_n} f(x, y)dx = F_n(y) \overset{[\alpha,
-\beta]}{\rightrightarrows} F(y)\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\forall \{t_n\}, \,\,\,\, t_n \to \infty,\,\,\,\,
+n \to \infty \,\,\,\, \displaystyle\int\limits_a^{t_n} f(x, y)dx =
+F_n(y) \overset{[\alpha, \beta]}{\rightrightarrows} F(y)\)</span>.</p>
 <p>По <a
 href="lection-functional-series-theorems.html#theorem-1">теореме</a>
 <span class="math inline">\(\exists \displaystyle \lim_{n\to
@@ -325,20 +345,20 @@ f(x, y)dy\right)dx \,\,\,\,\blacksquare\)</span></p>
 id="признак-дини-равномерной-сходимости-функциональной-последовательности">Признак
 Дини равномерной сходимости функциональной последовательности</h2>
 <div id="lemma-3">
-<p><strong>Лемма:</strong> (<em>Дини</em>) <span
-class="math inline">\(f_n(x) \in C[a, b]\)</span>, <span
-class="math inline">\(f_n(x)\)</span> монотонна на <span
-class="math inline">\([a, b] \,\,\,\, \forall x \in [a, b]\)</span>,
-<span class="math inline">\(f_n(x) \to f(x), \,\,\,\, n \to
+<p><span class="margin-lft"><strong>Лемма:
+</strong></span>(<em>Дини</em>) <span class="math inline">\(f_n(x) \in
+C[a, b]\)</span>, <span class="math inline">\(f_n(x)\)</span> монотонна
+на <span class="math inline">\([a, b] \,\,\,\, \forall x \in [a,
+b]\)</span>, <span class="math inline">\(f_n(x) \to f(x), \,\,\,\, n \to
 \infty\)</span> и <span class="math inline">\(f(x) \in C[a,
 b]\)</span>.</p>
 <p>Тогда <span class="math inline">\(f_n(x) \overset{[a,
 b]}{\rightrightarrows} f(x)\)</span>.</p>
-<p><em>Доказательство:</em> <span class="math inline">\(\forall x_0 \in
-[a, b] \,\,\,\, \forall \varepsilon &gt; 0 \,\,\,\, \exists
-n_{\varepsilon, x_0} \in \mathbb{N}: \,\,\,\, \forall n \geqslant
-n_{\varepsilon, x_0} \,\,\,\, |f_n(x_0) - f(x_0)| &lt;
-\varepsilon\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\forall x_0 \in [a, b] \,\,\,\, \forall
+\varepsilon &gt; 0 \,\,\,\, \exists n_{\varepsilon, x_0} \in \mathbb{N}:
+\,\,\,\, \forall n \geqslant n_{\varepsilon, x_0} \,\,\,\, |f_n(x_0) -
+f(x_0)| &lt; \varepsilon\)</span></p>
 <p><span class="math inline">\(f(x)\)</span> и <span
 class="math inline">\(f_n(x)\)</span> непрерывны, а следовательно <span
 class="math inline">\(\forall x_0 \in [a, b] \,\,\,\, \exists
@@ -367,9 +387,10 @@ f(x)| &lt; \varepsilon \,\,\,\, \forall x \in [a, b]
 id="двойной-несобственный-интеграл-с-параметром">Двойной несобственный
 интеграл с параметром</h2>
 <div id="theorem-48">
-<p><strong>Теорема:</strong> <span class="math inline">\(f(x, y) \in
-C([a, +\infty)\times[b, +\infty))\)</span>, <span
-class="math inline">\(f(x, y) \geqslant 0\)</span>,</p>
+<p><span class="margin-lft"><strong>Теорема: </strong></span><span
+class="math inline">\(f(x, y) \in C([a, +\infty)\times[b,
++\infty))\)</span>, <span class="math inline">\(f(x, y) \geqslant
+0\)</span>,</p>
 <p><span class="math inline">\(\displaystyle\int\limits_a^{+\infty} f(x,
 y)dx = G(y) \in C[b, +\infty)\)</span>,</p>
 <p><span class="math inline">\(\displaystyle\int\limits_b^{+\infty} f(x,
@@ -378,7 +399,7 @@ y)dy = H(x) \in C[a, +\infty)\)</span>.</p>
 \displaystyle\int\limits_b^{+\infty} G(y)dy = \mathcal{I}\)</span>, то
 <span class="math inline">\(\exists \displaystyle\int\limits_a^{+\infty}
 H(x)dx = \mathcal{I}\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>Рассмотрим последовательности <span class="math inline">\(\{a_n\}_{n
 = 1}^{\infty}, \,\,\,\, a_n \to \infty, \,\,\,\, n \to \infty\)</span> и
 <span class="math inline">\(\{b_n\}_{n = 1}^{\infty}, \,\,\,\, b_n \to
@@ -424,23 +445,24 @@ class="math inline">\(\exists\displaystyle\int\limits_b^{+\infty} G(y)dy
 \,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="corollary-5">
-<p><strong>Следствие:</strong> Пусть все условия теоремы выше, кроме
-неотрицательности функции выполнены для <span class="math inline">\(f(x,
-y)\)</span> и <span class="math inline">\(|f(x, y)|\)</span>. Если <span
+<p><span class="margin-lft"><strong>Следствие: </strong></span>Пусть все
+условия теоремы выше, кроме неотрицательности функции выполнены для
+<span class="math inline">\(f(x, y)\)</span> и <span
+class="math inline">\(|f(x, y)|\)</span>. Если <span
 class="math inline">\(\exists
 \displaystyle\int\limits_b^{+\infty}\left(\displaystyle\int\limits_a^{+\infty}
 f(x, y)dx\right)dy = \mathcal{I}\)</span>, то <span
 class="math inline">\(\exists\displaystyle\int\limits_a^{+\infty}\left(\displaystyle\int\limits_b^{+\infty}
 f(x, y)dy\right)dx = \mathcal{I}\)</span>.</p>
-<p><em>Доказательство:</em> Применить теорему к <span
-class="math inline">\(|f(x, y)| - f(x, y)\)</span> и <span
-class="math inline">\(|f(x, y)| + f(x, y)
+<p><span class="margin-lft"><em>Доказательство:</em></span> Применить
+теорему к <span class="math inline">\(|f(x, y)| - f(x, y)\)</span> и
+<span class="math inline">\(|f(x, y)| + f(x, y)
 \,\,\,\,\blacksquare\)</span></p>
 </div>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="несобственные-интегралы-с-параметром.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

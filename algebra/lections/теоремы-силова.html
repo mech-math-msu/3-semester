@@ -11,7 +11,10 @@
     
     <title>Теоремы Силова</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="действие-группы.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="коммутант-группы.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="действие-группы.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="коммутант-группы.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -247,8 +266,8 @@
 
 <h1 data-number="12" id="теоремы-силова">Теоремы Силова</h1>
 <div id="definition-42">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(G\)</span> – конечная группа и <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(G\)</span> – конечная группа и <span
 class="math inline">\(|G| = p^k\cdot m\)</span>, причем <span
 class="math inline">\(p \nmid m\)</span>. Тогда подгруппа <span
 class="math inline">\(G\)</span> порядка <span
@@ -256,19 +275,21 @@ class="math inline">\(p^k\)</span> – <em>силовская</em> <span
 class="math inline">\(p\)</span>-<em>подгруппа</em>.</p>
 </div>
 <div id="definition-43">
-<p><strong>Определение:</strong> <em>Нормализатор</em> <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Нормализатор</em> <span
 class="math inline">\(\operatorname{N}(H)\)</span> подгруппы <span
 class="math inline">\(H\)</span> – это <span class="math inline">\(\{g
 \in G| \,\,\,\, gH g^{-1} = H\}\)</span>.</p>
 </div>
 <div id="statement-23">
-<p><strong>Утверждение:</strong> Подгруппа является нормальной
-подгруппой в своем нормализаторе.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Подгруппа является нормальной подгруппой в своем
+нормализаторе.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="theorem-17">
-<p><strong>Теорема:</strong> Пусть <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
 class="math inline">\(G\)</span> – конечная группа, <span
 class="math inline">\(p\)</span> – простое число. Тогда</p>
 <ol type="1">
@@ -290,7 +311,7 @@ class="math inline">\(N_p\)</span>. Тогда <span
 class="math inline">\(N_p \equiv 1\mod p\)</span> и <span
 class="math inline">\(N_p \,\,|\,\, m\)</span>.</li>
 </ol>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p><span class="math display">\[\boxed{1}\]</span></p>
 <p><span class="math inline">\(\boxed{\operatorname{I}}\)</span> Пусть
 <span class="math inline">\(p\,\,|\,\,|Z(G)|\)</span>. <span
@@ -349,11 +370,12 @@ g’Sg’^{-1}\)</span>. Если <span class="math inline">\(P\)</span>
 силовская, то <span class="math inline">\(P = g’Sg’^{-1}
 \,\,\,\,\blacksquare\)</span></p>
 <div id="corollary-5">
-<p><strong>Следствие:</strong> Силовская <span
-class="math inline">\(p\)</span>-подгруппа <span
+<p><span class="margin-lft"><strong>Следствие: </strong></span>Силовская
+<span class="math inline">\(p\)</span>-подгруппа <span
 class="math inline">\(S\)</span> нормальна <span
 class="math inline">\(\iff S\)</span> единственна.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><span
+class="margin-lft"><em>Доказательство:</em></span></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <p><span class="math display">\[\boxed{3}\]</span></p>
@@ -388,23 +410,24 @@ class="math inline">\(\implies S = H\)</span>.</p>
 id="лемма-бернсайда-о-количестве-орбит-конечной-группы">Лемма Бернсайда
 о количестве орбит конечной группы</h2>
 <div id="definition-44">
-<p><strong>Определение:</strong> Пусть группа <span
-class="math inline">\(G\)</span> действует на множестве <span
-class="math inline">\(X\)</span>. <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+группа <span class="math inline">\(G\)</span> действует на множестве
+<span class="math inline">\(X\)</span>. <span
 class="math inline">\(\operatorname{Fix}(g) = \{x \in X: \,\,\,\, g\circ
 x = x\}\)</span>.</p>
 </div>
 <div id="definition-45">
-<p><strong>Определение:</strong> <em>Точка неподвижна</em></p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Точка неподвижна</em></p>
 </div>
 <div id="theorem-18">
-<p><strong>Теорема:</strong> Пусть <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
 class="math inline">\(G\)</span> – конечная группа, <span
 class="math inline">\(X\)</span> – конечное множество и <span
 class="math inline">\(G\)</span> действует на <span
 class="math inline">\(X\)</span>. Тогда число орбит равно среднему числу
 неподвижных точек.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p><span class="math inline">\(X = X_1\sqcup X_2 \ldots\sqcup
 X_k\)</span>, где <span class="math inline">\(X_i\)</span> – орбита.
 Нарисуем табличку:</p>
@@ -426,10 +449,11 @@ X_1}^{}\frac{|G|}{|G \circ x|} = |X_1|\frac{|G|}{|G \circ x|} = |G|
 \,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="theorem-19">
-<p><strong>Теорема:</strong> Конечную подгруппу нельзя представить, как
-объединение сопряженных собственных подгрупп.</p>
-<p><em>Доказательство:</em> Пусть <span class="math inline">\(G =
-\cup_{g \in G}gHg^{-1}\)</span>, где <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Конечную
+подгруппу нельзя представить, как объединение сопряженных собственных
+подгрупп.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть <span
+class="math inline">\(G = \cup_{g \in G}gHg^{-1}\)</span>, где <span
 class="math inline">\(H\)</span> – подгруппа. Рассмотрим действие группы
 <span class="math inline">\(G\)</span> на множестве <span
 class="math inline">\(\{gHg^{-1}: \,\,\,\, g \in G\}\)</span>. Орбита
@@ -484,7 +508,7 @@ role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="действие-группы.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

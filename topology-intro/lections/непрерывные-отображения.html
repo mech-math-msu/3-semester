@@ -11,7 +11,10 @@
     
     <title>Непрерывные отображения</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -238,17 +246,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="основные-определения.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="гомеоморфизм.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="основные-определения.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="гомеоморфизм.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -257,14 +276,14 @@
 <h1 data-number="2" id="непрерывные-отображения">Непрерывные
 отображения</h1>
 <div id="lemma-3">
-<p><strong>Лемма:</strong> (<em>свойства пересечения, дополнения и
-объединения множеств</em>) Пусть дан набор множеств <span
-class="math inline">\(U_{\alpha}\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Лемма: </strong></span>(<em>свойства
+пересечения, дополнения и объединения множеств</em>) Пусть дан набор
+множеств <span class="math inline">\(U_{\alpha}\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 <div id="definition-10">
-<p><strong>Определение:</strong> Пусть <span class="math inline">\(f: X
-\to Y\)</span> – отображение.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(f: X \to Y\)</span> – отображение.</p>
 <p><em>Прообраз точки</em> <span class="math inline">\(y \in Y\)</span>
 при отображении <span class="math inline">\(f\)</span> – это <span
 class="math inline">\(f^{-1}(x) = \{x \in X: \,\,\,\, f(x) =
@@ -275,17 +294,17 @@ Y\)</span> при отображении <span class="math inline">\(f\)</span> 
 V}f^{-1}(y)\)</span>.</p>
 </div>
 <div id="statement-2">
-<p><strong>Утверждение:</strong> Пусть <span class="math inline">\(f: X
-\to Y\)</span> – отображение. Тогда <span class="math inline">\(\forall
-V_{\alpha} \in Y \,\,\,\, f^{-1}\left(\cup_{\alpha \in
-\Lambda}V_{\alpha}\right) = \cup_{\alpha \in
-\Lambda}f^{-1}(V_{\alpha})\)</span>.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(f: X \to Y\)</span> – отображение. Тогда
+<span class="math inline">\(\forall V_{\alpha} \in Y \,\,\,\,
+f^{-1}\left(\cup_{\alpha \in \Lambda}V_{\alpha}\right) = \cup_{\alpha
+\in \Lambda}f^{-1}(V_{\alpha})\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="definition-11">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(X\)</span> и <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(X\)</span> и <span
 class="math inline">\(Y\)</span> – топологические пространства.
 Отображение <span class="math inline">\(f: X \to Y\)</span>
 <em>непрерывно в точке</em> <span class="math inline">\(x \in
@@ -294,18 +313,18 @@ class="math inline">\(Y\)</span> множества открыт в <span
 class="math inline">\(X\)</span>.</p>
 </div>
 <div id="statement-3">
-<p><strong>Утверждение:</strong> Пусть <span
-class="math inline">\(X\)</span> и <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(X\)</span> и <span
 class="math inline">\(Y\)</span> – топологические пространства.
 Отображение <span class="math inline">\(f: X \to Y\)</span>
 <em>непрерывно в точке</em> <span class="math inline">\(x \in X \iff
 \forall U_{f(x)} \in \tau_Y \,\,\,\, \exists U_x \in \tau_X: \,\,\,\,
 f(U_x) \subset U_{f(x)}\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 <div id="definition-12">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(X\)</span> и <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(X\)</span> и <span
 class="math inline">\(Y\)</span> – топологические пространства.
 Отображение <span class="math inline">\(f: X \to Y\)</span>
 <em>непрерывно</em>, если <span class="math inline">\(f\)</span>
@@ -313,15 +332,16 @@ class="math inline">\(Y\)</span> – топологические простра
 class="math inline">\(X\)</span>.</p>
 </div>
 <div id="statement-4">
-<p><strong>Утверждение:</strong> Пусть <span
-class="math inline">\(X\)</span> и <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(X\)</span> и <span
 class="math inline">\(Y\)</span> – топологические пространства.
 Отображение <span class="math inline">\(f: X \to Y\)</span> непрерывно
 <span class="math inline">\(\iff\)</span> прообраз любого элемента базы
 топологии на <span class="math inline">\(Y\)</span> при отображении
 <span class="math inline">\(f\)</span> открыт в <span
 class="math inline">\(X\)</span>.</p>
-<p><em>Доказательство:</em> Любое открытое множество в топологии <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> Любое
+открытое множество в топологии <span
 class="math inline">\(\tau_Y\)</span> – это объединение элементов базы
 топлогии на <span class="math inline">\(Y\)</span> и прообраз
 объединения множеств – это объединение прообразов <span
@@ -330,7 +350,7 @@ class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="основные-определения.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

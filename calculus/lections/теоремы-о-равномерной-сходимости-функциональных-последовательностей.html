@@ -12,7 +12,10 @@
     <title>Теоремы о равномерной сходимости функциональных
 последовательностей</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -84,13 +87,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -99,19 +102,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -217,7 +221,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -230,17 +238,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="функциональные-последовательности.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="функциональные-ряды.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="функциональные-последовательности.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="функциональные-ряды.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -250,20 +269,22 @@
 id="теоремы-о-равномерной-сходимости-функциональных-последовательностей">Теоремы
 о равномерной сходимости функциональных последовательностей</h1>
 <div id="theorem-20">
-<p><strong>Теорема:</strong> (<em>предел последовательности непрерывных
-функций – непрерывен</em>) Пусть <span class="math inline">\(\forall n
-\in \mathbb{N} \,\,\,\, f_n(x) \in C[a, b], \,\,\,\, f_n(x)
-\underset{[a, b]}{\rightrightarrows} f(x)\)</span>. Тогда <span
-class="math inline">\(f(x) \in C[a, b]\)</span>.</p>
-<p><em>Доказательство:</em> <span class="math display">\[|f(x + \Delta
-x) - f(x)| =\]</span> <span class="math display">\[=|f(x + \Delta x) -
-f_n(x + \Delta x) + f_n(x + \Delta x) - f_n(x) + f_n(x) - f(x)|
-\leqslant\]</span> <span class="math display">\[\leqslant |f(x + \Delta
-x) - f_n(x + \Delta x)| + |f_n(x + \Delta x) - f_n(x)| + |f_n(x) - f(x)|
-&lt; 3 \epsilon \,\,\,\,\blacksquare\]</span></p>
+<p><span class="margin-lft"><strong>Теорема: </strong></span>(<em>предел
+последовательности непрерывных функций – непрерывен</em>) Пусть <span
+class="math inline">\(\forall n \in \mathbb{N} \,\,\,\, f_n(x) \in C[a,
+b], \,\,\,\, f_n(x) \underset{[a, b]}{\rightrightarrows} f(x)\)</span>.
+Тогда <span class="math inline">\(f(x) \in C[a, b]\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math display">\[|f(x + \Delta x) - f(x)| =\]</span> <span
+class="math display">\[=|f(x + \Delta x) - f_n(x + \Delta x) + f_n(x +
+\Delta x) - f_n(x) + f_n(x) - f(x)| \leqslant\]</span> <span
+class="math display">\[\leqslant |f(x + \Delta x) - f_n(x + \Delta x)| +
+|f_n(x + \Delta x) - f_n(x)| + |f_n(x) - f(x)| &lt; 3 \epsilon
+\,\,\,\,\blacksquare\]</span></p>
 </div>
 <div id="theorem-21">
-<p><strong>Теорема:</strong> (<em>интегрирование функциональных
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>интегрирование функциональных
 последовательностей</em>) Пусть <span class="math inline">\(\forall n
 \in \mathbb{N} \,\,\,\, f_n(x) \in C[a, b], \,\,\,\, f_n(x)
 \underset{[a, b]}{\rightrightarrows} f(x)\)</span>. Тогда <span
@@ -272,9 +293,9 @@ class="math display">\[\displaystyle \lim_{n\to
 \displaystyle\int\limits_a^b f(x)dx = \left[\int\limits_a^b
 \displaystyle \lim_{n\to \infty}\displaystyle
 f_n(x)dx\right]\]</span></p>
-<p><em>Доказательство:</em> По предыдущей теореме <span
-class="math inline">\(f(x) \in C[a, b] \implies \exists
-\displaystyle\int\limits_a^b f(x)dx\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> По
+предыдущей теореме <span class="math inline">\(f(x) \in C[a, b] \implies
+\exists \displaystyle\int\limits_a^b f(x)dx\)</span>.</p>
 <p><span class="math display">\[\left|\displaystyle\int\limits_a^b
 f_n(x)dx - \displaystyle\int\limits_a^b f(x)dx\right| \leqslant
 \left|\displaystyle\int\limits_a^b |f_n(x) - f(x)| dx\right| \leqslant
@@ -282,16 +303,17 @@ f_n(x)dx - \displaystyle\int\limits_a^b f(x)dx\right| \leqslant
 \,\,\,\,\blacksquare\]</span></p>
 </div>
 <div id="theorem-22">
-<p><strong>Теорема:</strong> Рассмотрим <span
-class="math inline">\(\{f_n(x)\}_{n = 1}^{\infty}\)</span>. Пусть <span
-class="math inline">\(\forall n \in \mathbb{N} \,\,\,\, f_n(x) \in C’[a,
-b], \,\,\,\, f_n’(x) \underset{[a, b]}{\rightrightarrows} g(x)\)</span>
-и <span class="math inline">\(\exists c \in [a, b]: \,\,\,\, \exists
-\displaystyle \lim_{n\to \infty}f_n(c)\)</span>. Тогда <span
-class="math inline">\(f_n(x) \underset{[a, b]}{\rightrightarrows} f(x),
-\,\,\,\, f(x) \in C’[a, b]\)</span> и <span class="math inline">\(f’(x)
-= g(x)\)</span>.</p>
-<p><em>Доказательство:</em> По предыдущим теоремам:</p>
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Рассмотрим
+<span class="math inline">\(\{f_n(x)\}_{n = 1}^{\infty}\)</span>. Пусть
+<span class="math inline">\(\forall n \in \mathbb{N} \,\,\,\, f_n(x) \in
+C’[a, b], \,\,\,\, f_n’(x) \underset{[a, b]}{\rightrightarrows}
+g(x)\)</span> и <span class="math inline">\(\exists c \in [a, b]:
+\,\,\,\, \exists \displaystyle \lim_{n\to \infty}f_n(c)\)</span>. Тогда
+<span class="math inline">\(f_n(x) \underset{[a, b]}{\rightrightarrows}
+f(x), \,\,\,\, f(x) \in C’[a, b]\)</span> и <span
+class="math inline">\(f’(x) = g(x)\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> По
+предыдущим теоремам:</p>
 <p><span class="math display">\[\forall x \in [c, b] \,\,\,\, \exists
 \displaystyle \lim_{n\to \infty}\displaystyle\int\limits_c^x f_n’(x)dx =
 \displaystyle\int\limits_c^x g(x)dx := f(x)\]</span></p>
@@ -307,7 +329,7 @@ href="https://mech-math-msu.github.io/lections/math-analysis/lection-28.02.23#th
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="функциональные-последовательности.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

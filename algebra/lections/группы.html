@@ -11,7 +11,10 @@
     
     <title>Группы</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="карта-алгебры.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="способы-получения-групп.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="карта-алгебры.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="способы-получения-групп.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -247,16 +266,18 @@
 
 <h1 data-number="2" id="группы">Группы</h1>
 <div id="definition-0">
-<p><strong>Определение:</strong> <em>Бинарная операция</em> – это
-отображение <span class="math inline">\(\boxdot: G \times G \to
-G\)</span>.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Бинарная операция</em> – это отображение <span
+class="math inline">\(\boxdot: G \times G \to G\)</span>.</p>
 </div>
 <div id="definition-1">
-<p><strong>Определение:</strong> <em>Группоид</em> – это множество с
-бинарной операцией.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Группоид</em> – это множество с бинарной
+операцией.</p>
 </div>
 <div id="definition-2">
-<p><strong>Определение:</strong> <em>Группа</em> – множество <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Группа</em> – множество <span
 class="math inline">\(G\)</span> с бинарной операцией <span
 class="math inline">\(\boxdot: G \times G \to G\)</span> (операцию
 называют сложение или умножение), для которой выполнено:</p>
@@ -281,9 +302,9 @@ class="math inline">\(a^{-1}\)</span> – <em>противоположный
 <p>Множество, для которого выполнено 1 и 2, – <em>моноид</em>.</p>
 </div>
 <div id="definition-3">
-<p><strong>Определение:</strong> Если операция на группе ассоциативна
-<span class="math inline">\((a \boxdot b = b \boxdot a)\)</span>, то
-группа <em>абелева</em>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Если
+операция на группе ассоциативна <span class="math inline">\((a \boxdot b
+= b \boxdot a)\)</span>, то группа <em>абелева</em>.</p>
 </div>
 <h2 data-number="2.1" id="много-много-всяких-примеров">Много-много
 всяких примеров</h2>
@@ -390,20 +411,22 @@ j\cdot k = i, \,\,\,\, j\cdot i = -k\)</span></p>
 <p>Ну вообще, это математика.</p>
 </blockquote>
 <div id="definition-4">
-<p><strong>Определение:</strong> <em>Преобразование множества</em> – это
-его отображение в себя.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Преобразование множества</em> – это его отображение
+в себя.</p>
 </div>
 <div id="definition-5">
-<p><strong>Определение:</strong> <em>Группа преобразований
-множества</em> <span class="math inline">\(X\)</span> – это группа,
-состоящая из биективных преобразований множества <span
-class="math inline">\(X\)</span> с операцией композиции.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Группа преобразований множества</em> <span
+class="math inline">\(X\)</span> – это группа, состоящая из биективных
+преобразований множества <span class="math inline">\(X\)</span> с
+операцией композиции.</p>
 </div>
 <div id="definition-6">
-<p><strong>Определение:</strong> Группа преобразований множества <span
-class="math inline">\(X\)</span>, состоящая из всех биективных
-преобразований – это <em>симметрическая группа множества</em> <span
-class="math inline">\(X\)</span>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Группа
+преобразований множества <span class="math inline">\(X\)</span>,
+состоящая из всех биективных преобразований – это <em>симметрическая
+группа множества</em> <span class="math inline">\(X\)</span>.</p>
 </div>
 <p><strong>Например:</strong> <span
 class="math inline">\(GL_n(\mathbb{C})\)</span> – это группа
@@ -412,13 +435,14 @@ class="math inline">\(V\)</span> строк из комплексных чисе
 class="math inline">\(n\)</span>. Биекции – это автоморфизмы (линейные
 операторы) <span class="math inline">\(V\)</span>.</p>
 <div id="theorem-0">
-<p><strong>Теорема:</strong> Любая группа – это группа преобразований
-автоморфизмов некоторого графа.</p>
-<p><em>Доказательство:</em> хм</p>
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Любая
+группа – это группа преобразований автоморфизмов некоторого графа.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> хм</p>
 </div>
 <h2 data-number="2.3" id="группа-симметрий">Группа симметрий</h2>
 <div id="definition-7">
-<p><strong>Определение:</strong> (<em>Группа симметрий</em>)</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>(<em>Группа симметрий</em>)</p>
 <p>Пусть <span class="math inline">\(X\)</span> – метрическое
 пространство, <span class="math inline">\(A \subset X\)</span>.</p>
 <p><span class="math inline">\(\operatorname{Sym} A = \{\varphi: A \to
@@ -431,8 +455,9 @@ id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 id="группа-диэдра-правильного-n-угольника">Группа Диэдра правильного
 <span class="math inline">\(n\)</span>-угольника</h3>
 <div id="definition-8">
-<p><strong>Определение:</strong> Группа симметрий правильного <span
-class="math inline">\(n\)</span>-угольника – <em>группа Диэдра</em>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Группа
+симметрий правильного <span class="math inline">\(n\)</span>-угольника –
+<em>группа Диэдра</em>.</p>
 <p><strong>Обозначается:</strong> <span
 class="math inline">\(D_n\)</span></p>
 </div>
@@ -447,7 +472,8 @@ sa^2, \ldots, sa^{n - 1}\}\)</span>.</p>
 class="math inline">\(D_n\)</span>: <span class="math inline">\(as =
 s^{-1}a\)</span>.</p>
 <div id="definition-9">
-<p><strong>Определение:</strong> <em>Порядок группы</em> <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Порядок группы</em> <span
 class="math inline">\(G\)</span> – это мощность множества <span
 class="math inline">\(G\)</span>.</p>
 </div>
@@ -467,7 +493,7 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="карта-алгебры.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

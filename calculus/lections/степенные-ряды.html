@@ -11,7 +11,10 @@
     
     <title>Степенные ряды</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="функциональные-ряды.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="вторая-теорема-абеля-для-степеннных-рядов.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="функциональные-ряды.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="вторая-теорема-абеля-для-степеннных-рядов.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -247,9 +266,9 @@
 
 <h1 data-number="9" id="степенные-ряды">Степенные ряды</h1>
 <div id="definition-16">
-<p><strong>Определение:</strong> Ряд вида <span
-class="math inline">\(\displaystyle \sum_{n = 0}^{\infty}a_n(x -
-x_0)^n\)</span> – <em>степенной ряд</em>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Ряд
+вида <span class="math inline">\(\displaystyle \sum_{n =
+0}^{\infty}a_n(x - x_0)^n\)</span> – <em>степенной ряд</em>.</p>
 <p><span class="math inline">\(a_n\)</span> – <em>коэффиценты
 разложения</em>,</p>
 <p><span class="math inline">\(a_0\)</span> – <em>свободный
@@ -262,7 +281,8 @@ class="math inline">\(0\)</span>.</p>
 <h2 data-number="9.1" id="первая-теорема-абеля">Первая теорема
 Абеля</h2>
 <div id="theorem-28">
-<p><strong>Теорема:</strong> (<em>1-я теорема Абеля</em>)</p>
+<p><span class="margin-lft"><strong>Теорема: </strong></span>(<em>1-я
+теорема Абеля</em>)</p>
 <p>Рассмотрим ряд <span class="math inline">\(\displaystyle \sum_{n =
 0}^{\infty}a_nx^n\)</span>.</p>
 <ol type="1">
@@ -277,7 +297,7 @@ class="math inline">\(0\)</span>.</p>
 |x’’|\)</span> ряд <span class="math inline">\(\displaystyle \sum_{n =
 0}^{\infty}a_nx^n\)</span> расходится.</li>
 </ol>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <ol type="1">
 <li>Пусть <span class="math inline">\(|x| &lt; |x’|\)</span></li>
 </ol>
@@ -299,33 +319,35 @@ class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <h2 data-number="9.2" id="радиус-сходимости">Радиус сходимости</h2>
 <div id="definition-17">
-<p><strong>Определение:</strong> <span class="math inline">\([0,
-+\infty] \ni R = \sup\{x: \,\,\,\,\)</span> ряд <span
-class="math inline">\(\displaystyle \sum_{n = 0}^{\infty}a_nx^n\)</span>
-сходится <span class="math inline">\(\}\)</span> – <em>радиус сходимости
-ряда</em>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
+class="math inline">\([0, +\infty] \ni R = \sup\{x: \,\,\,\,\)</span>
+ряд <span class="math inline">\(\displaystyle \sum_{n =
+0}^{\infty}a_nx^n\)</span> сходится <span
+class="math inline">\(\}\)</span> – <em>радиус сходимости ряда</em>.</p>
 </div>
 <div id="theorem-29">
-<p><strong>Теорема:</strong> (<em>формула Коши-Адамара</em>) Рассмотрим
-ряд <span class="math inline">\(\displaystyle \sum_{n =
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>формула Коши-Адамара</em>) Рассмотрим ряд <span
+class="math inline">\(\displaystyle \sum_{n =
 0}^{\infty}a_nx^n\)</span>. Пусть <span
 class="math inline">\(\displaystyle \overline{\lim}_{n\to \infty}
 \sqrt[n]{|a_n|} = \frac1R \in [0, +\infty]\)</span>. Тогда <span
 class="math inline">\(R\)</span> – радиус сходимости ряда <span
 class="math inline">\(\displaystyle \sum_{n =
 0}^{\infty}a_nx^n\)</span>.</p>
-<p><em>Доказательство:</em> <span class="math inline">\(\forall x \in X
-\,\,\,\, \displaystyle \overline{\lim}_{n\to \infty}
-\sqrt[n]{|a_n||x|^n} = \frac{|x|}{R}\)</span>, а далее по признаку Коши
-<span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(\forall x \in X \,\,\,\, \displaystyle
+\overline{\lim}_{n\to \infty} \sqrt[n]{|a_n||x|^n} =
+\frac{|x|}{R}\)</span>, а далее по признаку Коши <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <h2 data-number="9.3" id="свойства-степенных-рядов">Свойства степенных
 рядов</h2>
 <div id="theorem-30">
-<p><strong>Теорема:</strong> (<em>свойства степенных рядов</em>)
-Рассмотрим ряд <span class="math inline">\(\displaystyle \sum_{n =
-0}^{\infty}a_nx^n\)</span> и пусть <span class="math inline">\(R &gt;
-0\)</span>. Тогда</p>
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>свойства степенных рядов</em>) Рассмотрим ряд <span
+class="math inline">\(\displaystyle \sum_{n = 0}^{\infty}a_nx^n\)</span>
+и пусть <span class="math inline">\(R &gt; 0\)</span>. Тогда</p>
 <ol type="1">
 <li><span class="math inline">\(\displaystyle \sum_{n =
 0}^{\infty}a_nx^n \underset{[-R + \varepsilon, R -
@@ -338,7 +360,7 @@ a_nx^ndx = \displaystyle \sum_{n = 0}^{\infty}a_n\frac{x_0^{n + 1}}{n +
 <li><span class="math inline">\(S(x) \in C^{\infty}(-R,
 R)\)</span>.</li>
 </ol>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <ol type="1">
 <li>Ряд <span class="math inline">\(\displaystyle \sum_{n =
 0}^{\infty}a_n\left(R - \varepsilon\right)^n\)</span> сходится, а
@@ -357,7 +379,7 @@ href="lection-functional-series-theorems.html#theorem-1">теоремы</a>.</li
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="функциональные-ряды.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

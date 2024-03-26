@@ -11,7 +11,10 @@
     
     <title>Основные определения</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -238,17 +246,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="index.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="непрерывные-отображения.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="index.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="непрерывные-отображения.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -256,10 +275,11 @@
 
 <h1 data-number="1" id="основные-определения">Основные определения</h1>
 <div id="definition-0">
-<p><strong>Определение:</strong> Пусть задано множество <span
-class="math inline">\(X\)</span>. Рассмотрим семейство <span
-class="math inline">\(\tau_X\)</span> подмножеств множества <span
-class="math inline">\(X\)</span>, удовлетворяющих условиям:</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+задано множество <span class="math inline">\(X\)</span>. Рассмотрим
+семейство <span class="math inline">\(\tau_X\)</span> подмножеств
+множества <span class="math inline">\(X\)</span>, удовлетворяющих
+условиям:</p>
 <ol type="1">
 <li><span class="math inline">\(\varnothing \in \tau_X\)</span> и <span
 class="math inline">\(X \in \tau_X\)</span>,</li>
@@ -283,14 +303,14 @@ class="math inline">\(\langle X, \tau_X \rangle\)</span> –
 <em>топологическое пространство</em>.</p>
 </div>
 <div id="statement-0">
-<p><strong>Утверждение:</strong> Пусть <span
-class="math inline">\(X\)</span> – топологическое пространство. Тогда
-<span class="math inline">\(\cap_{i = 1}^{n}U_i \in \tau_X\)</span>, где
-<span class="math inline">\(n \in \mathbb{N}\)</span> и <span
-class="math inline">\(U_i \in \tau_X \,\,\,\, \forall i \in \{1, \ldots,
-n\}\)</span>.</p>
-<p><em>Доказательство:</em> по индукции <span
-class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(X\)</span> – топологическое пространство.
+Тогда <span class="math inline">\(\cap_{i = 1}^{n}U_i \in
+\tau_X\)</span>, где <span class="math inline">\(n \in
+\mathbb{N}\)</span> и <span class="math inline">\(U_i \in \tau_X
+\,\,\,\, \forall i \in \{1, \ldots, n\}\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> по индукции
+<span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <p>Далее, если из контекста понятно какая топология задана на множестве
 <span class="math inline">\(X\)</span>, пишем <span
@@ -298,22 +318,24 @@ class="math inline">\(X\)</span>, имея в виду топологическ�
 пространство <a href="#fn1" class="footnote-ref" id="fnref1"
 role="doc-noteref"><sup>1</sup></a>.</p>
 <div id="definition-1">
-<p><strong>Определение:</strong> Пусть задано топологическое
-пространство <span class="math inline">\(X\)</span>. <span
-class="math inline">\(V \subset \tau_X\)</span> – <em>замкнутое
-множество</em>, если <span class="math inline">\(U = X \setminus
-V\)</span> – открытое множество.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+задано топологическое пространство <span
+class="math inline">\(X\)</span>. <span class="math inline">\(V \subset
+\tau_X\)</span> – <em>замкнутое множество</em>, если <span
+class="math inline">\(U = X \setminus V\)</span> – открытое
+множество.</p>
 </div>
 <div id="definition-2">
-<p><strong>Определение:</strong> (<em>топология через замкнутые
-множества</em>) Топологию можно задать через набор замкнутых множеств,
-для которых любое пересечение будет принадлежать топологии и любое
-конечное объединение будет принадлежать топологии.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>(<em>топология через замкнутые множества</em>) Топологию
+можно задать через набор замкнутых множеств, для которых любое
+пересечение будет принадлежать топологии и любое конечное объединение
+будет принадлежать топологии.</p>
 </div>
 <div id="definition-3">
-<p><strong>Определение:</strong> <em>База</em> на <span
-class="math inline">\(X\)</span> – это набор <span
-class="math inline">\(B\)</span> подмножеств <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>База</em> на <span class="math inline">\(X\)</span>
+– это набор <span class="math inline">\(B\)</span> подмножеств <span
 class="math inline">\(X\)</span> такой, что:</p>
 <ol type="1">
 <li><span class="math inline">\(\forall x \in X \,\,\,\, \exists \beta
@@ -324,12 +346,14 @@ class="math inline">\(X\)</span> такой, что:</p>
 </ol>
 </div>
 <div id="lemma-0">
-<p><strong>Лемма:</strong> Пусть <span class="math inline">\(B\)</span>
-база на <span class="math inline">\(X\)</span>. Пусть <span
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Пусть <span
+class="math inline">\(B\)</span> база на <span
+class="math inline">\(X\)</span>. Пусть <span
 class="math inline">\(\tau_{B}\)</span> – это множество всех объединений
 элементов базы. Тогда <span class="math inline">\(\tau_{B}\)</span> –
 топология на <span class="math inline">\(X\)</span>.</p>
-<p><em>Доказательство:</em> Проверим по определению:</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Проверим по
+определению:</p>
 <ol type="1">
 <li><span class="math inline">\(\varnothing \in \tau_B\)</span>, так как
 <span class="math inline">\(\varnothing\)</span> – это объединение по
@@ -343,36 +367,37 @@ class="math inline">\(\tau_{B}\)</span> – это множество всех �
 </ol>
 </div>
 <div id="definition-4">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(B\)</span> база на множестве <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(B\)</span> база на множестве <span
 class="math inline">\(X\)</span>. Топология <span
 class="math inline">\(\tau_B\)</span> из предыдущего утверждения
 <em>порождена базой</em> <span class="math inline">\(B\)</span>.</p>
 </div>
 <div id="definition-5">
-<p><strong>Определение:</strong> <em>База топологии (топологического
-пространства)</em> <span class="math inline">\(\rangle X,
-\tau_X\langle\)</span> – это база на множестве <span
-class="math inline">\(X\)</span>, такая что <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>База топологии (топологического пространства)</em>
+<span class="math inline">\(\rangle X, \tau_X\langle\)</span> – это база
+на множестве <span class="math inline">\(X\)</span>, такая что <span
 class="math inline">\(\tau_B = \tau_X\)</span>.</p>
 </div>
 <div id="definition-6">
-<p><strong>Определение:</strong> <em>Предбаза</em> – это такой набор
-множеств, что все конечные пересечения элементов предбазы составляют
-базу.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Предбаза</em> – это такой набор множеств, что все
+конечные пересечения элементов предбазы составляют базу.</p>
 </div>
 <div id="definition-7">
-<p><strong>Определение:</strong> <em>Покрытие множества</em> <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Покрытие множества</em> <span
 class="math inline">\(X\)</span> – это набор множеств, объединение
 которых содержит <span class="math inline">\(X\)</span>.</p>
 </div>
 <div id="lemma-1">
-<p><strong>Лемма:</strong> Набор подмножеств <span
-class="math inline">\(B\)</span> множества <span
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Набор
+подмножеств <span class="math inline">\(B\)</span> множества <span
 class="math inline">\(X\)</span> является предбазой <span
 class="math inline">\(\iff X\)</span> является покрытием множества <span
 class="math inline">\(X\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p><span class="math inline">\(\boxed{\Longrightarrow}\)</span> <span
 class="math inline">\(B\)</span> предбаза <span
 class="math inline">\(\implies\)</span> конечные пересечения элементов
@@ -386,9 +411,9 @@ class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 id="специальные-точки-и-множества-в-топологии">Специальные точки и
 множества в топологии</h2>
 <div id="definition-8">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(X\)</span> – топологическое пространство. <span
-class="math inline">\(x \in A \subset X\)</span> – <em>точка
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(X\)</span> – топологическое пространство.
+<span class="math inline">\(x \in A \subset X\)</span> – <em>точка
 прикосновения</em> подмножества <span class="math inline">\(A\)</span>,
 если пересечение любой окрестности точки <span
 class="math inline">\(x\)</span> и <span
@@ -400,7 +425,8 @@ class="math inline">\(A\)</span>, если существует окрестно
 class="math inline">\(A\)</span>.</p>
 </div>
 <div id="definition-9">
-<p><strong>Определение:</strong> <em>Замыкание</em> множества <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Замыкание</em> множества <span
 class="math inline">\(A \subset X\)</span> – это множество всех точек
 прикосновения <span class="math inline">\(X\)</span>. Обозначается <span
 class="math inline">\(\overline{A}\)</span> или <span
@@ -411,12 +437,13 @@ class="math inline">\(X\)</span>. Обозначается <span
 class="math inline">\(\operatorname{Int}A\)</span>.</p>
 </div>
 <div id="lemma-2">
-<p><strong>Лемма:</strong> (<em>о замыкании и внутренности</em>)</p>
+<p><span class="margin-lft"><strong>Лемма: </strong></span>(<em>о
+замыкании и внутренности</em>)</p>
 <ol type="1">
 <li>Внутренность множества – открытое множество.</li>
 <li>Замыкание множества – замкнутое множество.</li>
 </ol>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>Пусть <span class="math inline">\(X\)</span> – топологическое
 пространство, <span class="math inline">\(A \subset X\)</span>.</p>
 <ol type="1">
@@ -433,15 +460,15 @@ X}U_x\)</span>.</li>
 </ol>
 </div>
 <div id="statement-1">
-<p><strong>Утверждение:</strong> Пусть <span
-class="math inline">\(X\)</span> – топологическое пространство, <span
-class="math inline">\(A \subset X\)</span>. Тогда <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(X\)</span> – топологическое пространство,
+<span class="math inline">\(A \subset X\)</span>. Тогда <span
 class="math inline">\(\overline{A} = \cap \{U \in X: \,\,\,\, A \subset
 V\)</span> и <span class="math inline">\(V\)</span> – замкнуто <span
 class="math inline">\(\}\)</span>.</p>
-<p><em>Доказательство:</em> Пусть <span class="math inline">\(x \in \cap
-\{V \in X: \,\,\,\, A \subset V\)</span> и <span
-class="math inline">\(V\)</span> – замкнуто <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть <span
+class="math inline">\(x \in \cap \{V \in X: \,\,\,\, A \subset
+V\)</span> и <span class="math inline">\(V\)</span> – замкнуто <span
 class="math inline">\(\} \implies \exists V \subset X: \,\,\,\, A
 \subset V\)</span>, <span class="math inline">\(x \in V\)</span> и <span
 class="math inline">\(V\)</span> – замкнуто <span
@@ -461,7 +488,7 @@ role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="index.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

@@ -11,7 +11,10 @@
     
     <title>Коммутант группы</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="теоремы-силова.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="разрешимые-группы.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="теоремы-силова.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="разрешимые-группы.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -247,30 +266,30 @@
 
 <h1 data-number="13" id="коммутант-группы">Коммутант группы</h1>
 <div id="definition-46">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(G\)</span> – группа, <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(G\)</span> – группа, <span
 class="math inline">\(g, h \in G\)</span>. Множество <span
 class="math inline">\([g, h] \rightleftharpoons g^{-1}h^{-1}gh\)</span>
 – <em>коммутатор элементов</em> <span class="math inline">\(g\)</span> и
 <span class="math inline">\(h\)</span>.</p>
 </div>
 <div id="definition-47">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(G\)</span> – группа. Множество <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(G\)</span> – группа. Множество <span
 class="math inline">\([G, G] \rightleftharpoons \langle\{[g, h]|\,\,\,\,
 g, h \in G\}\rangle\)</span> – <em>коммутант группы</em> <span
 class="math inline">\(G\)</span>.</p>
 </div>
 <div id="statement-24">
-<p><strong>Утверждение:</strong> Пусть <span
-class="math inline">\(G\)</span> – группа. Тогда</p>
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(G\)</span> – группа. Тогда</p>
 <ol type="1">
 <li><span class="math inline">\([G, G] \vartriangleleft G\)</span>,</li>
 <li><span class="math inline">\(G\)</span> – абелева <span
 class="math inline">\(\iff [G, G] = \{e\}\)</span>,</li>
 <li><span class="math inline">\(G/[G, G]\)</span> – абелева.</li>
 </ol>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p><span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <blockquote>
@@ -278,22 +297,22 @@ class="math inline">\(\iff [G, G] = \{e\}\)</span>,</li>
 группе нормальна.</p>
 </blockquote>
 <div id="statement-25">
-<p><strong>Утверждение:</strong> <span class="math inline">\(H\)</span>
-– подгруппа в группе <span class="math inline">\(G\)</span>, содержащая
-коммутант <span class="math inline">\(G \implies H \vartriangleleft
-G\)</span>.</p>
-<p><em>Доказательство:</em> <span class="math inline">\(ghg^{-1} =
-ghg^{-1}h^{-1}h = [g^{-1}, h^{-1}]h \in H
-\,\,\,\,\blacksquare\)</span></p>
+<p><span class="margin-lft"><strong>Утверждение: </strong></span><span
+class="math inline">\(H\)</span> – подгруппа в группе <span
+class="math inline">\(G\)</span>, содержащая коммутант <span
+class="math inline">\(G \implies H \vartriangleleft G\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
+class="math inline">\(ghg^{-1} = ghg^{-1}h^{-1}h = [g^{-1}, h^{-1}]h \in
+H \,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="statement-26">
-<p><strong>Утверждение:</strong> Пусть <span
-class="math inline">\(G\)</span> – группа, <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(G\)</span> – группа, <span
 class="math inline">\(H\)</span> – подгруппа <span
 class="math inline">\(G\)</span>. Тогда <span class="math inline">\(H
 \vartriangleleft G\)</span> и <span class="math inline">\(G / H\)</span>
 абелева <span class="math inline">\(\iff [G, G] \subset H\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p><span class="math inline">\(\boxed{\Longrightarrow}\)</span> <span
 class="math inline">\((xH)(yH) = (yH)(xH) \implies xy \in yxH \implies
 [x, y] \in H \,\,\,\,\blacksquare\)</span></p>
@@ -306,17 +325,18 @@ h]H = H \implies ghH = hgH \,\,\,\,\blacksquare\)</span></p>
 id="ядро-гомоморфизма-в-абелеву-группу-содержит-коммутант">Ядро
 гомоморфизма в абелеву группу содержит коммутант</h2>
 <div id="statement-27">
-<p><strong>Утверждение:</strong> Ядро гомоморфизма <span
-class="math inline">\(\varphi: G \to H\)</span>, где <span
-class="math inline">\(H\)</span> абелева, содержит коммутант <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Ядро
+гомоморфизма <span class="math inline">\(\varphi: G \to H\)</span>, где
+<span class="math inline">\(H\)</span> абелева, содержит коммутант <span
 class="math inline">\([G, G]\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 <h2 data-number="13.2" id="коммутанты-некоторых-групп">Коммутанты
 некоторых групп</h2>
 <div id="definition-48">
-<p><strong>Определение:</strong> <em>Трансвекция</em> – это матрица
-вида: <span class="math inline">\(\left(\begin{array}{lllll}
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Трансвекция</em> – это матрица вида: <span
+class="math inline">\(\left(\begin{array}{lllll}
 1 &amp; 0 &amp; \dots &amp; 0 &amp; 0 \\
 0 &amp; 1 &amp; 0 &amp; \dots &amp; 0 \\
 0 &amp; \ddots &amp; \ddots &amp; \lambda &amp; 0 \\
@@ -327,7 +347,7 @@ class="math inline">\([G, G]\)</span>.</p>
 <span class="math inline">\(i \ne j\)</span>.</p>
 </div>
 <div id="statement-28">
-<p><strong>Утверждение:</strong></p>
+<span class="margin-lft"><strong>Утверждение: </strong></span>
 <ol type="1">
 <li><span class="math inline">\(A_n\)</span> порождается тройными
 циклами,</li>
@@ -338,10 +358,10 @@ class="math inline">\([G, G]\)</span>.</p>
 <li><span class="math inline">\(GL_n(\mathbb{F})\)</span> порождается
 матрицами элементраных преобразований.</li>
 </ol>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 <div id="statement-29">
-<p><strong>Утверждение:</strong></p>
+<span class="margin-lft"><strong>Утверждение: </strong></span>
 <ol type="1">
 <li><span class="math inline">\([S_n, S_n] = A_n\)</span></li>
 <li><span class="math inline">\([A_n, A_n] = A_n, \,\,\,\, \forall n
@@ -353,7 +373,7 @@ SL_n(\mathbb{F}), \,\,\,\, \forall \mathbb{F}: \,\,\,\, |\mathbb{F}|
 SL_n(\mathbb{F}), \,\,\,\, \forall \mathbb{F}: \,\,\,\, |\mathbb{F}|
 &gt; 3\)</span></li>
 </ol>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <ol type="1">
 <li>При <span class="math inline">\(n = 1, 2\)</span> очев. Хотим
 доказать, что все тройные циклы содержатся в коммутанте и далее
@@ -377,7 +397,7 @@ class="math inline">\(\,\,\,\,\blacksquare\)</span></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="теоремы-силова.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

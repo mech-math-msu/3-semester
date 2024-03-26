@@ -11,7 +11,10 @@
     
     <title>Накрытия</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -238,16 +246,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="свободное-произведение-и-теорема-ван-кампена.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="свободное-произведение-и-теорема-ван-кампена.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -259,34 +279,36 @@
 две точки зрения на одно и тоже.</p>
 </blockquote>
 <div id="definition-67">
-<p><strong>Определение:</strong> Топологическое пространство <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Топологическое пространство <span
 class="math inline">\(X\)</span> <em>локально линейно связно</em>, если
 у любой точки <span class="math inline">\(x \in X\)</span> и любой
 окрестности <span class="math inline">\(U_x\)</span> точки <span
 class="math inline">\(x\)</span> существует линейно связная окрестность
 <span class="math inline">\(V_x \subset U_x\)</span>.</p>
 </div>
-<h2 data-number="13.1"
+<h3 data-number="13.0.1"
 id="пример-линейно-связного-но-не-локально-линейно-свзного-пространства">Пример
-линейно связного, но не локально линейно свзного пространства</h2>
+линейно связного, но не локально линейно свзного пространства</h3>
 <div id="definition-68">
-<p><strong>Определение:</strong> <em>Гребень</em> – это <span
-class="math inline">\(\{(t, 0)|\,\,\,\, t \in [0, 1]\}\cap\{(0,
-t)|\,\,\,\, t \in [0, 1]\}\cap\{(\frac1n, t)|\,\,\,\, t \in [0,
-1]\}\)</span>.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Гребень</em> – это <span class="math inline">\(\{(t,
+0)|\,\,\,\, t \in [0, 1]\}\cap\{(0, t)|\,\,\,\, t \in [0,
+1]\}\cap\{(\frac1n, t)|\,\,\,\, t \in [0, 1]\}\)</span>.</p>
 <center>
 <canvas id="canvas-comb">
 </canvas>
 </center>
 </div>
 <div id="statement-41">
-<p><strong>Утверждение:</strong> Гребень не локально линейно связен.</p>
-<p><em>Доказательство:</em> см.картинку <span
-class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Гребень
+не локально линейно связен.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> см.картинку
+<span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="definition-69">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(Y\)</span> и <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(Y\)</span> и <span
 class="math inline">\(X\)</span> – линейно связные и локально линейно
 связные топологические пространства и <span class="math inline">\(p: Y
 \to X\)</span> – непрерывное (сюръективное) отображение. Пусть у каждой
@@ -299,7 +321,7 @@ class="math inline">\(X\)</span> – линейно связные и локал
 <em>накрытие</em> пространства <span class="math inline">\(X\)</span>
 пространством <span class="math inline">\(Y\)</span>.</p>
 </div>
-<h2 data-number="13.2" id="примеры-накрытий">Примеры накрытий</h2>
+<h2 data-number="13.1" id="примеры-накрытий">Примеры накрытий</h2>
 <ul>
 <li><p>У любого пространства <span class="math inline">\(X\)</span>
 существует тривиальное накрытие <span class="math inline">\(Y =
@@ -311,16 +333,16 @@ X\)</span> и <span class="math inline">\(p =
 \,\,\,\, p\)</span> – отождествление противоположных точек.</p></li>
 </ul>
 <div id="lemma-13">
-<p><strong>Лемма:</strong> (<em>поднятие пути</em>) Пусть <span
-class="math inline">\((Y, p, X)\)</span> – накрытие, <span
-class="math inline">\(x_0 \in X, \,\,\,\, y_0 \in Y \,\,\,\, p(y_0) =
-x_0, \,\,\,\,\gamma: [0, 1] \to X \,\,\,\, \gamma(0) = x_0\)</span>.
-Тогда <span class="math inline">\(\exists!\)</span> путь <span
-class="math inline">\(\tilde{\gamma}: [0, 1] \to Y\)</span>, такой что
-<span class="math inline">\(p\circ \tilde{\gamma} = \gamma\)</span>. <a
-href="#fn1" class="footnote-ref" id="fnref1"
+<p><span class="margin-lft"><strong>Лемма: </strong></span>(<em>поднятие
+пути</em>) Пусть <span class="math inline">\((Y, p, X)\)</span> –
+накрытие, <span class="math inline">\(x_0 \in X, \,\,\,\, y_0 \in Y
+\,\,\,\, p(y_0) = x_0, \,\,\,\,\gamma: [0, 1] \to X \,\,\,\, \gamma(0) =
+x_0\)</span>. Тогда <span class="math inline">\(\exists!\)</span> путь
+<span class="math inline">\(\tilde{\gamma}: [0, 1] \to Y\)</span>, такой
+что <span class="math inline">\(p\circ \tilde{\gamma} = \gamma\)</span>.
+<a href="#fn1" class="footnote-ref" id="fnref1"
 role="doc-noteref"><sup>1</sup></a></p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>В силу леммы Лебега выберем разбиение <span class="math inline">\(0
 &lt; t_0 &lt; \ldots &lt; t_n\)</span> отрезка <span
 class="math inline">\([0, 1]\)</span>, так чтобы <span
@@ -343,19 +365,19 @@ class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 <p>Если что это несложно сделать аккуратно. Реально?</p>
 </div>
 <div id="lemma-14">
-<p><strong>Лемма:</strong> (<em>поднятие гомотопии</em>) Пусть <span
-class="math inline">\((\tilde{X}, p, X)\)</span> – накрытие. <span
-class="math inline">\(f: Y \times I \to X\)</span> – гомотопия и <span
-class="math inline">\(\tilde{f}_0: Y \to \tilde{X}\)</span> –
-непрерывное отображение поднимающее <span
+<p><span class="margin-lft"><strong>Лемма: </strong></span>(<em>поднятие
+гомотопии</em>) Пусть <span class="math inline">\((\tilde{X}, p,
+X)\)</span> – накрытие. <span class="math inline">\(f: Y \times I \to
+X\)</span> – гомотопия и <span class="math inline">\(\tilde{f}_0: Y \to
+\tilde{X}\)</span> – непрерывное отображение поднимающее <span
 class="math inline">\(f_0\)</span>, то есть диаграмма слева
 коммутативна. Тогда диаграмма справа коммутативна.</p>
 <p><img src="img/cover-lemma.png" /></p>
 <!-- <center><div id="container" style="position: relative; width: 300px; height: 300px;">
 <canvas id="canvas-diag" style="position: absolute; left: 0px; top: 0px;"></canvas>
 </div></center> -->
-<p><em>Доказательство:</em> При фиксированном <span
-class="math inline">\(y\)</span> поднятие <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> При
+фиксированном <span class="math inline">\(y\)</span> поднятие <span
 class="math inline">\(\tilde{f}_y\)</span> для <span
 class="math inline">\(f: \{y\}\times I \to X\)</span> существует по
 предыдущей лемме. А следовательно определено отображение <span
@@ -365,24 +387,25 @@ href="#fn2" class="footnote-ref" id="fnref2"
 role="doc-noteref"><sup>2</sup></a> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
-<h2 data-number="13.3"
+<h2 data-number="13.2"
 id="гомоморфизм-фундаментальных-групп-индуцированный-отображением-накрытия">Гомоморфизм
 фундаментальных групп, индуцированный отображением накрытия</h2>
 <div id="lemma-15">
-<p><strong>Лемма:</strong> Пусть <span class="math inline">\((\tilde{X},
-p, X)\)</span> – накрытие. Тогда гомоморфизм <span
-class="math inline">\(p_{*}: \pi_1(\tilde{X}, x_0) \to \pi_1(X,
-p(x_0))\)</span> – инъективен, то есть <span
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Пусть <span
+class="math inline">\((\tilde{X}, p, X)\)</span> – накрытие. Тогда
+гомоморфизм <span class="math inline">\(p_{*}: \pi_1(\tilde{X}, x_0) \to
+\pi_1(X, p(x_0))\)</span> – инъективен, то есть <span
 class="math inline">\(p_{*}(\pi_1(\tilde{X}, x_0))\)</span> подгруппа в
 <span class="math inline">\(\pi_1(X, p(x_0))\)</span>, причем она
 состоит из тех классов петель, поднятия которых – петли.</p>
-<p><em>Доказательство:</em> По предыдущей лемме ядро тривиально. <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> По
+предыдущей лемме ядро тривиально. <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
-<h2 data-number="13.4" id="критерий-поднятия-отображения">Критерий
+<h2 data-number="13.3" id="критерий-поднятия-отображения">Критерий
 поднятия отображения</h2>
 <div id="theorem-9">
-<p><strong>Теорема:</strong> Пусть <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
 class="math inline">\((\tilde{X}, p, X)\)</span> – накрытие. <span
 class="math inline">\(f: (Y, y_0) \to (X, x_0)\)</span> и <span
 class="math inline">\(Y\)</span> линейно связно и локально линейно
@@ -391,15 +414,16 @@ class="math inline">\(Y\)</span> линейно связно и локально
 class="math inline">\(f\)</span> существует <span
 class="math inline">\(\iff f_{*}(\pi_1(Y, y_0)) \subset
 p_{*}(\pi_1(\tilde{X}, \tilde{x}_0))\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
-<h2 data-number="13.5" id="универсальные-накрытия">Универсальные
+<h2 data-number="13.4" id="универсальные-накрытия">Универсальные
 накрытия</h2>
 <div id="definition-70">
-<p><strong>Определение:</strong> Накрытие <span
-class="math inline">\((\tilde{X}, p, X)\)</span> <em>универсальное</em>,
-если <span class="math inline">\(\pi_1(\tilde{X}) = \{e\}\)</span>.</p>
-<h3 data-number="13.5.1" id="пример">Пример</h3>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Накрытие <span class="math inline">\((\tilde{X}, p,
+X)\)</span> <em>универсальное</em>, если <span
+class="math inline">\(\pi_1(\tilde{X}) = \{e\}\)</span>.</p>
+<h3 data-number="13.4.1" id="пример">Пример</h3>
 <p><span class="math inline">\((\mathbb{R}^1, p, S^1)\)</span> –
 универсально.</p>
 </div>
@@ -495,7 +519,7 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="свободное-произведение-и-теорема-ван-кампена.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>
@@ -503,6 +527,7 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
                         <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
                     </span>
         <span class="navlink">
+                        <a href="search.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
                     </span>
     </div>
 </nav>

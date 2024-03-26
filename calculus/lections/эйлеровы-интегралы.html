@@ -11,7 +11,10 @@
     
     <title>Эйлеровы интегралы</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="теоремы-о-несобственных-интегралах-с-параметром.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="формула-стирлинга.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="теоремы-о-несобственных-интегралах-с-параметром.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="формула-стирлинга.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -248,13 +267,13 @@
 <h1 data-number="17" id="эйлеровы-интегралы">Эйлеровы интегралы</h1>
 <h2 data-number="17.1" id="гамма-функция">Гамма-функция</h2>
 <div id="theorem-49">
-<p><strong>Теорема:</strong> Пусть <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
 class="math inline">\(\Gamma_n(x) = \frac{(n - 1)!\cdot
 n^x}{\displaystyle \prod_{k = 0}^{n - 1}\left(x + k\right)}, \,\,\,\, x
 \not\in \{0, -1, -2, \ldots\}\)</span>.</p>
 <p><span class="math display">\[\exists \displaystyle \lim_{n\to
 \infty}\Gamma_n(x) = \Gamma(x)\]</span></p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p><span class="math display">\[\Gamma_n(x) = \frac{(n - 1)!\cdot
 n^x}{\displaystyle \prod_{k = 0}^{n - 1}\left(x + k\right)} = \frac{1}{x
 \displaystyle \prod_{k = 1}^{n - 1}\left(\frac{x}{k} + 1\right)}\cdot
@@ -264,7 +283,7 @@ n^x}{\displaystyle \prod_{k = 0}^{n - 1}\left(x + k\right)} = \frac{1}{x
 \,\,\,\,\blacksquare\]</span></p>
 </div>
 <div id="definition-25">
-<p><strong>Определение:</strong> <span
+<p><span class="margin-lft"><strong>Определение: </strong></span><span
 class="math inline">\(\Gamma(x)\)</span> – <em>гамма функция
 Эйлера</em>.</p>
 </div>
@@ -272,47 +291,49 @@ class="math inline">\(\Gamma(x)\)</span> – <em>гамма функция
 id="основное-функциональное-тождество-для-гамма-функции">Основное
 функциональное тождество для гамма-функции</h2>
 <div id="theorem-50">
-<p><strong>Теорема:</strong> <span class="math display">\[\Gamma(x + 1)
-= x\Gamma(x)\]</span></p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Теорема: </strong></span><span
+class="math display">\[\Gamma(x + 1) = x\Gamma(x)\]</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p><span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="corollary-6">
-<p><strong>Следствие:</strong> <span class="math display">\[\Gamma(n +
-1) = n! \cdot \Gamma(1) = n!\]</span></p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><strong>Следствие: </strong></span><span
+class="math display">\[\Gamma(n + 1) = n! \cdot \Gamma(1) =
+n!\]</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="theorem-51">
-<p><strong>Теорема:</strong> При <span class="math inline">\(x &gt; 0
-\,\,\,\, \Gamma(x) = \displaystyle\int\limits_0^{+\infty} t^{x - 1}
-e^{-t} dt\)</span></p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Теорема: </strong></span>При <span
+class="math inline">\(x &gt; 0 \,\,\,\, \Gamma(x) =
+\displaystyle\int\limits_0^{+\infty} t^{x - 1} e^{-t} dt\)</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 <h2 data-number="17.3" id="формула-дополнения-для-гамма-функции">Формула
 дополнения для гамма-функции</h2>
 <div id="theorem-52">
-<p><strong>Теорема:</strong> (<em>Формула дополнения для
-гамма-функции</em>) <span class="math display">\[\Gamma(x)\cdot \Gamma(1
-- x) = \frac{\pi}{\sin(\pi x)} \,\,\,\, \forall x \in \mathbb{R}
-\setminus \mathbb{Z}\]</span></p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Формула дополнения для гамма-функции</em>) <span
+class="math display">\[\Gamma(x)\cdot \Gamma(1 - x) =
+\frac{\pi}{\sin(\pi x)} \,\,\,\, \forall x \in \mathbb{R} \setminus
+\mathbb{Z}\]</span></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 </div>
 <h2 data-number="17.4" id="интеграл-эйлера-пуассона">Интеграл
 Эйлера-Пуассона</h2>
 <div id="theorem-53">
-<p><strong>Теорема:</strong> <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span><span
 class="math display">\[\displaystyle\int\limits_{-\infty}^{+\infty}
 e^{-x^2}dx = 2 \displaystyle\int\limits_0^{+\infty} e^{-x^2}dx =
 \displaystyle\int\limits_0^{+\infty} e^{-t}t^{-\frac12}dx =
 \Gamma\left(\frac12\right) = \sqrt{\pi}\]</span></p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="теоремы-о-несобственных-интегралах-с-параметром.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

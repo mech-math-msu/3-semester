@@ -11,7 +11,10 @@
     
     <title>Различные топологии</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -238,17 +246,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="гомеоморфизм.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="инварианты-топологичеких-пространств-при-непрерывных-отображениях.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="гомеоморфизм.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="инварианты-топологичеких-пространств-при-непрерывных-отображениях.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -258,13 +277,13 @@
 <h2 data-number="4.1" id="метрические-пространства">Метрические
 пространства</h2>
 <div id="definition-15">
-<p><strong>Определение:</strong> Отображение <span
-class="math inline">\(f: X \to \mathbb{R}\)</span> –
-<em>функция</em>.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Отображение <span class="math inline">\(f: X \to
+\mathbb{R}\)</span> – <em>функция</em>.</p>
 </div>
 <div id="definition-16">
-<p><strong>Определение:</strong> Функция <span
-class="math inline">\(\rho: X\times X \to \mathbb{R}\)</span> –
+<p><span class="margin-lft"><strong>Определение: </strong></span>Функция
+<span class="math inline">\(\rho: X\times X \to \mathbb{R}\)</span> –
 <em>метрика</em>, если <span class="math inline">\(\forall x, y, z \in
 X\)</span></p>
 <ol type="1">
@@ -276,8 +295,8 @@ class="math inline">\(\rho(x, y) = 0 \iff x = y\)</span>,</li>
 </ol>
 </div>
 <div id="definition-17">
-<p><strong>Определение:</strong> Пусть на <span
-class="math inline">\(X\)</span> задана метрика <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+на <span class="math inline">\(X\)</span> задана метрика <span
 class="math inline">\(\rho\)</span>. <em>Открытый шар радиуса</em> <span
 class="math inline">\(\varepsilon\)</span> <em>с центром в точке</em>
 <span class="math inline">\(x_0 \in X\)</span> – это <span
@@ -287,11 +306,11 @@ x_0) &lt; \varepsilon\}\)</span>.</p>
 class="math inline">\(O_{\varepsilon}\)</span>.</p>
 </div>
 <div id="statement-5">
-<p><strong>Утверждение:</strong> Пусть на множестве <span
-class="math inline">\(X\)</span> задана метрика. Тогда множество всех
-открытых шаров <span class="math inline">\(O\)</span> является
-базой.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+на множестве <span class="math inline">\(X\)</span> задана метрика.
+Тогда множество всех открытых шаров <span
+class="math inline">\(O\)</span> является базой.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <ol type="1">
 <li><span class="math inline">\(\forall x \in X \,\,\,\, \exists
 O_{1}(x)\)</span>,</li>
@@ -304,19 +323,21 @@ O_{\varepsilon_1}(x_1)\cap O_{\varepsilon_2}(x_2)
 </ol>
 </div>
 <div id="definition-18">
-<p><strong>Определение:</strong> <em>Метрическое пространство</em> – это
-топологическое пространство, порожденное базой открытых шаров.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Метрическое пространство</em> – это топологическое
+пространство, порожденное базой открытых шаров.</p>
 </div>
 <div id="definition-19">
-<p><strong>Определение:</strong> Если на <span
-class="math inline">\(X\)</span> можно ввести метрику, то <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Если на
+<span class="math inline">\(X\)</span> можно ввести метрику, то <span
 class="math inline">\(X\)</span> – <em>метризуемое множество</em>.</p>
 </div>
 <div id="definition-20">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(X\)</span> – векторное пространство. Функция <span
-class="math inline">\(h: X \to \mathbb{R}\)</span> – <em>норма</em>,
-если <span class="math inline">\(\forall x, y \in X\)</span></p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(X\)</span> – векторное пространство. Функция
+<span class="math inline">\(h: X \to \mathbb{R}\)</span> –
+<em>норма</em>, если <span class="math inline">\(\forall x, y \in
+X\)</span></p>
 <ol type="1">
 <li><span class="math inline">\(h(x) \geqslant 0\)</span> и <span
 class="math inline">\(h(x) = 0 \iff x = 0\)</span>,</li>
@@ -329,8 +350,8 @@ h(y)\)</span>.</li>
 <h2 data-number="4.2" id="индуцированная-топология">Индуцированная
 топология</h2>
 <div id="definition-21">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(A\)</span> подмножество топологического
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(A\)</span> подмножество топологического
 пространства <span class="math inline">\(X\)</span>. <em>Индуцированная
 топология</em> – это топология на <span
 class="math inline">\(A\)</span>, в которой открытыми множествами
@@ -340,7 +361,7 @@ class="math inline">\(A\)</span>, в которой открытыми множ�
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="гомеоморфизм.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

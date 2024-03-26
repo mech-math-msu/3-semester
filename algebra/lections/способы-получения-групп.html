@@ -11,7 +11,10 @@
     
     <title>Способы получения групп</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="группы.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="смежные-классы-нормальные-подгруппы-автоморфизмы.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="группы.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="смежные-классы-нормальные-подгруппы-автоморфизмы.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -249,17 +268,18 @@
 групп</h1>
 <h2 data-number="3.1" id="подгруппы">Подгруппы</h2>
 <div id="definition-10">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(G\)</span> – группа, <span class="math inline">\(H
-\subset G\)</span>. <span class="math inline">\(H\)</span> –
-<em>подгруппа</em> группы <span class="math inline">\(G\)</span>, если
-<span class="math inline">\(H\)</span> – группа относительно операции
-группы <span class="math inline">\(G\)</span>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(G\)</span> – группа, <span
+class="math inline">\(H \subset G\)</span>. <span
+class="math inline">\(H\)</span> – <em>подгруппа</em> группы <span
+class="math inline">\(G\)</span>, если <span
+class="math inline">\(H\)</span> – группа относительно операции группы
+<span class="math inline">\(G\)</span>.</p>
 </div>
 <div id="statement-0">
-<p><strong>Утверждение:</strong> Пусть <span class="math inline">\((G,
-\cdot)\)</span> – группа, <span class="math inline">\(H \subset
-G\)</span>.</p>
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\((G, \cdot)\)</span> – группа, <span
+class="math inline">\(H \subset G\)</span>.</p>
 <p>Тогда <span class="math inline">\(H\)</span> – <em>подгруппа</em>
 группы <span class="math inline">\(G\)</span></p>
 <p><span class="math inline">\(\Updownarrow\)</span></p>
@@ -269,7 +289,7 @@ G\)</span>.</p>
 \,\,\,\, h_1 \cdot h_2 \in H\)</span>,</p>
 <p><span class="math inline">\((3) \,\,\,\, \forall h \in H \,\,\,\,
 h^{-1} \in H\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p><span class="math inline">\(\Downarrow \,\,\,\,
 \,\,\,\,\blacksquare\)</span></p>
 <p><span class="math inline">\(\Uparrow\)</span> Докажем, что <span
@@ -281,50 +301,51 @@ h^{-1} \in H \Rightarrow e \in H \,\,\,\,\blacksquare\)</span></p>
 </div>
 <h2 data-number="3.2" id="системы-порождающих">Системы порождающих</h2>
 <div id="definition-11">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(G\)</span> – группа, <span class="math inline">\(S
-\subset G\)</span>. Множество <span class="math inline">\(\langle S
-\rangle = \{g_1^{\varepsilon_1}\cdot \ldots \cdot g_k^{\varepsilon_k}|
-\,\,\,\, k \in \mathbb{N}, \,\,\,\, g_1, \ldots, g_k \in H, \,\,\,\,
-\varepsilon_1, \ldots, \varepsilon_k \in \{-1, 1\}\}\)</span> –
-<em>подгруппа, порожденная множеством</em> <span
-class="math inline">\(S\)</span>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(G\)</span> – группа, <span
+class="math inline">\(S \subset G\)</span>. Множество <span
+class="math inline">\(\langle S \rangle = \{g_1^{\varepsilon_1}\cdot
+\ldots \cdot g_k^{\varepsilon_k}| \,\,\,\, k \in \mathbb{N}, \,\,\,\,
+g_1, \ldots, g_k \in H, \,\,\,\, \varepsilon_1, \ldots, \varepsilon_k
+\in \{-1, 1\}\}\)</span> – <em>подгруппа, порожденная множеством</em>
+<span class="math inline">\(S\)</span>.</p>
 </div>
 <h2 data-number="3.3" id="изоморфные-группы-и-теорема-кэли">Изоморфные
 группы и теорема Кэли</h2>
 <div id="definition-12">
-<p><strong>Определение:</strong> Пусть <span class="math inline">\((G,
-\star)\)</span> и <span class="math inline">\((H, \cdot)\)</span>
-группы. Отображение <span class="math inline">\(\varphi: G \to
-H\)</span>, такое, что <span class="math inline">\(\varphi(g_1\star g_2)
-= \varphi(g_1)\cdot \varphi(g_2)\)</span> – <em>гомоморфизм</em> групп
-<span class="math inline">\(G\)</span> и <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\((G, \star)\)</span> и <span
+class="math inline">\((H, \cdot)\)</span> группы. Отображение <span
+class="math inline">\(\varphi: G \to H\)</span>, такое, что <span
+class="math inline">\(\varphi(g_1\star g_2) = \varphi(g_1)\cdot
+\varphi(g_2)\)</span> – <em>гомоморфизм</em> групп <span
+class="math inline">\(G\)</span> и <span
 class="math inline">\(H\)</span>.</p>
 </div>
 <div id="definition-13">
-<p><strong>Определение:</strong> Группы <span class="math inline">\((G,
-\star)\)</span> и <span class="math inline">\((H, \cdot)\)</span>
-<em>изоморфны</em>, если существует биективный гомоморфизм <span
-class="math inline">\(\varphi: G \to H\)</span> <a href="#fn1"
-class="footnote-ref" id="fnref1"
+<p><span class="margin-lft"><strong>Определение: </strong></span>Группы
+<span class="math inline">\((G, \star)\)</span> и <span
+class="math inline">\((H, \cdot)\)</span> <em>изоморфны</em>, если
+существует биективный гомоморфизм <span class="math inline">\(\varphi: G
+\to H\)</span> <a href="#fn1" class="footnote-ref" id="fnref1"
 role="doc-noteref"><sup>1</sup></a>.</p>
 <p><strong>Обозначение:</strong> <span class="math inline">\(G \cong
 H\)</span></p>
 </div>
 <div id="definition-14">
-<p><strong>Определение:</strong> Если группа <span
-class="math inline">\(H\)</span> изоморфна некоторой подгруппе группы
-<span class="math inline">\(G\)</span>, то <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Если
+группа <span class="math inline">\(H\)</span> изоморфна некоторой
+подгруппе группы <span class="math inline">\(G\)</span>, то <span
 class="math inline">\(H\)</span> <em>вкладывается в</em> <span
 class="math inline">\(G\)</span>.</p>
 </div>
 <div id="theorem-1">
-<p><strong>Теорема:</strong> (<em>Кэли</em>) Любая конечная <a
-href="#fn2" class="footnote-ref" id="fnref2"
-role="doc-noteref"><sup>2</sup></a> группа <span
-class="math inline">\((G, \cdot)\)</span> вкладывается в <span
-class="math inline">\(S_{|G|}\)</span>.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Кэли</em>) Любая конечная <a href="#fn2"
+class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>
+группа <span class="math inline">\((G, \cdot)\)</span> вкладывается в
+<span class="math inline">\(S_{|G|}\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>Пусть <span class="math inline">\(G = \{g_1, \ldots,
 g_n\}\)</span>.</p>
 <p>Пусть <span class="math inline">\(\varphi: g_i \mapsto
@@ -354,13 +375,14 @@ g^{\prime} \cdot g_n \end{array}\right) = \varphi(g)\circ
 </div>
 <h2 data-number="3.4" id="циклические-группы">Циклические группы</h2>
 <div id="definition-15">
-<p><strong>Определение:</strong> Группа <em>циклическая</em>, если она
-порождается одним элементом.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Группа
+<em>циклическая</em>, если она порождается одним элементом.</p>
 </div>
 <p><strong>Упражнение:</strong><a name="exercise-0"></a> Циклическая
 группа – абелева.</p>
 <div id="definition-16">
-<p><strong>Определение:</strong> <em>Порядок элемента</em> <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Порядок элемента</em> <span
 class="math inline">\(g\)</span> группы <span
 class="math inline">\(G\)</span> – это минимальное натуральное <span
 class="math inline">\(n\)</span>, такое, что <span
@@ -369,11 +391,12 @@ class="math inline">\(n\)</span> не существует, то порядок 
 бесконечность.</p>
 </div>
 <div id="statement-1">
-<p><strong>Утверждение:</strong> Порядок элемента <span
-class="math inline">\(g \in G\)</span> равен <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Порядок
+элемента <span class="math inline">\(g \in G\)</span> равен <span
 class="math inline">\(|\langle g \rangle|\)</span>.</p>
-<p><em>Доказательство:</em> Пусть <span class="math inline">\(\langle g
-\rangle = \{e, g, g^2, \ldots, g^{n - 1}\}\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть <span
+class="math inline">\(\langle g \rangle = \{e, g, g^2, \ldots, g^{n -
+1}\}\)</span>.</p>
 <p>Пусть <span class="math inline">\(g^l = g^m \,\,\,\, (n - 1 &gt; l
 &gt; m) \,\,\,\, \Rightarrow g^{l - m} = e \Rightarrow |\langle g
 \rangle| &lt; n - 1 \,\,\,\,\blacksquare\)</span></p>
@@ -382,8 +405,8 @@ class="math inline">\(|\langle g \rangle|\)</span>.</p>
 <p>Эта теорема мечта любого алгебраиста.</p>
 </blockquote>
 <div id="theorem-2">
-<p><strong>Теорема:</strong> (<em>Классификация циклических
-групп</em>)</p>
+<p><span class="margin-lft"><strong>Теорема:
+</strong></span>(<em>Классификация циклических групп</em>)</p>
 <ol type="1">
 <li><span class="math inline">\(\forall n \in \mathbb{N} \,\,\,\,
 \exists\)</span> циклическая группа порядка <span
@@ -391,7 +414,7 @@ class="math inline">\(n\)</span>.</li>
 <li>Все циклические группы порядка <span
 class="math inline">\(n\)</span> изоморфны.</li>
 </ol>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <ol type="1">
 <li><span class="math inline">\(\mathbb{Z}_n\)</span> <a href="#fn3"
 class="footnote-ref" id="fnref3"
@@ -404,8 +427,8 @@ role="doc-noteref"><sup>3</sup></a></li>
 </ol>
 </div>
 <div id="theorem-3">
-<p><strong>Теорема:</strong> (<em>о подгруппах циклических
-групп</em>)</p>
+<p><span class="margin-lft"><strong>Теорема: </strong></span>(<em>о
+подгруппах циклических групп</em>)</p>
 <ol type="1">
 <li>Подгруппа циклической группы – циклическая.</li>
 <li>У циклической группы порядка <span class="math inline">\(n \in
@@ -413,7 +436,7 @@ role="doc-noteref"><sup>3</sup></a></li>
 делящего <span class="math inline">\(n\)</span>, и других подгрупп
 нет.</li>
 </ol>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <ol type="1">
 <li><p>Пусть <span class="math inline">\(H\)</span> подгруппа <span
 class="math inline">\(G = \langle g \rangle\)</span>. Пусть <span
@@ -456,7 +479,7 @@ role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="группы.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

@@ -11,7 +11,10 @@
     
     <title>Алгебраические структуры</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -83,13 +86,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -98,19 +101,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -216,7 +220,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -229,17 +237,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="простота-группы-a_5.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="поле-разложения.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="простота-группы-a_5.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="поле-разложения.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -249,10 +268,11 @@
 структуры</h1>
 <h2 data-number="17.1" id="кольцо">Кольцо</h2>
 <div id="definition-54">
-<p><strong>Определение:</strong> <em>Кольцо</em> – это <span
-class="math inline">\((R, +, \cdot), \,\,\,\, R\times R\overset{+}{\to}
-R\)</span> и <span class="math inline">\(R\times R \overset{\cdot}{\to}
-R\)</span>, такая что</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Кольцо</em> – это <span class="math inline">\((R, +,
+\cdot), \,\,\,\, R\times R\overset{+}{\to} R\)</span> и <span
+class="math inline">\(R\times R \overset{\cdot}{\to} R\)</span>, такая
+что</p>
 <ol type="1">
 <li><span class="math inline">\((R, +)\)</span> – абелева группа,</li>
 <li><span class="math inline">\(\forall x, y, z \in R \,\,\,\, x(y + z)
@@ -262,30 +282,31 @@ yz\)</span>.</li>
 </div>
 <h2 data-number="17.2" id="поле-и-тело">Поле и тело</h2>
 <div id="definition-55">
-<p><strong>Определение:</strong> <em>Тело</em> – это ассоциативное
-кольцо с единицей не равной <span class="math inline">\(0\)</span>, в
-котором любой ненулевой элемент обратим.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Тело</em> – это ассоциативное кольцо с единицей не
+равной <span class="math inline">\(0\)</span>, в котором любой ненулевой
+элемент обратим.</p>
 </div>
 <p><strong>Самопроверка:</strong> Чем тело отличается от поля?</p>
 <details>
 <summary>
 </summary>
 <div id="definition-56">
-<p><strong>Определение:</strong> <em>Поле</em> – это коммутативное
-тело.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Поле</em> – это коммутативное тело.</p>
 </div>
 </details>
 <div id="definition-57">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(F\)</span> – поле. <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(F\)</span> – поле. <span
 class="math inline">\(G\)</span> – <em>подполе</em> поля <span
 class="math inline">\(F\)</span>, если <span class="math inline">\(G
 \subset F\)</span> и <span class="math inline">\(G\)</span> – поле.</p>
 </div>
 <div id="statement-34">
-<p><strong>Утверждение:</strong> Пусть <span
-class="math inline">\(F\)</span> – поле. <span class="math inline">\(G
-\subset F\)</span> – подполе <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(F\)</span> – поле. <span
+class="math inline">\(G \subset F\)</span> – подполе <span
 class="math inline">\(\iff\)</span></p>
 <ol type="1">
 <li><span class="math inline">\(G \ne \varnothing\)</span> и <span
@@ -295,14 +316,15 @@ G\)</span> и <span class="math inline">\(a\cdot b \in G\)</span>,</li>
 <li><span class="math inline">\(\forall a \in G, \,\,\,\, a \ne 0
 \,\,\,\, a^{-1} \in G\)</span>.</li>
 </ol>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="definition-58">
-<p><strong>Определение:</strong> Отображение <span
-class="math inline">\(\varphi: R \to S\)</span> – <em>гомоморфизм
-колец</em> (<em>полей</em>) <span class="math inline">\(R\)</span> и
-<span class="math inline">\(S\)</span>, если <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Отображение <span class="math inline">\(\varphi: R \to
+S\)</span> – <em>гомоморфизм колец</em> (<em>полей</em>) <span
+class="math inline">\(R\)</span> и <span
+class="math inline">\(S\)</span>, если <span
 class="math inline">\(\forall x, y \in R\)</span></p>
 <ol type="1">
 <li><span class="math inline">\(\varphi(x + y) = \varphi(x) +
@@ -332,7 +354,8 @@ class="math inline">\(\mathcal{P}(X)\)</span> – кольцо относите�
 </ol>
 <h2 data-number="17.4" id="алгебра">Алгебра</h2>
 <div id="definition-59">
-<p><strong>Определение:</strong> <em>Алгебра над полем</em> <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Алгебра над полем</em> <span
 class="math inline">\(\mathbb{F}\)</span> – это множество <span
 class="math inline">\(A\)</span> с операциями умножения <span
 class="math inline">\(\cdot: A \times A \to A\)</span>, умножения на
@@ -364,7 +387,8 @@ class="math inline">\(F(x)\)</span>.</li>
 <h3 data-number="17.4.2" id="алгебра-кватернионов">Алгебра
 кватернионов</h3>
 <div id="definition-60">
-<p><strong>Определение:</strong> Множество <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Множество <span
 class="math inline">\(\mathbb{H}\)</span> формальных выражений вида:
 <span class="math inline">\(a 1 + bi + cj + dk\)</span>, где <span
 class="math inline">\(a, b, c, d \in \mathbb{R}\)</span> – <em>алгебра
@@ -375,15 +399,16 @@ class="math inline">\(1 = (-1)^2\)</span> и покомпонентного
 сложения.</p>
 </div>
 <div id="statement-35">
-<p><strong>Утверждение:</strong> Определение алгебры кватернионов
-корректно.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Определение алгебры кватернионов корректно.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquared\)</span></p>
 </div>
 <div id="definition-61">
-<p><strong>Определение:</strong> Отображение <span
-class="math inline">\(\varphi: A_1 \to A_2\)</span> – <em>гомоморфизм
-алгебр</em> <span class="math inline">\(A_1\)</span> и <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Отображение <span class="math inline">\(\varphi: A_1 \to
+A_2\)</span> – <em>гомоморфизм алгебр</em> <span
+class="math inline">\(A_1\)</span> и <span
 class="math inline">\(A_2\)</span>, если <span
 class="math inline">\(\forall x, y \in A_1\)</span></p>
 <ol type="1">
@@ -401,9 +426,10 @@ class="math inline">\(\forall x, y \in A_1\)</span></p>
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 <h2 data-number="17.5" id="идеал">Идеал</h2>
 <div id="definition-62">
-<p><strong>Определение:</strong> <em>Идеал</em> – это <span
-class="math inline">\(I \subset R\)</span>, где <span
-class="math inline">\(R\)</span> – кольцо (алгебра), такое что</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Идеал</em> – это <span class="math inline">\(I
+\subset R\)</span>, где <span class="math inline">\(R\)</span> – кольцо
+(алгебра), такое что</p>
 <ol type="1">
 <li><span class="math inline">\(I\)</span> подгруппа по сложению
 (подпространство),</li>
@@ -421,8 +447,8 @@ class="math inline">\(I\)</span> <em>левый идеал</em> и аналог�
 <h2 data-number="17.6" id="факторкольцо-и-факторалгебра">Факторкольцо и
 факторалгебра</h2>
 <div id="statement-36">
-<p><strong>Утверждение:</strong> Пусть <span
-class="math inline">\(R\)</span> – кольцо (алгебра). Пусть <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(R\)</span> – кольцо (алгебра). Пусть <span
 class="math inline">\(I \subset R\)</span>. Определим <span
 class="math inline">\(v + I = \{v + i|\,\,\,\, i \in I\}, \,\,\,\, v \in
 R \,\,\,\, (\lambda (v + I) = \lambda v + I)\)</span>.</p>
@@ -435,59 +461,61 @@ I\)</span>.</p>
 <p>Тогда <span class="math inline">\(R/I\)</span> – группа относительно
 введенных операций <span class="math inline">\(\iff I \vartriangleleft
 R\)</span>.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="definition-63">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(R\)</span> – кольцо (алгебра). Пусть <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(R\)</span> – кольцо (алгебра). Пусть <span
 class="math inline">\(I \vartriangleleft R\)</span>. Множество <span
 class="math inline">\(R/I\)</span> с введенными выше операциями сложения
 и умножения – <em>факторкольцо (факторалгебра)</em>.</p>
 </div>
 <h2 data-number="17.7" id="главные-идеалы">Главные идеалы</h2>
 <div id="definition-64">
-<p><strong>Определение:</strong> Гомоморфизм <span
-class="math inline">\(R \overset{\pi}{\to} R/I: r \mapsto r + I\)</span>
-– <em>канонический гомоморфизм</em>.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Гомоморфизм <span class="math inline">\(R
+\overset{\pi}{\to} R/I: r \mapsto r + I\)</span> – <em>канонический
+гомоморфизм</em>.</p>
 <p><strong>Факт:</strong> <span
 class="math inline">\(\operatorname{ker}\pi = I\)</span>.</p>
 </div>
 <h2 data-number="17.8" id="кольца-главных-идеалов">Кольца главных
 идеалов</h2>
 <div id="definition-65">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(A\)</span> – ассоциативное коммутативное кольцо с
-единицей. <span class="math inline">\(S \subset A\)</span>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(A\)</span> – ассоциативное коммутативное
+кольцо с единицей. <span class="math inline">\(S \subset A\)</span>.</p>
 <p>Множество <span class="math inline">\((S) = \{a_1s_1 +\ldots +
 a_ns_n| \,\,\,\, a_i \in A, \,\,\,\, s_i \in S, \,\,\,\, n \in
 \mathbb{N}\}\)</span> – <em>идеал, порожденный</em> <span
 class="math inline">\(S\)</span>.</p>
 </div>
 <div id="definition-66">
-<p><strong>Определение:</strong> Идеал в кольце (алгебре)
-<em>главный</em>, если он порождается одним элементом.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Идеал в
+кольце (алгебре) <em>главный</em>, если он порождается одним
+элементом.</p>
 </div>
 <div id="definition-67">
-<p><strong>Определение:</strong> Кольцо (ассоциативное и коммутативное)
-без делителей нуля, в котором все идеалы главные – <em>кольцо главных
-идеалов</em>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Кольцо
+(ассоциативное и коммутативное) без делителей нуля, в котором все идеалы
+главные – <em>кольцо главных идеалов</em>.</p>
 </div>
 <div id="lemma-6">
-<p><strong>Лемма:</strong> Любое поле является кольцом главных
-идеалов.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Любое поле
+является кольцом главных идеалов.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="statement-37">
-<p><strong>Утверждение:</strong></p>
+<span class="margin-lft"><strong>Утверждение: </strong></span>
 <ol type="1">
 <li><span class="math inline">\(\mathbb{Z}\)</span> – кольцо главных
 идеалов,</li>
 <li><span class="math inline">\(F[x]\)</span> – кольцо главных
 идеалов.</li>
 </ol>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <ol type="1">
 <li>Все идеалы имеют вид <span class="math inline">\(k\mathbb{Z} =
 (k)\)</span>,</li>
@@ -501,10 +529,10 @@ h = gf + r \implies \deg r &lt; \deg f \implies r = 0 \implies I = (f)
 <h2 data-number="17.9" id="когда-факторкольцо-является-полем">Когда
 факторкольцо является полем?</h2>
 <div id="theorem-27">
-<p><strong>Теорема:</strong> <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span><span
 class="math inline">\(F[x]/fF[x]\)</span> – поле <span
 class="math inline">\(\iff f\)</span> неприводимый.</p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p><span class="math inline">\((f) = fF[x] = I\)</span>.</p>
 <p><span class="math inline">\(\boxed{\Longrightarrow}\)</span> Пусть
 <span class="math inline">\(f = gh \implies f + I = 0 = (g + I)(h + I)
@@ -521,16 +549,17 @@ class="math inline">\(fu \in I \implies fu + gv + I = gv + I = 1 + I
 \,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="statement-38">
-<p><strong>Утверждение:</strong> Базис в алгебре <span
-class="math inline">\(F[x]/fF[x]\)</span> – это <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Базис в
+алгебре <span class="math inline">\(F[x]/fF[x]\)</span> – это <span
 class="math inline">\(\{1 + (f), x + (f),\ldots, x^{n - 1} +
 (f)\}\)</span>, где <span class="math inline">\(n =
 \operatorname{deg}f\)</span>.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="definition-68">
-<p><strong>Определение:</strong> <em>Характеристика</em> поля <span
+<p><span class="margin-lft"><strong>Определение:
+</strong></span><em>Характеристика</em> поля <span
 class="math inline">\(F\)</span> – это минимальное натуральное <span
 class="math inline">\(n\)</span>, такое что <span
 class="math inline">\(\underbrace{1 + \ldots +1}_{n} = 0\)</span>.</p>
@@ -540,20 +569,20 @@ class="math inline">\(\operatorname{char}F\)</span>.</p>
 <span class="math inline">\(\operatorname{char}F = 0\)</span>.</p>
 </div>
 <div id="statement-39">
-<p><strong>Утверждение:</strong> <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span><span
 class="math inline">\(\operatorname{char}F = 0\)</span> или <span
 class="math inline">\(\operatorname{char}F\)</span> – простое число.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="statement-40">
-<p><strong>Утверждение:</strong> <span class="math inline">\(F\)</span>
-конечное поле <span class="math inline">\(\implies |F| =
-p^k\)</span>.</p>
-<p><em>Доказательство:</em> Будет доказано позже. Пусть <span
-class="math inline">\(\operatorname{char}F = p\)</span>. Рассмотрим
-<span class="math inline">\(\{0, 1, 1+1, \ldots, 1+\ldots+1\} \simeq
-\mathbb{Z}_p\)</span>.</p>
+<p><span class="margin-lft"><strong>Утверждение: </strong></span><span
+class="math inline">\(F\)</span> конечное поле <span
+class="math inline">\(\implies |F| = p^k\)</span>.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Будет
+доказано позже. Пусть <span class="math inline">\(\operatorname{char}F =
+p\)</span>. Рассмотрим <span class="math inline">\(\{0, 1, 1+1, \ldots,
+1+\ldots+1\} \simeq \mathbb{Z}_p\)</span>.</p>
 </div>
 <h2 data-number="17.10"
 id="поле-это-векторное-пространство-над-подполем">Поле это векторное
@@ -569,26 +598,28 @@ class="math inline">\(G\)</span> – его подполе. Тогда можн�
 базисом <span class="math inline">\(\{1, i\}\)</span>, то есть <span
 class="math inline">\(\dim_{\mathbb{R}} \mathbb{C} = 2\)</span>.</p>
 <div id="theorem-28">
-<p><strong>Теорема:</strong> Для любого простого <span
-class="math inline">\(p\)</span> и натурального <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Для любого
+простого <span class="math inline">\(p\)</span> и натурального <span
 class="math inline">\(k\)</span> существует единственное с точностью до
 изоморфизма поле из <span class="math inline">\(p^k\)</span>
 элементов.</p>
-<p><em>Доказательство:</em> Будет доказано позже.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Будет
+доказано позже.</p>
 </div>
 <h2 data-number="17.11" id="простые-кольца-и-алгебры">Простые кольца и
 алгебры</h2>
 <div id="definition-69">
-<p><strong>Определение:</strong> Кольцо (алгебра) <em>простое(-я)</em>,
-если не содержит собственных идеалов.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Кольцо
+(алгебра) <em>простое(-я)</em>, если не содержит собственных
+идеалов.</p>
 </div>
 <div id="statement-41">
-<p><strong>Утверждение:</strong> Кольцо матриц <span
-class="math inline">\(M_n(F)\)</span> над телом <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Кольцо
+матриц <span class="math inline">\(M_n(F)\)</span> над телом <span
 class="math inline">\(F\)</span> является простым.</p>
-<p><em>Доказательство:</em> Пусть <span class="math inline">\(0 \ne A
-\in I \vartriangleright M_n(F)\)</span>. Домножением на подходящие
-матрицы получим, что любая матрица <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть <span
+class="math inline">\(0 \ne A \in I \vartriangleright M_n(F)\)</span>.
+Домножением на подходящие матрицы получим, что любая матрица <span
 class="math inline">\(E_{ij}\)</span> лежит в <span
 class="math inline">\(I\)</span>, а значит <span class="math inline">\(I
 = M_n(F) \,\,\,\,\blacksquare\)</span></p>
@@ -597,15 +628,16 @@ class="math inline">\(I\)</span>, а значит <span class="math inline">\(I
 id="конечномерные-алгебры-над-полем-комплексных-чисел-являющиеся-телами">Конечномерные
 алгебры над полем комплексных чисел, являющиеся телами</h2>
 <div id="statement-42">
-<p><strong>Утверждение:</strong> Конечномерная алгебра <span
+<p><span class="margin-lft"><strong>Утверждение:
+</strong></span>Конечномерная алгебра <span
 class="math inline">\(A\)</span> над <span
 class="math inline">\(\mathbb{C}\)</span>, являющаяся телом изоморфна
 <span class="math inline">\(\mathbb{C}\)</span>.</p>
-<p><em>Доказательство:</em> Рассмотрим линейный оператор <span
-class="math inline">\(\lambda_t: A \to A: x \to tx\)</span>, где <span
-class="math inline">\(t \in A\)</span>. Любой линейный оператор над
-<span class="math inline">\(\mathbb{C}\)</span> имеет собственное
-значение и собственный вектор. Пусть <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> Рассмотрим
+линейный оператор <span class="math inline">\(\lambda_t: A \to A: x \to
+tx\)</span>, где <span class="math inline">\(t \in A\)</span>. Любой
+линейный оператор над <span class="math inline">\(\mathbb{C}\)</span>
+имеет собственное значение и собственный вектор. Пусть <span
 class="math inline">\(\mathbb{C} \ni \alpha, v\)</span> – собственное
 значение и собственный вектор соотвественно. Так как <span
 class="math inline">\(tv = \alpha v\)</span> оператор <span
@@ -619,8 +651,8 @@ class="math inline">\(\lambda_t - \alpha \mathcal{I} = 0 \implies
 <h2 data-number="17.13" id="простые-расширения-полей">Простые расширения
 полей</h2>
 <div id="definition-70">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(F\)</span> – поле, <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(F\)</span> – поле, <span
 class="math inline">\(G\)</span> – его подполе. Множество <span
 class="math inline">\(G(\alpha) =
 \left\lbrace\frac{f(\alpha)}{g(\alpha)}| \,\,\,\, f, g \in G[x],
@@ -628,16 +660,16 @@ class="math inline">\(G(\alpha) =
 расширение</em> <span class="math inline">\(G\)</span>.</p>
 </div>
 <div id="statement-43">
-<p><strong>Утверждение:</strong> Пусть <span
-class="math inline">\(F\)</span> – поле, <span
+<p><span class="margin-lft"><strong>Утверждение: </strong></span>Пусть
+<span class="math inline">\(F\)</span> – поле, <span
 class="math inline">\(G\)</span> – его подполе. Простое расширение <span
 class="math inline">\(G\)</span> – это поле.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <div id="definition-71">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(F\)</span> – поле, <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(F\)</span> – поле, <span
 class="math inline">\(\alpha \in F\)</span>.</p>
 <p>Если <span class="math inline">\(\exists 0 \ne f \in F[x]: \,\,\,\,
 f(\alpha) = 0\)</span>, то <span class="math inline">\(\alpha\)</span> –
@@ -647,9 +679,9 @@ class="math inline">\(F\)</span>.</p>
 <em>трансцендентный элемент</em>.</p>
 </div>
 <div id="definition-72">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(\alpha\)</span> – алгебраический элемент поля
-<span class="math inline">\(F\)</span>. Любой многочлен <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(\alpha\)</span> – алгебраический элемент
+поля <span class="math inline">\(F\)</span>. Любой многочлен <span
 class="math inline">\(f \in F[x]\)</span>, такой что <span
 class="math inline">\(f(\alpha) = 0\)</span> –
 <em>аннулирующий</em>.</p>
@@ -659,16 +691,16 @@ class="math inline">\(f(\alpha) = 0\)</span> –
 class="math inline">\(\mu_{\alpha}(x)\)</span>.</p>
 </div>
 <div id="lemma-7">
-<p><strong>Лемма:</strong> Минимальный многочлен делит любой
-аннулирующий и неприводим.</p>
-<p><em>Доказательство:</em> <span
+<p><span class="margin-lft"><strong>Лемма: </strong></span>Минимальный
+многочлен делит любой аннулирующий и неприводим.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> <span
 class="math inline">\(\,\,\,\,\blacksquared\)</span></p>
 </div>
 <h2 data-number="17.14"
 id="теорема-о-строении-простого-расширения-поля">Теорема о строении
 простого расширения поля</h2>
 <div id="theorem-29">
-<p><strong>Теорема:</strong> Пусть <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
 class="math inline">\(F(\alpha)\)</span> – простое расширение поля <span
 class="math inline">\(F\)</span>. Тогда</p>
 <ol type="1">
@@ -680,7 +712,7 @@ class="math inline">\(\alpha\)</span>,</p></li>
 <li><p>Иначе <span class="math inline">\(F(\alpha) \simeq
 F(x)\)</span>.</p></li>
 </ol>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p><span class="math display">\[\boxed{\operatorname{I}}\]</span></p>
 <p>Пусть <span class="math inline">\(\alpha\)</span> – алгебраический
 элемент, то есть <span class="math inline">\(\exists f \in
@@ -719,8 +751,8 @@ F(\alpha): \frac{f}{g} \mapsto \frac{f(\alpha)}{g(\alpha)}
 id="алгебраические-расширения-полей">Алгебраические расширения
 полей</h2>
 <div id="definition-73">
-<p><strong>Определение:</strong> Пусть <span
-class="math inline">\(F\)</span> подполе в поле <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(F\)</span> подполе в поле <span
 class="math inline">\(G\)</span>. <span class="math inline">\(G\)</span>
 <em>алгебраическое</em> расширение поля <span
 class="math inline">\(F\)</span>, если любой элемент <span
@@ -743,25 +775,27 @@ class="math inline">\(\pi\)</span> не удовлетворяет никако�
 id="конечномерное-расширение-поля-является-алгебраическим">Конечномерное
 расширение поля является алгебраическим</h2>
 <div id="statement-44">
-<p><strong>Утверждение:</strong> <span class="math inline">\(\dim_F G
-&lt; \infty \implies G\)</span> алгебраическое.</p>
-<p><em>Доказательство:</em> Пусть <span class="math inline">\(\alpha \in
-G\)</span>. Так как пространство конечномерное, векторы <span
-class="math inline">\(1, \alpha, \alpha^2, \ldots\)</span> линейно
-зависимы, начиная с какого-то <span class="math inline">\(\alpha^k
-\implies \exists\)</span> коэффиценты не все равные нулю, такие что
-<span class="math inline">\(a_0 \cdot 1 + a_1 \cdot \alpha + \ldots +
-a_k \cdot \alpha^k = 0\)</span>, а это и есть коэффиценты аннулирующего
-многочлен <span class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
+<p><span class="margin-lft"><strong>Утверждение: </strong></span><span
+class="math inline">\(\dim_F G &lt; \infty \implies G\)</span>
+алгебраическое.</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть <span
+class="math inline">\(\alpha \in G\)</span>. Так как пространство
+конечномерное, векторы <span class="math inline">\(1, \alpha, \alpha^2,
+\ldots\)</span> линейно зависимы, начиная с какого-то <span
+class="math inline">\(\alpha^k \implies \exists\)</span> коэффиценты не
+все равные нулю, такие что <span class="math inline">\(a_0 \cdot 1 + a_1
+\cdot \alpha + \ldots + a_k \cdot \alpha^k = 0\)</span>, а это и есть
+коэффиценты аннулирующего многочлен <span
+class="math inline">\(\,\,\,\,\blacksquare\)</span></p>
 </div>
 <h2 data-number="17.17" id="башня-расширений">Башня расширений</h2>
 <div id="theorem-30">
-<p><strong>Теорема:</strong> (<em>о башне расширений</em>) Пусть <span
-class="math inline">\(F \subset G \subset H\)</span> и все это поля.
-Тогда</p>
+<p><span class="margin-lft"><strong>Теорема: </strong></span>(<em>о
+башне расширений</em>) Пусть <span class="math inline">\(F \subset G
+\subset H\)</span> и все это поля. Тогда</p>
 <p><span class="math display">\[\dim_F H = \dim_F G + \dim_G
 H\]</span></p>
-<p><em>Доказательство:</em></p>
+<p><span class="margin-lft"><em>Доказательство:</em></span></p>
 <p>Пусть <span class="math inline">\(\{g_1, \ldots, g_m\}\)</span> –
 базис в <span class="math inline">\(G\)</span> над <span
 class="math inline">\(F\)</span>, <span class="math inline">\(\{h_1,
@@ -791,15 +825,16 @@ class="math inline">\(\alpha_{ij} = 0 \,\,\,\,\blacksquare\)</span></p>
 id="множество-алгебраических-элементов-алгебраическое-расширение">Множество
 алгебраических элементов – алгебраическое расширение</h2>
 <div id="theorem-31">
-<p><strong>Теорема:</strong> Пусть <span class="math inline">\(F \subset
-G\)</span> и <span class="math inline">\(F, G\)</span> – поля. Тогда
-множество алгебраических элементов поля <span
-class="math inline">\(G\)</span> над <span
-class="math inline">\(F\)</span> – это подполе в <span
+<p><span class="margin-lft"><strong>Теорема: </strong></span>Пусть <span
+class="math inline">\(F \subset G\)</span> и <span
+class="math inline">\(F, G\)</span> – поля. Тогда множество
+алгебраических элементов поля <span class="math inline">\(G\)</span> над
+<span class="math inline">\(F\)</span> – это подполе в <span
 class="math inline">\(G\)</span> <a href="#fn2" class="footnote-ref"
 id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
-<p><em>Доказательство:</em> Пусть <span class="math inline">\(\alpha,
-\beta \in G\)</span> – алгебраические. Хотим показать, что</p>
+<p><span class="margin-lft"><em>Доказательство:</em></span> Пусть <span
+class="math inline">\(\alpha, \beta \in G\)</span> – алгебраические.
+Хотим показать, что</p>
 <ol type="1">
 <li><span class="math inline">\(\alpha + \beta\)</span> –
 алгебраический,</li>
@@ -841,7 +876,7 @@ href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="простота-группы-a_5.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>

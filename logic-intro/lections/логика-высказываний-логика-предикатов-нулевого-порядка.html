@@ -12,7 +12,10 @@
     <title>Логика высказываний (Логика предикатов нулевого
 порядка)</title>
     <style>
-        div.sitenav { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        img.logo { position: fixed; left: 20px; top: 20px; width: 70px; height: 70px; }
+        div.sitenav { display: flex; justify-content: space-between; }
+        div.sitenav_right { display: flex; flex-direction: row; justify-content: flex-end; align-items: center; flex-grow: 0; }
+        div.sitenav_left { display: flex; flex-direction: row; justify-content: flex-start; align-items: center; flex-grow: 0; }
         span.navlink { margin-left: 10px; }
         span.navlink-label { display: inline-block; min-width: 4em; }
         html {
@@ -84,13 +87,13 @@
             max-width: 100%;
         }
 
-        h1 {
+        h1, h2 {
             padding-bottom: 3px;
             border-bottom: 1px solid black;
         }
 
         h1.title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             border: none;
         }
         h2.toc-title {
@@ -99,19 +102,20 @@
 
         h1, h2, h3, h4 {
             margin: 1rem 0;
+            margin-left: 0px;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
         }
         h2 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
         }
         h3 {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
         }
         h4 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
 
         ol, ul {
@@ -217,7 +221,11 @@
         }
 
 
-    </style>
+
+
+        .margin-lft {
+            margin-left: 0px;
+        }    </style>
 
     
     <script src="https://kit.fontawesome.com/4b37446228.js" crossorigin="anonymous"></script>
@@ -230,17 +238,28 @@
 <body>
 
 
+<a href="https://mech-math-msu.github.io/everything/#/">
+    <img src="ico.png" alt="" class="logo">
+</a>
+
 <nav id="sitenav">
     <div class="sitenav">
-        <span class="navlink">
-                        <a href="логические-языки.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
-                    </span>
-        <span class="navlink">
-                        <a href="логика-предикатов-первого-порядка.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
-                    </span>
+        <div class="sitenav_left">
+            <span class="navlink">
+                <a href="search.html" accesskey="s" rel="search"><i class="fa-solid fa-search fa-sm" style="color: #363636;"></i></a>
+            </span>
+        </div>
+        <div class="sitenav_right">
+            <span class="navlink">
+                                <a href="логические-языки.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="index.html" accesskey="h" rel="top"><i class="fa-solid fa-book fa-sm" style="color: #363636;"></i></a>
+                            </span>
+            <span class="navlink">
+                                <a href="логика-предикатов-первого-порядка.html" accesskey="p" rel="next"><i class="fa-solid fa-angle-right fa-sm" style="color: #363636;"></i></a>
+                            </span>
+        </div>
     </div>
 </nav>
 
@@ -253,10 +272,9 @@ id="логика-высказываний-логика-предикатов-ну
 id="формальный-синтаксис-логики-высказываний">Формальный синтаксис
 логики высказываний</h2>
 <div id="definition-2">
-<p><strong>Определение:</strong></p>
-<p>Пусть <span class="math inline">\(\operatorname{Var}\)</span> –
-алфавит. Его элементы (символы) – <em>пропозициональные
-переменные</em>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(\operatorname{Var}\)</span> – алфавит. Его
+элементы (символы) – <em>пропозициональные переменные</em>.</p>
 <p>Пусть <span class="math inline">\(\operatorname{Prop} = \{\neg, \vee,
 \wedge, \rightarrow, \ldots\}\)</span> – алфавит. Его элементы –
 <em>пропозииональные связки</em>.</p>
@@ -281,8 +299,8 @@ class="math inline">\(F’\)</span> – формулы.</li>
 id="формальная-семантика-логики-высказываний">Формальная семантика
 логики высказываний</h2>
 <div id="definition-3">
-<p><strong>Определение:</strong></p>
-<p>Пусть <span class="math inline">\(U\)</span> – множество. <span
+<p><span class="margin-lft"><strong>Определение: </strong></span>Пусть
+<span class="math inline">\(U\)</span> – множество. <span
 class="math inline">\(U\)</span> – <em>универсум</em>.</p>
 <p>Отображение <span class="math inline">\(f: \operatorname{Var} \to
 \mathcal{P}(U)\)</span> – <em>оценка</em>.</p>
@@ -299,28 +317,30 @@ f(B)\)</span>.</li>
 </ol>
 </div>
 <div id="definition-4">
-<p><strong>Определение:</strong> Возьмем <span class="math inline">\(U =
-\{1\}\)</span>. Тогда <span class="math inline">\(\mathcal{P}(U) =
-\{\{1\}, \varnothing\}\)</span>. Назовем <span
-class="math inline">\(\{1\}\)</span> – <em>истина</em>, а <span
-class="math inline">\(\varnothing\)</span> – <em>ложь</em>.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Возьмем
+<span class="math inline">\(U = \{1\}\)</span>. Тогда <span
+class="math inline">\(\mathcal{P}(U) = \{\{1\}, \varnothing\}\)</span>.
+Назовем <span class="math inline">\(\{1\}\)</span> – <em>истина</em>, а
+<span class="math inline">\(\varnothing\)</span> – <em>ложь</em>.</p>
 <p>Формула <em>истинная</em>, если ее значение при оценке – истина.
 Формула <em>ложная</em>, если ее значение при оценке – ложь.</p>
 </div>
 <div id="definition-5">
-<p><strong>Определение:</strong> Формула, истинная при какой-то оценке
-переменных, – <em>выполнимая</em>.</p>
+<p><span class="margin-lft"><strong>Определение:
+</strong></span>Формула, истинная при какой-то оценке переменных, –
+<em>выполнимая</em>.</p>
 <p>Формула, истинная при любой оценке переменных, – <em>тавтология</em>
 или <em>тождественно истинная</em>.</p>
 </div>
 <div id="definition-6">
-<p><strong>Определение:</strong> Формулы <em>равносильны</em>, если при
-каждой оценке переменных их значения совпадают.</p>
+<p><span class="margin-lft"><strong>Определение: </strong></span>Формулы
+<em>равносильны</em>, если при каждой оценке переменных их значения
+совпадают.</p>
 </div>
 
 
 <nav id="sitenav">
-    <div class="sitenav">
+    <div class="sitenav_right">
         <span class="navlink">
                         <a href="логические-языки.html" accesskey="n" rel="previous"><i class="fa-solid fa-angle-left fa-sm" style="color: #363636;"></i></a>
                     </span>
